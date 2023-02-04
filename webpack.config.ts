@@ -1,14 +1,26 @@
-import * as path from 'path';
-import * as webpack from 'webpack';
-import 'webpack-dev-server';
+import { BuildOptionsT, BuildModeT, BuildEnv } from './config/build/types';
+import webpack from 'webpack';
+import { WebpackBuild } from './config/build/webpackBuild';
+import path from 'path';  
 
-const config: webpack.Configuration = {
-  mode: 'production',
-  entry: './index.ts',
-  output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: 'index.bundle.js',
-  },
-};
+export default (env:BuildEnv) => {
 
-export default config;
+  const port = env.port
+  const mode = env.mode
+  const isDev = mode === 'development'
+
+  const options:BuildOptionsT = {
+    mode: mode,
+    paths: {
+      build:  path.resolve(__dirname, 'dist'),
+      src: path.resolve(__dirname, 'src', 'index.tsx'),
+      html:  path.resolve(__dirname, 'src', 'public', 'index.html')
+    },
+    isDev: isDev,
+    port: port
+  }
+  
+  const config: webpack.Configuration = WebpackBuild(options)
+
+  return config
+}
