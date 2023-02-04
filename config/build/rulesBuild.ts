@@ -10,14 +10,17 @@ function buildRules({isDev}:BuildOptionsT): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   }
 
-  const styleRule = {
+  const scssRule = {
     test: /\.(sa|sc|c)ss$/,
     use: [
       isDev ? "style-loader" : MiniCssExtractPlugin.loader, 
       {
         loader: 'css-loader',
         options: {
-          modules: true
+          modules: {
+            auto: (resourcePath: string)=> resourcePath.indexOf('.module.') !== -1,
+            localIdentName: isDev ? "[name]__[path]--[hash:base64:5]" : "[hash:base64:5]",
+          },
         }
       },
       "sass-loader"
@@ -26,7 +29,7 @@ function buildRules({isDev}:BuildOptionsT): webpack.RuleSetRule[] {
 
   return [
     tsRule,
-    styleRule,
+    scssRule,
     {
       test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
       loader: "url-loader",

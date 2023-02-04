@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import s from './index.module.scss'
+import './index.scss'
 
 export default function App() {
   return (
