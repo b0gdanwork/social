@@ -1,7 +1,7 @@
-import DevServerBuild from './devServerBuild';
-import plaginsBuild from './plaginsBuild';
-import resolvesBuild from './resolvesBuild';
-import buildRules from './rulesBuild';
+import DevServerBuild from './buildDevServer';
+import plaginsBuild from './buildPlagins';
+import resolvesBuild from './buildResolves';
+import buildRules from './buildRules';
 import { BuildOptionsT } from './types';
 
 
@@ -11,7 +11,7 @@ export function WebpackBuild(options:BuildOptionsT) {
 
   return {
     mode: mode,
-    entry: paths.src,
+    entry: paths.srcJs,
     resolve: resolvesBuild(options),
     devtool: isDev ? 'inline-source-map': undefined,
     output: {

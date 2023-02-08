@@ -4,13 +4,14 @@ type BuildPathsT = {
   html?: string,
   build?: string,
   src?: string,
+  srcJs?: string
 }
 
 export interface BuildOptionsT {
   mode?: BuildModeT,
   paths?: BuildPathsT,
   isDev?: boolean,
-  port?: number
+  port?: number,
 }
 
 export interface BuildEnv {

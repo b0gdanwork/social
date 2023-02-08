@@ -3,7 +3,7 @@ import './styles/index.scss'
 import {
   BrowserRouter
 } from "react-router-dom";
-import ThemeProvider from './theme/ThemeProvider';
+import {ThemeProvider} from './providers/ThemeProvider/index';
 import App from './App';
 
 const Index = () => {

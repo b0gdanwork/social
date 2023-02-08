@@ -1,5 +1,5 @@
 import { useContext, useMemo, useState } from "react"
-import { ThemeContext, ThemeContextT, ThemesT } from "./ThemeContext"
+import { ThemeContext, ThemeContextT, ThemesT } from "shared/config/theme/context/ThemeContext"
 
 interface PropsT {
   children: any,
