@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "webpack serve --env port=3000 --env mode=development",
+    "start": "webpack serve --env port=3000 --env mode=development  --history-api-fallback",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack serve --env port=3000 --env mode=production"
   },
@@ -12,12 +12,16 @@
   "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router": "^6.8.0",
+    "react-router-dom": "^6.8.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@types/react-router": "^5.1.20",
+    "@types/react-router-dom": "^5.3.3",
     "@types/webpack": "^5.28.0",
     "@types/webpack-dev-server": "^4.7.2",
     "css-loader": "^6.7.3",

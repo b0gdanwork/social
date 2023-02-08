@@ -1,13 +1,23 @@
 import ReactDOM from 'react-dom/client';
-import s from './index.module.scss'
-import './index.scss'
+import './styles/index.scss'
+import {
+  BrowserRouter
+} from "react-router-dom";
+import ThemeProvider from './theme/ThemeProvider';
+import App from './App';
 
-export default function App() {
+const Index = () => {
   return (
-    <div className={s.all}>indexindex</div>
+    <>
+      <BrowserRouter>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </BrowserRouter>
+    </>
   )
 }
 
 const domContainer = document.querySelector('#root');
 const root = ReactDOM.createRoot(domContainer);
-root.render(<App/>);
+root.render(<Index/>);
