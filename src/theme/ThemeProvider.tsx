@@ -15,9 +15,21 @@ const ThemeProvider = ({children}:PropsT) => {
     localStorage.setItem('theme', theme)
   }
 
+  const toogleTheme = () => {
+    switch (theme) {
+      case ThemesT.DARK_THEME:
+        setTheme(ThemesT.BLUE_THEME);
+        break;
+      case ThemesT.BLUE_THEME:
+        setTheme(ThemesT.DARK_THEME);
+        break;
+    }
+  }
+
   const value:ThemeContextT = useMemo(() => ({
     theme: theme,
-    setTheme
+    setTheme,
+    toogleTheme
   }), [theme])
 
   return (
