@@ -7,6 +7,8 @@ import HtmlWebpackPlugin from "html-webpack-plugin"
 
 
 function plaginsBuild({paths}:BuildOptionsT):webpack.WebpackPluginInstance[] {
+
+  console.log('paths', paths)
   return [
     new webpack.ProgressPlugin({}),
     new HtmlWebpackPlugin({ template: paths.html}),

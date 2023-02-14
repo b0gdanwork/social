@@ -3,7 +3,7 @@ export type BuildModeT = 'development' | 'production'
 type BuildPathsT = {
   html?: string,
   build?: string,
-  src?: string,
+  srcFolder?: string,
   srcJs?: string
 }
 

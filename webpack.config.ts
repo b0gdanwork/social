@@ -12,9 +12,9 @@ export default (env:BuildEnv) => {
   const options:BuildOptionsT = {
     mode: mode,
     paths: {
-      src: path.resolve(__dirname, 'src'),
+      srcFolder: path.resolve(__dirname, 'src'),
       build:  path.resolve(__dirname, 'dist'),
-      srcJs: path.resolve(__dirname, 'src', 'app', 'index.tsx'),
+      srcJs: path.resolve(__dirname, 'src', 'app', 'Index.tsx'),
       html:  path.resolve(__dirname, 'src', 'app', 'public', 'index.html'),
     },
     isDev: isDev,
