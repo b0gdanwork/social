@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react"
-import { ThemeContext, ThemeContextT, ThemesT } from "../context/ThemeContext"
+import { useContext } from "react"
+import { ThemeContext, ThemeContextT } from "../context/ThemeContext"
 
 
 const useTheme = () => {

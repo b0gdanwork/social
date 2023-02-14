@@ -1,3 +1,7 @@
 @import url(./reset.scss);
 @import url(./variables.scss);
 @import url(./themes/themes.scss);
+
+.social-app {
+  background-color: var(--bg-color);
+}

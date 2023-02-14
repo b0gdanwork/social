@@ -7,7 +7,7 @@ interface PropsT {
   additional?: string[]
 }
 
-export function className(
+export function classNames(
   mainClass?: string,
   mods?: {
     [key: string]: boolean;
