@@ -3,5 +3,6 @@
 @import url(./themes/themes.scss);
 
 .social-app {
+  min-height: 100vh;
   background-color: var(--bg-color);
 }
