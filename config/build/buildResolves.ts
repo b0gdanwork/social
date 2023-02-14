@@ -3,7 +3,7 @@ import webpack from "webpack"
 
 function resolvesBuild(options:BuildOptionsT): webpack.ResolveOptions {
   return {
-    modules: [options.paths.src, 'node_modules'],
+    modules: [options.paths.srcFolder, 'node_modules'],
     // alias:{
     //   "": [options.paths.src, 'node_modules']
     // },
