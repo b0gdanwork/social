@@ -27,14 +27,31 @@ function buildRules({isDev}:BuildOptionsT): webpack.RuleSetRule[] {
     ],
   }
 
+  const urlRule = {
+    test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
+    loader: "url-loader",
+    options: { limit: false },
+  }
+
+  const svgRule = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  }
+
+  const imgRule = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  }
+
   return [
+    svgRule,
+    imgRule,
     tsRule,
     scssRule,
-    {
-      test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
-      loader: "url-loader",
-      options: { limit: false },
-    },
   ]
 
 }
