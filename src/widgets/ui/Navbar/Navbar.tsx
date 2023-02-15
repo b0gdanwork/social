@@ -1,21 +1,21 @@
-import { useTranslation } from 'react-i18next';
-import AppRoutes, { PathsAppT } from 'shared/config/routes/routes';
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import { AppLink } from 'shared/ui';
+import { useTranslation } from 'react-i18next'
+import { PathsAppT } from 'shared/config/routes/routes'
+import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { AppLink } from 'shared/ui'
 
-import s from './Navbar.module.scss';
+import s from './Navbar.module.scss'
 
-type NavbarProps = {
-  className?: string,
+interface NavbarProps {
+  className?: string
 }
 
-const Routes:Record<PathsAppT, string> = {
+const Routes: Record<PathsAppT, string> = {
   [PathsAppT.MAIN]: 'Главная страница',
-  [PathsAppT.ABOUT]: 'О компании',
+  [PathsAppT.ABOUT]: 'О компании', 
 }
 
 const Navbar = (props: NavbarProps) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const {
     className

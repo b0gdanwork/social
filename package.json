@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --env port=3000 --env mode=development  --history-api-fallback",
     "build:prod": "webpack --env mode=production",
-    "build:dev": "webpack serve --env port=3000 --env mode=production"
+    "build:dev": "webpack serve --env port=3000 --env mode=production",
+    "eslint:test": "eslint '**/*.{ts,tsx}'"
   },
   "author": "Savluk Bogdan",
   "license": "ISC",
@@ -32,6 +33,9 @@
     "@types/webpack-dev-server": "^4.7.2",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
+    "eslint": "^8.34.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-react": "^7.32.2",
     "html-webpack-plugin": "^5.5.0",
     "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^2.7.2",
