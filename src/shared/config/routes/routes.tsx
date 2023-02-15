@@ -1,6 +1,6 @@
-import { AboutPage } from "pages/AboutPage";
-import { MainPage } from "pages/MainPage";
-import { RouteObject } from "react-router";
+import { AboutPage } from 'pages/AboutPage';
+import { MainPage } from 'pages/MainPage';
+import { RouteObject } from 'react-router';
 
 export enum PathsAppT {
   MAIN = "/",

@@ -1,7 +1,7 @@
-import React, { FC } from 'react'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import React, { FC } from 'react';
+import { classNames } from 'shared/lib/helpers/classNames/classNames';
 
-import s from './AppButton.module.scss'
+import s from './AppButton.module.scss';
 
 export enum AppButtonTheme {
   PRIMARY = 'primary',

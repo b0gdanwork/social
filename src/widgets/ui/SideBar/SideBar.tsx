@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import s from './SideBar.module.scss'
+import React, { useState } from 'react';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
+
+import s from './SideBar.module.scss';
 
 type Props = {}
 

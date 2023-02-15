@@ -1,10 +1,10 @@
+import './styles/index.scss';
+
 import ReactDOM from 'react-dom/client';
-import './styles/index.scss'
-import {
-  BrowserRouter
-} from "react-router-dom";
-import {ThemeProvider} from './providers/ThemeProvider/index';
+import { BrowserRouter } from 'react-router-dom';
+
 import App from './App';
+import { ThemeProvider } from './providers/ThemeProvider/index';
 
 const Index = () => {
   return (

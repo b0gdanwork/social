@@ -1,6 +1,6 @@
-import React, { Suspense } from 'react'
-import { createBrowserRouter, Routes, useRoutes } from 'react-router-dom'
-import AppRoutesList from 'shared/config/routes/routes'
+import React, { Suspense } from 'react';
+import { createBrowserRouter, Routes, useRoutes } from 'react-router-dom';
+import AppRoutesList from 'shared/config/routes/routes';
 
 type Props = {}
 

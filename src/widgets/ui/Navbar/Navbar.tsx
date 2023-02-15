@@ -1,9 +1,10 @@
-import ToggleThemeBtn from "../ToggleThemeBtn/ToggleThemeBtn"
-import { AppLink } from "shared/ui"
-import { classNames } from "shared/lib/helpers/classNames/classNames"
-import s from './Navbar.module.scss'
-import AppRoutes, { PathsAppT } from "shared/config/routes/routes"
 import { RouteObject } from 'react-router';
+import AppRoutes, { PathsAppT } from 'shared/config/routes/routes';
+import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { AppLink } from 'shared/ui';
+
+import ToggleThemeBtn from '../ToggleThemeBtn/ToggleThemeBtn';
+import s from './Navbar.module.scss';
 
 type NavbarProps = {
   className?: string,

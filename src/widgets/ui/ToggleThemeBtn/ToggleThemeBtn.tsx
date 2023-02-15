@@ -1,9 +1,9 @@
-import { useTheme } from "shared/config/theme"
+import IconTheme from 'shared/assets/icons/theme.svg';
+import { useTheme } from 'shared/config/theme';
+import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { AppButton } from 'shared/ui';
 
-import s from './ToggleThemeBtn.module.scss'
-import { classNames } from "shared/lib/helpers/classNames/classNames"
-import { AppButton } from "shared/ui"
-import IconTheme from 'shared/assets/icons/theme.svg'
+import s from './ToggleThemeBtn.module.scss';
 
 type NavbarProps = {
   className?: string,
