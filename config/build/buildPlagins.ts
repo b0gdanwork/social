@@ -5,11 +5,13 @@ import CopyPlugin from "copy-webpack-plugin";
 
 import { BuildOptionsT } from './types';
 import HtmlWebpackPlugin from "html-webpack-plugin"
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
 
 function plaginsBuild({paths, isDev}:BuildOptionsT):webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({ template: paths.html}),
+    new ReactRefreshWebpackPlugin(),
     new webpack.ProgressPlugin({}),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
