@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import IconTheme from 'shared/assets/icons/theme.svg';
 import { useTheme } from 'shared/config/theme';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
@@ -15,12 +16,13 @@ const ToggleThemeBtn = (props: NavbarProps) => {
     className
   } = props
 
+  const { t, i18n } = useTranslation();
   const {theme, toogleTheme} = useTheme()
   
   return (
     <AppButton className={classNames(s.btn, {}, [className])} onClick={toogleTheme}>
       <IconTheme className={s.icon}/>
-      Сменить тему
+      {t('Сменить тему')}
     </AppButton>
   )
 }
