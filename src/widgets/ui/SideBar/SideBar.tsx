@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { AppButton } from 'shared/ui';
+import ToggleLanguageBtn from '../ToggleLanguageBtn/ToggleLanguageBtn';
+import ToggleThemeBtn from '../ToggleThemeBtn/ToggleThemeBtn';
 
 import s from './SideBar.module.scss';
 
@@ -15,9 +18,11 @@ function SideBar({}: Props) {
 
   return (
     <div className={classNames(s.sidebar, {[s.open]: isOpen}, [])}>
-      <button onClick={onToggle}>
+      <ToggleThemeBtn />
+      <ToggleLanguageBtn />
+      <AppButton onClick={onToggle}>
         Открыть
-      </button>
+      </AppButton>
     </div>
   )
 }

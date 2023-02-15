@@ -6,13 +6,16 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import { ThemeProvider } from './providers/ThemeProvider/index';
 import 'shared/config/i18n/i18n';
+import { Suspense } from 'react';
 
 const Index = () => {
   return (
     <>
       <BrowserRouter>
         <ThemeProvider>
-          <App />
+          <Suspense fallback=''>
+            <App />
+          </Suspense>
         </ThemeProvider>
       </BrowserRouter>
     </>

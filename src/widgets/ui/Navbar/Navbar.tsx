@@ -2,7 +2,6 @@ import AppRoutes, { PathsAppT } from 'shared/config/routes/routes';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { AppLink } from 'shared/ui';
 
-import ToggleThemeBtn from '../ToggleThemeBtn/ToggleThemeBtn';
 import s from './Navbar.module.scss';
 
 type NavbarProps = {
@@ -27,7 +26,6 @@ const Navbar = (props: NavbarProps) => {
           return <AppLink key={key[0]} className={s.link} to={key[0]}>{key[1]}</AppLink>
         })}
       </div>
-      <ToggleThemeBtn />
     </div>
   )
 }
