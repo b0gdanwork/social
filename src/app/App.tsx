@@ -9,7 +9,7 @@ import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { AboutPage } from 'pages/AboutPage';
 import { MainPage } from 'pages/MainPage';
 import { Navbar, SideBar } from '../widgets/ui/index';
-import AppRoutesProvider from './providers/AppRoutesProvider/AppRoutesProvider';
+import AppRoutes from './providers/AppRoutes/AppRoutes';
 
 export default function App() {
   const {theme, toogleTheme} = useTheme()
@@ -17,9 +17,9 @@ export default function App() {
   return (
     <div className={classNames('social-app', {}, [theme])}>
       <Navbar/>
-      <div className={'content-container'}>
+      <div className={'content-page'}>
         <SideBar/>
-        <AppRoutesProvider />
+        <AppRoutes />
       </div>
   </div>
   )

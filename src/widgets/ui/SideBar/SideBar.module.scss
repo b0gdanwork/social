@@ -1,6 +1,7 @@
 .sidebar {
   width: 40px;
   height: calc(100vh - var(--navbar-height));
+  flex-grow: 1;
   background: red;
   transition: .3s width;
 }

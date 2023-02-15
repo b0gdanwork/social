@@ -7,7 +7,7 @@ export enum PathsAppT {
   ABOUT = "/about",
 }
 
-const AppRoutes: RouteObject[] = [
+const AppRoutesList: RouteObject[] = [
   {
     path: PathsAppT.MAIN,
     element: <MainPage />,
@@ -18,4 +18,4 @@ const AppRoutes: RouteObject[] = [
   },
 ];
 
-export default AppRoutes
+export default AppRoutesList

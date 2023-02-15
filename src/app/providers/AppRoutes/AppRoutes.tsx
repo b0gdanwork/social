@@ -1,13 +1,13 @@
 import React, { Suspense } from 'react'
 import { createBrowserRouter, Routes, useRoutes } from 'react-router-dom'
-import AppRoutes from 'shared/config/routes/routes'
+import AppRoutesList from 'shared/config/routes/routes'
 
 type Props = {}
 
 
-const AppRoutesProvider = ({}: Props) => {
+const AppRoutes = ({}: Props) => {
   
-  let element = useRoutes(AppRoutes);
+  let element = useRoutes(AppRoutesList);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -16,4 +16,4 @@ const AppRoutesProvider = ({}: Props) => {
   )
 }
 
-export default AppRoutesProvider
+export default AppRoutes
