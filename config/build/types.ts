@@ -4,7 +4,8 @@ type BuildPathsT = {
   html?: string,
   build?: string,
   src?: string,
-  srcJs?: string
+  srcJs?: string,
+  publicFolder?: string,
 }
 
 export interface BuildOptionsT {

@@ -16,6 +16,7 @@ export default (env:BuildEnv) => {
       build:  path.resolve(__dirname, 'dist'),
       srcJs: path.resolve(__dirname, 'src', 'app', 'Index.tsx'),
       html:  path.resolve(__dirname, 'src', 'app', 'public', 'index.html'),
+      publicFolder: path.resolve(__dirname, 'src', 'app', 'public'),
     },
     isDev: isDev,
     port: port

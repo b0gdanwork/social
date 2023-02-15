@@ -47,7 +47,13 @@ function buildRules({isDev}:BuildOptionsT): webpack.RuleSetRule[] {
     ],
   }
 
+  const jsonRule = {
+    test: /\.json$/,
+    loader: 'json-loader'
+  }
+
   return [
+    jsonRule,
     svgRule,
     imgRule,
     tsRule,

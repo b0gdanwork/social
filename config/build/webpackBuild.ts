@@ -12,8 +12,6 @@ export function WebpackBuild(options:BuildOptionsT) {
   return {
     mode: mode,
     entry: paths.srcJs,
-    resolve: resolvesBuild(options),
-    devtool: isDev ? 'inline-source-map': undefined,
     output: {
       filename: '[name][contenthash].js',
       path: paths.build,
@@ -22,7 +20,9 @@ export function WebpackBuild(options:BuildOptionsT) {
     module: {
       rules: buildRules(options),
     },
+    resolve: resolvesBuild(options),
     plugins: plaginsBuild(options),
-    devServer:DevServerBuild(options),
+    devtool: isDev ? 'inline-source-map': undefined,
+    devServer: DevServerBuild(options),
   }
 }

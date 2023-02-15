@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 import { ThemeProvider } from './providers/ThemeProvider/index';
+import 'shared/config/i18n/i18n';
 
 const Index = () => {
   return (

@@ -4,12 +4,17 @@ import type {Configuration as ConfigurationServerT} from 'webpack-dev-server'
 function DevServerBuild({paths, port}: BuildOptionsT):ConfigurationServerT {
   return (
     {
-      open: true,
+      // open: true,
       static: {
         directory: paths.html,
       },
-      compress: false,
+      // compress: false,
+      // port: port,
+
       port: port,
+      open: true,
+      historyApiFallback: true,
+
     }
   )
 }

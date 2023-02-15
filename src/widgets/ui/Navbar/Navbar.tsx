@@ -1,4 +1,3 @@
-import { RouteObject } from 'react-router';
 import AppRoutes, { PathsAppT } from 'shared/config/routes/routes';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { AppLink } from 'shared/ui';
@@ -25,7 +24,7 @@ const Navbar = (props: NavbarProps) => {
     <div className={classNames(s.navbar, {}, [className])}>
       <div className={s.links}>
         {Object.entries(Routes).map((key)=> {
-          return <AppLink className={s.link} to={key[0]}>{key[1]}</AppLink>
+          return <AppLink key={key[0]} className={s.link} to={key[0]}>{key[1]}</AppLink>
         })}
       </div>
       <ToggleThemeBtn />
