@@ -5,6 +5,7 @@
   padding: var(--btn-padding);
   color: var(--text-color);
   background-color: transparent;
+ 
   :global {
     .primary {
       background-color: var(--primary-btn-bg);
@@ -12,6 +13,7 @@
       border: var(--primary-btn-border);
 
     }
+
     .secondary {
       background-color: var(--secondary-btn-bg);
       color: var(--secondary-btn-color);

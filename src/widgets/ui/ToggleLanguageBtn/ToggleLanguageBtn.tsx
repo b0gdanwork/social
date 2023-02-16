@@ -14,6 +14,7 @@ function ToggleLanguageBtn ({}: ToggleLanguageBtnProps) {
   };
 
   return (
+    // eslint-disable-next-line i18next/no-literal-string
     <AppButton onClick={ toggleLaguage }>ru/en</AppButton>
   )
 }

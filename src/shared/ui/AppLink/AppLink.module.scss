@@ -3,10 +3,12 @@
   margin: 10px 0;
   color: var(--text-color);
   background-color: transparent;
+
   :global {
     .primary {
       background-color: var(--primary-color);
     }
+
     .secondary {
       background-color: var(--secondary-color);
     }

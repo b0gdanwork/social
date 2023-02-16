@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import React, { useState } from 'react';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { AppButton } from 'shared/ui';

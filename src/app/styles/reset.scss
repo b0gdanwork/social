@@ -1,7 +1,7 @@
 /* Reset and base styles  */
 * {
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	border: none;
   box-sizing: border-box;
 }
@@ -12,23 +12,26 @@
 	box-sizing: border-box;
 }
 
-:focus,
-:active {
-	/*outline: none;*/
-}
+// *:focus,
+// *:active {
+// 	/* outline: none; */
+// }
 
-a:focus,
-a:active {
-	/* outline: none;*/
-}
+
 
 /* Links */
 
 a, a:link, a:visited  {
     /* color: inherit; */
     text-decoration: none;
+
     /* display: inline-block; */
 }
+
+// a:focus,
+// a:active {
+// 	/* outline: none; */
+// }
 
 a:hover  {
     /* color: inherit; */
@@ -79,8 +82,8 @@ input::-ms-clear {
 button, input[type="submit"] {
     display: inline-block;
     box-shadow: none;
-    background-color: transparent;
     background: none;
+    background-color: transparent;
     cursor: pointer;
 }
 

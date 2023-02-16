@@ -8,7 +8,9 @@
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack serve --env port=3000 --env mode=production",
     "eslint:test": "eslint '**/*.{ts,tsx}'",
-    "eslint:fix": "eslint '**/*.{ts,tsx}' --fix"
+    "eslint:fix": "eslint '**/*.{ts,tsx}' --fix",
+    "stylelint:test": "npx stylelint '**/*.scss'",
+    "stylelint:fix": "npx stylelint '**/*.scss' --fix"
   },
   "author": "Savluk Bogdan",
   "license": "ISC",
@@ -36,6 +38,7 @@
     "css-loader": "^6.7.3",
     "eslint": "^8.34.0",
     "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-i18next": "^6.0.0-2",
     "eslint-plugin-react": "^7.32.2",
     "html-webpack-plugin": "^5.5.0",
     "json-loader": "^0.5.7",
@@ -44,6 +47,8 @@
     "sass": "^1.58.0",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
+    "stylelint": "^15.1.0",
+    "stylelint-config-standard-scss": "^7.0.1",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5",
