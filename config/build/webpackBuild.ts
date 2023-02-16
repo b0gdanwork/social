@@ -2,15 +2,14 @@ import DevServerBuild from './buildDevServer';
 import plaginsBuild from './buildPlagins';
 import resolvesBuild from './buildResolves';
 import buildRules from './buildRules';
-import { BuildOptionsT } from './types';
+import { type BuildOptionsT } from './types';
 
+export function WebpackBuild (options: BuildOptionsT) {
 
-export function WebpackBuild(options:BuildOptionsT) {
-
-  const {isDev, mode, paths} = options
+  const { isDev, mode, paths } = options
 
   return {
-    mode: mode,
+    mode,
     entry: paths.srcJs,
     output: {
       filename: '[name][contenthash].js',
@@ -18,11 +17,11 @@ export function WebpackBuild(options:BuildOptionsT) {
       clean: true
     },
     module: {
-      rules: buildRules(options),
+      rules: buildRules(options)
     },
     resolve: resolvesBuild(options),
     plugins: plaginsBuild(options),
-    devtool: isDev ? 'inline-source-map': undefined,
-    devServer: DevServerBuild(options),
+    devtool: isDev ? 'inline-source-map' : undefined,
+    devServer: DevServerBuild(options)
   }
 }

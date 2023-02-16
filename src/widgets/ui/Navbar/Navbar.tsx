@@ -11,7 +11,7 @@ interface NavbarProps {
 
 const Routes: Record<PathsAppT, string> = {
   [PathsAppT.MAIN]: 'Главная страница',
-  [PathsAppT.ABOUT]: 'О компании', 
+  [PathsAppT.ABOUT]: 'О компании' 
 }
 
 const Navbar = (props: NavbarProps) => {
@@ -24,7 +24,7 @@ const Navbar = (props: NavbarProps) => {
   return (
     <div className={classNames(s.navbar, {}, [className])}>
       <div className={s.links}>
-        {Object.entries(Routes).map((key)=> {
+        {Object.entries(Routes).map((key) => {
           return <AppLink key={key[0]} className={s.link} to={key[0]}>{t(key[1])}</AppLink>
         })}
       </div>

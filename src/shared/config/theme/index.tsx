@@ -1,3 +1,3 @@
 import useTheme from './lib/useTheme';
 
-export {useTheme}
+export { useTheme }

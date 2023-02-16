@@ -1,13 +1,10 @@
-import React, { Suspense } from 'react';
-import { createBrowserRouter, Routes, useRoutes } from 'react-router-dom';
+import { Suspense } from 'react';
+import { useRoutes } from 'react-router-dom';
 import AppRoutesList from 'shared/config/routes/routes';
 
-type Props = {}
-
-
-const AppRoutes = ({}: Props) => {
+const AppRoutes = () => {
   
-  let element = useRoutes(AppRoutesList);
+  const element = useRoutes(AppRoutesList);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>

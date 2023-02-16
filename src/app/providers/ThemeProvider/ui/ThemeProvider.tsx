@@ -1,5 +1,5 @@
-import { useContext, useMemo, useState } from 'react';
-import { ThemeContext, ThemeContextT, ThemesT } from 'shared/config/theme/context/ThemeContext';
+import { useMemo, useState } from 'react';
+import { ThemeContext, type ThemeContextT, ThemesT } from 'shared/config/theme/context/ThemeContext';
 
 interface PropsT {
   children: any,
@@ -7,10 +7,10 @@ interface PropsT {
 
 const themeLocal = localStorage.getItem('theme') as ThemesT
 
-const ThemeProvider = ({children}:PropsT) => {
+const ThemeProvider = ({ children }: PropsT) => {
   const [theme, setThemeThis] = useState(themeLocal || ThemesT.DARK_THEME)
 
-  const setTheme = (theme:ThemesT) => {
+  const setTheme = (theme: ThemesT) => {
     setThemeThis(theme);
     localStorage.setItem('theme', theme)
   }
@@ -26,8 +26,8 @@ const ThemeProvider = ({children}:PropsT) => {
     }
   }
 
-  const value:ThemeContextT = useMemo(() => ({
-    theme: theme,
+  const value: ThemeContextT = useMemo(() => ({
+    theme,
     setTheme,
     toogleTheme
   }), [theme])

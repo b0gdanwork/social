@@ -1,6 +1,6 @@
 export type BuildModeT = 'development' | 'production'
 
-type BuildPathsT = {
+interface BuildPathsT {
   html?: string,
   build?: string,
   src?: string,

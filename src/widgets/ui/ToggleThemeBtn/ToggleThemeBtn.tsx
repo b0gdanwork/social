@@ -6,7 +6,7 @@ import { AppButton } from 'shared/ui';
 
 import s from './ToggleThemeBtn.module.scss';
 
-type NavbarProps = {
+interface NavbarProps {
   className?: string,
 }
 
@@ -16,8 +16,8 @@ const ToggleThemeBtn = (props: NavbarProps) => {
     className
   } = props
 
-  const { t, i18n } = useTranslation();
-  const {theme, toogleTheme} = useTheme()
+  const { t } = useTranslation();
+  const { toogleTheme } = useTheme()
   
   return (
     <AppButton className={classNames(s.btn, {}, [className])} onClick={toogleTheme}>

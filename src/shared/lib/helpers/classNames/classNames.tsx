@@ -1,30 +1,19 @@
-
-interface PropsT {
+export function classNames (
   mainClass?: string,
-  mods?: {
-    [key: string]: boolean;
-  },
+  mods?: Record<string, boolean>,
   additional?: string[]
-}
-
-export function classNames(
-  mainClass?: string,
-  mods?: {
-    [key: string]: boolean;
-  },
-  additional?: string[]
-  ): string {
+): string {
 
   let returnClass = mainClass || ''
 
-  for (let key in mods) {
+  for (const key in mods) {
     const valueKey = mods[key]
     if (valueKey) {
       returnClass = returnClass + ' ' + key
     }
   }
 
-  additional && additional.forEach(item => returnClass = returnClass + ' ' + item)
+  additional?.forEach(item => { returnClass = returnClass + ' ' + item })
 
   return returnClass
 }

@@ -5,17 +5,18 @@ import { initReactI18next } from 'react-i18next';
 
 const options = {
   // lng: 'en', // if you're using a language detector, do not define the lng option
-  debug: __IS_DEV__ ? true : false,
+  debug: !!__IS_DEV__,
   fallbackLng: 'en',
   interpolation: {
-    escapeValue: false, // not needed for react as it escapes by default
+    escapeValue: false
   },
   backendOptions: [{
     loadPath: '/public/locales/{{lng}}/{{ns}}.json',
-    allowMultiLoading: true,
+    allowMultiLoading: true
   }]
 }
 
+/* eslint-disable @typescript-eslint/no-floating-promises */
 i18n
   .use(Backend)
   .use(LanguageDetector)

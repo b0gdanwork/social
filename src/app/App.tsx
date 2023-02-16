@@ -7,8 +7,9 @@ import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { Navbar, SideBar } from '../widgets/ui/index';
 import AppRoutes from './providers/AppRoutes/AppRoutes';
 
-export default function App() {
-  const {theme} = useTheme()
+export default function App () {
+
+  const { theme } = useTheme()
   
   return (
     <div className={classNames('social-app', {}, [theme])}>
@@ -19,7 +20,6 @@ export default function App() {
           <AppRoutes />
         </div>
       </div>
-  </div>
+    </div>
   )
-  
 }
