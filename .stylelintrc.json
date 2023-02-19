@@ -5,6 +5,7 @@
     "custom-property-empty-line-before": null,
     "import-notation": null,
     "selector-class-pattern": null,
+    "keyframes-name-pattern": null,
     "selector-pseudo-class-no-unknown": [
       true,
       {

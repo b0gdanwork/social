@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/helpers/classNames/classNames';
 
 import { Navbar, SideBar } from '../widgets/ui/index';
 import AppRoutes from './providers/AppRoutes/AppRoutes';
+import Loader from 'widgets/ui/Loader/Loader';
 
 export default function App () {
 

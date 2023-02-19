@@ -23,6 +23,9 @@ const ThemeProvider = ({ children }: PropsT) => {
       case ThemesT.BLUE_THEME:
         setTheme(ThemesT.DARK_THEME);
         break;
+      default:
+        setTheme(ThemesT.BLUE_THEME);
+        break;
     }
   }
 

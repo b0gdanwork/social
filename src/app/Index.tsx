@@ -7,13 +7,14 @@ import App from './App';
 import { ThemeProvider } from './providers/ThemeProvider/index';
 import 'shared/config/i18n/i18n';
 import { Suspense } from 'react';
+import Loader from 'widgets/ui/Loader/Loader';
 
 const Index = () => {
   return (
     <>
       <BrowserRouter>
         <ThemeProvider>
-          <Suspense fallback=''>
+          <Suspense fallback={<Loader />}>
             <App />
           </Suspense>
         </ThemeProvider>
