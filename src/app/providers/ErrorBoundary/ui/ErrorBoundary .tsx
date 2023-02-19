@@ -1,5 +1,5 @@
-import React, { Component, ErrorInfo, ReactNode } from "react";
-import { PageError } from "widgets/ui";
+import React, { Component, Suspense, type ErrorInfo, type ReactNode } from 'react';
+import { PageError } from 'widgets/ui';
 
 interface Props {
   children?: ReactNode;
@@ -14,17 +14,17 @@ class ErrorBoundary extends Component<Props, State> {
     hasError: false
   };
 
-  public static getDerivedStateFromError(_: Error): State {
+  public static getDerivedStateFromError (_: Error): State {
     return { hasError: true };
   }
 
-  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("ErrorBoundary Uncaught error:", error, errorInfo);
+  public componentDidCatch (error: Error, errorInfo: ErrorInfo) {
+    console.error('ErrorBoundary Uncaught error:', error, errorInfo);
   }
 
-  public render() {
+  public render () {
     if (this.state.hasError) {
-      return <PageError />;
+      return <Suspense><PageError /></Suspense>;
     }
 
     return this.props.children;

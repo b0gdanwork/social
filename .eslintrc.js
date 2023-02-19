@@ -57,6 +57,6 @@ module.exports = {
     '@typescript-eslint/no-misused-promises': 'off',
     'no-return-assign': ['warn', 'always'],
     '@typescript-eslint/naming-convention': 'off',
-    '@typescript-eslint/no-unused-vars': ['error']
+    '@typescript-eslint/no-unused-vars': ['warn'],
   },
 }

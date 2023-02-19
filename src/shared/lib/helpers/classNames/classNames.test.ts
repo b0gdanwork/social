@@ -1,8 +1,8 @@
-import { classNames } from "./classNames";
+import { classNames } from './classNames';
 
 describe('classNames', () => {
   test('', () => {
-    expect(classNames('main', {hover: true, active: false}, ['main--test']))
+    expect(classNames('main', { hover: true, active: false }, ['main--test']))
       .toBe('main hover main--test');
   });
 

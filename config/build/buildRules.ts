@@ -2,7 +2,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import type webpack from 'webpack'
 import { type BuildOptionsT } from './types'
 
-function buildRules({ isDev }: BuildOptionsT): webpack.RuleSetRule[] {
+function buildRules ({ isDev }: BuildOptionsT): webpack.RuleSetRule[] {
 
   const tsRule = {
     test: /\.(tsx|ts)?$/,
@@ -14,7 +14,7 @@ function buildRules({ isDev }: BuildOptionsT): webpack.RuleSetRule[] {
     test: /\.(js|ts|jsx|tsx)$/,
     exclude: /node_modules/,
     use: {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env']
       }

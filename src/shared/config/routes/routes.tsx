@@ -18,7 +18,7 @@ const AppRoutesList: RouteObject[] = [
     element: <AboutPage />
   },
   {
-    path: "*",
+    path: '*',
     element: <NotFoundPage />
   }
 ];

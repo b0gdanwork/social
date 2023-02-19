@@ -9,12 +9,14 @@ import 'shared/config/i18n/i18n';
 import { Suspense } from 'react';
 import { Loader } from 'shared/ui';
 import { ErrorBoundary } from './providers/ErrorBoundary';
+import CreateErrorBtn from 'widgets/ui/CreateErrorBtn/CreateErrorBtn';
 
 const Index = () => {
   return (
     <>
       <BrowserRouter>
         <ErrorBoundary>
+          <CreateErrorBtn />
           <ThemeProvider>
             <Suspense fallback={<Loader />}>
               <App />

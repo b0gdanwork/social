@@ -1,8 +1,8 @@
 import s from './Loader.module.scss'
 
-type PropsLoader = {}
+interface PropsLoader {}
 
-export default function Loader({ }: PropsLoader) {
+export default function Loader ({ }: PropsLoader) {
   return (
     <div>
       <div className={s.spiner}>

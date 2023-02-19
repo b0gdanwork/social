@@ -7,8 +7,8 @@
     "start": "webpack serve --env port=3000 --env mode=development  --history-api-fallback",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack serve --env port=3000 --env mode=production",
-    "eslint:test": "eslint '**/*.{ts,tsx}'",
-    "eslint:fix": "eslint '**/*.{ts,tsx}' --fix",
+    "eslint:test": "eslint \"**/*.{ts,tsx}\"",
+    "eslint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "stylelint:test": "npx stylelint '**/*.scss'",
     "stylelint:fix": "npx stylelint '**/*.scss' --fix",
     "test": "jest --config ./config/jest/jest.config.ts"
