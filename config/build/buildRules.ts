@@ -2,18 +2,29 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import type webpack from 'webpack'
 import { type BuildOptionsT } from './types'
 
-function buildRules ({ isDev }: BuildOptionsT): webpack.RuleSetRule[] {
+function buildRules({ isDev }: BuildOptionsT): webpack.RuleSetRule[] {
 
   const tsRule = {
-    test: /\.tsx?$/,
+    test: /\.(tsx|ts)?$/,
     use: 'ts-loader',
     exclude: /node_modules/
+  }
+
+  const babelRule = {
+    test: /\.(js|ts|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ['@babel/preset-env']
+      }
+    }
   }
 
   const scssRule = {
     test: /\.(sa|sc|c)ss$/,
     use: [
-      isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
         loader: 'css-loader',
         options: {
@@ -26,12 +37,6 @@ function buildRules ({ isDev }: BuildOptionsT): webpack.RuleSetRule[] {
       'sass-loader'
     ]
   }
-
-  // const urlRule = {
-  //   test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
-  //   loader: 'url-loader',
-  //   options: { limit: false }
-  // }
 
   const svgRule = {
     test: /\.svg$/,
@@ -56,6 +61,7 @@ function buildRules ({ isDev }: BuildOptionsT): webpack.RuleSetRule[] {
     jsonRule,
     svgRule,
     imgRule,
+    babelRule,
     tsRule,
     scssRule
   ]
