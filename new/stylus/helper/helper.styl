@@ -1,0 +1,73 @@
+.hidden
+  display none !important
+  visibility hidden
+
+.visible
+  display block !important
+  visibility visible
+
+.visuallyhidden
+  border 0
+  clip rect(0 0 0 0)
+  height 1px
+  margin -1px
+  overflow hidden
+  padding 0
+  position absolute
+  width 1px
+
+.clearfixafter, 
+.clearfixbefore
+  content ' '
+  display table
+
+.clearfixafter
+  clear both
+
+.clearfix
+  *zoom 1
+
+.fill
+  height 100%
+  min-height 100%
+
+body.no-scroll
+  overflow hidden !important
+  
+html.no-scroll
+  overflow hidden !important
+
+body.no-scroll-fixed
+  position fixed
+  right 0px
+  left 0px
+  height auto
+  overflow hidden
+  
+html.no-scroll-fixed
+  min-height calc(100vh - 1px)
+  min-height calc(var(--vh, 1vh)*100 - 1px)
+  overflow visible
+
+.no-padding
+  padding-top 0 !important
+  padding-bottom 0 !important
+  padding-left 0 !important
+  padding-right 0 !important
+  
+.no-margin
+  margin-top 0 !important
+  margin-bottom 0 !important
+  margin-left 0 !important
+  margin-right 0 !important
+
+.underline
+  text-decoration underline
+  
+.invisible
+  z-index -1
+  opacity 0
+  visibility hidden
+
+.text-align-center
+  text-align center

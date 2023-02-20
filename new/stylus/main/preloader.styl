@@ -1,0 +1,133 @@
+@keyframes roundLoop 
+  0% 
+    opacity 0
+    transform scale(0.01)
+  50% 
+    opacity 1
+    transform scale(0.70)
+  100% 
+    opacity 0
+    transform scale(1)
+
+@keyframes simpleRoundLoop
+  0% 
+    opacity 0
+  50% 
+    opacity 1
+  100% 
+    opacity 0
+  
+@keyframes scroll
+  50%
+    background-size 80%
+
+  100%
+    background-position 125% 0
+
+.wm-spinner
+  z-index -1
+  position fixed
+  top 0
+  left 0
+  display flex
+  justify-content center
+  align-items center
+  // padding-top 75px
+  opacity 0
+  visibility hidden
+  transition opacity .3s ease, padding .3s ease
+  // +min-max-w($tab + 1, $lap-s)
+  //   padding-top 75px
+  // +min-max-w(1px, $tab)
+  //   padding-top 60px
+
+  &__overlay
+    position absolute
+    top 0
+    left 0
+    background-color $preloader-color
+    background-image url('/assets/front/img/preloader-bg.png')
+    background-repeat repeat
+    opacity 0
+    transition all ease-in-out 0.4s
+
+  &__inner
+    z-index 777
+    position relative
+    display flex
+    justify-content center
+    align-items center
+    width 300px
+    height 40px
+    background-image url('/assets/front/img/preloader-logo.svg')
+    background-repeat no-repeat
+    opacity 0
+    transform translateY(-50%)
+    transition all ease-in-out 0.3s
+    +min-max-w(1px, $mob-xs)
+      width 280px
+    
+    &:after 
+      content ''
+      position absolute
+      top calc(100% + 10px)
+      left 50%
+      width 300px
+      height 5px
+      border-radius 2px
+      background linear-gradient(to right, #BD977E, #BD977E)
+      background-color #ffffff
+      background-size 20%
+      background-repeat repeat-y
+      background-position -25% 0
+      animation scroll 2.2s ease-in-out infinite
+      transform translateX(-50%)
+      +min-max-w(1px, $mob-xs)
+        width 280px
+
+   img 
+    display block
+    width 30px
+    height 30px
+
+.wm-spinner
+  &.over
+    z-index 400
+    padding-top 0
+
+  &.fullscreen 
+    width 100vw
+    height 100vh
+    height calc(var(--vh, 1vh) * 100)
+
+    .wm-spinner__overlay
+      width 100vw
+      height 100vh
+      height calc(var(--vh, 1vh) * 100)
+
+  &.active
+    z-index 400
+    opacity 1
+    visibility visible
+    
+    .wm-spinner__overlay
+      opacity 1
+
+    .wm-spinner__inner
+      // background-color #fff
+      opacity 1
+      --fill-color #ffffff
+
+  &.active.over
+    z-index 400
+  
+  &.active.under
+    z-index 100
+
+// @-moz-document url-prefix()
+//   .wm-spinner__inner
+//     animation simpleRoundLoop 2s infinite ease-in-out
+
+// @supports (-ms-accelerator:true)
+//   .wm-spinner__inner
+//     animation simpleRoundLoop 2s infinite ease-in-out
