@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { AppButton } from 'shared/ui';
-import CreateErrorBtn from '../CreateErrorBtn/CreateErrorBtn';
 import ToggleLanguageBtn from '../ToggleLanguageBtn/ToggleLanguageBtn';
 import ToggleThemeBtn from '../ToggleThemeBtn/ToggleThemeBtn';
 

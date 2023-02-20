@@ -4,22 +4,31 @@ import { type BuildOptionsT } from './types'
 
 function buildRules ({ isDev }: BuildOptionsT): webpack.RuleSetRule[] {
 
-  const tsRule = {
-    test: /\.(tsx|ts)?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/
-  }
+  // const tsRule = {
+  //   test: /\.(tsx|ts)?$/,
+  //   use: 'ts-loader',
+  //   exclude: /node_modules/
+  // }
 
   const babelRule = {
-    test: /\.(js|ts|jsx|tsx)$/,
+    test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
     use: {
       loader: 'babel-loader',
       options: {
-        presets: ['@babel/preset-env']
+        presets: ['@babel/preset-env'],
+        plugins: [
+          [
+            'i18next-extract',
+            {
+              locales: ['ru', 'en'],
+              keyAsDefaultValue: true
+            }
+          ]
+        ]
       }
     }
-  }
+  };
 
   const scssRule = {
     test: /\.(sa|sc|c)ss$/,
@@ -62,7 +71,7 @@ function buildRules ({ isDev }: BuildOptionsT): webpack.RuleSetRule[] {
     svgRule,
     imgRule,
     babelRule,
-    tsRule,
+    // tsRule,
     scssRule
   ]
 

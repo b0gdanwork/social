@@ -24,9 +24,9 @@ export default async (): Promise<Config> => {
     // coverageDirectory: undefined,
   
     // An array of regexp pattern strings used to skip coverage collection
-    // coveragePathIgnorePatterns: [
-    //   '\\\\node_modules\\\\'
-    // ],
+    coveragePathIgnorePatterns: [
+      '\\\\node_modules\\\\'
+    ],
   
     // Indicates which provider should be used to instrument code for coverage
     // coverageProvider: 'babel',
@@ -69,10 +69,11 @@ export default async (): Promise<Config> => {
   
     // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
     maxWorkers: '60%',
-  
+    
     // An array of directory names to be searched recursively up from the requiring module's location
     moduleDirectories: [
       'node_modules'
+      // 'src'
     ],
   
     // An array of file extensions your modules use
@@ -88,7 +89,9 @@ export default async (): Promise<Config> => {
     ],
   
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-    // moduleNameMapper: {},
+    moduleNameMapper: {
+      '^.+\\.(css|less|scss)$': 'babel-jest'
+    },
   
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
     // modulePathIgnorePatterns: [],
@@ -121,7 +124,7 @@ export default async (): Promise<Config> => {
     // restoreMocks: false,
   
     // The root directory that Jest should scan for tests and modules within
-    rootDir: '../..',
+    rootDir: '../../',
   
     // A list of paths to directories that Jest should use to search for files in
     // roots: [
@@ -135,7 +138,8 @@ export default async (): Promise<Config> => {
     // setupFiles: [],
   
     // A list of paths to modules that run some code to configure or set up the testing framework before each test
-    // setupFilesAfterEnv: [],
+    // setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.js'],
+    setupFilesAfterEnv: ['/home/demid-malyanov/projects/MY/social/config/jest/jest.config.ts'],
   
     // The number of seconds after which a test is considered as slow and reported as such in the results.
     slowTestThreshold: 3,
@@ -172,12 +176,13 @@ export default async (): Promise<Config> => {
     // testRunner: 'jest-circus/runner',
   
     // A map from regular expressions to paths to transformers
-    // transform: undefined,
-  
+    // transform: {
+    // '\\.[jt]sx?$': 'babel-jest'
+    // },
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
     transformIgnorePatterns: [
       '\\\\node_modules\\\\'
-    ]
+    ],
   
     // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
     // unmockedModulePathPatterns: undefined,
@@ -190,6 +195,7 @@ export default async (): Promise<Config> => {
   
     // Whether to use watchman for file crawling
     // watchman: true,
+    modulePaths: ['<rootDir>src']
   };
   
 }
