@@ -23,11 +23,10 @@ const Index = () => {
             </Suspense>
           </ThemeProvider>
         </ErrorBoundary>
-
       </BrowserRouter>
     </>
-  )
-}
+  );
+};
 
 const domContainer = document.querySelector('#root');
 const root = ReactDOM.createRoot(domContainer);
