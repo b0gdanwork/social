@@ -46,6 +46,18 @@
   }
 }
 
+@mixin adaptiv-font($pcSize, $mobSize) {
+ 
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320;
+
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+
+ @media (max-width: 1300px) {
+   @content
+ };
+}
+
 @mixin adaptiv-img($pcSize, $mobSize) {
   $addSize: $pcSize - $mobSize;
   $maxWidth: $maxWidth - 320;
@@ -53,16 +65,6 @@
   width: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 }
 
-@mixin adaptiv-font($pcSize, $mobSize) {
-  
-  $addSize: $pcSize - $mobSize;
-  $maxWidth: $maxWidth - 320;
 
-  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
-
-  @media (max-width: 1300px) {
-    @content
-  }
-}
 
 

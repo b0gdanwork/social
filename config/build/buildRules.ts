@@ -2,7 +2,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import type webpack from 'webpack'
 import { type BuildOptionsT } from './types'
 
-function buildRules ({ isDev }: BuildOptionsT): webpack.RuleSetRule[] {
+function buildRules ({ isDev, paths }: BuildOptionsT): webpack.RuleSetRule[] {
 
   // const tsRule = {
   //   test: /\.(tsx|ts)?$/,
@@ -32,18 +32,27 @@ function buildRules ({ isDev }: BuildOptionsT): webpack.RuleSetRule[] {
 
   const scssRule = {
     test: /\.(sa|sc|c)ss$/,
+    sideEffects: true,
     use: [
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
         loader: 'css-loader',
         options: {
           modules: {
-            auto: (resourcePath: string) => resourcePath.includes('.module.'),
-            localIdentName: isDev ? '[name]__[path]--[hash:base64:5]' : '[hash:base64:5]'
+            auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+            localIdentName: isDev
+              ? '[path][name]__[local]--[hash:base64:5]'
+              : '[hash:base64:8]'
           }
         }
       },
-      'sass-loader'
+      'postcss-loader',
+      {
+        loader: 'sass-loader',
+        options: {
+          sourceMap: isDev
+        }
+      }
     ]
   }
 
@@ -70,9 +79,9 @@ function buildRules ({ isDev }: BuildOptionsT): webpack.RuleSetRule[] {
     jsonRule,
     svgRule,
     imgRule,
-    babelRule,
+    scssRule,
+    babelRule
     // tsRule,
-    scssRule
   ]
 
 }

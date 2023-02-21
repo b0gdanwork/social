@@ -8,6 +8,8 @@
     "keyframes-name-pattern": null,
     "scss/dollar-variable-empty-line-before": null,
     "scss/dollar-variable-pattern": [null, { "ignore": ["always"], "disableFix": false }],
+    "scss/at-import-partial-extension": "always",
+    "scss/at-import-partial-extension-blacklist": [""],
     "selector-pseudo-class-no-unknown": [
       true,
       {

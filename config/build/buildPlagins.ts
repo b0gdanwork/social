@@ -8,10 +8,9 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 function plaginsBuild ({ paths, isDev }: BuildOptionsT): webpack.WebpackPluginInstance[] {
-  return [
+
+  const plagins: webpack.WebpackPluginInstance[] = [
     new HtmlWebpackPlugin({ template: paths.html }),
-    new BundleAnalyzerPlugin(),
-    new ReactRefreshWebpackPlugin({ overlay: false }),
     new webpack.ProgressPlugin({}),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
@@ -23,6 +22,15 @@ function plaginsBuild ({ paths, isDev }: BuildOptionsT): webpack.WebpackPluginIn
         { from: paths.publicFolder + '/locales', to: 'locales' }
       ]
     })
+  ]
+
+  if (isDev) {
+    plagins.push(new ReactRefreshWebpackPlugin({ overlay: false }))
+    plagins.push(new BundleAnalyzerPlugin())
+  }
+
+  return [
+    ...plagins
   ]
 }
 

@@ -1,4 +1,7 @@
-$TextFont: $main-font;
+/* stylelint-disable no-duplicate-selectors */
+@use "sass:math";
+
+$TextFont: var(--font-family);
 $TextSize: 16px;
 
 $button-min-width: 230px;
@@ -48,32 +51,34 @@ $button-border-radius: 1rem;
 }
 
 // primary
-.btn 
+.btn {
   &--primary {
-  border: 1px solid var(--primary-color);
-  background-color: var(--primary-color);
-  color: var(--primary-color-text);
-  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
-
-  &:hover {
-    @include min-w($tab) {
-      border: 1px solid var(--primary-color) ;
-      background-color: var(--primary-color-active);
-      color: $primary-text-active;
-    }
-  }
-
-  &.active:not([disabled], .disabled),
-  &:active:not([disabled], .disabled),
-  &:focus:focus-visible:not([disabled], .disabled) {
     border: 1px solid var(--primary-color);
-    background-color: var(--primary-color-active);
-    color: var(--primary-text-active);
+    background-color: var(--primary-color);
+    color: var(--primary-color-text);
+    transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+
+    &:hover {
+      @include min-w($tab) {
+        border: 1px solid var(--primary-color) ;
+        background-color: var(--primary-color-active);
+        color: var(--primary-text-active);
+      }
+    }
+
+    &.active:not([disabled], .disabled),
+    &:active:not([disabled], .disabled),
+    &:focus:focus-visible:not([disabled], .disabled) {
+      border: 1px solid var(--primary-color);
+      background-color: var(--primary-color-active);
+      color: var(--primary-text-active);
+    }
   }
 }
 
 // secondary
-.btn &--secondary {
+.btn {
+  &--secondary {
   border: 1px solid var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-color-text);
@@ -95,17 +100,16 @@ $button-border-radius: 1rem;
     color: var(--secondary-color-text-active);
   }
 }
+}
 
 
-/* transparent */
 $transparent-bg: transparent;
 $transparent-text: #fff;
 $transparent-border: #fff;
 $transparent-border-active: #fff;
 $transparent-bg-active: #fff;
-$transparent-text-active: $primary-color;
+$transparent-text-active: var(--primary-color);
 
-/* stylelint-disable-next-line no-duplicate-selectors */
 .btn {
   &--transparent {
     border: 1px solid $transparent-text;

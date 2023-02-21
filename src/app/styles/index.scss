@@ -1,8 +1,12 @@
-@import url("./variables.scss");
-@import url("./helpers/index.scss");
-@import url("./reset.scss");
-@import url("./themes/themes.scss");
-@import url("./typography/index.scss");
+@use "sass:math";
+@import "helpers/mixins.scss";
+@import "helpers/variablesScss.scss";
+@import "variables.scss";
+@import "helpers/classes.scss";
+@import "reset.scss";
+@import "themes/themes.scss";
+
+// @import "typography/index.scss";
 
 body {
   background: var(--body-bg);

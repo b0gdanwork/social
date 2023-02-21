@@ -1,3 +1,4 @@
+@use "sass:math";
 
 $h1Size: 96px;
 $h2Size: 55px;
@@ -18,7 +19,7 @@ $hWeightThin: 300;
   margin-top: 0;
   margin-bottom: 1rem;
   letter-spacing: 0;
-  font-family: $main-font;
+  font-family: var(--font-family);
   font-weight: $hWeight;
   font-feature-settings: 'pnum' on, 'lnum' on;
 
