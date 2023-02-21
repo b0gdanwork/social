@@ -1,3 +1,4 @@
+
 $h1Size: 96px;
 $h2Size: 55px;
 $h3Size: 36px;
@@ -61,7 +62,7 @@ $hWeightThin: 300;
   }
 }
 
-.content .h3, .content h3, .h3, h3 {
+.h3, h3 {
   font-size: $h3Size;
   line-height: math.round($h3Size * 1.1);
 
@@ -111,7 +112,7 @@ $hWeightThin: 300;
   font-size: $h6Size;
   line-height: math.round($h6Size * 1.1);
 
-  @include min-max-w($mob-l @include  1px, $lap-l) {
+  @include min-max-w($mob-l + 1px, $lap-l) {
     font-size: math.round($h6Size * 0.85);
     line-height: math.round(($h6Size * 0.85) * 1.1);
   }
