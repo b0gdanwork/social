@@ -4,6 +4,13 @@
 @import url("./themes/themes.scss");
 @import url("./typography/index.scss");
 
+body {
+  background: var(--body-bg);
+  color: var(--text-color);
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-l);
+}
+
 .social-app {
   min-height: 100vh;
   background-color: var(--bg-color);

@@ -1,0 +1,132 @@
+$TextFont: $main-font;
+$TextSize: 16px;
+
+$button-min-width: 230px;
+$button-min-height: 50px;
+$button-min-height-mob: 45px;
+$button-border-radius: 1rem;
+
+.btn {
+  display: inline-block;
+  min-width: $button-min-width;
+  padding: (($button-min-height - 3px - math.round($TextSize * 1.7)) / 2) 15px (($button-min-height - 1px - math.round($TextSize * 1.7)) / 2) 15px;
+  border-radius: 30px;
+  font-family: $TextFont;
+  font-size: $TextSize;
+  line-height: math.round($TextSize * 1.7);
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+
+  @include min-max-w($mob-l + 1, $lap-s) {
+    font-size: ($TextSize - 2px);
+    line-height: math.round(($TextSize - 2px) * 1.7);
+    padding-top: (($button-min-height - math.round(($TextSize - 1px) * 1.7)) / 2);
+    padding-bottom: (($button-min-height - math.round(($TextSize - 1px) * 1.7)) / 2);
+  }
+
+  @include min-max-w(1px, $mob-l) {
+    font-size: ($TextSize - 2px);
+    line-height: math.round(($TextSize - 2px) * 1.7);
+    padding-top: (($button-min-height-mob - 4px - math.round(($TextSize) * 1.7)) / 2);
+    padding-bottom: (($button-min-height-mob - 0 - math.round(($TextSize) * 1.7)) / 2);
+  }
+
+  @include min-max-w(1px, $mob-m) {
+    min-width: 100%;
+  }
+
+  &[disabled],
+  &.disabled {
+    border-color: #dfdfdf;
+    background-color: #dfdfdf;
+    color: #a7a7a7;
+    pointer-events: none;
+  }
+}
+
+// primary
+.btn 
+  &--primary {
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--primary-color-text);
+  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+
+  &:hover {
+    @include min-w($tab) {
+      border: 1px solid var(--primary-color) ;
+      background-color: var(--primary-color-active);
+      color: $primary-text-active;
+    }
+  }
+
+  &.active:not([disabled], .disabled),
+  &:active:not([disabled], .disabled),
+  &:focus:focus-visible:not([disabled], .disabled) {
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color-active);
+    color: var(--primary-text-active);
+  }
+}
+
+// secondary
+.btn &--secondary {
+  border: 1px solid var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--secondary-color-text);
+  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+
+  &:hover {
+    @include min-w($tab) {
+      border: 1px solid var(--secondary-color-active);
+      background-color: var(--secondary-color-active);
+      color: var(--secondary-color-text-active);
+    }
+  }
+
+  &.active:not([disabled], .disabled),
+  &:active:not([disabled], .disabled),
+  &:focus:focus-visible:not([disabled], .disabled) {
+    border: 1px solid var(--secondary-color-active);
+    background-color: var(--secondary-color-active);
+    color: var(--secondary-color-text-active);
+  }
+}
+
+
+/* transparent */
+$transparent-bg: transparent;
+$transparent-text: #fff;
+$transparent-border: #fff;
+$transparent-border-active: #fff;
+$transparent-bg-active: #fff;
+$transparent-text-active: $primary-color;
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.btn {
+  &--transparent {
+    border: 1px solid $transparent-text;
+    background-color: $transparent-bg;
+    color: $transparent-text;
+    transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+
+    &:hover {
+      @include min-w($tab) {
+        border: 1px solid $transparent-bg-active;
+        background: $transparent-bg-active;
+        color: var(--primary-color);
+      }
+    }
+
+    &.active:not([disabled], .disabled),
+    &:active:not([disabled], .disabled),
+    &:focus:focus-visible:not([disabled], .disabled) {
+      border: 1px solid $transparent-bg-active;
+      background-color: $transparent-bg-active;
+      color: var(--primary-color);
+    }
+  }
+}
