@@ -61,24 +61,30 @@ function buildRules ({ isDev, paths }: BuildOptionsT): webpack.RuleSetRule[] {
     use: ['@svgr/webpack']
   }
 
-  const imgRule = {
-    test: /\.(png|jpe?g|gif)$/i,
-    use: [
-      {
-        loader: 'file-loader'
-      }
-    ]
-  }
-
   const jsonRule = {
     test: /\.json$/,
     loader: 'json-loader'
   }
 
+  const imgsRule = {
+    test: /\.(png|jpe?g|gif)$/i,
+    loader: 'file-loader',
+    options: {
+      name (resourcePath: string) {
+        let path = resourcePath.toString()
+        path = resourcePath.toString().slice(path.indexOf('assets'), path.lastIndexOf('\\'))
+          .replace('\\', '/')
+
+        return `${path}/[contenthash].[ext]`;
+
+      }
+    }
+  }
+
   return [
     jsonRule,
+    imgsRule,
     svgRule,
-    imgRule,
     scssRule,
     babelRule
     // tsRule,

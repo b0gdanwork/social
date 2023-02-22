@@ -13,6 +13,7 @@ export function WebpackBuild (options: BuildOptionsT) {
     entry: paths.srcJs,
     output: {
       filename: '[name][contenthash].js',
+      assetModuleFilename: 'assets/[hash][ext][query]',
       path: paths.build,
       clean: true
     },

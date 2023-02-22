@@ -7,14 +7,21 @@
 @import "themes/themes.scss";
 @import "typography/index.scss";
 
+
+#root {
+  height: 100vh;
+}
+
 body {
   background: var(--body-bg);
   color: var(--text-color);
   font-size: var(--font-size-l);
   line-height: var(--line-height-l);
+  min-height: 100vh;
 }
 
 .social-app {
+  width: 100%;
   min-height: 100vh;
   background-color: var(--bg-color);
 }

@@ -1,15 +1,14 @@
 import s from './PageError.module.scss';
-import { useTranslation } from 'react-i18next';
+
+import img404 from 'shared/assets/img/404.png'
 
 interface PropsPageError {}
 
 export default function PageError ({}: PropsPageError) {
 
-  const { t } = useTranslation();
-
   return (
     <div className={s.wrapper}>
-      {t('Непредвиденная ошибка')}
+      <img src={img404} alt="img 404" />
     </div>
   )
 }

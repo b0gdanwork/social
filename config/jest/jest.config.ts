@@ -139,6 +139,7 @@ export default async (): Promise<Config> => {
   
     // A list of paths to modules that run some code to configure or set up the testing framework before each test
     // setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.js'],
+    // C:/Bogdan/social/config/jest/setupTests.ts
     setupFilesAfterEnv: ['/home/demid-malyanov/projects/MY/social/config/jest/jest.config.ts'],
   
     // The number of seconds after which a test is considered as slow and reported as such in the results.

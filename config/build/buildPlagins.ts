@@ -26,7 +26,7 @@ function plaginsBuild ({ paths, isDev }: BuildOptionsT): webpack.WebpackPluginIn
 
   if (isDev) {
     plagins.push(new ReactRefreshWebpackPlugin({ overlay: false }))
-    plagins.push(new BundleAnalyzerPlugin())
+    // plagins.push(new BundleAnalyzerPlugin())
   }
 
   return [
