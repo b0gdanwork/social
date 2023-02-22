@@ -4,35 +4,31 @@ module.exports = {
     es2021: true,
     jest: true
   },
-  extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended'],
+  extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   overrides: [],
   parserOptions: {
     project: ['./tsconfig.json'],
     ecmaVersion: 'latest',
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: ['react', 'i18next'],
   rules: {
     strictNullChecks: 0,
-    'comma-dangle': [
-      0,
-      {
-        arrays: 'never',
-        objects: 'always',
-        imports: 'never',
-        exports: 'never',
-        functions: 'never',
-      }
-    ],
+    'comma-dangle': [0, {
+      arrays: 'never',
+      objects: 'always',
+      imports: 'never',
+      exports: 'never',
+      functions: 'never'
+    }],
     semi: 'off',
     '@typescript-eslint/semi': 'off',
     'react/jsx-indent': [1, 2],
     'react/jsx-indent-props': [1, 2],
     // indent: [1, 2],
-    'react/jsx-filename-extension': [
-      2,
-      { extensions: ['.js', '.jsx', '.tsx'], }
-    ],
+    'react/jsx-filename-extension': [2, {
+      extensions: ['.js', '.jsx', '.tsx']
+    }],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'no-unused-vars': 'off',
@@ -58,10 +54,13 @@ module.exports = {
     'no-return-assign': ['warn', 'always'],
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-unused-vars': ['warn'],
+    'import/no-duplicates': 'off',
+    '@typescript-eslint/consistent-type-assertions': 'off'
+
   },
   settings: {
     react: {
       version: 'detect'
     }
   }
-}
+};

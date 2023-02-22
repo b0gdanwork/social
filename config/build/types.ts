@@ -1,11 +1,11 @@
 export type BuildModeT = 'development' | 'production'
 
-interface BuildPathsT {
-  html?: string,
-  build?: string,
-  src?: string,
-  srcJs?: string,
-  publicFolder?: string,
+export interface BuildPathsT {
+  html: string,
+  build: string,
+  src: string,
+  srcJs: string,
+  publicFolder: string,
 }
 
 export interface BuildOptionsT {

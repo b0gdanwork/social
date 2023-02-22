@@ -1,5 +1,6 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import type webpack from 'webpack'
+import scssRuleBuild from './rules/styleRule';
 import { type BuildOptionsT } from './types'
 
 function buildRules ({ isDev, paths }: BuildOptionsT): webpack.RuleSetRule[] {
@@ -30,31 +31,7 @@ function buildRules ({ isDev, paths }: BuildOptionsT): webpack.RuleSetRule[] {
     }
   };
 
-  const scssRule = {
-    test: /\.(sa|sc|c)ss$/,
-    sideEffects: true,
-    use: [
-      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-            localIdentName: isDev
-              ? '[path][name]__[local]--[hash:base64:5]'
-              : '[hash:base64:8]'
-          }
-        }
-      },
-      'postcss-loader',
-      {
-        loader: 'sass-loader',
-        options: {
-          sourceMap: isDev
-        }
-      }
-    ]
-  }
+  
 
   const svgRule = {
     test: /\.svg$/,
@@ -85,7 +62,7 @@ function buildRules ({ isDev, paths }: BuildOptionsT): webpack.RuleSetRule[] {
     jsonRule,
     imgsRule,
     svgRule,
-    scssRule,
+    scssRuleBuild({ isDev }),
     babelRule
     // tsRule,
   ]
