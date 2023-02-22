@@ -1,4 +1,4 @@
-import React, { Component, Suspense, type ErrorInfo, type ReactNode } from 'react';
+import React, { Component, type ErrorInfo, type ReactNode } from 'react';
 import { PageError } from 'widgets/ui';
 
 interface Props {

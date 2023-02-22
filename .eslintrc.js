@@ -59,4 +59,9 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-unused-vars': ['warn'],
   },
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  }
 }

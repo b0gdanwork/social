@@ -1,7 +1,7 @@
 import React, { type FC } from 'react';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 
-import s from './AppButton.module.scss';
+// import s from './AppButton.module.scss';
 
 export enum AppButtonTheme {
   PRIMARY = 'btn--primary',
@@ -25,6 +25,7 @@ const AppButton: FC<AppBattonProps> = (props) => {
   } = props
 
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <button {...anyProps} className={classNames('btn', { className: className !== undefined }, [theme])}>{children}</button>
   )
 }
