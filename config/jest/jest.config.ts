@@ -90,7 +90,8 @@ export default async (): Promise<Config> => {
   
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     moduleNameMapper: {
-      '^.+\\.(css|less|scss)$': 'babel-jest'
+      '^.+\\.(css|less|scss)$': 'babel-jest',
+      '.+\\.(png)$': 'jest-transform-stub'
     },
   
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -140,7 +141,8 @@ export default async (): Promise<Config> => {
     // A list of paths to modules that run some code to configure or set up the testing framework before each test
     // setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.js'],
     // C:/Bogdan/social/config/jest/setupTests.ts
-    setupFilesAfterEnv: ['/home/demid-malyanov/projects/MY/social/config/jest/jest.config.ts'],
+    // setupFilesAfterEnv: ['/home/demid-malyanov/projects/MY/social/config/jest/jest.config.ts'],
+    setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
   
     // The number of seconds after which a test is considered as slow and reported as such in the results.
     slowTestThreshold: 3,
