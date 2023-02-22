@@ -4,8 +4,9 @@ import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import s from './AppButton.module.scss';
 
 export enum AppButtonTheme {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
+  PRIMARY = 'btn--primary',
+  SECONDARY = 'btn--secondary',
+  TRANSPARENT = 'btn--transparent'
 }
 
 interface AppBattonProps extends React.HTMLProps<HTMLButtonElement> {
@@ -24,7 +25,7 @@ const AppButton: FC<AppBattonProps> = (props) => {
   } = props
 
   return (
-    <button {...anyProps} className={classNames(s.btn, {}, [className, theme])}>{children}</button>
+    <button {...anyProps} className={classNames('btn', { className: className !== undefined }, [theme])}>{children}</button>
   )
 }
 

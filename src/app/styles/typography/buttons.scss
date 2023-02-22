@@ -1,3 +1,4 @@
+/* stylelint-disable scss/at-mixin-pattern */
 /* stylelint-disable no-duplicate-selectors */
 @use "sass:math";
 
@@ -9,10 +10,10 @@ $button-min-height: 50px;
 $button-min-height-mob: 45px;
 $button-border-radius: 1rem;
 
-.btn {
+@mixin btn {
   display: inline-block;
   min-width: $button-min-width;
-  padding: (($button-min-height - 3px - math.round($TextSize * 1.7)) / 2) 15px (($button-min-height - 1px - math.round($TextSize * 1.7)) / 2) 15px;
+  padding: calc(($button-min-height - 3px - math.round($TextSize * 1.7)) / 2) 15px calc(($button-min-height - 1px - math.round($TextSize * 1.7)) / 2) 15px;
   border-radius: 30px;
   font-family: $TextFont;
   font-size: $TextSize;
@@ -26,15 +27,15 @@ $button-border-radius: 1rem;
   @include min-max-w($mob-l + 1, $lap-s) {
     font-size: ($TextSize - 2px);
     line-height: math.round(($TextSize - 2px) * 1.7);
-    padding-top: (($button-min-height - math.round(($TextSize - 1px) * 1.7)) / 2);
-    padding-bottom: (($button-min-height - math.round(($TextSize - 1px) * 1.7)) / 2);
+    padding-top: calc(($button-min-height - math.round(($TextSize - 1px) * 1.7)) / 2);
+    padding-bottom: calc(($button-min-height - math.round(($TextSize - 1px) * 1.7)) / 2);
   }
 
   @include min-max-w(1px, $mob-l) {
     font-size: ($TextSize - 2px);
     line-height: math.round(($TextSize - 2px) * 1.7);
-    padding-top: (($button-min-height-mob - 4px - math.round(($TextSize) * 1.7)) / 2);
-    padding-bottom: (($button-min-height-mob - 0 - math.round(($TextSize) * 1.7)) / 2);
+    padding-top: calc(($button-min-height-mob - 4px - math.round(($TextSize) * 1.7)) / 2);
+    padding-bottom: calc(($button-min-height-mob - 0px - math.round(($TextSize) * 1.7)) / 2);
   }
 
   @include min-max-w(1px, $mob-m) {
@@ -50,35 +51,30 @@ $button-border-radius: 1rem;
   }
 }
 
-// primary
-.btn {
-  &--primary {
-    border: 1px solid var(--primary-color);
-    background-color: var(--primary-color);
-    color: var(--primary-color-text);
-    transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+@mixin btn--primary {
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--primary-color-text);
+  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
 
-    &:hover {
-      @include min-w($tab) {
-        border: 1px solid var(--primary-color) ;
-        background-color: var(--primary-color-active);
-        color: var(--primary-text-active);
-      }
-    }
-
-    &.active:not([disabled], .disabled),
-    &:active:not([disabled], .disabled),
-    &:focus:focus-visible:not([disabled], .disabled) {
-      border: 1px solid var(--primary-color);
+  &:hover {
+    @include min-w($tab) {
+      border: 1px solid var(--primary-color) ;
       background-color: var(--primary-color-active);
       color: var(--primary-text-active);
     }
   }
+
+  &.active:not([disabled], .disabled),
+  &:active:not([disabled], .disabled),
+  &:focus:focus-visible:not([disabled], .disabled) {
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color-active);
+    color: var(--primary-text-active);
+  }
 }
 
-// secondary
-.btn {
-  &--secondary {
+@mixin btn--secondary {
   border: 1px solid var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-color-text);
@@ -100,8 +96,6 @@ $button-border-radius: 1rem;
     color: var(--secondary-color-text-active);
   }
 }
-}
-
 
 $transparent-bg: transparent;
 $transparent-text: #fff;
@@ -110,27 +104,42 @@ $transparent-border-active: #fff;
 $transparent-bg-active: #fff;
 $transparent-text-active: var(--primary-color);
 
-.btn {
-  &--transparent {
-    border: 1px solid $transparent-text;
-    background-color: $transparent-bg;
-    color: $transparent-text;
-    transition: color .3s ease, background-color .3s ease, border-color .3s ease;
 
-    &:hover {
-      @include min-w($tab) {
-        border: 1px solid $transparent-bg-active;
-        background: $transparent-bg-active;
-        color: var(--primary-color);
-      }
-    }
+@mixin btn--transparent {
+  border: 1px solid $transparent-text;
+  background-color: $transparent-bg;
+  color: $transparent-text;
+  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
 
-    &.active:not([disabled], .disabled),
-    &:active:not([disabled], .disabled),
-    &:focus:focus-visible:not([disabled], .disabled) {
+  &:hover {
+    @include min-w($tab) {
       border: 1px solid $transparent-bg-active;
-      background-color: $transparent-bg-active;
+      background: $transparent-bg-active;
       color: var(--primary-color);
     }
+  }
+
+  &.active:not([disabled], .disabled),
+  &:active:not([disabled], .disabled),
+  &:focus:focus-visible:not([disabled], .disabled) {
+    border: 1px solid $transparent-bg-active;
+    background-color: $transparent-bg-active;
+    color: var(--primary-color);
+  }
+}
+
+.btn {
+  @include btn;
+
+  &--primary {
+    @include btn--primary
+  }
+
+  &--transparent {
+    @include btn--transparent
+  }
+
+  &--secondary {
+    @include btn--secondary
   }
 }

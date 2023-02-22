@@ -16,7 +16,7 @@ const Index = () => {
     <>
       <BrowserRouter>
         <ErrorBoundary>
-          <CreateErrorBtn />
+          {/* <CreateErrorBtn /> */}
           <ThemeProvider>
             <Suspense fallback={<Loader />}>
               <App />

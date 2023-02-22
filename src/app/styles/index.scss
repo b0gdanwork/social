@@ -5,8 +5,7 @@
 @import "helpers/classes.scss";
 @import "reset.scss";
 @import "themes/themes.scss";
-
-// @import "typography/index.scss";
+@import "typography/index.scss";
 
 body {
   background: var(--body-bg);
