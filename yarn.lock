@@ -1957,7 +1957,7 @@
     "prop-types" "^15.7.2"
     "regenerator-runtime" "^0.13.7"
 
-"@storybook/addons@6.5.16":
+"@storybook/addons@^6.0.0", "@storybook/addons@6.5.16":
   "integrity" "sha512-p3DqQi+8QRL5k7jXhXmJZLsE/GqHqyY6PcoA1oNTJr0try48uhTGUOYkgzmqtDaa/qPFO5LP+xCPzZXckGtquQ=="
   "resolved" "https://registry.npmjs.org/@storybook/addons/-/addons-6.5.16.tgz"
   "version" "6.5.16"
@@ -1974,7 +1974,7 @@
     "global" "^4.4.0"
     "regenerator-runtime" "^0.13.7"
 
-"@storybook/api@6.5.16":
+"@storybook/api@^6.0.0", "@storybook/api@6.5.16":
   "integrity" "sha512-HOsuT8iomqeTMQJrRx5U8nsC7lJTwRr1DhdD0SzlqL4c80S/7uuCy4IZvOt4sYQjOzW5fOo/kamcoBXyLproTA=="
   "resolved" "https://registry.npmjs.org/@storybook/api/-/api-6.5.16.tgz"
   "version" "6.5.16"
@@ -2161,7 +2161,7 @@
     "core-js" "^3.8.2"
     "global" "^4.4.0"
 
-"@storybook/components@6.5.16":
+"@storybook/components@^6.0.0", "@storybook/components@6.5.16":
   "integrity" "sha512-LzBOFJKITLtDcbW9jXl0/PaG+4xAz25PK8JxPZpIALbmOpYWOAPcO6V9C2heX6e6NgWFMUxjplkULEk9RCQMNA=="
   "resolved" "https://registry.npmjs.org/@storybook/components/-/components-6.5.16.tgz"
   "version" "6.5.16"
@@ -2257,7 +2257,7 @@
     "util-deprecate" "^1.0.2"
     "webpack" "4"
 
-"@storybook/core-events@6.5.16":
+"@storybook/core-events@^6.0.0", "@storybook/core-events@6.5.16":
   "integrity" "sha512-qMZQwmvzpH5F2uwNUllTPg6eZXr2OaYZQRRN8VZJiuorZzDNdAFmiVWMWdkThwmyLEJuQKXxqCL8lMj/7PPM+g=="
   "resolved" "https://registry.npmjs.org/@storybook/core-events/-/core-events-6.5.16.tgz"
   "version" "6.5.16"
@@ -2661,7 +2661,7 @@
     "@testing-library/user-event" "^13.2.1"
     "ts-dedent" "^2.2.0"
 
-"@storybook/theming@6.5.16":
+"@storybook/theming@^6.0.0", "@storybook/theming@6.5.16":
   "integrity" "sha512-hNLctkjaYLRdk1+xYTkC1mg4dYz2wSv6SqbLpcKMbkPHTE0ElhddGPHQqB362md/w9emYXNkt1LSMD8Xk9JzVQ=="
   "resolved" "https://registry.npmjs.org/@storybook/theming/-/theming-6.5.16.tgz"
   "version" "6.5.16"
@@ -5347,7 +5347,7 @@
   "resolved" "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.28.0.tgz"
   "version" "3.28.0"
 
-"core-js@^3.0.4", "core-js@^3.6.5", "core-js@^3.8.2":
+"core-js@^3.0.4", "core-js@^3.6.4", "core-js@^3.6.5", "core-js@^3.8.2":
   "integrity" "sha512-GiZn9D4Z/rSYvTeg1ljAIsEqFm0LaN9gVtwDCrKL80zHtS31p9BAjmTxVqTQDMpwlMolJZOFntUG2uwyj7DAqw=="
   "resolved" "https://registry.npmjs.org/core-js/-/core-js-3.28.0.tgz"
   "version" "3.28.0"
@@ -10919,6 +10919,11 @@
     "@babel/runtime" "^7.20.6"
     "html-parse-stringify" "^3.0.1"
 
+"react-icons@^4.7.1":
+  "integrity" "sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw=="
+  "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.7.1.tgz"
+  "version" "4.7.1"
+
 "react-inspector@^5.1.0":
   "integrity" "sha512-GURDaYzoLbW8pMGXwYPDBIv6nqei4kK7LPRZ9q9HCZF54wqXz/dnylBp/kfE9XmekBhHvLDdcYeyIwSrvtOiWg=="
   "resolved" "https://registry.npmjs.org/react-inspector/-/react-inspector-5.1.1.tgz"
@@ -12134,6 +12139,20 @@
   "integrity" "sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w=="
   "resolved" "https://registry.npmjs.org/store2/-/store2-2.14.2.tgz"
   "version" "2.14.2"
+
+"storybook-addon-themes@^6.1.0":
+  "integrity" "sha512-ZT8aNgrwFVNEOmOPBLNS0WBacjvMFo/bZ83P8MmsJ3Ewqt0AbmPioghTZccARUn/EQ+LrDxyh2D0QgmLaKo07Q=="
+  "resolved" "https://registry.npmjs.org/storybook-addon-themes/-/storybook-addon-themes-6.1.0.tgz"
+  "version" "6.1.0"
+  dependencies:
+    "@storybook/addons" "^6.0.0"
+    "@storybook/api" "^6.0.0"
+    "@storybook/components" "^6.0.0"
+    "@storybook/core-events" "^6.0.0"
+    "@storybook/theming" "^6.0.0"
+    "core-js" "^3.6.4"
+    "global" "^4.4.0"
+    "memoizerific" "^1.11.3"
 
 "stream-browserify@^2.0.1":
   "integrity" "sha512-nX6hmklHs/gr2FuxYDltq8fJA1GDlxKQCz8O/IM4atRqBH8OORmBNgfvW5gG10GT/qQ9u0CzIvr2X5Pkt6ntqg=="

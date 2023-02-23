@@ -44,7 +44,7 @@ function buildRules ({ isDev, paths }: BuildOptionsT): webpack.RuleSetRule[] {
   }
 
   const imgsRule = {
-    test: /\.(png|jpe?g|gif)$/i,
+    test: /\.(png|jpe?g|gif|svg)$/i,
     loader: 'file-loader',
     options: {
       name (resourcePath: string) {
@@ -61,7 +61,7 @@ function buildRules ({ isDev, paths }: BuildOptionsT): webpack.RuleSetRule[] {
   return [
     jsonRule,
     imgsRule,
-    svgRule,
+    // svgRule,
     scssRuleBuild({ isDev }),
     babelRule
     // tsRule,

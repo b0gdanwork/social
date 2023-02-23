@@ -1,28 +1,29 @@
 import { useTranslation } from 'react-i18next';
-import IconTheme from 'shared/assets/icons/theme.svg';
 import { useTheme } from 'shared/config/theme';
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { AppButton } from 'shared/ui';
 
-import s from './ToggleThemeBtn.module.scss';
+import { IoMdColorPalette } from "react-icons/io";
+
 
 interface NavbarProps {
-  className?: string,
+  size?: number
+  [x:string]: any;
 }
 
 const ToggleThemeBtn = (props: NavbarProps) => {
 
   const {
-    className
+    size,
+    color,
+    ...anyProps
   } = props
 
   const { t } = useTranslation();
   const { toogleTheme } = useTheme()
   
   return (
-    <AppButton className={classNames(s.btn, {}, [className])} onClick={toogleTheme}>
-      <IconTheme className={s.icon}/>
-      {t('Сменить тему')}
+    <AppButton {...anyProps} onClick={toogleTheme} baseClass={false}>
+      <IoMdColorPalette size={size} color={color}/>
     </AppButton>
   )
 }

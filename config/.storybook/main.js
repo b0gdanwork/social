@@ -8,5 +8,6 @@ module.exports = {
   addons: [
     "@storybook/addon-essentials",
     "@storybook/preset-scss",
+    'storybook-addon-themes'
   ]
 };

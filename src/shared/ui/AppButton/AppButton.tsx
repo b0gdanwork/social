@@ -13,20 +13,23 @@ interface AppBattonProps extends React.HTMLProps<HTMLButtonElement> {
   className?: any,
   theme?: AppButtonTheme,
   type?: 'button' | 'submit' | 'reset',
+  disabled?: boolean,
+  baseClass?: boolean
 }
 
 const AppButton: FC<AppBattonProps> = (props) => {
 
   const {
-    theme = AppButtonTheme.PRIMARY,
+    theme,
     children,
+    baseClass = true,
     className,
     ...anyProps
   } = props
 
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
-    <button {...anyProps} className={classNames('btn', { className: className !== undefined }, [theme])}>{children}</button>
+    <button {...anyProps} className={classNames('', { [className]: className !== undefined , 'btn': baseClass}, [theme])}>{children}</button>
   )
 }
 
