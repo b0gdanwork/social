@@ -4,15 +4,14 @@ import { classNames } from 'shared/lib/helpers/classNames/classNames';
 
 import s from './AppLink.module.scss';
 
-export enum AppLinkTheme {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-}
+// export enum AppLinkTheme {
+//   PRIMARY = 'primary',
+//   SECONDARY = 'secondary',
+// }
 
 interface PropsAppLink extends LinkProps {
   children?: any
   className?: string
-  theme?: AppLinkTheme
 }
 
 const AppLink: FC<PropsAppLink> = (props) => {
@@ -20,13 +19,12 @@ const AppLink: FC<PropsAppLink> = (props) => {
   const {
     children,
     className,
-    theme = AppLinkTheme.PRIMARY,
     ...anyProps
   } = props
 
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
-    <Link {...anyProps} className={classNames(s.link, {}, [className, theme])}>
+    <Link {...anyProps} className={classNames(s.link, {}, [className])}>
       {children}
     </Link>
   )

@@ -14,6 +14,7 @@ export default {
 } as ComponentMeta<typeof AppButton>;
 
 const Template: ComponentStory<typeof AppButton> = (args) => {
+  console.log('args', args)
   return <AppButton {...args}/>
 };
 
@@ -21,25 +22,19 @@ export const Primary = Template.bind({});
 Primary.args = {
   label: 'AppButton',
   children: "Button",
-  args: {
-    theme: AppButtonTheme.PRIMARY
-  }
+  theme: AppButtonTheme.PRIMARY
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'AppButton',
   children: "Button",
-  args: {
-    theme: AppButtonTheme.SECONDARY
-  }
+  theme: AppButtonTheme.SECONDARY
 };
 
 export const Transparent = Template.bind({});
 Transparent.args = {
   label: 'AppButton',
   children: "Button",
-  args: {
-    theme: AppButtonTheme.TRANSPARENT
-  }
+  theme: AppButtonTheme.TRANSPARENT
 };
