@@ -31,4 +31,4 @@ jobs:
       - name: Stylelint
         run: npm run lint:style:test
       - name: Unit test
-        run: test:unit
+        run: npm run test:unit
