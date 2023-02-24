@@ -29,4 +29,4 @@ jobs:
       - name: Eslint
         run: npm run lint:ts:test
       - name: Stylelint
-        run: lint:style:test
+        run: npm run lint:style:test
