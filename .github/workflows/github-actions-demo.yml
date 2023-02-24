@@ -21,6 +21,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node_version }}
-          architecture: ${{ matrix.architecture }}
-      - run: npm ci
-      - run: npm test
+      - run: npm run
+      - name: install modules
+        run: npm i
+      - name: build prod project
+        run: npm run build:prod
+      - name: Eslint
+        run: npm run lint:ts:test
+      - name: Stylelint
+        run: lint:style:test
