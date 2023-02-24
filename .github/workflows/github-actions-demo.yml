@@ -8,14 +8,19 @@ on:
     branches: [ "main" ]
 
 jobs:
-  hello_world_job:
+  init:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    strategy:
+      matrix:
+        node_version:
+          - 16
+    name: Node ${{ matrix.node_version }}
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
-          cache: 'npm'
-          cache-dependency-path: subdir/package-lock.json
-      - run: npm run build:prod
+          node-version: ${{ matrix.node_version }}
+          architecture: ${{ matrix.architecture }}
+      - run: npm ci
+      - run: npm test
