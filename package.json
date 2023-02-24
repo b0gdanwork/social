@@ -11,7 +11,7 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:style:test": "npx stylelint **/*.scss",
     "lint:style:fix": "npx stylelint **/*.scss --fix",
-    "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "npx jest --config ./config/jest/jest.config.ts",
     "storybook": "start-storybook -p 6006 -c ./config/.storybook",
     "test:ui": "npx loki test --port 6006",
     "test:ui:ok": "npx loki test approve --port 6006"
