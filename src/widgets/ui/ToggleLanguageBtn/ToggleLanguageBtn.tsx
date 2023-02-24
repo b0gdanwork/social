@@ -2,11 +2,12 @@ import React from 'react'
 import { AppButton } from 'shared/ui'
 import { useTranslation } from 'react-i18next';
 
-import { MdLanguage } from "react-icons/md";
+import { MdLanguage } from 'react-icons/md';
 
 interface ToggleLanguageBtnProps {
   size?: number
-  [x:string]: any;
+  color?: string
+  [x: string]: any
 }
 
 function ToggleLanguageBtn (props: ToggleLanguageBtnProps) {
@@ -27,7 +28,7 @@ function ToggleLanguageBtn (props: ToggleLanguageBtnProps) {
   return (
     // eslint-disable-next-line i18next/no-literal-string
     <AppButton {...anyProps} onClick={ toggleLaguage } baseClass={false}>
-        <MdLanguage size={size} color={color}/>
+      <MdLanguage size={size} color={color}/>
     </AppButton>
   )
 }

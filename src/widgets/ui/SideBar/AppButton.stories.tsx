@@ -4,13 +4,7 @@ import SideBar from './SideBar';
 
 export default {
   title: 'widgets/SideBar',
-  component: SideBar,
-  
-  // argTypes: {
-    // label:{
-    //   options: [SideBarTheme.PRIMARY, SideBarTheme.SECONDARY, SideBarTheme.TRANSPARENT],
-    // },
-  // }
+  component: SideBar
 
 } as ComponentMeta<typeof SideBar>;
 
@@ -20,5 +14,5 @@ const Template: ComponentStory<typeof SideBar> = (args) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: 'SideBar',
+  label: 'SideBar'
 };

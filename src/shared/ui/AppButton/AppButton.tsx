@@ -29,7 +29,11 @@ const AppButton: FC<AppBattonProps> = (props) => {
 
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
-    <button {...anyProps} className={classNames('', { [className]: className !== undefined , 'btn': baseClass}, [theme])}>{children}</button>
+    <button 
+      {...anyProps} 
+      className={classNames('', { [className]: className !== undefined, btn: baseClass }, [theme])}>
+      {children}
+    </button>
   )
 }
 

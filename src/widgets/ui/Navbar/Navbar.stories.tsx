@@ -6,7 +6,7 @@ import Navbar from './Navbar';
 export default {
   title: 'widgets/Navbar',
   component: Navbar,
-  decorators: [withRouter],
+  decorators: [withRouter]
 } as ComponentMeta<typeof Navbar>
 
 const Template: ComponentStory<typeof Navbar> = (args) => {
@@ -15,5 +15,5 @@ const Template: ComponentStory<typeof Navbar> = (args) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: 'Navbar',
+  label: 'Navbar'
 };

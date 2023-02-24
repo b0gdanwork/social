@@ -31,8 +31,6 @@ function buildRules ({ isDev, paths }: BuildOptionsT): webpack.RuleSetRule[] {
     }
   };
 
-  
-
   const svgRule = {
     test: /\.svg$/,
     use: ['@svgr/webpack']

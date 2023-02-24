@@ -3,11 +3,10 @@ import { withRouter } from 'storybook-addon-react-router-v6';
 
 import AppLink from './AppLink';
 
-
 export default {
   title: 'shared/AppLink',
   component: AppLink,
-  decorators: [withRouter],
+  decorators: [withRouter]
 };
 
 const Template: ComponentStory<typeof AppLink> = (args) => {
@@ -17,5 +16,5 @@ const Template: ComponentStory<typeof AppLink> = (args) => {
 export const Primary = Template.bind({});
 Primary.args = {
   label: 'AppLink',
-  children: "AppLink",
+  children: 'AppLink'
 };

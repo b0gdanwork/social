@@ -5,7 +5,7 @@ import { AppButton } from 'shared/ui';
 import ToggleLanguageBtn from '../ToggleLanguageBtn/ToggleLanguageBtn';
 import ToggleThemeBtn from '../ToggleThemeBtn/ToggleThemeBtn';
 
-import { TbArrowBarToRight } from "react-icons/tb";
+import { TbArrowBarToRight } from 'react-icons/tb';
 
 import s from './SideBar.module.scss';
 
@@ -28,7 +28,7 @@ function SideBar ({}: Props) {
         <ToggleThemeBtn className={s.iconBtn} size={25} color={'var(--sidebar-color)'}/>
         <ToggleLanguageBtn className={s.iconBtn} size={25} color={'var(--sidebar-color)'}/>
         <AppButton onClick={onToggle} className={classNames(s.iconBtn)} baseClass={false}>
-          <TbArrowBarToRight size={25} className={classNames(s.iconToggle, {[s.openIcon]: isOpen })} color={'var(--sidebar-color)'}/>
+          <TbArrowBarToRight size={25} className={classNames(s.iconToggle, { [s.openIcon]: isOpen })} color={'var(--sidebar-color)'}/>
         </AppButton>
       </div>
     </div>
