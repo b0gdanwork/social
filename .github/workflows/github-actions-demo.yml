@@ -8,18 +8,19 @@ on:
     branches: [ "main" ]
 
 jobs:
-  init:
+  hello_world_job:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
+    name: A job to say hello
     steps:
-    - name: Checkout
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Hello world action step
+        uses: ./ # Uses an action in the root directory
+        id: hello
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-
-    
+          who-to-greet: 'Mona the Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
