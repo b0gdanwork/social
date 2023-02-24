@@ -11,7 +11,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', 'i18next'],
+  plugins: ['react', 'i18next', 'react-hooks'],
   rules: {
     strictNullChecks: 0,
     'comma-dangle': [0, {
@@ -55,8 +55,10 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-unused-vars': ['warn'],
     'import/no-duplicates': 'off',
-    '@typescript-eslint/consistent-type-assertions': 'off'
-
+    '@typescript-eslint/consistent-type-assertions': 'off',
+    '@typescript-eslint/object-curly-spacing': 'warn',
+    'react-hooks/rules-of-hooks': 'error', 
+    'react-hooks/exhaustive-deps': 'error', 
   },
   settings: {
     react: {

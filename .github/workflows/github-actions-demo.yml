@@ -24,9 +24,11 @@ jobs:
       - run: npm run
       - name: install modules
         run: npm i
-      - name: build prod project
+      - name: Build PROD project
         run: npm run build:prod
       - name: Eslint
         run: npm run lint:ts:test
       - name: Stylelint
         run: npm run lint:style:test
+      - name: Unit test
+        run: test:unit
