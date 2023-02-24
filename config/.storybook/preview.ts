@@ -1,5 +1,6 @@
 import { ThemesT } from './../../src/shared/config/theme/context/ThemeContext';
 import 'app/styles/index.scss';
+import 'loki/configure-react'
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
