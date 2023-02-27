@@ -9,10 +9,13 @@ import 'shared/config/i18n/i18n';
 import { Suspense } from 'react';
 import { Loader } from 'shared/ui';
 import { ErrorBoundary } from './providers/ErrorBoundary';
+import { StoreProvider } from './providers/StoreProvider';
 
 const Index = () => {
+  
   return (
-    <>
+
+    <StoreProvider>
       <BrowserRouter>
         <ErrorBoundary>
           <ThemeProvider>
@@ -22,7 +25,8 @@ const Index = () => {
           </ThemeProvider>
         </ErrorBoundary>
       </BrowserRouter>
-    </>
+    </StoreProvider>
+
   );
 };
 

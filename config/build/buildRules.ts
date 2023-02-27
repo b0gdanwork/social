@@ -12,7 +12,7 @@ function buildRules ({ isDev, paths }: BuildOptionsT): webpack.RuleSetRule[] {
   // }
 
   const babelRule = {
-    test: /\.(js|jsx|tsx)$/,
+    test: /\.(js|jsx|tsx|ts)$/,
     exclude: /node_modules/,
     use: {
       loader: 'babel-loader',
