@@ -11,23 +11,23 @@ const Counter: React.FC<Props> = (props) => {
   const countValue = useSelector(getCounterValue)
 
   const decrement = () => {
-    dispath(counterActions.increment())
+    dispath(counterActions.decrement())
   }
   
   const increment = () => {
-    dispath(counterActions.decrement())
+    dispath(counterActions.increment())
   }
 
   return (
     <div>
-      <h1>
+      <h1 data-testid={'value'}>
         value: 
         {countValue}
       </h1>
-      <button onClick={increment}>
+      <button onClick={increment} data-testid={'increment'}>
         +
       </button>
-      <button onClick={decrement}>
+      <button onClick={decrement} data-testid={'decrement'}>
         -
       </button>
     </div>
