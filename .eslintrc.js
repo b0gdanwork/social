@@ -59,6 +59,7 @@ module.exports = {
     '@typescript-eslint/object-curly-spacing': 'warn',
     'react-hooks/rules-of-hooks': 'error', 
     'react-hooks/exhaustive-deps': 'error', 
+    'i18next/no-literal-string': 'warn'
   },
   settings: {
     react: {
