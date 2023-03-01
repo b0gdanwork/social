@@ -1,23 +1,23 @@
-import { useEffect, useState, type ReactNode } from 'react'
+import { useEffect, type ReactNode } from 'react'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
 import Portal from '../Portal/Portal'
 
 import s from './Modal.module.scss'
 
-interface NavbarProps {
+export interface ModalProps {
   className?: string
   children?: ReactNode
   isOpen?: boolean,
   onClose?: () => void;
 }
 
-const Modal = (props: NavbarProps) => {
+const Modal = (props: ModalProps) => {
 
   const {
-    className,
+    isOpen,
     children,
-    onClose = () => {},
-    isOpen 
+    className,
+    onClose = () => {}
   } = props
 
   const closeModal = () => {
@@ -46,7 +46,7 @@ const Modal = (props: NavbarProps) => {
     <Portal>
       <div className={classNames(s.modal, { [s.open]: isOpen }, [className])}>
         <div className={s.overlay} onClick={closeModal}/>
-        <div className={classNames(s.content, { [s.openContent]: isOpen })} onClick={contentClick}>
+        <div className={classNames('contentModal', { contentModalOpen: isOpen })} onClick={contentClick}>
           {children}
         </div>
       </div>

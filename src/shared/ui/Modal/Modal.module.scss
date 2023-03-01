@@ -27,16 +27,18 @@
   background-color: var(--overlay-color);
 }
 
-.content {
-  z-index: 1;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transform: scale(0.9);
-  transition: transform .3s;
-}
-
-.openContent {
-  transform: scale(1);
+:global {
+  .contentModal {
+    z-index: 1;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transform: scale(0.9);
+    transition: transform .3s;
+  }
+  
+  .contentModalOpen {
+    transform: scale(1);
+  }
 }

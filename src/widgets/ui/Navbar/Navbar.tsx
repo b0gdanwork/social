@@ -8,6 +8,7 @@ import s from './Navbar.module.scss'
 import Modal from 'shared/ui/Modal/Modal'
 import { useCallback, useState } from 'react'
 import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
+import { LoginModal } from 'features/AuthByUsername'
 
 interface NavbarProps {
   className?: string
@@ -50,9 +51,7 @@ const Navbar = (props: NavbarProps) => {
           Войти
         </AppButton>
       </div>
-      <Modal isOpen={isOpenAuthModal} onClose={closeCallback}>
-        sdfsdfsdfasdfsadfsdf
-      </Modal>
+      <LoginModal isOpen={isOpenAuthModal} onClose={closeCallback}/>
     </div>
   )
 }
