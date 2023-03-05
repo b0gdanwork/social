@@ -1,14 +1,16 @@
-/* eslint-disable i18next/no-literal-string */
 import { useTranslation } from 'react-i18next'
 import { PathsAppT } from 'shared/config/routes/routes'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
 import { AppButton, AppLink } from 'shared/ui'
+import { useEffect } from 'react'
 import Logo from 'shared/assets/icons/men.svg'
 import s from './Navbar.module.scss'
-import Modal from 'shared/ui/Modal/Modal'
 import { useCallback, useState } from 'react'
 import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
 import { LoginModal } from 'features/AuthByUsername'
+import { useDispatch, useSelector } from 'react-redux'
+import { userActions } from 'entitiess/User'
+import { getUser } from 'entitiess/User/model/selectors/getUser/getUser'
 
 interface NavbarProps {
   className?: string
@@ -26,7 +28,20 @@ const Navbar = (props: NavbarProps) => {
     className
   } = props
   
+  const dispath = useDispatch()
+  const user = useSelector(getUser)
+  
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false)
+
+  useEffect(() => {
+    if (user) {
+      setIsOpenAuthModal(false)
+    }
+  }, [dispath, user])
+  
+  const logout = useCallback(() => {
+    dispath(userActions.logoutAuthData())
+  }, [dispath])
 
   const openAuthModal = useCallback(() => {
     setIsOpenAuthModal(true)
@@ -47,9 +62,14 @@ const Navbar = (props: NavbarProps) => {
         })}
       </div>
       <div className={s.right}>
-        <AppButton onClick={openAuthModal} theme={AppButtonTheme.TRANSPARENT}>
-          Войти
-        </AppButton>
+        {user
+          ? <AppButton onClick={logout} theme={AppButtonTheme.TRANSPARENT}>
+            Выйти
+          </AppButton>
+          : <AppButton onClick={openAuthModal} theme={AppButtonTheme.TRANSPARENT}>
+            Войти
+          </AppButton>
+        }
       </div>
       <LoginModal isOpen={isOpenAuthModal} onClose={closeCallback}/>
     </div>

@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "webpack serve --env port=8000 --env mode=development  --history-api-fallback",
+    "start": "webpack serve --env port=9000 --env mode=development  --history-api-fallback",
     "start:dev:server": "node ./json-server/index.js",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack serve --env port=3000 --env mode=production",
@@ -22,6 +22,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "axios": "^1.3.4",
     "i18next": "^22.4.9",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.1.1",

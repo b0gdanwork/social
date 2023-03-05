@@ -1,12 +1,14 @@
-import { getLoginState } from 'features/AuthByUsername/model/selectors/getLoginState/getLoginState'
-import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice'
+import { getLoginState } from '../../model/selectors/getLoginState/getLoginState'
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
 import { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
-import { AppButton, AppInput } from 'shared/ui'
+import { AppButton, AppInput, Form } from 'shared/ui'
 import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
 
 import s from './LoginForm.module.scss'
+import { loginActions } from '../../model/slice/loginSlice'
+import { type ThunkDispatch } from '@reduxjs/toolkit'
 
 interface PropsLoginForm {
   className?: string
@@ -18,8 +20,8 @@ export default function LoginForm (props: PropsLoginForm) {
     className
   } = props
 
-  const dispath = useDispatch()
-  const state = useSelector(getLoginState)
+  const dispath = useDispatch<ThunkDispatch<any, any, any>>()
+  const { password, username, isLoading, error } = useSelector(getLoginState)
 
   const onChangePassword = useCallback((value: string) => {
     dispath(loginActions.setPassword(value))
@@ -30,16 +32,17 @@ export default function LoginForm (props: PropsLoginForm) {
   }, [dispath])
 
   const onLoginClick = useCallback(() => {
-
-  }, [])
+    const data = { password, username } 
+    return dispath(loginByUsername(data))
+  }, [dispath, password, username])
 
   return (
-    <div className={classNames(s.loginForm, {}, [className])}>
-      <AppInput value={state.username} label='Username' className={s.input} onChange={onChangeUsername}/>
-      <AppInput value={state.password} label='Password' className={s.input} onChange={onChangePassword}/>
+    <Form className={classNames(s.loginForm, {}, [className])} isLoading={isLoading} error={error}>
+      <AppInput value={username} label='Username' className={s.input} onChange={onChangeUsername}/>
+      <AppInput value={password} label='Password' className={s.input} onChange={onChangePassword}/>
       <AppButton theme={AppButtonTheme.TRANSPARENT} onClick={onLoginClick}>
         Войти
       </AppButton>
-    </div>
+    </Form>
   )
 }
