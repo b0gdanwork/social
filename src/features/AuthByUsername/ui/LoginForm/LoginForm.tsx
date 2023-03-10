@@ -10,11 +10,11 @@ import s from './LoginForm.module.scss'
 import { loginActions } from '../../model/slice/loginSlice'
 import { type ThunkDispatch } from '@reduxjs/toolkit'
 
-interface PropsLoginForm {
+export interface PropsLoginForm {
   className?: string
 }
 
-export default function LoginForm (props: PropsLoginForm) {
+function LoginForm (props: PropsLoginForm) {
 
   const { 
     className
@@ -46,3 +46,5 @@ export default function LoginForm (props: PropsLoginForm) {
     </Form>
   )
 }
+
+export default LoginForm

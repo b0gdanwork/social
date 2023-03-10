@@ -1,6 +1,8 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
-import Modal, { type ModalProps } from 'shared/ui/Modal/Modal'
-import LoginForm from '../LoginForm/LoginForm'
+import { Loader, Modal } from 'shared/ui'
+import { type ModalProps } from 'shared/ui/Modal/Modal'
+import { Suspense } from 'react';
+import LoginFormAsync from '../LoginForm/LoginForm.async'
 
 import s from './LoginModal.module.scss'
 
@@ -17,7 +19,9 @@ export default function LoginModal (props: PropsLoginModal) {
 
   return (
     <Modal {...anyProps} className={classNames(s.loginModal, {}, [className])} >
-      <LoginForm /> 
+      <Suspense fallback={<Loader/>}>
+        <LoginFormAsync /> 
+      </Suspense>
     </Modal>
   )
 }

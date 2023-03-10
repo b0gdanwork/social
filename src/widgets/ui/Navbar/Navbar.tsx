@@ -66,12 +66,14 @@ const Navbar = (props: NavbarProps) => {
           ? <AppButton onClick={logout} theme={AppButtonTheme.TRANSPARENT}>
             Выйти
           </AppButton>
-          : <AppButton onClick={openAuthModal} theme={AppButtonTheme.TRANSPARENT}>
-            Войти
-          </AppButton>
+          : <>
+            <AppButton onClick={openAuthModal} theme={AppButtonTheme.TRANSPARENT}>
+              Войти
+            </AppButton>
+            <LoginModal isOpen={isOpenAuthModal} onClose={closeCallback}/>
+          </>
         }
       </div>
-      <LoginModal isOpen={isOpenAuthModal} onClose={closeCallback}/>
     </div>
   )
 }
