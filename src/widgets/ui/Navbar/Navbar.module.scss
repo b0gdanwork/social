@@ -13,3 +13,11 @@
   display: flex;
   gap: 10px;
 }
+
+.link {
+  color: var(--navbar-color);
+
+  &::after {
+    background-color: var(--navbar-color);
+  }
+}

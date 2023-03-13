@@ -19,7 +19,8 @@ interface NavbarProps {
 
 const Routes: Record<PathsAppT, string> = {
   [PathsAppT.MAIN]: 'Главная страница',
-  [PathsAppT.ABOUT]: 'О компании' 
+  [PathsAppT.ABOUT]: 'О компании',
+  [PathsAppT.PROFILE]: 'Профиль'
 }
 
 const Navbar = (props: NavbarProps) => {
