@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "webpack serve --env port=9000 --env mode=development  --history-api-fallback",
+    "start": "webpack serve --env port=8000 --env mode=development  --history-api-fallback",
     "start:dev:server": "node ./json-server/index.js",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack serve --env port=3000 --env mode=production",
