@@ -1,5 +1,6 @@
-import { type ComponentStory, type ComponentMeta } from '@storybook/react';
 import { withRouter } from 'storybook-addon-react-router-v6';
+
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
 import Navbar from './Navbar';
 

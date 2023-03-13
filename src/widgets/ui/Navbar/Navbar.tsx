@@ -1,16 +1,17 @@
-import { useTranslation } from 'react-i18next'
-import { PathsAppT } from 'shared/config/routes/routes'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
-import { AppButton, AppLink } from 'shared/ui'
-import { useEffect } from 'react'
-import Logo from 'shared/assets/icons/men.svg'
-import s from './Navbar.module.scss'
-import { useCallback, useState } from 'react'
-import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
-import { LoginModal } from 'features/AuthByUsername'
-import { useDispatch, useSelector } from 'react-redux'
-import { userActions } from 'entitiess/User'
-import { getUser } from 'entitiess/User/model/selectors/getUser/getUser'
+import { userActions } from 'entitiess/User';
+import { getUser } from 'entitiess/User/model/selectors/getUser/getUser';
+import { LoginModal } from 'features/AuthByUsername';
+import { useCallback, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import Logo from 'shared/assets/icons/men.svg';
+import { PathsAppT } from 'shared/config/routes/routes';
+import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath';
+import { AppButton, AppLink } from 'shared/ui';
+import { AppButtonTheme } from 'shared/ui/AppButton/AppButton';
+
+import s from './Navbar.module.scss';
 
 interface NavbarProps {
   className?: string
@@ -28,7 +29,7 @@ const Navbar = (props: NavbarProps) => {
     className
   } = props
   
-  const dispath = useDispatch()
+  const dispath = useAppDispath()
   const user = useSelector(getUser)
   
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false)

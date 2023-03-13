@@ -1,6 +1,6 @@
-import { Reducer } from '@reduxjs/toolkit'
-import { StoreSchemaKeys, StoreSchemaWithManager } from 'app/providers/StoreProvider/config/StoreSchema'
-import React, { FC, ReactNode, useEffect } from 'react'
+import { type Reducer } from '@reduxjs/toolkit'
+import { type StoreSchemaKeys, type StoreSchemaWithManager } from 'app/providers/StoreProvider/config/StoreSchema'
+import React, { type FC, type ReactNode, useEffect } from 'react'
 import { useStore } from 'react-redux'
 
 interface Props {
@@ -14,7 +14,7 @@ const DynamicModuleLoader: FC<Props> = (props) => {
   const {
     reducer,
     children,
-    reducerKey,
+    reducerKey
   } = props
 
   const store = useStore() as StoreSchemaWithManager
@@ -25,6 +25,7 @@ const DynamicModuleLoader: FC<Props> = (props) => {
     return () => {
       store.reducerManager.remove(reducerKey)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

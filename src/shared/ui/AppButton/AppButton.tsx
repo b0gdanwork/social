@@ -37,4 +37,4 @@ const AppButton: FC<AppBattonProps> = (props) => {
   )
 }
 
-export default AppButton
+export default React.memo(AppButton)

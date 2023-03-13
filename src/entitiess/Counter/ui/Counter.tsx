@@ -1,13 +1,14 @@
 /* eslint-disable i18next/no-literal-string */
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { counterActions } from '../model/slice/counterSlice';
+import { useAppDispath } from '../../../shared/lib/hooks/useAppDispath/useAppDispath';
 
 interface Props {}
 
 const Counter: React.FC<Props> = (props) => {
 
-  const dispath = useDispatch()
+  const dispath = useAppDispath()
   const countValue = useSelector(getCounterValue)
 
   const decrement = () => {

@@ -1,20 +1,18 @@
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
-import { useCallback, useEffect } from 'react'
-import { useDispatch, useSelector, useStore } from 'react-redux'
+import { useCallback } from 'react'
+import { useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
 import { AppButton, AppInput, Form } from 'shared/ui'
 import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
 
 import s from './LoginForm.module.scss'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
-import { type ThunkDispatch } from '@reduxjs/toolkit'
-import { StoreSchemaWithManager } from 'app/providers/StoreProvider/config/StoreSchema'
 import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginState/getLoginPassword'
 import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginState/getLoginUsername'
 import { getLoginIsLoading } from 'features/AuthByUsername/model/selectors/getLoginState/getLoginIsLoading'
 import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginState/getLoginError'
 import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
 
 export interface PropsLoginForm {
   className?: string
@@ -26,7 +24,7 @@ function LoginForm (props: PropsLoginForm) {
     className
   } = props
 
-  const dispath = useDispatch<ThunkDispatch<any, any, any>>()
+  const dispath = useAppDispath()
 
   const password = useSelector(getLoginPassword)
   const username = useSelector(getLoginUsername)

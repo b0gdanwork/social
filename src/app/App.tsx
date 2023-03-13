@@ -1,21 +1,21 @@
 
 import './styles/index.scss';
 
+import { userActions } from 'entitiess/User';
+import { useEffect } from 'react';
 import { useTheme } from 'shared/config/theme';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 
+import { useAppDispath } from '../shared/lib/hooks/useAppDispath/useAppDispath';
 import { Navbar, SideBar } from '../widgets/ui/index';
 import AppRoutes from './providers/AppRoutes/AppRoutes';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entitiess/User';
 
 const body: any = document.querySelector('body')
 
 export default function App () {
 
   const { theme } = useTheme()
-  const dispath = useDispatch()
+  const dispath = useAppDispath()
 
   useEffect(() => {
     if (!body) return
