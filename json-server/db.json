@@ -26,6 +26,13 @@
     }
   ],
   "profile": { 
-    "name": "typicode" 
+    "first": "first",
+    "lastname": "string",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Country",
+    "city": "city",
+    "username": "username",
+    "avatar": "https://ic.pics.livejournal.com/iglokott/37190182/1358256/1358256_original.jpg"
   }
 }

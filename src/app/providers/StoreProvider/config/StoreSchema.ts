@@ -30,9 +30,9 @@ export interface ThunkExtraArg {
 }
 
 export interface ThunkConfig<T> {
+  rejectWithValue: T,
   extra: {
     api: AxiosInstance,
     navigate: (to: To, options?: NavigateOptions) => void;
   }
-  rejectWithValue: T,
 }
