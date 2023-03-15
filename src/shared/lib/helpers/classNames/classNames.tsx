@@ -1,7 +1,7 @@
 export function classNames (
   mainClass?: string,
-  mods?: Record<string, boolean>,
-  additional?: string[]
+  mods?: Record<string, boolean | undefined>,
+  additional?: Array<string | undefined>
 ): string {
 
   let returnClass = mainClass || ''

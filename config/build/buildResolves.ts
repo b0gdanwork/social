@@ -1,4 +1,4 @@
-import { type BuildOptionsT } from './types';
+import { type BuildOptionsT } from './types'
 import type webpack from 'webpack'
 
 function resolvesBuild (options: BuildOptionsT): webpack.ResolveOptions {

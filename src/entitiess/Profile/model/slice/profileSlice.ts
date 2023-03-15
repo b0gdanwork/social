@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { type ProfileSchema } from '../types/profileSchema'
-import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
+import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData'
 
 const initialState: ProfileSchema = {
   data: {

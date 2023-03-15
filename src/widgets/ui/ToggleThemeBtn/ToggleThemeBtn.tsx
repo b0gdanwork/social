@@ -1,7 +1,7 @@
-import { useTheme } from 'shared/config/theme';
-import { AppButton } from 'shared/ui';
+import { useTheme } from 'shared/config/theme'
+import { AppButton } from 'shared/ui'
 
-import { IoMdColorPalette } from 'react-icons/io';
+import { IoMdColorPalette } from 'react-icons/io'
 
 interface NavbarProps {
   size?: number

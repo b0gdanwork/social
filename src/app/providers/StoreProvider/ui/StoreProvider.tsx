@@ -1,8 +1,8 @@
-import { type ReactNode } from 'react';
-import { Provider } from 'react-redux';
-import { useNavigate } from 'react-router';
+import { type ReactNode } from 'react'
+import { Provider } from 'react-redux'
+import { useNavigate } from 'react-router'
 
-import { createReduxStore } from '../config/reduxConfig';
+import { createReduxStore } from '../config/reduxConfig'
 
 import type StoreSchema from '../config/StoreSchema'
 

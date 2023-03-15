@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type ThunkConfig } from 'app/providers/StoreProvider';
-import { type ProfileT } from '../../types/profileSchema';
+import { type ThunkConfig } from 'app/providers/StoreProvider'
+import { type ProfileT } from '../../types/profileSchema'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export const fetchProfileData = createAsyncThunk<ProfileT, void, ThunkConfig<string>>(

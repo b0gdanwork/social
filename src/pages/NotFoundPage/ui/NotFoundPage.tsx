@@ -1,9 +1,9 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'
 
 import s from './NotFoundPage.module.scss'
 
 export default function NotFoundPage () {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <div className={s.NotFoundPage}>

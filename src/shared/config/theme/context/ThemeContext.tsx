@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext } from 'react'
 
 export enum ThemesT {
   DARK_THEME = 'theme-dark',
@@ -11,4 +11,4 @@ export interface ThemeContextT {
   toogleTheme?: () => void,
 }
 
-export const ThemeContext = createContext<ThemeContextT>({});
+export const ThemeContext = createContext<ThemeContextT>({})

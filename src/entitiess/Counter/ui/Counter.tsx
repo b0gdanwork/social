@@ -1,8 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
 import { useSelector } from 'react-redux'
-import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
-import { counterActions } from '../model/slice/counterSlice';
-import { useAppDispath } from '../../../shared/lib/hooks/useAppDispath/useAppDispath';
+import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue'
+import { counterActions } from '../model/slice/counterSlice'
+import { useAppDispath } from '../../../shared/lib/hooks/useAppDispath/useAppDispath'
 
 interface Props {}
 
@@ -33,6 +33,6 @@ const Counter: React.FC<Props> = (props) => {
       </button>
     </div>
   )
-};
+}
 
 export default Counter

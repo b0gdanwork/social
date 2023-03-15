@@ -1,8 +1,8 @@
 import React from 'react'
 import { AppButton } from 'shared/ui'
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'
 
-import { MdLanguage } from 'react-icons/md';
+import { MdLanguage } from 'react-icons/md'
 
 interface ToggleLanguageBtnProps {
   size?: number
@@ -18,12 +18,12 @@ function ToggleLanguageBtn (props: ToggleLanguageBtnProps) {
     ...anyProps
   } = props
 
-  const { i18n } = useTranslation();
+  const { i18n } = useTranslation()
 
   const toggleLaguage = async () => {
     const newLeng = i18n.language === 'ru' ? 'en' : 'ru'
-    await i18n.changeLanguage(newLeng);
-  };
+    await i18n.changeLanguage(newLeng)
+  }
 
   return (
     // eslint-disable-next-line i18next/no-literal-string

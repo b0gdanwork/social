@@ -1,8 +1,8 @@
-import DevServerBuild from './buildDevServer';
-import plaginsBuild from './buildPlagins';
-import resolvesBuild from './buildResolves';
-import buildRules from './buildRules';
-import { type BuildOptionsT } from './types';
+import DevServerBuild from './buildDevServer'
+import plaginsBuild from './buildPlagins'
+import resolvesBuild from './buildResolves'
+import buildRules from './buildRules'
+import { type BuildOptionsT } from './types'
 
 export function WebpackBuild (options: BuildOptionsT) {
 

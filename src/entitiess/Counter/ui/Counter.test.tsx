@@ -1,7 +1,7 @@
-import Counter from './Counter';
-import { render, screen } from '@testing-library/react';
+import Counter from './Counter'
+import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import ProviderTest from 'shared/lib/helpers/forTest/componentRender';
+import ProviderTest from 'shared/lib/helpers/forTest/componentRender'
 
 describe('Counter raact test', () => {
   test('', async () => {

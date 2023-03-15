@@ -1,4 +1,4 @@
-import type { Config } from 'jest';
+import type { Config } from 'jest'
 
 export default async (): Promise<Config> => {
   return {
@@ -199,6 +199,6 @@ export default async (): Promise<Config> => {
     // Whether to use watchman for file crawling
     // watchman: true,
     modulePaths: ['<rootDir>src']
-  };
+  }
   
 }

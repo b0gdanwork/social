@@ -21,27 +21,23 @@ module.exports = {
       exports: 'never',
       functions: 'never'
     }],
-    semi: 'off',
-    '@typescript-eslint/semi': 'off',
     'react/jsx-indent': [1, 2],
     'react/jsx-indent-props': [1, 2],
     // indent: [1, 2],
     'react/jsx-filename-extension': [2, {
       extensions: ['.js', '.jsx', '.tsx']
     }],
-    'import/no-unresolved': 'off',
-    'import/prefer-default-export': 'off',
     'no-unused-vars': 'off',
+    'import/no-unresolved': 'off',
     'react/require-default-props': 'off',
+    'import/prefer-default-export': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'warn',
-    'react/function-component-definition': 'off',
-    'no-shadow': 'off',
+    // 'no-shadow': 'off',
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'padded-blocks': [0],
-    'eol-last': [0],
     'no-trailing-spaces': [0],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unnecessary-condition': 'off',
@@ -68,4 +64,4 @@ module.exports = {
       version: 'detect'
     }
   }
-};
+}

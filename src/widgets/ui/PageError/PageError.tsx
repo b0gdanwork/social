@@ -1,4 +1,4 @@
-import s from './PageError.module.scss';
+import s from './PageError.module.scss'
 
 import img404 from 'shared/assets/img/404.png'
 

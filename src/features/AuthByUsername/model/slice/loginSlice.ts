@@ -1,4 +1,4 @@
-import { loginByUsername } from './../services/loginByUsername/loginByUsername';
+import { loginByUsername } from './../services/loginByUsername/loginByUsername'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { type LoginSchema } from '../types/loginSchema'
 

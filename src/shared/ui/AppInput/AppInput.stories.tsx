@@ -1,16 +1,16 @@
-import { type ComponentStory, type ComponentMeta } from '@storybook/react';
+import { type ComponentStory, type ComponentMeta } from '@storybook/react'
 
-import AppInput from './AppInput';
+import AppInput from './AppInput'
 
 export default {
   title: 'shared/AppInput',
   component: AppInput
-} as ComponentMeta<typeof AppInput>;
+} as ComponentMeta<typeof AppInput>
 
-const Template: ComponentStory<typeof AppInput> = (args) => <AppInput {...args} />;
+const Template: ComponentStory<typeof AppInput> = (args) => <AppInput {...args} />
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
 Primary.args = {
   label: 'AppInput',
   value: 'AppInput'
-};
+}

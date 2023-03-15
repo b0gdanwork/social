@@ -1,13 +1,13 @@
 /* eslint-disable i18next/no-literal-string */
-import { useState } from 'react';
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import { AppButton } from 'shared/ui';
-import ToggleLanguageBtn from '../ToggleLanguageBtn/ToggleLanguageBtn';
-import ToggleThemeBtn from '../ToggleThemeBtn/ToggleThemeBtn';
+import { useState } from 'react'
+import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { AppButton } from 'shared/ui'
+import ToggleLanguageBtn from '../ToggleLanguageBtn/ToggleLanguageBtn'
+import ToggleThemeBtn from '../ToggleThemeBtn/ToggleThemeBtn'
 
-import { TbArrowBarToRight } from 'react-icons/tb';
+import { TbArrowBarToRight } from 'react-icons/tb'
 
-import s from './SideBar.module.scss';
+import s from './SideBar.module.scss'
 
 interface Props {}
 

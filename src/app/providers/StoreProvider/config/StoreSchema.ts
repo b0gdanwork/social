@@ -1,12 +1,12 @@
-import { type LoginSchema } from 'features/AuthByUsername';
-import { type CounterSchema } from 'entitiess/Counter';
-import { type UserSchema } from 'entitiess/User';
-import { type EnhancedStore } from '@reduxjs/toolkit';
-import { type reducerManager } from './reducerManager';
-import { type createReduxStore } from './reduxConfig';
-import { type ProfileSchema } from 'entitiess/Profile';
-import { type AxiosInstance } from 'axios';
-import { type NavigateOptions, type To } from 'react-router';
+import { type LoginSchema } from 'features/AuthByUsername'
+import { type CounterSchema } from 'entitiess/Counter'
+import { type UserSchema } from 'entitiess/User'
+import { type EnhancedStore } from '@reduxjs/toolkit'
+import { type reducerManager } from './reducerManager'
+import { type createReduxStore } from './reduxConfig'
+import { type ProfileSchema } from 'entitiess/Profile'
+import { type AxiosInstance } from 'axios'
+import { type NavigateOptions, type To } from 'react-router'
 
 export default interface StoreSchema {
   counter: CounterSchema,

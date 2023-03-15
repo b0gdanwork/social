@@ -1,15 +1,15 @@
-import { type ComponentStory, type ComponentMeta } from '@storybook/react';
+import { type ComponentStory, type ComponentMeta } from '@storybook/react'
 
-import Loader from './Loader';
+import Loader from './Loader'
 
 export default {
   title: 'shared/Loader',
   component: Loader
-} as ComponentMeta<typeof Loader>;
+} as ComponentMeta<typeof Loader>
 
-const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
+const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
 Primary.args = {
   label: 'Loader'
-};
+}

@@ -9,10 +9,10 @@ export interface BuildPathsT {
 }
 
 export interface BuildOptionsT {
-  mode?: BuildModeT,
-  paths?: BuildPathsT,
-  isDev?: boolean,
-  port?: number,
+  mode: BuildModeT,
+  paths: BuildPathsT,
+  isDev: boolean,
+  port: number,
 }
 
 export interface BuildEnv {

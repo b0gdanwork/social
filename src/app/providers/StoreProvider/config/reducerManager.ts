@@ -1,9 +1,9 @@
-import type StoreSchema from './StoreSchema';
+import type StoreSchema from './StoreSchema'
 import {
   type AnyAction, type CombinedState, combineReducers, type Reducer, type ReducersMapObject
-} from '@reduxjs/toolkit';
+} from '@reduxjs/toolkit'
 
-import { type StoreSchemaKeys } from './StoreSchema';
+import { type StoreSchemaKeys } from './StoreSchema'
 
 export interface reducerManager {
   reduce: (state: StoreSchema, action: AnyAction) => CombinedState<StoreSchema>

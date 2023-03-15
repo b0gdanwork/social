@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import type webpack from 'webpack'
-import scssRuleBuild from './rules/styleRule';
+import scssRuleBuild from './rules/styleRule'
 import { type BuildOptionsT } from './types'
 
-function buildRules ({ isDev, paths }: BuildOptionsT): webpack.RuleSetRule[] {
+function buildRules (BuildOptions: BuildOptionsT): webpack.RuleSetRule[] {
 
-  // const tsRule = {
-  //   test: /\.(tsx|ts)?$/,
-  //   use: 'ts-loader',
-  //   exclude: /node_modules/
-  // }
+  const tsRule = {
+    test: /\.(tsx|ts)?$/,
+    use: 'ts-loader',
+    exclude: /node_modules/
+  }
 
   const babelRule = {
     test: /\.(js|jsx|tsx|ts)$/,
@@ -30,7 +30,7 @@ function buildRules ({ isDev, paths }: BuildOptionsT): webpack.RuleSetRule[] {
         ]
       }
     }
-  };
+  }
 
   const svgRule = {
     test: /\.svg$/,
@@ -51,7 +51,7 @@ function buildRules ({ isDev, paths }: BuildOptionsT): webpack.RuleSetRule[] {
         path = resourcePath.toString().slice(path.indexOf('assets'), path.lastIndexOf('\\'))
           .replace('\\', '/')
 
-        return `${path}/[contenthash].[ext]`;
+        return `${path}/[contenthash].[ext]`
 
       }
     }
@@ -61,9 +61,9 @@ function buildRules ({ isDev, paths }: BuildOptionsT): webpack.RuleSetRule[] {
     jsonRule,
     imgsRule,
     // svgRule,
-    scssRuleBuild({ isDev }),
-    babelRule
-    // tsRule,
+    scssRuleBuild(BuildOptions),
+    babelRule,
+    tsRule
   ]
 
 }

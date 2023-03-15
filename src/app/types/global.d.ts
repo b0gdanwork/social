@@ -1,7 +1,7 @@
 declare module '*.scss' {
-  type IClassNames = Record<string, string>;
-  const classNames: IClassNames;
-  export = classNames;
+  type IClassNames = Record<string, string>
+  const classNames: IClassNames
+  export = classNames
 }
 
 declare module '*.module.css';
@@ -16,6 +16,6 @@ declare module '*.svg';
 declare const __IS_DEV__: boolean
 declare module '*.jpg';
 declare module '*.png' {
-  const value: any;
-  export default value;
+  const value: any
+  export default value
 }

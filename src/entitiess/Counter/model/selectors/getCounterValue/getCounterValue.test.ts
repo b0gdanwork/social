@@ -1,6 +1,6 @@
-import { type DeepPartial } from '@reduxjs/toolkit';
-import { type StoreSchema } from 'app/providers/StoreProvider';
-import { getCounterValue } from './getCounterValue';
+import { type DeepPartial } from '@reduxjs/toolkit'
+import { type StoreSchema } from 'app/providers/StoreProvider'
+import { getCounterValue } from './getCounterValue'
 
 describe('getCounter', () => {
   test('selector counter', () => {

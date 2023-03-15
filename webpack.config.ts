@@ -1,7 +1,7 @@
-import { type BuildOptionsT, type BuildEnv } from './config/build/types';
-import type webpack from 'webpack';
-import { WebpackBuild } from './config/build/webpackBuild';
-import path from 'path';  
+import { type BuildOptionsT, type BuildEnv } from './config/build/types'
+import type webpack from 'webpack'
+import { WebpackBuild } from './config/build/webpackBuild'
+import path from 'path'  
 
 export default (env: BuildEnv) => {
 

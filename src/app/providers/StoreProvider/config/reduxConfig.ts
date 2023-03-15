@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import type StoreSchema from './StoreSchema';
-import { counterReducer } from 'entitiess/Counter';
-import { userReducer } from 'entitiess/User';
+import type StoreSchema from './StoreSchema'
+import { counterReducer } from 'entitiess/Counter'
+import { userReducer } from 'entitiess/User'
 
 import {
   configureStore, type ReducersMapObject
-} from '@reduxjs/toolkit';
+} from '@reduxjs/toolkit'
 
-import { createReducerManager } from './reducerManager';
-import { $api } from 'shared/api/api';
-import { type NavigateOptions, type To } from 'react-router';
+import { createReducerManager } from './reducerManager'
+import { $api } from 'shared/api/api'
+import { type NavigateOptions, type To } from 'react-router'
 
 interface Options { 
   navigate: (to: To, options?: NavigateOptions) => void;

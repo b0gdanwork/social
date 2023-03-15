@@ -1,5 +1,5 @@
-import { useSelector } from 'react-redux';
-import { getProfileData, getProfileIsLoading, getProfileError } from 'entitiess/Profile';
+import { useSelector } from 'react-redux'
+import { getProfileData, getProfileIsLoading, getProfileError } from 'entitiess/Profile'
 
 interface ProfileCardProps {
 } 
@@ -11,5 +11,5 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   return (
     <div>ProfileCard</div>
-  );
+  )
 }

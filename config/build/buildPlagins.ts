@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import webpack from 'webpack'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import CopyPlugin from 'copy-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import CopyPlugin from 'copy-webpack-plugin'
 
-import { type BuildOptionsT } from './types';
+import { type BuildOptionsT } from './types'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 function plaginsBuild ({ paths, isDev }: BuildOptionsT): webpack.WebpackPluginInstance[] {
 
@@ -26,7 +26,7 @@ function plaginsBuild ({ paths, isDev }: BuildOptionsT): webpack.WebpackPluginIn
   ]
 
   if (isDev) {
-    // plagins.push(new ReactRefreshWebpackPlugin({ overlay: false }))
+    plagins.push(new ReactRefreshWebpackPlugin({ overlay: true }))
     // plagins.push(new BundleAnalyzerPlugin())
   }
 
