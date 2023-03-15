@@ -5,6 +5,8 @@ import { type EnhancedStore } from '@reduxjs/toolkit';
 import { type reducerManager } from './reducerManager';
 import { type createReduxStore } from './reduxConfig';
 import { type ProfileSchema } from 'entitiess/Profile';
+import { type AxiosInstance } from 'axios';
+import { type NavigateOptions, type To } from 'react-router';
 
 export default interface StoreSchema {
   counter: CounterSchema,
@@ -14,10 +16,23 @@ export default interface StoreSchema {
   profile?: ProfileSchema
 }
 
+export type StoreSchemaKeys = keyof StoreSchema
+
 export interface StoreSchemaWithManager extends EnhancedStore<StoreSchema> {
   reducerManager?: reducerManager
 }
 
 export type AppDispath = ReturnType<typeof createReduxStore>['dispatch']
 
-export type StoreSchemaKeys = keyof StoreSchema
+export interface ThunkExtraArg {
+  api: AxiosInstance,
+  navigate: (to: To, options?: NavigateOptions) => void;
+}
+
+export interface ThunkConfig<T> {
+  extra: {
+    api: AxiosInstance,
+    navigate: (to: To, options?: NavigateOptions) => void;
+  }
+  rejectWithValue: T,
+}

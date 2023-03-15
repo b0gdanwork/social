@@ -8,8 +8,14 @@ import {
 } from '@reduxjs/toolkit';
 
 import { createReducerManager } from './reducerManager';
+import { $api } from 'shared/api/api';
+import { type NavigateOptions, type To } from 'react-router';
 
-export function createReduxStore (initialState?: StoreSchema) {
+interface Options { 
+  navigate: (to: To, options?: NavigateOptions) => void;
+}
+
+export function createReduxStore (initialState?: StoreSchema, options?: Options) {
   
   const rootResucer: ReducersMapObject<StoreSchema> = {
     user: userReducer,
@@ -18,10 +24,19 @@ export function createReduxStore (initialState?: StoreSchema) {
 
   const reducerManager = createReducerManager(rootResucer)
 
-  const storeRedux = configureStore<StoreSchema>({
+  const storeRedux = configureStore({
     reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
-    preloadedState: initialState
+    preloadedState: initialState,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: {
+            api: $api,
+            navigate: options.navigate
+          }
+        }
+      })
   })
 
   // @ts-expect-error

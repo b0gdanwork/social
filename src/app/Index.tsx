@@ -15,8 +15,8 @@ const Index = () => {
   
   return (
 
-    <StoreProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <StoreProvider>
         <ErrorBoundary>
           <ThemeProvider>
             <Suspense fallback={<Loader />}>
@@ -24,8 +24,8 @@ const Index = () => {
             </Suspense>
           </ThemeProvider>
         </ErrorBoundary>
-      </BrowserRouter>
-    </StoreProvider>
+      </StoreProvider>
+    </BrowserRouter>
 
   );
 };
