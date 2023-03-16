@@ -15,6 +15,5 @@ const Template: ComponentStory<typeof AppLink> = (args) => {
 
 export const Primary = Template.bind({})
 Primary.args = {
-  label: 'AppLink',
   children: 'AppLink'
 }

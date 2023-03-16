@@ -20,10 +20,10 @@ const DynamicModuleLoader: FC<Props> = (props) => {
   const store = useStore() as StoreSchemaWithManager
 
   useEffect(() => {
-    store.reducerManager.add(reducerKey, reducer)
+    store.reducerManager?.add(reducerKey, reducer)
   
     return () => {
-      store.reducerManager.remove(reducerKey)
+      store.reducerManager?.remove(reducerKey)
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

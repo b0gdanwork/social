@@ -16,5 +16,4 @@ const Template: ComponentStory<typeof Navbar> = (args) => {
 
 export const Primary = Template.bind({})
 Primary.args = {
-  label: 'Navbar'
 }

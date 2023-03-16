@@ -15,7 +15,7 @@ const Portal = (props: PoratalProps) => {
     children
   } = props
   
-  return ReactDOM.createPortal(children, container)
+  return ReactDOM.createPortal(children, container as DocumentFragment)
 }
 
 export default Portal

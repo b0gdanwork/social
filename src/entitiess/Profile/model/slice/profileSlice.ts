@@ -1,17 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { type ProfileSchema } from '../types/profileSchema'
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData'
+import { Country } from 'shared/const/common'
 
 const initialState: ProfileSchema = {
   data: {
-    age: undefined,
-    avatar: undefined,
-    city: undefined,
-    country: undefined,
-    first: undefined,
-    lastname: undefined,
-    username: undefined,
-    currency: undefined
+    age: '',
+    avatar: '',
+    city: '',
+    country: null,
+    first: '',
+    lastname: '',
+    username: '',
+    currency: null
   },
   error: undefined,
   isLoading: false,

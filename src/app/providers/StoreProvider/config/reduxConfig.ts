@@ -4,7 +4,8 @@ import { counterReducer } from 'entitiess/Counter'
 import { userReducer } from 'entitiess/User'
 
 import {
-  configureStore, type ReducersMapObject
+  type CombinedState,
+  configureStore, type Reducer, type ReducersMapObject
 } from '@reduxjs/toolkit'
 
 import { createReducerManager } from './reducerManager'
@@ -25,7 +26,7 @@ export function createReduxStore (initialState?: StoreSchema, options?: Options)
   const reducerManager = createReducerManager(rootResucer)
 
   const storeRedux = configureStore({
-    reducer: reducerManager.reduce,
+    reducer: reducerManager.reduce as Reducer<CombinedState<StoreSchema>>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) =>
@@ -33,7 +34,7 @@ export function createReduxStore (initialState?: StoreSchema, options?: Options)
         thunk: {
           extraArgument: {
             api: $api,
-            navigate: options.navigate
+            navigate: options?.navigate
           }
         }
       })
