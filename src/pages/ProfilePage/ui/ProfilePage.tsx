@@ -7,6 +7,7 @@ import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader'
 
 import s from './ProfilePage.module.scss'
+import { Avatar } from 'shared/ui'
 
 export default function ProfilePage () {
 
@@ -47,6 +48,7 @@ export default function ProfilePage () {
       <div className={s.page}>
         <ProfilePageHeader readOnly={readonly as boolean} offReadonly={offReadonly} changeSave={changeSave} changeReset={changeReset}/>
         <div className={s.card}>
+          <Avatar src={data?.avatar} width={200} height={200}/>
           <ProfileCard data={data} error={error} isLoading={isLoading} createFunChange={createFunChange} readonly={!!readonly}/>
         </div>
       </div>
