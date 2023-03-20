@@ -5,5 +5,6 @@ import { type ProfileSchema, type ProfileT } from './model/types/profileSchema'
 import { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading'
 import { getProfileData } from './model/selectors/getProfileData/getProfileData'
 import { ProfileCard } from './ui/ProfileCard'
+import { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly'
 
-export { ProfileCard, profileActions, profileReducer, type ProfileSchema, type ProfileT, fetchProfileData, getProfileData, getProfileError, getProfileIsLoading }
+export { ProfileCard, profileActions, profileReducer, type ProfileSchema, type ProfileT, fetchProfileData, getProfileData, getProfileError, getProfileIsLoading, getProfileReadonly }

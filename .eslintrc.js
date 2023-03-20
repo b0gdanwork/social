@@ -54,7 +54,7 @@ module.exports = {
     '@typescript-eslint/consistent-type-assertions': 'off',
     '@typescript-eslint/object-curly-spacing': 'warn',
     'react-hooks/rules-of-hooks': 'error', 
-    'react-hooks/exhaustive-deps': 'error', 
+    'react-hooks/exhaustive-deps': 'warn', 
     'i18next/no-literal-string': 'warn',
     '@typescript-eslint/no-dynamic-delete': 'off',
     '@typescript-eslint/no-floating-promises': 'off'

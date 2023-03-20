@@ -13,6 +13,7 @@ export interface ProfileT {
 
 export interface ProfileSchema {
   data: ProfileT;
+  oldData: ProfileT | null;
   error: string | undefined;
   readonly: boolean;
   isLoading: boolean;
