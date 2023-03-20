@@ -8,6 +8,7 @@ import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader'
 
 import s from './ProfilePage.module.scss'
 import { Avatar } from 'shared/ui'
+import { updateProfileData } from '../../../entitiess/Profile/model/services/updateProfileData/updateProfileData'
 
 export default function ProfilePage () {
 
@@ -33,13 +34,11 @@ export default function ProfilePage () {
   }, [dispatch])
   
   const changeSave = useCallback(() => {
-    // dispatch(profileActions.)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch])
+    if (!data) return
+    dispatch(updateProfileData(data))
+  }, [dispatch, data])
 
   const changeReset = useCallback(() => {
-    console.log('offReadonly')
-
     dispatch(profileActions.resetData())
   }, [dispatch])
 
