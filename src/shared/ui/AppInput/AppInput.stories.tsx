@@ -11,6 +11,19 @@ const Template: ComponentStory<typeof AppInput> = (args) => <AppInput {...args} 
 
 export const Primary = Template.bind({})
 Primary.args = {
-  label: 'AppInput',
+  label: 'label',
   value: 'AppInput'
+}
+
+export const Empty = Template.bind({})
+Empty.args = {
+  label: 'label',
+  value: ''
+}
+
+export const Readonly = Template.bind({})
+Readonly.args = {
+  label: 'label',
+  value: 'AppInput',
+  readonly: true
 }
