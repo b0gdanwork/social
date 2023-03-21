@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "start": "webpack serve --env port=3000 --env mode=development  --history-api-fallback",
-    "start:dev": "concurrently \"npm run start\" \"npm run start:dev:server\"",
     "start:dev:server": "node ./json-server/index.js",
     "build:prod": "webpack --env mode=production",
+    "start:dev": "concurrently -n front,back \"npm run start\" \"npm run start:dev:server\"", 
     "build:dev": "webpack serve --env port=3000 --env mode=production",
     "lint:ts:test": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
