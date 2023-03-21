@@ -27,7 +27,7 @@
   ],
   "profile": {
     "first": "first",
-    "lastname": "string",
+    "lastname": "stringf",
     "age": "22",
     "currency": "RUB",
     "country": "Ukraine",
