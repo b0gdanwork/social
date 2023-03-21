@@ -50,11 +50,11 @@ export default function AppSelect (props: PropsAppSelect) {
 
   if (readOnly) {
     return (
-      <div className={classNames(s.readonly)}>
+      <div className={classNames(s.readonly, {}, [])}>
         <div className={s.readonlyLabel}>
           {label}
         </div>
-        <div className={s.readonlyValue}>
+        <div className={classNames(s.readonlyValue, {}, [])}>
           {value}
         </div>
       </div>

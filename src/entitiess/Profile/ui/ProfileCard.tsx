@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 
 import s from './ProfileCard.module.scss'
 import { CountrySelect } from 'entitiess/Country'
-import { type ActionMeta, type SingleValue } from 'react-select'
+import { CurrencySelect } from 'entitiess/Currency'
 
 type ProfileSchemaForProps = Partial<Omit<ProfileSchema, 'data'>>
 
@@ -71,6 +71,15 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return <CountrySelect value={data?.country || undefined} onChange={newFunc} label={'country'} readOnly={readonly}/>
   }, [createFunChange, data?.country, readonly])
 
+  const renderCurrency = useMemo(() => {
+    const newFunc = (newValue: string | null) => {
+      if (!newValue) return null
+      createFunChange('currency')(newValue)
+    }
+
+    return <CurrencySelect value={data?.currency || undefined} onChange={newFunc} label={'currency'} readOnly={readonly}/>
+  }, [createFunChange, data?.currency, readonly])
+
   if (error) {
     return <>{error}</>
   }
@@ -83,6 +92,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
       {renderUsername}
       {renderAvatar}
       {renderCountry}
+      {renderCurrency}
     </Form>
   )
 }
