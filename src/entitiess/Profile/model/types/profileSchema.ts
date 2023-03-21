@@ -18,4 +18,11 @@ export interface ProfileSchema {
   error: string | undefined;
   readonly: boolean;
   isLoading: boolean;
+  errorsValidate?: ErrorsValidateProfile[]
+}
+
+export enum ErrorsValidateProfile {
+  NO_DATA = 'NO_DATA',
+  ERROR_USER_DATA = 'ERROR_USER_DATA',
+  ERROR_AGE = 'ERROR_AGE',
 }

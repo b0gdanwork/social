@@ -5,12 +5,14 @@ import { useMemo } from 'react'
 import s from './ProfileCard.module.scss'
 import { CountrySelect } from 'entitiess/Country'
 import { CurrencySelect } from 'entitiess/Currency'
+import { type ErrorsValidateProfile } from '../model/types/profileSchema'
 
 type ProfileSchemaForProps = Partial<Omit<ProfileSchema, 'data'>>
 
 interface ProfileCardProps extends ProfileSchemaForProps {
   data: ProfileT | undefined
   readonly: boolean
+  validateErrors?: ErrorsValidateProfile[]
   createFunChange: (key: keyof ProfileT) => (value: string) => void 
 } 
 
@@ -21,6 +23,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     error,
     readonly,
     isLoading,
+    validateErrors,
     createFunChange
   } = props 
 
@@ -62,6 +65,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return renderInput(data?.avatar, func, 'avatar')
   }, [createFunChange, data?.avatar, readonly])
 
+  const renderAge = useMemo(() => {
+    const func = createFunChange('age')
+    return renderInput(data?.age, func, 'age')
+  }, [createFunChange, data?.age, readonly])
+
   const renderCountry = useMemo(() => {
     const newFunc = (newValue: string | null) => {
       if (!newValue) return null
@@ -85,9 +93,10 @@ export const ProfileCard = (props: ProfileCardProps) => {
   }
   
   return (
-    <Form error={error} isLoading={isLoading} className={s.profile}>
+    <Form error={validateErrors} isLoading={isLoading} className={s.profile}>
       {renderFirstname}
       {renderLastname}
+      {renderAge}
       {renderCity}
       {renderUsername}
       {renderAvatar}

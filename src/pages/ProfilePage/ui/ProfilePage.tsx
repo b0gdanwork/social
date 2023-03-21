@@ -9,6 +9,7 @@ import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader'
 import s from './ProfilePage.module.scss'
 import { Avatar } from 'shared/ui'
 import { updateProfileData } from '../../../entitiess/Profile/model/services/updateProfileData/updateProfileData'
+import { getProfileValidateErrors } from '../../../entitiess/Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 
 export default function ProfilePage () {
 
@@ -18,6 +19,7 @@ export default function ProfilePage () {
   const error = useSelector(getProfileError) 
   const readonly = useSelector(getProfileReadonly)
   const isLoading = useSelector(getProfileIsLoading)
+  const validateErrors = useSelector(getProfileValidateErrors)
 
   useEffect(() => {
     dispatch(fetchProfileData())
@@ -48,7 +50,7 @@ export default function ProfilePage () {
         <ProfilePageHeader readOnly={readonly as boolean} offReadonly={offReadonly} changeSave={changeSave} changeReset={changeReset}/>
         <div className={s.card}>
           <Avatar src={data?.avatar} width={200} height={200}/>
-          <ProfileCard data={data} error={error} isLoading={isLoading} createFunChange={createFunChange} readonly={!!readonly}/>
+          <ProfileCard data={data} error={error} isLoading={isLoading} validateErrors={validateErrors} createFunChange={createFunChange} readonly={!!readonly}/>
         </div>
       </div>
     </DynamicModuleLoader>
