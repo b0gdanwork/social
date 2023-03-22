@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react'
+import { useMemo, type ReactNode } from 'react'
 import { Provider } from 'react-redux'
 import { useNavigate } from 'react-router'
 
@@ -19,7 +19,7 @@ const StoreProvider = ({ children, initialState }: PropsT) => {
     navigate
   }
   
-  const store = createReduxStore(initialState, options)
+  const store = useMemo(() => createReduxStore(initialState, options as any), [])
 
   return (
     <Provider store={store}>

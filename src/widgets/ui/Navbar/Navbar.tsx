@@ -1,11 +1,11 @@
 import { userActions } from 'entitiess/User'
 import { getUser } from 'entitiess/User/model/selectors/getUser/getUser'
 import { LoginModal } from 'features/AuthByUsername'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import Logo from 'shared/assets/icons/men.svg'
-import { PathsAppT } from 'shared/config/routes/routes'
+import AppRoutesList, { PathsAppT } from 'shared/config/routes/routes'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
 import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
 import { AppButton, AppLink } from 'shared/ui'
@@ -15,12 +15,6 @@ import s from './Navbar.module.scss'
 
 interface NavbarProps {
   className?: string
-}
-
-const Routes: Record<PathsAppT, string> = {
-  [PathsAppT.MAIN]: 'Главная страница',
-  [PathsAppT.ABOUT]: 'О компании',
-  [PathsAppT.PROFILE]: 'Профиль'
 }
 
 const Navbar = (props: NavbarProps) => {
@@ -53,15 +47,20 @@ const Navbar = (props: NavbarProps) => {
     setIsOpenAuthModal(false)
   }, [setIsOpenAuthModal])
 
+  const renderLinks = useMemo(() => {
+    return AppRoutesList.map((key) => {
+      if (!key.path || !key.name || (!user && key.authOnly)) return <></>
+      return <AppLink key={key.path} className={s.link} to={key.path}>{t(key.name)}</AppLink>
+    })
+  }, [t, user])
+
   return (
     <div className={classNames(s.navbar, {}, [className])}>
       <div className={s.logo}>
         <img src={Logo} alt="Logo" />
       </div>
       <div className={s.links}>
-        {Object.entries(Routes).map((key) => {
-          return <AppLink key={key[0]} className={s.link} to={key[0]}>{t(key[1])}</AppLink>
-        })}
+        {renderLinks}
       </div>
       <div className={s.right}>
         {user

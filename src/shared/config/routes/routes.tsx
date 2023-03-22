@@ -2,7 +2,7 @@ import { AboutPage } from 'pages/AboutPage'
 import { MainPage } from 'pages/MainPage'
 import NotFoundPage from 'pages/NotFoundPage/ui/NotFoundPage'
 import { ProfilePage } from 'pages/ProfilePage'
-import { type RouteObject } from 'react-router'
+import { type RouteProps } from 'react-router'
 
 export enum PathsAppT {
   MAIN = '/',
@@ -10,16 +10,26 @@ export enum PathsAppT {
   PROFILE = '/profile'
 }
 
-const AppRoutesList: RouteObject[] = [
+type CustomRouteObject = RouteProps & {
+  name?: string 
+  path?: string
+  authOnly?: boolean
+}
+
+const AppRoutesList: CustomRouteObject[] = [
   {
+    name: 'Главная страница',
     path: PathsAppT.MAIN,
     element: <MainPage />
   },
   {
+    name: 'О компании',
     path: PathsAppT.ABOUT,
     element: <AboutPage />
   },
   {
+    name: 'Профиль',
+    authOnly: true,
     path: PathsAppT.PROFILE,
     element: <ProfilePage />
   },
@@ -27,6 +37,6 @@ const AppRoutesList: RouteObject[] = [
     path: '*',
     element: <NotFoundPage />
   }
-]
+] 
 
-export default AppRoutesList
+export default AppRoutesList 
