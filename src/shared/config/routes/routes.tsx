@@ -1,20 +1,21 @@
 import { RequareAuth } from 'app/providers/StoreProvider'
 import { AboutPage } from 'pages/AboutPage'
+import { ArticleDetailsPage } from 'pages/ArticleDetailsPage'
 import { ArticlePage } from 'pages/ArticlePage'
 import { MainPage } from 'pages/MainPage'
 import NotFoundPage from 'pages/NotFoundPage/ui/NotFoundPage'
 import { ProfilePage } from 'pages/ProfilePage'
-import { type RouteProps } from 'react-router'
+import { type RouteObject, type RouteProps } from 'react-router'
 
 export enum PathsAppT {
   MAIN = '/',
   ABOUT = '/about',
   PROFILE = '/profile',
   ARTICLE = '/article',
-  ARTICLE_DETAILS = '/article_details'
+  ARTICLE_DETAILS = '/article'
 }
 
-type CustomRouteObject = RouteProps & {
+type CustomRouteObject = RouteObject & {
   name?: string 
   path?: string
   authOnly?: boolean
@@ -41,12 +42,11 @@ const AppRoutesList: CustomRouteObject[] = [
     name: 'Cтатьи',
     authOnly: true,
     path: PathsAppT.ARTICLE,
-    element: <RequareAuth><ArticlePage /></RequareAuth>
-  },
-  {
-    authOnly: true,
-    path: PathsAppT.ARTICLE_DETAILS,
-    element: <RequareAuth><ArticlePage /></RequareAuth> 
+    element: <RequareAuth><ArticlePage /></RequareAuth>,
+    children: [
+      { index: true, element: <RequareAuth><ArticleDetailsPage /></RequareAuth> },
+      { path: ':id', element: <RequareAuth><ArticleDetailsPage /></RequareAuth> }
+    ]
   },
   {
     path: '*',

@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { memo, useMemo } from 'react'
 import Select, { type SingleValue, type ActionMeta, type GroupBase, type OptionsOrGroups } from 'react-select'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
 
@@ -17,7 +17,7 @@ export interface PropsAppSelect {
   
 }
 
-export default function AppSelect (props: PropsAppSelect) {
+function AppSelect (props: PropsAppSelect) {
 
   const {
     label,
@@ -74,3 +74,5 @@ export default function AppSelect (props: PropsAppSelect) {
       />
   )
 }
+
+export default memo(AppSelect)

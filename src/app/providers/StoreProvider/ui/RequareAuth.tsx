@@ -17,6 +17,7 @@ const RequareAuth = ({ children }: PropsT) => {
   const user = useSelector(getUser)
 
   if (!user) {
+    console.log('Navigate')
     return <Navigate to={PathsAppT.MAIN}/>
   }
   

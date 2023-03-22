@@ -15,7 +15,8 @@ export function WebpackBuild (options: BuildOptionsT) {
       filename: '[name][contenthash].js',
       assetModuleFilename: 'assets/[hash][ext][query]',
       path: paths.build,
-      clean: true
+      clean: true,
+      publicPath: '/'
     },
     module: {
       rules: buildRules(options)

@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
 
 type MobileStatuses = 'm-5' | 'm-10' | 'm-15' | 'm-20' | 'm-25' | 'm-30' | 'm-35' | 'm-40' | 'm-45' | 'm-50'
@@ -8,8 +9,10 @@ interface Props {
   sectopSize?: DesctopStatuses
 }
 
-export default function Divider ({ mobileSize, sectopSize }: Props) {
+function Divider ({ mobileSize, sectopSize }: Props) {
   return (
     <div className={classNames('divider', { mobileSize: !!mobileSize, sectopSize: !!sectopSize })}></div>
   )
 }
+
+export default memo(Divider)

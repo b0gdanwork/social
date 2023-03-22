@@ -1,8 +1,9 @@
+import { memo } from 'react'
 import s from './Loader.module.scss'
 
 interface PropsLoader {}
 
-export default function Loader ({ }: PropsLoader) {
+function Loader ({ }: PropsLoader) {
   return (
     <div>
       <div className={s.spiner}>
@@ -19,3 +20,5 @@ export default function Loader ({ }: PropsLoader) {
     </div>
   )
 }
+
+export default memo(Loader)

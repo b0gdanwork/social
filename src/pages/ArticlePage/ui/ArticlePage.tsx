@@ -4,6 +4,8 @@ export default function ArticlePage () {
   const { t } = useTranslation()
 
   return (
-    <div>Статьи</div>
+    <>
+      <div>Статьи</div>
+    </>
   )
 }
