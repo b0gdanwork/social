@@ -7,6 +7,7 @@ import { type createReduxStore } from './reduxConfig'
 import { type ProfileSchema } from 'entitiess/Profile'
 import { type AxiosInstance } from 'axios'
 import { type NavigateOptions, type To } from 'react-router'
+import { type ArticleDetailsSchema } from 'entitiess/Article/model/types/articleSchema'
 
 export default interface StoreSchema {
   counter: CounterSchema,
@@ -14,6 +15,7 @@ export default interface StoreSchema {
 
   loginForm?: LoginSchema,
   profile?: ProfileSchema
+  articleDetails?: ArticleDetailsSchema
 }
 
 export type StoreSchemaKeys = keyof StoreSchema
@@ -30,8 +32,8 @@ export interface ThunkExtraArg {
 }
 
 export interface ThunkConfig<T> {
+  state: StoreSchema,
   rejectWithValue: T,
   extra: ThunkExtraArg,
   getState: () => StoreSchema,
-  state: StoreSchema
 }
