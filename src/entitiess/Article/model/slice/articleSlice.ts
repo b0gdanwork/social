@@ -3,7 +3,7 @@ import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById'
 import { type ArticleDetailsSchema } from '../types/articleSchema'
 
 const initialState: ArticleDetailsSchema = {
-  data: null,
+  data: undefined,
   readonly: true,
   error: undefined,
   isLoading: false
@@ -17,7 +17,7 @@ export const articleDetailsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchArticleById.pending, (state) => {
-      state.data = null
+      state.data = undefined
       state.error = undefined
       state.isLoading = true
     })
@@ -26,7 +26,7 @@ export const articleDetailsSlice = createSlice({
       state.data = action.payload
     })
     builder.addCase(fetchArticleById.rejected, (state, action) => {
-      state.data = null
+      state.data = undefined
       state.error = action.payload as string
       state.isLoading = true
     })

@@ -7,7 +7,7 @@ $h4Size: 20px;
 $h5Size: 18px;
 $h6Size: 16px;
 
-$hWeight: 300;
+$hWeight: 400;
 $hWeightThin: 300;
 
 .h1, h1,
@@ -17,7 +17,8 @@ $hWeightThin: 300;
 .h5, h5,
 .h6, h6 {
   margin-top: 0;
-  margin-bottom: 1rem;
+
+  // margin-bottom: 1rem;
   letter-spacing: 0;
   font-family: var(--font-family);
   font-weight: $hWeight;

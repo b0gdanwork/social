@@ -1,13 +1,23 @@
+import { memo, useEffect, useMemo } from 'react'
+import { useSelector } from 'react-redux'
+
+import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
+import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+
 import { fetchArticleById } from 'entitiess/Article/model/services/fetchArticleById/fetchArticleById'
 import { articleDetailsReducer } from 'entitiess/Article/model/slice/articleSlice'
-import { memo, useEffect } from 'react'
-import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
-import { useSelector } from 'react-redux'
+
 import { getArticleDetailError } from '../../model/selectors/getArticleDetailError/getArticleDetailError'
 import { getArticleDetailIsLoading } from '../../model/selectors/getArticleDetailIsLoading/getArticleDetailIsLoading'
 import { getArticleDetailData } from '../../model/selectors/getArticleDetailData/getArticleDetailData'
-import { Divider, Loader, Skeleton } from 'shared/ui'
+
+import ArticleTitle from '../ArticleTitle/ArticleTitle'
+import { ARTICLE_TYPES } from 'entitiess/Article/model/types/articleSchema'
+import ArticleCodeBlockComponent from '../blocks/ArticleCodeBlockComponent/ArticleCodeBlockComponent'
+import ArticleImageBlockComponent from '../blocks/ArticleImageBlockComponent/ArticleImageBlockComponent'
+import ArticleTextBlockComponent from '../blocks/ArticleTextBlockComponent/ArticleTextBlockComponent'
+
+import s from './ArticleDetails.module.scss'
 
 interface Props {
   id?: string | number 
@@ -15,56 +25,53 @@ interface Props {
 
 function ArticleDetails ({ id }: Props) {
 
-  console.log('ArticleDetails ', id)
-
   const dispatch = useAppDispath()
   
   const data = useSelector(getArticleDetailData)
-  const error = undefined
-  // const error = useSelector(getArticleDetailError)
-  // const isLoading = useSelector(getArticleDetailIsLoading)
-  const isLoading = true
+  const error = useSelector(getArticleDetailError)
+  const isLoading = useSelector(getArticleDetailIsLoading)
 
   useEffect(() => {
     if (!id) return 
     dispatch(fetchArticleById(`${id}`))
   }, [id])
 
-  if (!id) {
-    return <>Not found</>
-  }
+  const renderBlocks = useMemo(() => {
+    if (!data) return ''
+    
+    const blocks = data.blocks.map((block) => {
+      switch (block.type) {
+        
+        case ARTICLE_TYPES.CODE:
+          return <ArticleCodeBlockComponent data={block}/>
 
-  let content
+        case ARTICLE_TYPES.IMAGE:
+          return <ArticleImageBlockComponent data={block}/>
+          
+        case ARTICLE_TYPES.TEXT:
+          return <ArticleTextBlockComponent data={block}/>
+      
+        default:
+          return ''
+      }
+    })
+
+    return <div className={s.blocks}>{blocks}</div>
+  }, [data])
   
+  let content
+
   if (error) {
     content = <div>error</div>
   } else if (isLoading) {
     content = (
-      <div>
-        <Skeleton  
-          width={80}
-          height={80}
-          border={50}
-        />
-        <Divider mobileSize='m-20' desctopSize='d-30'/>
-        <Skeleton  
-          width={200}
-          height={60}
-        />
-        <Divider mobileSize='m-20' desctopSize='d-10'/>
-        <Skeleton  
-          width={400}
-          height={60}
-        />
-        <Divider mobileSize='m-20' desctopSize='d-10'/>
-        <Skeleton  
-          width={600}
-          height={80}
-        />
-      </div>
+      <ArticleTitle article={data} isLoading={true}/>
     )
-  } else {
-    content = <div>ArticleDetails</div>
+  } else if (data) {
+    content = <div>
+      <ArticleTitle article={data}/>
+      {renderBlocks}
+    </div>
   }
 
   return (
@@ -74,4 +81,4 @@ function ArticleDetails ({ id }: Props) {
   )
 }
 
-export default memo(ArticleDetails)
+export default memo(ArticleDetails) 

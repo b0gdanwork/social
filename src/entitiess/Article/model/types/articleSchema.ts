@@ -1,4 +1,4 @@
-enum ARTICLE_TYPES {
+export enum ARTICLE_TYPES {
   TEXT = 'TEXT',
   CODE = 'CODE',
   IMAGE = 'IMAGE'
@@ -24,19 +24,21 @@ export interface ArticleCodeT {
   code: string
 }
 
+export type ArticleBlocks = ArticleCodeT | ArticleImageT | ArticleTextT
+
 export interface ArticleT { 
   id: 1,
   title: string,
   subtitle: string,
-  img: string | null,
+  img: string | undefined,
   views: string,
   createdAt: number,
   type: string[],
-  blocks: ArticleCodeT | ArticleImageT | ArticleTextT
+  blocks: ArticleBlocks[]
 }
 
 export interface ArticleDetailsSchema {
-  data: ArticleT | null;
+  data: ArticleT | undefined;
   error: string | undefined;
   readonly: boolean;
   isLoading: boolean;

@@ -3,14 +3,16 @@
   flex-direction: column;
   padding: 10px 15px;
   width: 55px;
+  min-width: 55px;
   height: calc(100vh - var(--navbar-height));
   background: var(--sidebar-bg);
   color: var(--sidebar-color);
-  transition: .3s width;
+  transition: .3s width, .3s min-width;
   overflow: hidden;
 
   &.open {
     width: 300px;
+    min-width: 300px;
   }
 }
 
