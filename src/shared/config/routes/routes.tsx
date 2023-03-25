@@ -5,7 +5,7 @@ import { ArticlePage } from 'pages/ArticlePage'
 import { MainPage } from 'pages/MainPage'
 import NotFoundPage from 'pages/NotFoundPage/ui/NotFoundPage'
 import { ProfilePage } from 'pages/ProfilePage'
-import { type RouteObject, type RouteProps } from 'react-router'
+import { type RouteObject } from 'react-router'
 
 export enum PathsAppT {
   MAIN = '/',
@@ -15,7 +15,7 @@ export enum PathsAppT {
   ARTICLE_DETAILS = '/article'
 }
 
-type CustomRouteObject = RouteObject & {
+export type CustomRouteObject = RouteObject & {
   name?: string 
   path?: string
   authOnly?: boolean
@@ -42,10 +42,15 @@ const AppRoutesList: CustomRouteObject[] = [
     name: 'Cтатьи',
     authOnly: true,
     path: PathsAppT.ARTICLE,
-    element: <RequareAuth><ArticlePage /></RequareAuth>,
     children: [
-      { index: true, element: <RequareAuth><ArticleDetailsPage /></RequareAuth> },
-      { path: ':id', element: <RequareAuth><ArticleDetailsPage /></RequareAuth> }
+      {
+        index: true,
+        element: <RequareAuth><ArticlePage /></RequareAuth>
+      },
+      {
+        path: '/article/:id', 
+        element: <RequareAuth><ArticleDetailsPage /></RequareAuth>
+      }
     ]
   },
   {

@@ -6,7 +6,7 @@ import Divider from './Divider'
 describe('test AppButton', () => {
 
   test('', async () => {
-    const { container } = render(<Divider />)
+    const { container } = render(<Divider desctopSize='d-10' mobileSize='m-10'/>)
 
     expect(container.getElementsByClassName('divider')[0]).toBeInTheDocument()
   })

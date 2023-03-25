@@ -48,9 +48,10 @@ const Navbar = (props: NavbarProps) => {
   }, [setIsOpenAuthModal])
 
   const renderLinks = useMemo(() => {
-    return AppRoutesList.map((key) => {
+    return AppRoutesList.map((key, ind) => {
       if (!key.path || !key.name || (!user && key.authOnly)) return <></>
-      return <AppLink key={key.path} className={s.link} to={key.path}>{t(key.name)}</AppLink>
+      console.log('key.path', ind, key)
+      return <AppLink key={key.path + key.name} className={s.link} to={key.path}>{t(key.name)}</AppLink>
     })
   }, [t, user])
 

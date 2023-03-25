@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import { getArticleDetailError } from '../../model/selectors/getArticleDetailError/getArticleDetailError'
 import { getArticleDetailIsLoading } from '../../model/selectors/getArticleDetailIsLoading/getArticleDetailIsLoading'
 import { getArticleDetailData } from '../../model/selectors/getArticleDetailData/getArticleDetailData'
-import { Loader } from 'shared/ui'
+import { Divider, Loader, Skeleton } from 'shared/ui'
 
 interface Props {
   id?: string | number 
@@ -15,11 +15,15 @@ interface Props {
 
 function ArticleDetails ({ id }: Props) {
 
+  console.log('ArticleDetails ', id)
+
   const dispatch = useAppDispath()
   
   const data = useSelector(getArticleDetailData)
-  const error = useSelector(getArticleDetailError)
-  const isLoading = useSelector(getArticleDetailIsLoading)
+  const error = undefined
+  // const error = useSelector(getArticleDetailError)
+  // const isLoading = useSelector(getArticleDetailIsLoading)
+  const isLoading = true
 
   useEffect(() => {
     if (!id) return 
@@ -35,7 +39,30 @@ function ArticleDetails ({ id }: Props) {
   if (error) {
     content = <div>error</div>
   } else if (isLoading) {
-    content = <div><Loader/></div>
+    content = (
+      <div>
+        <Skeleton  
+          width={80}
+          height={80}
+          border={50}
+        />
+        <Divider mobileSize='m-20' desctopSize='d-30'/>
+        <Skeleton  
+          width={200}
+          height={60}
+        />
+        <Divider mobileSize='m-20' desctopSize='d-10'/>
+        <Skeleton  
+          width={400}
+          height={60}
+        />
+        <Divider mobileSize='m-20' desctopSize='d-10'/>
+        <Skeleton  
+          width={600}
+          height={80}
+        />
+      </div>
+    )
   } else {
     content = <div>ArticleDetails</div>
   }

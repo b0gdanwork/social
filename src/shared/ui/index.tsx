@@ -7,5 +7,6 @@ import Divider from './Divider/Divider'
 import Form from './Form/Form'
 import Loader from './Loader/Loader'
 import Modal from './Modal/Modal'
+import Skeleton from './Skeleton/Skeleton'
 
-export { AppLink, AppButton, Loader, AppInput, Form, Modal, Divider, Avatar, AppSelect }
+export { AppLink, AppButton, Loader, AppInput, Form, Modal, Divider, Avatar, AppSelect, Skeleton }

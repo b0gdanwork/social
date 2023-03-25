@@ -1,7 +1,8 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import path from 'path'
 import { type BuildOptionsT } from '../types'
 
-const styleRuleBuild = ({ isDev }: BuildOptionsT) => ({
+const styleRuleBuild = ({ isDev, paths }: BuildOptionsT) => ({
   test: /\.(sa|sc|c)ss$/,
   sideEffects: true,
   use: [

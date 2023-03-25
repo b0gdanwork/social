@@ -10,6 +10,7 @@ import s from './ProfilePage.module.scss'
 import { Avatar } from 'shared/ui'
 import { updateProfileData } from '../../../entitiess/Profile/model/services/updateProfileData/updateProfileData'
 import { getProfileValidateErrors } from '../../../entitiess/Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors'
+import { PageLayout } from 'pages/PageLayout'
 
 export default function ProfilePage () {
 
@@ -46,13 +47,13 @@ export default function ProfilePage () {
 
   return (
     <DynamicModuleLoader reducerKey='profile' reducer={profileReducer}>
-      <div className={s.page}>
+      <PageLayout>
         <ProfilePageHeader readOnly={readonly as boolean} offReadonly={offReadonly} changeSave={changeSave} changeReset={changeReset}/>
         <div className={s.card}>
           <Avatar src={data?.avatar} width={200} height={200}/>
           <ProfileCard data={data} error={error} isLoading={isLoading} validateErrors={validateErrors} createFunChange={createFunChange} readonly={!!readonly}/>
         </div>
-      </div>
+      </PageLayout>
     </DynamicModuleLoader>
   )
 }
