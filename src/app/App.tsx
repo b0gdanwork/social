@@ -1,5 +1,6 @@
 
 import './styles/index.scss'
+import 'rc-tooltip/assets/bootstrap.css'
 
 import { userActions } from 'entitiess/User'
 import { useEffect } from 'react'

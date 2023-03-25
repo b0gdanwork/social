@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev": "concurrently -n front,back \"npm run start\" \"npm run start:dev:server\" --kill-others", 
+    "dev": "concurrently -n front,back \"npm run start\" \"npm run start:dev:server\" --kill-others",
     "start": "webpack serve --env port=3000 --env mode=development ",
     "start:dev:server": "node ./json-server/index.js",
     "build:prod": "webpack --env mode=production",
@@ -29,6 +29,7 @@
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.1.1",
     "loki": "^0.31.0",
+    "rc-tooltip": "^6.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.5",
