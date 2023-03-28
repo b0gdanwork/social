@@ -1,5 +1,6 @@
 export interface UserT { 
   id: number,
+  avatar: string,
   username: string,
 }
 

@@ -89,13 +89,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://ic.pics.livejournal.com/iglokott/37190182/1358256/1358256_original.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://ic.pics.livejournal.com/iglokott/37190182/1358256/1358256_original.jpg"
     }
   ],
   "profile": {
