@@ -43,13 +43,13 @@ function ArticleDetails ({ id }: Props) {
       switch (block.type) {
         
         case ARTICLE_TYPES.CODE:
-          return <ArticleCodeBlockComponent data={block}/>
+          return <ArticleCodeBlockComponent data={block} key={block.id}/>
 
         case ARTICLE_TYPES.IMAGE:
-          return <ArticleImageBlockComponent data={block}/>
+          return <ArticleImageBlockComponent data={block} key={block.id}/>
           
         case ARTICLE_TYPES.TEXT:
-          return <ArticleTextBlockComponent data={block}/>
+          return <ArticleTextBlockComponent data={block} key={block.id}/>
       
         default:
           return ''

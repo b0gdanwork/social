@@ -50,7 +50,6 @@ const Navbar = (props: NavbarProps) => {
   const renderLinks = useMemo(() => {
     return AppRoutesList.map((key, ind) => {
       if (!key.path || !key.name || (!user && key.authOnly)) return <></>
-      console.log('key.path', ind, key)
       return <AppLink key={key.path + key.name} className={s.link} to={key.path}>{t(key.name)}</AppLink>
     })
   }, [t, user])

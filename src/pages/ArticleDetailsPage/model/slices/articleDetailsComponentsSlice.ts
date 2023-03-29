@@ -5,6 +5,7 @@ import {
 } from '@reduxjs/toolkit'
 import { type ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema'
 import { type StoreSchema } from 'app/providers/StoreProvider'
+import { featchCommentsByArrticleId } from '../services/featchCommentsByArrticleId'
 
 const commentsAdapter = createEntityAdapter<CommentT>({
   selectId: (comment) => comment.id
@@ -27,6 +28,22 @@ const articleDetailsCommentsSlice = createSlice({
     booksReceived (state, action) {
       commentsAdapter.setAll(state, action.payload.books)
     }
+  },
+  extraReducers: (builder) => {
+    builder.addCase(featchCommentsByArrticleId.pending, (state) => {
+      state.isLoading = true
+      state.error = undefined
+    })
+    builder.addCase(featchCommentsByArrticleId.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.error = undefined
+      commentsAdapter.setAll(state, action.payload)
+
+    })
+    builder.addCase(featchCommentsByArrticleId.rejected, (state, action) => {
+      state.isLoading = false
+      state.error = action.error.message
+    })    
   }
 })
 
