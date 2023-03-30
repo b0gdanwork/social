@@ -9,6 +9,7 @@ import { type AxiosInstance } from 'axios'
 import { type NavigateOptions, type To } from 'react-router'
 import { type ArticleDetailsSchema } from 'entitiess/Article/model/types/articleSchema'
 import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
+import { type AddCommentFormSchema } from 'features/addCommentForm'
 
 export default interface StoreSchema {
   counter: CounterSchema,
@@ -17,6 +18,7 @@ export default interface StoreSchema {
   loginForm?: LoginSchema,
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
+  addCommentForm?: AddCommentFormSchema
   articleDetailsComments?: ArticleDetailsCommentsSchema
 }
 
