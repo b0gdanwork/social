@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import { fetchProfileData, getProfileData, getProfileError, getProfileIsLoading, getProfileReadonly, profileActions, profileReducer, type ProfileT } from 'entitiess/Profile'
 import { ProfileCard } from 'entitiess/Profile'
 import { useCallback, useEffect } from 'react'
@@ -11,20 +12,28 @@ import { Avatar } from 'shared/ui'
 import { updateProfileData } from '../../../entitiess/Profile/model/services/updateProfileData/updateProfileData'
 import { getProfileValidateErrors } from '../../../entitiess/Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 import { PageLayout } from 'pages/PageLayout'
+import { useParams } from 'react-router'
+import { getUser } from 'entitiess/User/model/selectors/getUser/getUser'
 
 export default function ProfilePage () {
 
   const dispatch = useAppDispath()
 
+  const user = useSelector(getUser)
   const data = useSelector(getProfileData)
+  const { id } = useParams<{ id: string }>()
   const error = useSelector(getProfileError) 
   const readonly = useSelector(getProfileReadonly)
   const isLoading = useSelector(getProfileIsLoading)
+  const isEditingBlock = user && data && +user.id !== +data.id 
   const validateErrors = useSelector(getProfileValidateErrors)
 
+  const idProfile = id || user?.id || undefined
+
   useEffect(() => {
-    dispatch(fetchProfileData())
-  }, [dispatch])
+    if (!idProfile) return
+    dispatch(fetchProfileData(String(idProfile)))
+  }, [dispatch, idProfile])
 
   const createFunChange = useCallback((key: keyof ProfileT) => {
     return (value: string) => {
@@ -48,7 +57,7 @@ export default function ProfilePage () {
   return (
     <DynamicModuleLoader reducerKey='profile' reducer={profileReducer}>
       <PageLayout>
-        <ProfilePageHeader readOnly={readonly as boolean} offReadonly={offReadonly} changeSave={changeSave} changeReset={changeReset}/>
+        <ProfilePageHeader isEditingBlock={!!isEditingBlock} readOnly={!!readonly} offReadonly={offReadonly} changeSave={changeSave} changeReset={changeReset}/>
         <div className={s.card}>
           <Avatar src={data?.avatar} width={200} height={200}/>
           <ProfileCard data={data} error={error} isLoading={isLoading} validateErrors={validateErrors} createFunChange={createFunChange} readonly={!!readonly}/>

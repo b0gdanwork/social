@@ -120,14 +120,28 @@
       "avatar": "https://cs2.livemaster.ru/storage/3f/d1/b8020a152d3e02369b20a82e53uh--materialy-dlya-tvorchestva-avatarka.jpg"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://cs2.livemaster.ru/storage/3f/d1/b8020a152d3e02369b20a82e53uh--materialy-dlya-tvorchestva-avatarka.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "First",
+      "lastname": "Lastname",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://cs2.livemaster.ru/storage/3f/d1/b8020a152d3e02369b20a82e53uh--materialy-dlya-tvorchestva-avatarka.jpg"
+    },
+    {
+      "id": "2",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://cs2.livemaster.ru/storage/3f/d1/b8020a152d3e02369b20a82e53uh--materialy-dlya-tvorchestva-avatarka.jpg"
+    }
+  ]
 }

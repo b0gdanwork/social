@@ -7,6 +7,7 @@ import { AppButton } from 'shared/ui'
 import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
 
 interface ProfilePageHeaderProps {
+  isEditingBlock: boolean
   readOnly: boolean
   offReadonly: () => void
   changeSave: () => void
@@ -19,10 +20,16 @@ export default function ProfilePageHeader (props: ProfilePageHeaderProps) {
     readOnly,
     changeSave,
     offReadonly,
-    changeReset
+    changeReset,
+    isEditingBlock
   } = props
 
   const renderButtons = useMemo(() => {
+
+    if (isEditingBlock) {
+      return <></>
+    }
+
     if (readOnly) {
       return <AppButton theme={AppButtonTheme.PRIMARY} onClick={offReadonly}>Редактировать</AppButton>
     }

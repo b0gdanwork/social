@@ -1,5 +1,5 @@
 export interface UserT { 
-  id: number,
+  id: string,
   avatar: string,
   username: string,
 }

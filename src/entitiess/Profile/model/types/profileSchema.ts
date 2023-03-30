@@ -2,6 +2,7 @@ import { type Country } from 'entitiess/Country'
 import { type Currency } from 'entitiess/Currency'
 
 export interface ProfileT {
+  id: string;
   first: string;
   lastname: string;
   age: string,

@@ -2,7 +2,6 @@ import { ArticleDetails } from 'entitiess/Article'
 import { PageLayout } from 'pages/PageLayout'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router'
-import { CommentList } from 'entitiess/Comment'
 import { Divider } from 'shared/ui'
 import { useAppDispath } from '../../../shared/lib/hooks/useAppDispath/useAppDispath'
 import { useEffect } from 'react'
@@ -11,6 +10,7 @@ import { articleDetailsCommentsReducer, getArticleComments } from '../model/slic
 import { useSelector } from 'react-redux'
 import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { getCommentsArticleIsLoading } from '../model/selectors'
+import { CommentList } from 'entitiess/Comment'
 
 export default function ArticleDetailsPage () {
   const { t } = useTranslation()
@@ -31,7 +31,7 @@ export default function ArticleDetailsPage () {
         <ArticleDetails id={id}/>
         <Divider mobileSize='m-30' desctopSize='d-30'/>
         <h2>Комментарии</h2>
-        <CommentList 
+        <CommentList
           isLoading={isLoadingComments}
           comments={comments}
         />

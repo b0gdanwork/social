@@ -5,6 +5,7 @@ import { updateProfileData } from '../services/updateProfileData/updateProfileDa
 
 const initialState: ProfileSchema = {
   data: {
+    id: '',
     age: '',
     avatar: '',
     city: '',

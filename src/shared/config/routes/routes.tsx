@@ -36,7 +36,16 @@ const AppRoutesList: CustomRouteObject[] = [
     name: 'Профиль',
     authOnly: true,
     path: PathsAppT.PROFILE,
-    element: <RequareAuth><ProfilePage /></RequareAuth>
+    children: [
+      {
+        index: true,
+        element: <RequareAuth><ProfilePage /></RequareAuth>
+      },
+      {
+        path: PathsAppT.PROFILE + '/:id', 
+        element: <RequareAuth><ProfilePage /></RequareAuth>
+      }
+    ]
   },
   {
     name: 'Cтатьи',
