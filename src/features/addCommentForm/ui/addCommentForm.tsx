@@ -20,7 +20,7 @@ const AddCommentForm: FC = ({}: Props) => {
   }
 
   const sendFunc = useCallback(() => {
-
+    
   }, [])
 
   return (

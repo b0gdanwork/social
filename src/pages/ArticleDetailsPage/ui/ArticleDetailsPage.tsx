@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux'
 import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { getCommentsArticleIsLoading } from '../model/selectors'
 import { CommentList } from 'entitiess/Comment'
+import { AddCommentForm } from 'features/addCommentForm'
 
 export default function ArticleDetailsPage () {
   const { t } = useTranslation()
@@ -31,6 +32,7 @@ export default function ArticleDetailsPage () {
         <ArticleDetails id={id}/>
         <Divider mobileSize='m-30' desctopSize='d-30'/>
         <h2>Комментарии</h2>
+        <AddCommentForm />
         <CommentList
           isLoading={isLoadingComments}
           comments={comments}
