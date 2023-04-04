@@ -11,13 +11,9 @@ import { useSelector } from 'react-redux'
 import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { getCommentsArticleIsLoading } from '../model/selectors'
 import { CommentList } from 'entitiess/Comment'
-<<<<<<< HEAD
 import { addCommentForArticle, AddCommentForm } from 'features/addCommentForm'
 
 import s from './ArticleDetailsPage.module.scss'
-=======
-import { AddCommentForm } from 'features/addCommentForm'
->>>>>>> 8e395bd8a3e2c27fc100fb6177c98c3e30404331
 
 export default function ArticleDetailsPage () {
   const { t } = useTranslation()
