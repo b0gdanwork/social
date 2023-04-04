@@ -27,7 +27,7 @@ export interface ArticleCodeT {
 export type ArticleBlocks = ArticleCodeT | ArticleImageT | ArticleTextT
 
 export interface ArticleT { 
-  id: 1,
+  id: string,
   title: string,
   subtitle: string,
   img: string | undefined,

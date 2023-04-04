@@ -1,16 +1,19 @@
-import React, { type FC, useState, memo, useCallback } from 'react'
+import React, { memo, useCallback } from 'react'
 
 import s from './addCommentForm.module.scss'
-import { AppButton } from 'shared/ui'
+import { AppButton, AppTextarea } from 'shared/ui'
 import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { addCommentFormActions, addCommentFormReducer } from '../model/slices/addCommentFormSlice'
 import { useSelector } from 'react-redux'
 import { getAddCommentFormText } from '../model/selectors/addCommentFormSelectors'
 import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
+import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
 
-interface Props {}
+export interface AddCommentFormProps {
+  onSendComment: (text: string) => void
+}
 
-const AddCommentForm: FC = ({}: Props) => {
+const AddCommentForm = ({ onSendComment }: AddCommentFormProps) => {
 
   const dispath = useAppDispath()
   const valueStateText = useSelector(getAddCommentFormText)
@@ -20,16 +23,15 @@ const AddCommentForm: FC = ({}: Props) => {
   }
 
   const sendFunc = useCallback(() => {
-
-  }, [])
+    dispath(addCommentFormActions.setText(''))
+    onSendComment(valueStateText || '')
+  }, [dispath, onSendComment, valueStateText])
 
   return (
     <DynamicModuleLoader reducerKey='addCommentForm' reducer={addCommentFormReducer}>
       <div className={s.wrapper}>
-        <textarea onChange={changeFunc}>
-          {valueStateText}
-        </textarea>
-        <AppButton onClick={sendFunc}>Добавить</AppButton>
+        <AppTextarea onChange={changeFunc} value={valueStateText} className={s.textarea}/>
+        <AppButton onClick={sendFunc} theme={AppButtonTheme.PRIMARY}>Добавить</AppButton>
       </div>
     </DynamicModuleLoader>
   )
