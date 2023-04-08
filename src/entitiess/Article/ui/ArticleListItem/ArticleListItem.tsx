@@ -6,6 +6,8 @@ import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
 import { FaRegEye } from 'react-icons/fa'
 
 import s from './ArticleListItem.module.scss'
+import { useHover } from 'shared/lib/hooks/useHover/useHover'
+import { classNames } from 'shared/lib/helpers/classNames/classNames'
 
 interface ArticleListItemProps {
   article: ArticleT
@@ -14,6 +16,8 @@ interface ArticleListItemProps {
 
 export default function ArticleListItem ({ article, view }: ArticleListItemProps) {
 
+  const [isHover, bindHover] = useHover()
+  console.log('isHover', isHover)
   const renderTags = () => {
     if (article.type?.length) {
       return (<div className={s.articleTitleTags}>
@@ -25,7 +29,7 @@ export default function ArticleListItem ({ article, view }: ArticleListItemProps
   }
 
   if (view === 'grid') {
-    return (<div className={s.article}>
+    return (<div className={classNames(s.article, { [s.articleHover]: isHover })} {...bindHover}>
       <div className={s.articleGridImg}>
         <img src={article.img} alt="" />
         <data>{article.createdAt}</data>
@@ -44,12 +48,12 @@ export default function ArticleListItem ({ article, view }: ArticleListItemProps
   }
 
   return (
-    <div className={s.article}>
+    <div className={classNames(s.article, { [s.articleHover]: isHover })} {...bindHover}>
       <div className={s.articleTitle}>
         <div className={s.articleTitleLeft}>
           <div className={s.articleTitleUser}>
-            <Avatar width={40} height={40} src={article.img}/>
-            <span>{article.createdAt}</span>
+            <Avatar width={40} height={40} src={article.user.avatar}/>
+            <span>{article.user.username}</span>
           </div>
           <h3>{article.title}</h3>
           {renderTags()}

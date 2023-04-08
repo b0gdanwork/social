@@ -1,8 +1,11 @@
 .article {
   background: var(--body-alt-bg);
   cursor: pointer;
-  transform: translate(1.01);
-  transition: 2s;
+  transition: .3s;
+}
+
+.articleHover {
+  transform: scale(1.01);
 }
 
 .articleTitle {
