@@ -43,3 +43,5 @@ export interface ArticleDetailsSchema {
   readonly: boolean;
   isLoading: boolean;
 }
+
+export type ArticleListViewT = 'list' | 'grid'
