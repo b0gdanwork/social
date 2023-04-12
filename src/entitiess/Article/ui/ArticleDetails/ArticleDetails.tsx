@@ -5,7 +5,7 @@ import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
 import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 import { fetchArticleById } from 'entitiess/Article/model/services/fetchArticleById/fetchArticleById'
-import { articleDetailsReducer } from 'entitiess/Article/model/slice/articleSlice'
+import { articleDetailsReducer } from 'entitiess/Article/model/slice/articleDetailsSlice'
 
 import { getArticleDetailError } from '../../model/selectors/getArticleDetailError/getArticleDetailError'
 import { getArticleDetailIsLoading } from '../../model/selectors/getArticleDetailIsLoading/getArticleDetailIsLoading'

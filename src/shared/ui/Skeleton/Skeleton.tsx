@@ -1,11 +1,13 @@
 
 import { memo } from 'react'
 import s from './Skeleton.module.scss'
+import { classNames } from 'shared/lib/helpers/classNames/classNames'
 
 interface Props {
   width?: number | string,
   height?: number | string,
   border?: number
+  className?: string
 }
 
 function Skeleton (props: Props) {
@@ -13,7 +15,8 @@ function Skeleton (props: Props) {
   const {
     width,
     height,
-    border   
+    border,
+    className
   } = props
 
   const style = {
@@ -23,7 +26,7 @@ function Skeleton (props: Props) {
   }
 
   return (
-    <div style={style} className={s.skeleton}/>
+    <div style={style} className={classNames(s.skeleton, {}, [className])}/>
   )
 }
 

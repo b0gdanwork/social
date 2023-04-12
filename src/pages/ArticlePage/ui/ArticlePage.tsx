@@ -1,5 +1,6 @@
 import { ArticleList } from 'entitiess/Article'
 import { PageLayout } from 'pages/PageLayout'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function ArticlePage () {
@@ -8,7 +9,7 @@ export default function ArticlePage () {
   return (
     <PageLayout>
       <ArticleList 
-        view='grid'
+        view='list'
         isLoading={false}
         articles={
         [

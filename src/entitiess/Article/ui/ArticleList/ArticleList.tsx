@@ -21,12 +21,18 @@ export default function ArticleList (props: ArticleListProps) {
   const renderArticles = () => {
     if (articles.length) {
       return articles.map((article) => {
-        return <ArticleListItem key={article.id} article={article} view={view}/>
+        return <ArticleListItem key={article.id} article={article} view={view} isLoading={isLoading}/>
       })
     } else {
       return <h2>Список статей пуст</h2>
     }
 
+  }
+
+  const renderSkeletons = () => {
+    return Array(12).fill(0).map((item, ind) => {
+      return <ArticleListItem key={ind} view={view} isLoading={isLoading}/>
+    })
   }
 
   return (
@@ -35,10 +41,10 @@ export default function ArticleList (props: ArticleListProps) {
         s.articles, 
         { 
           [s.articleGrid]: view === 'grid',
-          [s.articleList]: view === 'grid'
+          [s.articleList]: view === 'list'
         })
     }>
-      {renderArticles()}
+      {!isLoading ? renderArticles() : renderSkeletons()}
     </div>
   )
 }
