@@ -1,1 +1,2 @@
 export const USER_LOVALSTORAGE_KEY = 'user'
+export const ARTICLE_PAGE_VIEW = 'ARTICLE_PAGE_VIEW'

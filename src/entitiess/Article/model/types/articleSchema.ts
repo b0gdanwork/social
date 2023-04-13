@@ -47,4 +47,7 @@ export interface ArticleDetailsSchema {
   isLoading: boolean;
 }
 
-export type ArticleListViewT = 'list' | 'grid'
+export enum ArticleListViewT {
+  list = 'list',
+  grid = 'grid'
+}

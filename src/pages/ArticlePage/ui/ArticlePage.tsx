@@ -1,38 +1,37 @@
-import { ArticleList } from 'entitiess/Article'
+import { ArticleList, ArticleListViewT } from 'entitiess/Article'
 import { PageLayout } from 'pages/PageLayout'
-import { useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useEffect, useState } from 'react'
+import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
+import { featchArticles } from '../model/services/featchArticles'
+import { getArticles } from '../model/slices/ArticlesPageSlice'
+import { useSelector } from 'react-redux'
+import { getArticlePageError, getArticlePageIsLoading, getArticlePageView } from '../model/selectors/articlePageSelectors'
+import ArticlePageViewSelector from './ArticlePageViewSelector/ArticlePageViewSelector'
 
 export default function ArticlePage () {
-  const { t } = useTranslation()
+
+  const dispath = useAppDispath()
+  const error = useSelector(getArticlePageError)
+  const articles = useSelector(getArticles.selectAll)
+  const isLoading = useSelector(getArticlePageIsLoading)
+  const view = useSelector(getArticlePageView)
+
+  useEffect(() => {
+    dispath(featchArticles())
+  }, [dispath])
 
   return (
     <PageLayout>
-      <ArticleList 
-        view='list'
-        isLoading={false}
-        articles={
-        [
-          {
-            id: '1',
-            title: 'Javascript news',
-            subtitle: 'Что нового в JS за 2022 год?',
-            img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
-            views: '1022',
-            createdAt: 123,
-            user: {
-              avatar: '',
-              id: '',
-              username: 'username'
-            },
-            type: [
-              'IT'
-            ],
-            blocks: []
-          }
-        ]
-      }
-      />
+      {!error 
+        ? <>
+          <ArticlePageViewSelector />
+          <ArticleList 
+            view={view || ArticleListViewT.grid}
+            isLoading={isLoading}
+            articles={articles}
+            />
+        </>
+        : error}
     </PageLayout>
   )
 }
