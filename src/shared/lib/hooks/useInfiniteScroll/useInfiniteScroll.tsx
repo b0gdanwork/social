@@ -8,15 +8,18 @@ interface Props {
 
 export default function useInfiniteScroll ({ callback, refTrigger, refWrapper }: Props) {
 
-  const options = {
-    root: refWrapper.current,
-    // rootMargin: '0px',
-    threshold: 0.9
-  }
-
   useEffect(() => {
+    const refTriggerLocal = refTrigger.current
+    const refWrapperLocal = refWrapper.current
+
+    const options = {
+      root: refWrapperLocal,
+      // rootMargin: '0px',
+      threshold: 0.9
+    }
+  
     let observer: IntersectionObserver
-    if (callback) {
+    if (callback && refTriggerLocal) {
       const callbackLocal: IntersectionObserverCallback = ([entry], observer) => {
         if (entry.isIntersecting) {
           callback()
@@ -24,12 +27,12 @@ export default function useInfiniteScroll ({ callback, refTrigger, refWrapper }:
       }
       
       observer = new IntersectionObserver(callbackLocal, options)
-      observer.observe(refTrigger.current)
+      observer.observe(refTriggerLocal)
   
     }
     return () => {
       if (observer) {
-        observer.unobserve(refTrigger.current)
+        observer.unobserve(refTriggerLocal)
       }
     }
   }, [callback])
