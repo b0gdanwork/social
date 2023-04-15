@@ -25,7 +25,7 @@ function ArticlePageViewSelector () {
         <BsFillGridFill size={20}/>
       </div>
       <div className={s.item} onClick={changeList}>
-        <BsList size={20}/>
+        <BsList size={35} style={{ margin: -4 }}/>
       </div>
     </div>
   )

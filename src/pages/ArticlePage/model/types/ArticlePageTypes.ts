@@ -5,7 +5,8 @@ import { type ArticleListViewT } from 'entitiess/Article/model/types/articleSche
 export interface ArticlePageSchema extends EntityState<ArticleT> {
   isLoading?: boolean,
   error?: string,
-  view?: ArticleListViewT
-  // ids: string[],
-  // entities: Record<any, any>
+  view?: ArticleListViewT,
+  limit: number,
+  page: number,
+  hasMore: boolean
 }

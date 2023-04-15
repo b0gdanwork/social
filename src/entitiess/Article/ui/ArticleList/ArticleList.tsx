@@ -3,34 +3,38 @@ import ArticleListItem from '../ArticleListItem/ArticleListItem'
 
 import s from './ArticleList.module.scss'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { memo } from 'react'
 
 interface ArticleListProps {
   view: ArticleListViewT
   isLoading?: boolean
   articles: ArticleT[]
+  limit: number
 }
 
-export default function ArticleList (props: ArticleListProps) {
+function ArticleList (props: ArticleListProps) {
 
   const {
     view,
     articles,
-    isLoading
+    isLoading,
+    limit
   } = props
   
   const renderArticles = () => {
     if (articles.length) {
       return articles.map((article) => {
-        return <ArticleListItem key={article.id} article={article} view={view} isLoading={isLoading}/>
+        return <ArticleListItem key={article.id} article={article} view={view} isLoading={false}/>
       })
-    } else {
+    } else if (!articles.length && !isLoading) {
       return <h2>Список статей пуст</h2>
     }
 
+    return <></>
   }
 
   const renderSkeletons = () => {
-    return Array(12).fill(0).map((item, ind) => {
+    return Array(limit).fill(0).map((item, ind) => {
       return <ArticleListItem key={ind} view={view} isLoading={isLoading}/>
     })
   }
@@ -44,7 +48,10 @@ export default function ArticleList (props: ArticleListProps) {
           [s.articleList]: view === 'list'
         })
     }>
-      {!isLoading ? renderArticles() : renderSkeletons()}
+      {renderArticles()}
+      {isLoading ? renderSkeletons() : null}
     </div>
   )
 }
+
+export default memo(ArticleList)

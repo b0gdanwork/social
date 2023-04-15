@@ -8,8 +8,7 @@ import { FaRegEye } from 'react-icons/fa'
 import s from './ArticleListItem.module.scss'
 import { useHover } from 'shared/lib/hooks/useHover/useHover'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
-import { type ReactNode } from 'react'
-import { Navigate, useNavigate } from 'react-router'
+import { Navigate } from 'react-router'
 import { PathsAppT } from 'shared/config/routes/routes'
 
 interface ArticleListItemProps {
@@ -20,7 +19,6 @@ interface ArticleListItemProps {
 
 export default function ArticleListItem ({ article, view, isLoading }: ArticleListItemProps) {
 
-  const navigate = useNavigate()
   const [isHover, bindHover] = useHover()
 
   const renderTags = () => {
@@ -112,8 +110,8 @@ export default function ArticleListItem ({ article, view, isLoading }: ArticleLi
       <div className={s.articleTitle}>
         <div className={s.articleTitleLeft}>
           <div className={s.articleTitleUser}>
-            <Avatar width={40} height={40} src={article.user.avatar}/>
-            <span>{article.user.username}</span>
+            <Avatar width={40} height={40} src={article.user?.avatar}/>
+            <span>{article.user?.username}</span>
           </div>
           <h3>{article.title}</h3>
           {renderTags()}
