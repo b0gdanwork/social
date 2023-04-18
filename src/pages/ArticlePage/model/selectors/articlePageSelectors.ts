@@ -7,3 +7,7 @@ export const getArticlePageLimit = (state: StoreSchema) => state.articlesPage?.l
 export const getArticlePageHasMore = (state: StoreSchema) => state.articlesPage?.hasMore
 export const getArticlePagePageNum = (state: StoreSchema) => state.articlesPage?.page || 1
 export const getArticlePageInited = (state: StoreSchema) => state.articlesPage?.__inited
+
+export const getArticlePageSearch = (state: StoreSchema) => state.articlesPage?.search
+export const getArticlePageOrder = (state: StoreSchema) => state.articlesPage?.order
+export const getArticlePageSort = (state: StoreSchema) => state.articlesPage?.sort

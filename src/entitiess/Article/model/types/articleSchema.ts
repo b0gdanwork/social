@@ -1,5 +1,16 @@
 import { type UserT } from 'entitiess/User'
 
+export enum ArticleSortField {
+  VIEWS = 'views',
+  TITLE = 'title',
+  CREATED = 'createdAt'
+}
+
+export enum ArticleSortOrder {
+  asc = 'asc',
+  desc = 'desc',
+}
+
 export enum ARTICLE_TYPES {
   TEXT = 'TEXT',
   CODE = 'CODE',

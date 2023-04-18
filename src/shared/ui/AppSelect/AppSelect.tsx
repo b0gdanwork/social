@@ -1,4 +1,4 @@
-import { memo, useMemo } from 'react'
+import { type ReactNode, memo, useMemo } from 'react'
 import Select, { type SingleValue, type ActionMeta, type GroupBase, type OptionsOrGroups } from 'react-select'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
 
@@ -11,7 +11,7 @@ export interface PropsAppSelect {
   label?: string
   readOnly?: boolean
   className?: string
-  value?: string | undefined
+  value?: string | undefined | ReactNode
   options?: OptionsOrGroups<string, GroupBase<string>> | any
   onChange?: ((newValue: string | null) => void) | undefined
   
@@ -67,6 +67,7 @@ function AppSelect (props: PropsAppSelect) {
       options={options}
       onChange={onChangeFunc}
       className={classNames('', {}, [className])}
+      isSearchable={false}
       // inputValue={''}
       // onInputChange={emptyFunc}
       // onMenuOpen={emptyFunc} 

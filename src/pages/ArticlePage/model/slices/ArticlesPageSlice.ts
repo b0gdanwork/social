@@ -8,6 +8,7 @@ import { ArticleListViewT, type ArticleT } from 'entitiess/Article'
 import { type ArticlePageSchema } from '../types/ArticlePageTypes'
 import { featchArticles } from '../services/featchArticles'
 import { ARTICLE_PAGE_VIEW } from 'shared/const/localstorage'
+import { ArticleSortField, ArticleSortOrder } from 'entitiess/Article/model/types/articleSchema'
 
 const articlesAdapter = createEntityAdapter<ArticleT>({
   selectId: (comment) => comment.id
@@ -20,15 +21,21 @@ export const getArticles = articlesAdapter.getSelectors<StoreSchema>(
 const articlesPageSlice = createSlice({
   name: 'articlesPage',
   initialState: articlesAdapter.getInitialState<ArticlePageSchema>({
-    error: undefined,
-    isLoading: false,
+    __inited: false,
+
     ids: [],
     entities: {},
+    error: undefined,
+    isLoading: false,
+
     view: ArticleListViewT.grid,
     hasMore: true, 
     limit: 4,
     page: 1,
-    __inited: false
+    
+    order: ArticleSortOrder.asc,
+    search: '',
+    sort: ArticleSortField.CREATED
   }),
   reducers: {
     setArticlePageView: (state, action: PayloadAction<ArticleListViewT>) => {
@@ -45,6 +52,15 @@ const articlesPageSlice = createSlice({
     },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload
+    },
+    setOrder: (state, action: PayloadAction<ArticleSortOrder>) => {
+      state.order = action.payload
+    },
+    setSort: (state, action: PayloadAction<ArticleSortField>) => {
+      state.sort = action.payload
+    },
+    setSearch: (state, action: PayloadAction<string>) => {
+      state.search = action.payload
     }
   },
   extraReducers: (builder) => {

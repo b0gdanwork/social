@@ -9,7 +9,8 @@ interface ArticleListProps {
   view: ArticleListViewT
   isLoading?: boolean
   articles: ArticleT[]
-  limit: number
+  limit: number,
+  style: any
 }
 
 function ArticleList (props: ArticleListProps) {
@@ -18,7 +19,8 @@ function ArticleList (props: ArticleListProps) {
     view,
     articles,
     isLoading,
-    limit
+    limit,
+    style
   } = props
   
   const renderArticles = () => {
@@ -47,7 +49,9 @@ function ArticleList (props: ArticleListProps) {
           [s.articleGrid]: view === 'grid',
           [s.articleList]: view === 'list'
         })
-    }>
+    }
+      style={style}
+    >
       {renderArticles()}
       {isLoading ? renderSkeletons() : null}
     </div>

@@ -7,8 +7,8 @@ import { featchArticles } from '../model/services/featchArticles'
 import { articlesPageActions, articlesPageReducer, getArticles } from '../model/slices/ArticlesPageSlice'
 import { useSelector } from 'react-redux'
 import { getArticlePageError, getArticlePageHasMore, getArticlePageInited, getArticlePageIsLoading, getArticlePageLimit, getArticlePagePageNum, getArticlePageView } from '../model/selectors/articlePageSelectors'
-import ArticlePageViewSelector from './ArticlePageViewSelector/ArticlePageViewSelector'
 import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import ArticlePageFilters from './ArticlePageFilters/ArticlePageFilters'
 
 export default function ArticlePage () {
 
@@ -43,12 +43,13 @@ export default function ArticlePage () {
       <PageLayout onScrollEnd={onScrollEnd}>
         {!error 
           ? <>
-            <ArticlePageViewSelector />
+            <ArticlePageFilters />
             <ArticleList 
               view={view || ArticleListViewT.grid}
               isLoading={isLoading}
               articles={articles}
               limit={limit}
+              style={{ marginTop: 10 }}
             />
           </>
           : error}
