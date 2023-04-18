@@ -7,6 +7,7 @@ interface Props {
   reducer: Reducer,
   children: ReactNode,
   reducerKey: StoreSchemaKeys,
+  deliteAfterAnmount?: boolean
 }
 
 const DynamicModuleLoader: FC<Props> = (props) => {
@@ -14,16 +15,21 @@ const DynamicModuleLoader: FC<Props> = (props) => {
   const {
     reducer,
     children,
-    reducerKey
+    reducerKey,
+    deliteAfterAnmount = false
   } = props
 
   const store = useStore() as StoreSchemaWithManager
 
   useEffect(() => {
-    store.reducerManager?.add(reducerKey, reducer)
-  
-    return () => {
-      store.reducerManager?.remove(reducerKey)
+    const reducers = store.reducerManager?.getReducerMap()
+    if (reducers && !(reducerKey in reducers)) {
+      store.reducerManager?.add(reducerKey, reducer)
+    }
+    if (deliteAfterAnmount) {
+      return () => {
+        store.reducerManager?.remove(reducerKey)
+      }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

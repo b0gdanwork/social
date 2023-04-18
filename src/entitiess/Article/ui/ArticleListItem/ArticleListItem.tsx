@@ -8,7 +8,7 @@ import { FaRegEye } from 'react-icons/fa'
 import s from './ArticleListItem.module.scss'
 import { useHover } from 'shared/lib/hooks/useHover/useHover'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
-import { Navigate } from 'react-router'
+import { Navigate, useNavigate } from 'react-router'
 import { PathsAppT } from 'shared/config/routes/routes'
 
 interface ArticleListItemProps {
@@ -20,6 +20,7 @@ interface ArticleListItemProps {
 export default function ArticleListItem ({ article, view, isLoading }: ArticleListItemProps) {
 
   const [isHover, bindHover] = useHover()
+  const navigate = useNavigate()
 
   const renderTags = () => {
     if (!article) return 
@@ -34,14 +35,14 @@ export default function ArticleListItem ({ article, view, isLoading }: ArticleLi
 
   const onClickArticle = () => {
     if (article) {
-      <Navigate to={PathsAppT.ARTICLE_DETAILS + '/' + article?.id} replace={true} />
+      navigate(PathsAppT.ARTICLE_DETAILS + '/' + article?.id) 
     }
   }
 
   if (isLoading || !article) {
 
     if (view === 'grid') {
-      return (<div className={classNames(s.article, { [s.articleHover]: isHover })} {...bindHover}>
+      return (<div className={classNames(s.article, { [s.articleHover]: isHover })} {...bindHover} onClick={onClickArticle}>
         <div className={s.articleGridImg}>
           <Skeleton className={s.articleGridImgSkel} width={'100%'} height={'100%'}/>
         </div>

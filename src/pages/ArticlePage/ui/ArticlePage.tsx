@@ -6,7 +6,7 @@ import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
 import { featchArticles } from '../model/services/featchArticles'
 import { articlesPageActions, articlesPageReducer, getArticles } from '../model/slices/ArticlesPageSlice'
 import { useSelector } from 'react-redux'
-import { getArticlePageError, getArticlePageHasMore, getArticlePageIsLoading, getArticlePageLimit, getArticlePagePageNum, getArticlePageView } from '../model/selectors/articlePageSelectors'
+import { getArticlePageError, getArticlePageHasMore, getArticlePageInited, getArticlePageIsLoading, getArticlePageLimit, getArticlePagePageNum, getArticlePageView } from '../model/selectors/articlePageSelectors'
 import ArticlePageViewSelector from './ArticlePageViewSelector/ArticlePageViewSelector'
 import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
@@ -21,11 +21,10 @@ export default function ArticlePage () {
   const page = useSelector(getArticlePagePageNum) || 1
   const hasMore = useSelector(getArticlePageHasMore) 
   const limit = useSelector(getArticlePageLimit) 
+  const inited = useSelector(getArticlePageInited)
 
   const onScrollEnd = useCallback(() => {
-    console.log('hasMore', hasMore)
     if (hasMore && !isLoading) {
-      console.log('onScrollEnd')
       const newPage = page + 1
       dispath(articlesPageActions.setPage(newPage))
       dispath(featchArticles({ page: newPage }))
@@ -33,8 +32,10 @@ export default function ArticlePage () {
   }, [dispath, page, hasMore, isLoading])
 
   useEffect(() => {
-    dispath(articlesPageActions.init())
-    dispath(featchArticles({ page: 1 }))
+    if (!inited) {
+      dispath(articlesPageActions.init())
+      dispath(featchArticles({ page: 1 }))
+    }
   }, [dispath])
 
   return (
