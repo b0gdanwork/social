@@ -1,6 +1,12 @@
-import React, { useRef, type ReactNode } from 'react'
+import React, { useRef, type ReactNode, useEffect, useCallback } from 'react'
 import s from './PageLayout.module.scss'
 import useInfiniteScroll from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
+import { useLocation } from 'react-router'
+import { useSelector } from 'react-redux'
+import { getPageLayoutScroll } from '../model/selectors/PageLayoutSelectors'
+import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
+import { pageLayoutActions } from '../model/slice/pageLayoutSlice'
+import throttle from 'lodash/throttle'
 
 interface Props {
   children: ReactNode,
@@ -9,8 +15,24 @@ interface Props {
 
 export default function PageLayout ({ children, onScrollEnd }: Props) {
 
+  const dispatch = useAppDispath()
+  const location = useLocation()
+  const scrollList = useSelector(getPageLayoutScroll)
+  
   const wrapperRef = useRef() as React.MutableRefObject<HTMLDivElement>
   const triggerRef = useRef() as React.MutableRefObject<HTMLDivElement>
+  
+  useEffect(() => {
+    if (location.pathname in scrollList) {
+      wrapperRef.current.scrollTop = scrollList[location.pathname]
+    } else {
+      dispatch(pageLayoutActions.setPositionScroll({ scroll: 0, path: location.pathname }))
+    }
+  }, [dispatch, location, scrollList, wrapperRef])
+
+  const onScroll = useCallback(throttle((event: any) => {
+    dispatch(pageLayoutActions.setPositionScroll({ scroll: event.target.scrollTop, path: location.pathname }))
+  }, 500), [location])
 
   useInfiniteScroll({
     refTrigger: triggerRef,
@@ -19,7 +41,7 @@ export default function PageLayout ({ children, onScrollEnd }: Props) {
   })
   
   return (
-    <div className={s.layout} ref={wrapperRef}>
+    <div className={s.layout} ref={wrapperRef} onScroll={onScroll}>
       {children}
       <div ref={triggerRef}></div>
     </div> 

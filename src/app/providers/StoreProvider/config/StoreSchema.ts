@@ -11,10 +11,12 @@ import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 import { type AddCommentFormSchema } from 'features/addCommentForm'
 import { type ArticlePageSchema } from 'pages/ArticlePage'
 import { type ArticleDetailsSchema } from 'entitiess/Article'
+import { type pageLayoutSchema } from 'pages/PageLayout'
 
 export default interface StoreSchema {
   counter: CounterSchema,
   user: UserSchema,
+  pageLayout: pageLayoutSchema,
 
   articlesPage?: ArticlePageSchema,
   loginForm?: LoginSchema,

@@ -11,6 +11,7 @@ import {
 import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
 import { type NavigateOptions, type To } from 'react-router'
+import { pageLayoutReducer } from 'pages/PageLayout/model/slice/pageLayoutSlice'
 
 interface Options { 
   navigate: (to: To, options?: NavigateOptions) => void;
@@ -20,6 +21,7 @@ export function createReduxStore (initialState?: StoreSchema, options?: Options)
   
   const rootResucer: ReducersMapObject<StoreSchema> = {
     user: userReducer,
+    pageLayout: pageLayoutReducer,
     counter: counterReducer
   }
 
