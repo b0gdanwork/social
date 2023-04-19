@@ -14,27 +14,27 @@ export default function ArticlePage () {
 
   const dispath = useAppDispath()
 
-  const articles = useSelector(getArticles.selectAll)
-  const error = useSelector(getArticlePageError)
-  const isLoading = useSelector(getArticlePageIsLoading)
   const view = useSelector(getArticlePageView)
-  const page = useSelector(getArticlePagePageNum) || 1
-  const hasMore = useSelector(getArticlePageHasMore) 
+  const error = useSelector(getArticlePageError)
   const limit = useSelector(getArticlePageLimit) 
+  const page = useSelector(getArticlePagePageNum)
   const inited = useSelector(getArticlePageInited)
+  const hasMore = useSelector(getArticlePageHasMore) 
+  const articles = useSelector(getArticles.selectAll)
+  const isLoading = useSelector(getArticlePageIsLoading)
 
   const onScrollEnd = useCallback(() => {
     if (hasMore && !isLoading) {
       const newPage = page + 1
       dispath(articlesPageActions.setPage(newPage))
-      dispath(featchArticles({ page: newPage }))
+      dispath(featchArticles())
     }
   }, [dispath, page, hasMore, isLoading])
 
   useEffect(() => {
     if (!inited) {
       dispath(articlesPageActions.init())
-      dispath(featchArticles({ page: 1 }))
+      dispath(featchArticles())
     }
   }, [dispath])
 

@@ -43,7 +43,7 @@ export default function PageLayout ({ children, onScrollEnd }: Props) {
   return (
     <div className={s.layout} ref={wrapperRef} onScroll={onScroll}>
       {children}
-      <div ref={triggerRef}></div>
+      <div ref={triggerRef} className={s.trigger}></div>
     </div> 
   )
 }

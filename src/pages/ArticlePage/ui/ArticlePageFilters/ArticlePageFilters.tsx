@@ -4,29 +4,14 @@ import { memo, useCallback } from 'react'
 
 import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
 import { useSelector } from 'react-redux'
-import { getArticlePageSearch, getArticlePageSort } from 'pages/ArticlePage/model/selectors/articlePageSelectors'
+import { getArticlePageSearch } from 'pages/ArticlePage/model/selectors/articlePageSelectors'
 import { articlesPageActions } from 'pages/ArticlePage/model/slices/ArticlesPageSlice'
-import { ArticleSortField } from 'entitiess/Article/model/types/articleSchema'
 import ArticlePageSort from '../ArticlePageSort/ArticlePageSort'
 
 import s from './ArticlePageFilters.module.scss'
+import { featchArticles } from 'pages/ArticlePage/model/services/featchArticles'
 
 interface Props {}
-
-const options: Array<{ value: string, label: string }> = [
-  {
-    label: 'Дата создания',
-    value: ArticleSortField.CREATED
-  },
-  {
-    label: 'Заголовок',
-    value: ArticleSortField.TITLE
-  },
-  {
-    label: 'Просмотры',
-    value: ArticleSortField.VIEWS
-  }
-]
 
 function ArticlePageFilters ({}: Props) {
 
@@ -36,6 +21,7 @@ function ArticlePageFilters ({}: Props) {
 
   const changeSearch = useCallback((value: string) => {
     dispath(articlesPageActions.setSearch(value))
+    dispath(featchArticles({ replace: true }))
   }, [dispath])
 
   return (

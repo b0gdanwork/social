@@ -1,20 +1,26 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type ThunkConfig } from 'app/providers/StoreProvider'
 import { type ArticleT } from 'entitiess/Article'
-import { getArticlePageLimit } from '../selectors/articlePageSelectors'
+import { getArticlePageLimit, getArticlePageOrder, getArticlePagePageNum, getArticlePageSearch, getArticlePageSort } from '../selectors/articlePageSelectors'
 
-interface FeatchArticlesProps {
-  page: number
+interface Props {
+  replace?: boolean 
 }
 
+type PropsFetch = Props | undefined
+
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-export const featchArticles = createAsyncThunk<ArticleT[], FeatchArticlesProps, ThunkConfig<string>>(
+export const featchArticles = createAsyncThunk<ArticleT[], PropsFetch, ThunkConfig<string>>(
   'articlePage/featchArticles',
   async (props, { extra, rejectWithValue, getState }) => {
 
     const state = getState()
-    const { page = 1 } = props
+    const page = getArticlePagePageNum(state)
     const limit = getArticlePageLimit(state)
+
+    const sort = getArticlePageSort(state)
+    const order = getArticlePageOrder(state)
+    const search = getArticlePageSearch(state)
 
     try {
 
@@ -22,7 +28,10 @@ export const featchArticles = createAsyncThunk<ArticleT[], FeatchArticlesProps, 
         params: {
           _expend: 'user',
           _page: page,
-          _limit: limit
+          _limit: limit,
+          _sort: sort,
+          _order: order,
+          q: search
         }
       })
 

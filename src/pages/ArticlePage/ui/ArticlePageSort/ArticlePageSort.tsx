@@ -10,6 +10,7 @@ import { AppSelect } from 'shared/ui'
 
 import s from './ArticlePageSort.module.scss'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
+import { featchArticles } from 'pages/ArticlePage/model/services/featchArticles'
 
 interface Props {}
 
@@ -31,11 +32,11 @@ const optionsSort: Array<{ value: ArticleSortField, label: string }> = [
 const optionsSortDirection: Array<{ value: ArticleSortOrder, label: ReactNode }> = [
   {
     label: <AiOutlineArrowDown size={20}/>,
-    value: ArticleSortOrder.asc
+    value: ArticleSortOrder.desc
   },
   {
     label: <AiOutlineArrowUp size={20}/>,
-    value: ArticleSortOrder.desc
+    value: ArticleSortOrder.asc
   }
 ]
 
@@ -48,10 +49,12 @@ function ArticlePageFilters ({}: Props) {
 
   const changeSort = useCallback((value: any) => {
     dispath(articlesPageActions.setSort(value))
+    dispath(featchArticles({ replace: true }))
   }, [dispath])
 
   const changeOrder = useCallback((value: any) => {
     dispath(articlesPageActions.setOrder(value))
+    dispath(featchArticles({ replace: true }))
   }, [dispath])
 
   return (

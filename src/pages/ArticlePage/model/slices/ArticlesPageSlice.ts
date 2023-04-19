@@ -33,9 +33,9 @@ const articlesPageSlice = createSlice({
     limit: 4,
     page: 1,
     
-    order: ArticleSortOrder.asc,
+    order: ArticleSortOrder.desc,
     search: '',
-    sort: ArticleSortField.CREATED
+    sort: ArticleSortField.VIEWS
   }),
   reducers: {
     setArticlePageView: (state, action: PayloadAction<ArticleListViewT>) => {
@@ -55,23 +55,33 @@ const articlesPageSlice = createSlice({
     },
     setOrder: (state, action: PayloadAction<ArticleSortOrder>) => {
       state.order = action.payload
+      state.page = 1
     },
     setSort: (state, action: PayloadAction<ArticleSortField>) => {
       state.sort = action.payload
+      state.page = 1
     },
     setSearch: (state, action: PayloadAction<string>) => {
       state.search = action.payload
+      state.page = 1
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(featchArticles.pending, (state) => {
+    builder.addCase(featchArticles.pending, (state, action) => {
       state.isLoading = true
       state.error = undefined
+      if (action.meta.arg?.replace) { 
+        articlesAdapter.removeAll(state)
+      }
     })
-    builder.addCase(featchArticles.fulfilled, (state, action: PayloadAction<ArticleT[]>) => {
+    builder.addCase(featchArticles.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = undefined
-      articlesAdapter.addMany(state, action.payload)
+      if (action.meta.arg?.replace) {
+        articlesAdapter.setAll(state, action.payload)
+      } else {
+        articlesAdapter.addMany(state, action.payload)
+      }
       state.hasMore = action.payload.length > 0 && action.payload.length === state.limit
 
     })
