@@ -1,4 +1,5 @@
 import { type StoreSchema } from 'app/providers/StoreProvider'
+import { ArticleType } from 'entitiess/Article'
 
 export const getArticlePageError = (state: StoreSchema) => state.articlesPage?.error
 export const getArticlePageIsLoading = (state: StoreSchema) => state.articlesPage?.isLoading
@@ -11,3 +12,4 @@ export const getArticlePageInited = (state: StoreSchema) => state.articlesPage?.
 export const getArticlePageSearch = (state: StoreSchema) => state.articlesPage?.search
 export const getArticlePageOrder = (state: StoreSchema) => state.articlesPage?.order
 export const getArticlePageSort = (state: StoreSchema) => state.articlesPage?.sort
+export const getArticlePageType = (state: StoreSchema) => state.articlesPage?.type || ArticleType.ALL

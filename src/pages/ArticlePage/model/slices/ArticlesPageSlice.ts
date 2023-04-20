@@ -3,12 +3,14 @@ import {
   createSlice,
   type PayloadAction
 } from '@reduxjs/toolkit'
+
 import { type StoreSchema } from 'app/providers/StoreProvider'
 import { ArticleListViewT, type ArticleT } from 'entitiess/Article'
 import { type ArticlePageSchema } from '../types/ArticlePageTypes'
 import { featchArticles } from '../services/featchArticles'
 import { ARTICLE_PAGE_VIEW } from 'shared/const/localstorage'
-import { ArticleSortField, ArticleSortOrder } from 'entitiess/Article/model/types/articleSchema'
+import { ArticleSortField, ArticleSortOrder, ArticleType } from 'entitiess/Article'
+import { getSearchParams } from 'shared/lib/helpers/urlHelpers/urlHelpers'
 
 const articlesAdapter = createEntityAdapter<ArticleT>({
   selectId: (comment) => comment.id
@@ -35,7 +37,8 @@ const articlesPageSlice = createSlice({
     
     order: ArticleSortOrder.desc,
     search: '',
-    sort: ArticleSortField.VIEWS
+    sort: ArticleSortField.VIEWS,
+    type: ArticleType.ALL
   }),
   reducers: {
     setArticlePageView: (state, action: PayloadAction<ArticleListViewT>) => {
@@ -47,6 +50,14 @@ const articlesPageSlice = createSlice({
       if (value) {
         state.view = value
       }
+      const params = getSearchParams()
+
+      Object.entries(params).forEach(([name, value]) => {
+        if (name === 'sort' || name === 'order' || name === 'search') {
+          state[name] = value as never
+        }
+      })
+      
       state.__inited = true
       state.limit = state.view === ArticleListViewT.list ? 4 : 9
     },
@@ -56,6 +67,9 @@ const articlesPageSlice = createSlice({
     setOrder: (state, action: PayloadAction<ArticleSortOrder>) => {
       state.order = action.payload
       state.page = 1
+    },
+    setType: (state, action: PayloadAction<ArticleType>) => {
+      state.type = action.payload
     },
     setSort: (state, action: PayloadAction<ArticleSortField>) => {
       state.sort = action.payload

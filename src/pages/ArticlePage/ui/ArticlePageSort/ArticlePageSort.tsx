@@ -12,7 +12,9 @@ import s from './ArticlePageSort.module.scss'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 import { featchArticles } from 'pages/ArticlePage/model/services/featchArticles'
 
-interface Props {}
+interface Props {
+  fetchData: any
+}
 
 const optionsSort: Array<{ value: ArticleSortField, label: string }> = [
   {
@@ -40,7 +42,7 @@ const optionsSortDirection: Array<{ value: ArticleSortOrder, label: ReactNode }>
   }
 ]
 
-function ArticlePageFilters ({}: Props) {
+function ArticlePageFilters ({ fetchData }: Props) {
 
   const dispath = useAppDispath()
   
@@ -49,13 +51,13 @@ function ArticlePageFilters ({}: Props) {
 
   const changeSort = useCallback((value: any) => {
     dispath(articlesPageActions.setSort(value))
-    dispath(featchArticles({ replace: true }))
-  }, [dispath])
+    fetchData()
+  }, [dispath, fetchData])
 
   const changeOrder = useCallback((value: any) => {
     dispath(articlesPageActions.setOrder(value))
-    dispath(featchArticles({ replace: true }))
-  }, [dispath])
+    fetchData()
+  }, [dispath, fetchData])
 
   return (
     <>

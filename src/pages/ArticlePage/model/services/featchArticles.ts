@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type ThunkConfig } from 'app/providers/StoreProvider'
-import { type ArticleT } from 'entitiess/Article'
-import { getArticlePageLimit, getArticlePageOrder, getArticlePagePageNum, getArticlePageSearch, getArticlePageSort } from '../selectors/articlePageSelectors'
+import { ArticleType, type ArticleT } from 'entitiess/Article'
+import { getArticlePageLimit, getArticlePageOrder, getArticlePagePageNum, getArticlePageSearch, getArticlePageSort, getArticlePageType } from '../selectors/articlePageSelectors'
+import { setSearchParams } from 'shared/lib/helpers/urlHelpers/urlHelpers'
 
 interface Props {
   replace?: boolean 
@@ -21,6 +22,11 @@ export const featchArticles = createAsyncThunk<ArticleT[], PropsFetch, ThunkConf
     const sort = getArticlePageSort(state)
     const order = getArticlePageOrder(state)
     const search = getArticlePageSearch(state)
+    const type = getArticlePageType(state)
+
+    setSearchParams({
+      sort, order, search
+    })
 
     try {
 
@@ -31,7 +37,8 @@ export const featchArticles = createAsyncThunk<ArticleT[], PropsFetch, ThunkConf
           _limit: limit,
           _sort: sort,
           _order: order,
-          q: search
+          q: search,
+          type: type === ArticleType.ALL ? undefined : type
         }
       })
 

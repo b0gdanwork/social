@@ -11,6 +11,13 @@ export enum ArticleSortOrder {
   desc = 'desc',
 }
 
+export enum ArticleType {
+  ALL = 'ALL',
+  IT = 'IT',
+  SCINCE = 'SCINCE',
+  ECONOMICS = 'ECONOMICS',
+}
+
 export enum ARTICLE_TYPES {
   TEXT = 'TEXT',
   CODE = 'CODE',

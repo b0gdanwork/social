@@ -1,5 +1,5 @@
 import ArticleDetails from './ui/ArticleDetails/ArticleDetails'
 import ArticleList from './ui/ArticleList/ArticleList'
-import { type ArticleT, type ArticleDetailsSchema, ArticleListViewT } from './model/types/articleSchema'
+import { type ArticleT, type ArticleDetailsSchema, ArticleListViewT, ArticleType, ArticleSortOrder, ArticleSortField } from './model/types/articleSchema'
 
-export { ArticleDetails, ArticleList, type ArticleT, type ArticleDetailsSchema, ArticleListViewT }
+export { ArticleDetails, ArticleList, type ArticleT, type ArticleDetailsSchema, ArticleListViewT, ArticleType, ArticleSortOrder, ArticleSortField }
