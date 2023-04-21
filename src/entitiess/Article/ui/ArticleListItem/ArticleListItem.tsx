@@ -8,16 +8,19 @@ import { FaRegEye } from 'react-icons/fa'
 import s from './ArticleListItem.module.scss'
 import { useHover } from 'shared/lib/hooks/useHover/useHover'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
-import { Navigate, useNavigate } from 'react-router'
+import { useNavigate } from 'react-router'
 import { PathsAppT } from 'shared/config/routes/routes'
+import { type HTMLAttributeAnchorTarget, memo } from 'react'
+import { Link } from 'react-router-dom'
 
 interface ArticleListItemProps {
   isLoading?: boolean
   article?: ArticleT
   view: ArticleListViewT
+  target?: HTMLAttributeAnchorTarget
 }
 
-export default function ArticleListItem ({ article, view, isLoading }: ArticleListItemProps) {
+function ArticleListItem ({ article, view, isLoading, target = '_parent' }: ArticleListItemProps) {
 
   const [isHover, bindHover] = useHover()
   const navigate = useNavigate()
@@ -42,7 +45,7 @@ export default function ArticleListItem ({ article, view, isLoading }: ArticleLi
   if (isLoading || !article) {
 
     if (view === 'grid') {
-      return (<div className={classNames(s.article, { [s.articleHover]: isHover })} {...bindHover} onClick={onClickArticle}>
+      return (<div className={classNames(s.article, { [s.articleHover]: isHover })} {...bindHover} >
         <div className={s.articleGridImg}>
           <Skeleton className={s.articleGridImgSkel} width={'100%'} height={'100%'}/>
         </div>
@@ -59,7 +62,8 @@ export default function ArticleListItem ({ article, view, isLoading }: ArticleLi
       </div>)
     }
 
-    return (<div className={classNames(s.article, { [s.articleHover]: isHover })} onClick={onClickArticle} {...bindHover}>
+    return (<div className={classNames(s.article, { [s.articleHover]: isHover })} {...bindHover}>
+
       <div className={s.articleTitle}>
         <div className={s.articleTitleLeft}>
           <div className={s.articleTitleUser}>
@@ -89,6 +93,8 @@ export default function ArticleListItem ({ article, view, isLoading }: ArticleLi
 
   if (view === 'grid') {
     return (<div className={classNames(s.article, { [s.articleHover]: isHover })} onClick={onClickArticle} {...bindHover}>
+      <Link to={`${PathsAppT.ARTICLE_DETAILS}/${article?.id}`} className={s.link} target={target}></Link>
+
       <div className={s.articleGridImg}>
         <img src={article.img} alt="" />
         <data>{article.createdAt}</data>
@@ -108,6 +114,7 @@ export default function ArticleListItem ({ article, view, isLoading }: ArticleLi
 
   return (
     <div className={classNames(s.article, { [s.articleHover]: isHover })} {...bindHover} onClick={onClickArticle}>
+      <Link to={`${PathsAppT.ARTICLE_DETAILS}/${article?.id}`} className={s.link} target={target}></Link>
       <div className={s.articleTitle}>
         <div className={s.articleTitleLeft}>
           <div className={s.articleTitleUser}>
@@ -135,3 +142,5 @@ export default function ArticleListItem ({ article, view, isLoading }: ArticleLi
     </div>
   )
 }
+
+export default memo(ArticleListItem)

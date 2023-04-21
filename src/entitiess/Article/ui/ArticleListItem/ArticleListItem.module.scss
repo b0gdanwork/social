@@ -1,8 +1,18 @@
 .article {
+  position: relative;
   background: var(--body-alt-bg);
   transition: .3s;
   cursor: pointer;
 }
+
+.link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
 
 .articleHover {
   transform: scale(1.005);

@@ -7,7 +7,7 @@ import { type createReduxStore } from './reduxConfig'
 import { type ProfileSchema } from 'entitiess/Profile'
 import { type AxiosInstance } from 'axios'
 import { type NavigateOptions, type To } from 'react-router'
-import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
+import { type ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage'
 import { type AddCommentFormSchema } from 'features/addCommentForm'
 import { type ArticlePageSchema } from 'pages/ArticlePage'
 import { type ArticleDetailsSchema } from 'entitiess/Article'
@@ -23,7 +23,7 @@ export default interface StoreSchema {
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
   addCommentForm?: AddCommentFormSchema
-  articleDetailsComments?: ArticleDetailsCommentsSchema
+  articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StoreSchemaKeys = keyof StoreSchema

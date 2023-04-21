@@ -3,14 +3,15 @@ import ArticleListItem from '../ArticleListItem/ArticleListItem'
 
 import s from './ArticleList.module.scss'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
-import { memo } from 'react'
+import { type HTMLAttributeAnchorTarget, memo } from 'react'
 
 interface ArticleListProps {
   view: ArticleListViewT
   isLoading?: boolean
   articles: ArticleT[]
   limit: number,
-  style: any
+  style?: any,
+  target?: HTMLAttributeAnchorTarget
 }
 
 function ArticleList (props: ArticleListProps) {
@@ -20,13 +21,14 @@ function ArticleList (props: ArticleListProps) {
     articles,
     isLoading,
     limit,
-    style
+    style,
+    target
   } = props
   
   const renderArticles = () => {
     if (articles.length) {
       return articles.map((article) => {
-        return <ArticleListItem key={article.id} article={article} view={view} isLoading={false}/>
+        return <ArticleListItem key={article.id} article={article} view={view} isLoading={false} target={target}/>
       })
     } else if (!articles.length && !isLoading) {
       return <h2>Список статей пуст</h2>
