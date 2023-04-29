@@ -49,6 +49,7 @@ export type ArticleBlocks = ArticleCodeT | ArticleImageT | ArticleTextT
 export interface ArticleT { 
   id: string,
   user: UserT,
+  userId: string,
   title: string,
   subtitle: string,
   img: string | undefined,

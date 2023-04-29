@@ -1,6 +1,8 @@
 import { RequareAuth } from 'app/providers/StoreProvider'
 import { AboutPage } from 'pages/AboutPage'
+import { ArticleCreatePage } from 'pages/ArticleCreatePage'
 import { ArticleDetailsPage } from 'pages/ArticleDetailsPage'
+import { ArticleEditPage } from 'pages/ArticleEditPage'
 import { ArticlePage } from 'pages/ArticlePage'
 import { MainPage } from 'pages/MainPage'
 import NotFoundPage from 'pages/NotFoundPage/ui/NotFoundPage'
@@ -12,7 +14,9 @@ export enum PathsAppT {
   ABOUT = '/about',
   PROFILE = '/profile',
   ARTICLE = '/article',
-  ARTICLE_DETAILS = '/article'
+  ARTICLE_DETAILS = '/article',
+  ARTICLE_CREATE = '/article/new',
+  ARTICLE_EDIT = '/article/:id/edit'
 }
 
 export type CustomRouteObject = RouteObject & {
@@ -55,6 +59,14 @@ const AppRoutesList: CustomRouteObject[] = [
       {
         index: true,
         element: <RequareAuth><ArticlePage /></RequareAuth>
+      },
+      {
+        path: PathsAppT.ARTICLE_CREATE,
+        element: <RequareAuth><ArticleCreatePage /></RequareAuth>
+      },
+      {
+        path: PathsAppT.ARTICLE_EDIT,
+        element: <RequareAuth><ArticleEditPage /></RequareAuth>
       },
       {
         path: '/article/:id', 

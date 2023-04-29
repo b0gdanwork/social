@@ -12,6 +12,7 @@ import { AppButton, AppLink } from 'shared/ui'
 import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
 
 import s from './Navbar.module.scss'
+import { useNavigate } from 'react-router'
 
 interface NavbarProps {
   className?: string
@@ -25,6 +26,7 @@ const Navbar = (props: NavbarProps) => {
   } = props
   
   const dispath = useAppDispath()
+  const navigete = useNavigate()
   const user = useSelector(getUser)
   
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false)
@@ -47,6 +49,10 @@ const Navbar = (props: NavbarProps) => {
     setIsOpenAuthModal(false)
   }, [setIsOpenAuthModal])
 
+  const createNewArticle = () => {
+    navigete(PathsAppT.ARTICLE_CREATE)
+  }
+
   const renderLinks = useMemo(() => {
     return AppRoutesList.map((key, ind) => {
       if (!key.path || !key.name || (!user && key.authOnly)) return <></>
@@ -63,6 +69,11 @@ const Navbar = (props: NavbarProps) => {
         {renderLinks}
       </div>
       <div className={s.right}>
+        {user
+          ? <button className={s.newArticle} onClick={createNewArticle}>
+            Создать статью
+          </button>
+          : null}
         {user
           ? <AppButton onClick={logout} theme={AppButtonTheme.TRANSPARENT}>
             Выйти

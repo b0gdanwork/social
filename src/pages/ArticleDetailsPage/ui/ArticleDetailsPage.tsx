@@ -21,6 +21,7 @@ import { getRecomendationsArticleDetailsIsLoading } from '../model/selectors/rec
 import { featchRecomendationArticles } from '../model/services/featchRecomendationArticles'
 
 import s from './ArticleDetailsPage.module.scss'
+import ArticleDetailsPageHeader from './ArticleDetailsPageHeader'
 
 const reducer = combineReducers({
   comments: articleDetailsCommentsReducer,
@@ -37,7 +38,6 @@ export default function ArticleDetailsPage () {
   const isLoadingComments = useSelector(getCommentsArticleIsLoading)
   const articlesRecomended = useSelector(getArticleRecomendations.selectAll)
   const articlesRecomendedIsLoading = useSelector(getRecomendationsArticleDetailsIsLoading)
-  console.log('articlesRecomended', articlesRecomended)
 
   useEffect(() => {
     dispatch(featchCommentsByArrticleId(id))
@@ -51,6 +51,7 @@ export default function ArticleDetailsPage () {
   return (
     <DynamicModuleLoader reducer={reducer} reducerKey={'articleDetailsPage'}>
       <PageLayout>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id}/>
         <Divider mobileSize='m-30' desctopSize='d-30'/>
         <h2>Рекомендованные статьи</h2>
