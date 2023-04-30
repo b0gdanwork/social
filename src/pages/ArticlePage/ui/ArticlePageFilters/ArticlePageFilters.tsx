@@ -59,15 +59,15 @@ function ArticlePageFilters ({}: Props) {
   }, [dispath, valueType])
 
   return (
-    <>
-      <div className={s.wrapper}>
+    <div className={s.wrapper}>
+      <div className={s.wrapperTop}>
         <ArticlePageSort fetchData={fetchData}/>
         <AppInput value={searchValue} onChange={changeSearch} label={'Поиск'}/>
         <ArticlePageViewSelector />
       </div>
       <Divider desctopSize='d-15' mobileSize='m-15'/>
       <Tabs callback={changeTab} data={dataTabs} value={valueType}/>
-    </>
+    </div>
   )
 }
 

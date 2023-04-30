@@ -2,6 +2,7 @@ import { type Reducer } from '@reduxjs/toolkit'
 import { type StoreSchemaKeys, type StoreSchemaWithManager } from 'app/providers/StoreProvider/config/StoreSchema'
 import React, { type FC, type ReactNode, useEffect } from 'react'
 import { useStore } from 'react-redux'
+import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
 
 export type ReducersList = {
   [name in StoreSchemaKeys]?: Reducer;
@@ -24,16 +25,19 @@ const DynamicModuleLoader: FC<Props> = (props) => {
   } = props
 
   const store = useStore() as StoreSchemaWithManager
+  const dispath = useAppDispath()
 
   useEffect(() => {
     if (typeof reducer === 'function' && reducerKey) {
       const reducersState = store.reducerManager?.getReducerMap()
       if (reducersState && !(reducerKey in reducersState)) {
+        dispath({ type: `@add reducer ${reducerKey}`, payload: '' })
         store.reducerManager?.add(reducerKey, reducer)
       }
       
       if (deliteAfterAnmount) {
         return () => {
+          dispath({ type: `@remove reducer ${reducerKey}`, payload: '' })
           store.reducerManager?.remove(reducerKey)
         }
       }

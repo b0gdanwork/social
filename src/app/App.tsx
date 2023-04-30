@@ -13,6 +13,24 @@ import AppRoutes from './providers/AppRoutes/AppRoutes'
 
 const body: any = document.querySelector('body')
 
+function addFullHeightVars () {
+  function fixWindowHeight () {
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+  }
+
+  function fixWindowHeightFix () {
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vhFix', `${vh}px`)
+  }
+
+  fixWindowHeight()
+  fixWindowHeightFix()
+  window.addEventListener('resize', () => {
+    fixWindowHeight()
+  })
+} 
+
 export default function App () {
 
   const { theme } = useTheme()
@@ -24,6 +42,7 @@ export default function App () {
   }, [theme])
 
   useEffect(() => {
+    addFullHeightVars()
     dispath(userActions.initAuthData())
   }, [dispath])
 

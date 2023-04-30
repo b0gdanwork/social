@@ -1,16 +1,22 @@
+/* eslint-disable react/display-name */
+import React, { useState, type HTMLAttributeAnchorTarget, memo } from 'react'
+
 import { type ArticleListViewT, type ArticleT } from 'entitiess/Article/model/types/articleSchema'
 import ArticleListItem from '../ArticleListItem/ArticleListItem'
 
-import s from './ArticleList.module.scss'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
-import { type HTMLAttributeAnchorTarget, memo } from 'react'
+import { VirtuosoGrid, type GridScrollSeekPlaceholderProps } from 'react-virtuoso'
+
+import s from './ArticleList.module.scss'
 
 interface ArticleListProps {
-  view: ArticleListViewT
+  limit: number
+  isVirtuoso?: boolean
+  className?: string
   isLoading?: boolean
   articles: ArticleT[]
-  limit: number,
-  style?: any,
+  view: ArticleListViewT
+  onScrollEnd?: () => void
   target?: HTMLAttributeAnchorTarget
 }
 
@@ -18,44 +24,90 @@ function ArticleList (props: ArticleListProps) {
 
   const {
     view,
+    limit,
+    target,
     articles,
     isLoading,
-    limit,
-    style,
-    target
+    className,
+    onScrollEnd,
+    isVirtuoso = false
   } = props
-  
-  const renderArticles = () => {
-    if (articles.length) {
-      return articles.map((article) => {
-        return <ArticleListItem key={article.id} article={article} view={view} isLoading={false} target={target}/>
-      })
-    } else if (!articles.length && !isLoading) {
-      return <h2>Список статей пуст</h2>
-    }
 
-    return <></>
-  }
+  const ScrollSeekPlaceholder = (data: GridScrollSeekPlaceholderProps) => (
+    <div
+      style={{
+        height: data.height,
+        padding: '8px',
+        boxSizing: 'border-box',
+        overflow: 'hidden'
+      }}
+    >
+      <div
+      >
+        <ArticleListItem view={view} isLoading={true}/>
+      </div>
+    </div>
+  )
 
   const renderSkeletons = () => {
     return Array(limit).fill(0).map((item, ind) => {
-      return <ArticleListItem key={ind} view={view} isLoading={isLoading}/>
+      return <ArticleListItem key={ind} view={view} isLoading={true}/>
     })
+  }
+  console.log(view)
+  const renderArticles = () => {
+
+    if (!articles.length && !isLoading) {
+      return <h2>Список статей пуст</h2>
+    }
+
+    if (isVirtuoso) {
+      
+      return (
+        <VirtuosoGrid
+          data={articles}
+          totalCount={100}
+          endReached={onScrollEnd}
+          style={{ height: 'calc(var(--vh) * 100 - 60px - 117px)', width: '100%' }}
+          itemContent={(index, article) => <ArticleListItem key={article.id} article={article} view={view} isLoading={false} target={target}/>}
+          // listClassName={classNames(s.articles, {}, [s[view]])}
+          components={{
+            // eslint-disable-next-line react/prop-types
+            List: React.forwardRef(({ style, children }, listRef) => {
+              return (
+                <div ref={listRef} style={style} className={classNames(s.articles, {}, [s[view]])}>
+                  {children}
+                  {isLoading ? renderSkeletons() : null}
+                </div>
+              )
+            }),
+            ScrollSeekPlaceholder
+            // Footer: () => <>{renderSkeletons()}</>
+          }}
+          scrollSeekConfiguration={{
+            enter: (velocity) => Math.abs(velocity) > 400,
+            exit: (velocity) => Math.abs(velocity) < 30
+          }}
+      />
+      )
+      
+    } else {
+      return <div  
+        className= {classNames(s.articles, {}, [s[view]])}
+      >
+        {articles.map((article) => {
+          return <>
+            <ArticleListItem key={article.id} article={article} view={view} isLoading={false} target={target}/>
+            {/* {isLoading ? renderSkeletons() : null} */}
+          </>
+        })}
+      </div>
+    }
   }
 
   return (
-    <div className={
-      classNames(
-        s.articles, 
-        { 
-          [s.articleGrid]: view === 'grid',
-          [s.articleList]: view === 'list'
-        })
-    }
-      style={style}
-    >
+    <div className={classNames(className)}>
       {renderArticles()}
-      {isLoading ? renderSkeletons() : null}
     </div>
   )
 }

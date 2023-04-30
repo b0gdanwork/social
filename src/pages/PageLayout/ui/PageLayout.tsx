@@ -10,10 +10,11 @@ import throttle from 'lodash/throttle'
 
 interface Props {
   children: ReactNode,
+  saveScrollPosition?: boolean
   onScrollEnd?: () => void
 }
 
-export default function PageLayout ({ children, onScrollEnd }: Props) {
+export default function PageLayout ({ children, saveScrollPosition = false, onScrollEnd }: Props) {
 
   const dispatch = useAppDispath()
   const location = useLocation()
@@ -23,6 +24,7 @@ export default function PageLayout ({ children, onScrollEnd }: Props) {
   const triggerRef = useRef() as React.MutableRefObject<HTMLDivElement>
   
   useEffect(() => {
+    if (!saveScrollPosition) return 
     if (location.pathname in scrollList) {
       wrapperRef.current.scrollTop = scrollList[location.pathname]
     } else {
@@ -41,7 +43,7 @@ export default function PageLayout ({ children, onScrollEnd }: Props) {
   })
   
   return (
-    <div className={s.layout} ref={wrapperRef} onScroll={onScroll}>
+    <div className={s.layout} ref={wrapperRef} onScroll={saveScrollPosition ? onScroll : undefined}>
       {children}
       <div ref={triggerRef} className={s.trigger}></div>
     </div> 

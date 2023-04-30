@@ -49,8 +49,8 @@ export default function ArticleDetailsPage () {
   }, [])
   
   return (
-    <DynamicModuleLoader reducer={reducer} reducerKey={'articleDetailsPage'}>
-      <PageLayout>
+    <DynamicModuleLoader reducer={reducer} reducerKey={'articleDetailsPage'} >
+      <PageLayout saveScrollPosition={true}>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id}/>
         <Divider mobileSize='m-30' desctopSize='d-30'/>
