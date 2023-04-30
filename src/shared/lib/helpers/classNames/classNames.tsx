@@ -13,7 +13,7 @@ export function classNames (
     }
   }
 
-  additional?.forEach(item => { returnClass = returnClass + ' ' + item })
+  additional?.forEach(item => { if (item) { returnClass = `${returnClass} ${item}` } })
 
   return returnClass
 }

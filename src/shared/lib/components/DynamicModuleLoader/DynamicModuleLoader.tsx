@@ -1,8 +1,9 @@
+import { type FC, type ReactNode, useEffect } from 'react'
 import { type Reducer } from '@reduxjs/toolkit'
+
 import { type StoreSchemaKeys, type StoreSchemaWithManager } from 'app/providers/StoreProvider/config/StoreSchema'
-import React, { type FC, type ReactNode, useEffect } from 'react'
 import { useStore } from 'react-redux'
-import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
+import { useAppDispath } from '../../hooks/useAppDispath/useAppDispath'
 
 export type ReducersList = {
   [name in StoreSchemaKeys]?: Reducer;

@@ -8,7 +8,7 @@ import { BsFillGridFill, BsList } from 'react-icons/bs'
 
 import s from './ArticlePageViewSelector.module.scss'
 import { useSelector } from 'react-redux'
-import { getArticlePageView } from 'pages/ArticlePage/model/selectors/articlePageSelectors'
+import { getArticlePageView } from '../../model/selectors/articlePageSelectors'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
 
 function ArticlePageViewSelector () {

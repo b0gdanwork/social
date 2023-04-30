@@ -6970,6 +6970,13 @@
     "eslint-utils" "^2.0.0"
     "regexpp" "^3.0.0"
 
+"eslint-plugin-eslint-plagin-path-checker-fsd@^0.0.1":
+  "integrity" "sha512-BRPZw4jLji9psJif9vpTtGlVAQG8AapXvdm7L4WNk+9z4gFInTf/3T8mS29uxoh3XDtbdp873nheclr0jYCXnA=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-eslint-plagin-path-checker-fsd/-/eslint-plugin-eslint-plagin-path-checker-fsd-0.0.1.tgz"
+  "version" "0.0.1"
+  dependencies:
+    "requireindex" "^1.2.0"
+
 "eslint-plugin-i18next@^6.0.0-2":
   "integrity" "sha512-3jm5ufmACjecaE/q6R3ZHhc3uzgx5ZMXoJhArZyg2tmBlk6AP/q1dfY12JWLFb4loNJdJPJncGCBOhG+cJsv9Q=="
   "resolved" "https://registry.npmjs.org/eslint-plugin-i18next/-/eslint-plugin-i18next-6.0.0-2.tgz"
@@ -12691,6 +12698,11 @@
   "integrity" "sha512-LBnkqsDE7BZKvqylbmn7lTIVdpx4K/QCduRATpO5R+wtPmky/a8pN1bO2D6wXppn1497AJF9mNjqAXr6bdl9jg=="
   "resolved" "https://registry.npmjs.org/requireindex/-/requireindex-1.1.0.tgz"
   "version" "1.1.0"
+
+"requireindex@^1.2.0":
+  "integrity" "sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww=="
+  "resolved" "https://registry.npmjs.org/requireindex/-/requireindex-1.2.0.tgz"
+  "version" "1.2.0"
 
 "requires-port@^1.0.0":
   "integrity" "sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ=="

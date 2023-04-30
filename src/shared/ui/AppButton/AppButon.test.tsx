@@ -2,7 +2,7 @@
 import '@testing-library/jest-dom/extend-expect'
 import { render, screen } from '@testing-library/react'
 import AppButton from './AppButton'
-import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
+import { AppButtonTheme } from './AppButton'
 
 describe('test AppButton', () => {
 

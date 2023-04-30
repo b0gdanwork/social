@@ -1,5 +1,5 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { type pageLayoutSchema } from 'pages/PageLayout/types'
+import { type pageLayoutSchema } from '../../types'
 
 const initialState: pageLayoutSchema = {
   scrollList: {}
