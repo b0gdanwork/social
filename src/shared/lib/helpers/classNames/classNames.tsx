@@ -1,6 +1,6 @@
 export function classNames (
   mainClass?: string,
-  mods?: Record<string, boolean | undefined>,
+  mods?: Record<string, boolean | undefined | string>,
   additional?: Array<string | undefined>
 ): string {
 

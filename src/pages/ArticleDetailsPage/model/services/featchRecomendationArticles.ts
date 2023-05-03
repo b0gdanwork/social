@@ -15,7 +15,7 @@ export const featchRecomendationArticles = createAsyncThunk<ArticleT[], Props, T
 
       const response = await extra.api.get<ArticleT[]>('/articles', {
         params: {
-          _expend: 'user',
+          _expand: 'user',
           _limit: limit
         }
       })

@@ -48,20 +48,15 @@ function ArticleTitle ({ article, isLoading }: Props) {
 
   return (
     <div className={s.wrapper}>
-      <div className={s.img}>
-        <Avatar 
-          src={article.img}
-          width={150}
-          height={150}
-      />
-      </div>
-      <div className={s.info}>
-        <h2>
-          {article.title}
-        </h2>
-        <p>
-          {article.subtitle}
-        </p>
+      <div className={s.info} >
+        <div className={s.info__top}>
+          <h2>
+            {article.title}
+          </h2>
+          <p>
+            {article.subtitle}
+          </p>
+        </div>
         <div className={s.stats}>
           <div>
             <FaRegEye size={20}/>
@@ -72,6 +67,10 @@ function ArticleTitle ({ article, isLoading }: Props) {
             {article.createdAt}
           </div>
         </div>
+      </div>
+      <div className={s.img}>
+        <div className={s.bg} style={{ backgroundImage: `url(${article.img || ''})` }} />
+        <img src={ article.img } alt="" />
       </div>
     </div>
   )

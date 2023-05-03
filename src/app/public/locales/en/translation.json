@@ -1,7 +1,12 @@
 {
-  "О компании": "About company",
+  "Игры": "Games",
   "Главная страница": "Main page",
   "Сменить тему": "Toggle theme",
   "Страница не найдена": "Not found",
-  "Непредвиденная ошибка": "Oops... Eror"
+  "Непредвиденная ошибка": "Oops... Eror",
+  "Создать статью": "Creaate article",
+  "Войти": "Log in",
+  "Выйти": "Log out",
+  "Профиль": "Profile",
+  "Статьи": "Articles"
 }

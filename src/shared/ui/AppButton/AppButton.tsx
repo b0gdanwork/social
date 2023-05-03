@@ -10,9 +10,9 @@ export enum AppButtonTheme {
 }
 
 interface AppBattonProps extends React.HTMLProps<HTMLButtonElement> {
-  className?: any,
   theme?: AppButtonTheme,
   type?: 'button' | 'submit' | 'reset',
+  className?: any,
   disabled?: boolean,
   baseClass?: boolean
 }

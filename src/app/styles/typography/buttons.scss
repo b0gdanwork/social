@@ -8,13 +8,13 @@ $TextSize: 16px;
 $button-min-width: 230px;
 $button-min-height: 50px;
 $button-min-height-mob: 45px;
-$button-border-radius: 1rem;
+$button-border-radius: 5px;
 
 @mixin btn {
   display: inline-block;
   min-width: $button-min-width;
   padding: calc(($button-min-height - 3px - math.round($TextSize * 1.7)) / 2) 15px calc(($button-min-height - 1px - math.round($TextSize * 1.7)) / 2) 15px;
-  border-radius: 30px;
+  border-radius: $button-border-radius;
   font-family: $TextFont;
   font-size: $TextSize;
   line-height: math.round($TextSize * 1.7);

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 import { ArticleList, ArticleListViewT } from 'entitiess/Article'
-import { PageLayout } from 'pages/PageLayout'
 import { useCallback, useEffect } from 'react'
 import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
 import { featchArticles } from '../model/services/featchArticles'
@@ -48,6 +47,7 @@ export default function ArticlePage () {
             <div style={{ marginTop: '117px' }}>
               <ArticleList 
                 limit={limit}
+                target={'_blank'}
                 isVirtuoso={true}
                 articles={articles}
                 isLoading={isLoading}

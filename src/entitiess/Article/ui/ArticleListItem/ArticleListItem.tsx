@@ -93,7 +93,7 @@ function ArticleListItem ({ article, view, isLoading, target = '_parent' }: Arti
 
   if (view === 'grid') {
     return (<div className={classNames(s.article, { [s.articleHover]: isHover })} {...bindHover}>
-      <Link to={`${PathsAppT.ARTICLE_DETAILS}/${article?.id}`} className={s.link}></Link>
+      <Link to={`${PathsAppT.ARTICLE_DETAILS}/${article?.id}`} className={s.link} target={target}></Link>
 
       <div className={s.articleGridImg}>
         <img src={article.img} alt="" />
@@ -114,7 +114,7 @@ function ArticleListItem ({ article, view, isLoading, target = '_parent' }: Arti
 
   return (
     <div className={classNames(s.article, { [s.articleHover]: isHover })} {...bindHover} >
-      <Link to={`${PathsAppT.ARTICLE_DETAILS}/${article?.id}`} className={s.link} ></Link>
+      <Link to={`${PathsAppT.ARTICLE_DETAILS}/${article?.id}`} className={s.link} target={target}></Link>
       <div className={s.articleTitle}>
         <div className={s.articleTitleLeft}>
           <div className={s.articleTitleUser}>

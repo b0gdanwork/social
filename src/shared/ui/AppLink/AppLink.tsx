@@ -3,20 +3,20 @@ import { Link, type LinkProps } from 'react-router-dom'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
 
 import s from './AppLink.module.scss'
-
-// export enum AppLinkTheme {
-//   PRIMARY = 'primary',
-//   SECONDARY = 'secondary',
-// }
+import { type IconBaseProps } from 'react-icons'
 
 interface PropsAppLink extends LinkProps {
+  Icon?: FC<IconBaseProps>
   children?: any
   className?: string
+  isOpen?: boolean
 }
 
 const AppLink: FC<PropsAppLink> = (props) => {
   
   const {
+    Icon,
+    isOpen,
     children,
     className,
     ...anyProps
@@ -24,8 +24,9 @@ const AppLink: FC<PropsAppLink> = (props) => {
 
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
-    <Link {...anyProps} className={classNames(s.link, {}, [className])}>
-      {children}
+    <Link {...anyProps} className={classNames(s.link, { [s.active]: isOpen }, [className])}>
+      {Icon ? <Icon size={20} color={'var(--navbar-color'}/> : null}
+      {isOpen ? children : null}
     </Link>
   )
 }
