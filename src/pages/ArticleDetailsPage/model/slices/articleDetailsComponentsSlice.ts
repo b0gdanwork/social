@@ -3,9 +3,9 @@ import {
   createEntityAdapter,
   createSlice
 } from '@reduxjs/toolkit'
-import { type ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema'
 import { type StoreSchema } from 'app/providers/StoreProvider'
 import { featchCommentsByArrticleId } from '../services/featchCommentsByArrticleId'
+import { type ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema'
 
 const commentsAdapter = createEntityAdapter<CommentT>({
   selectId: (comment) => comment.id
