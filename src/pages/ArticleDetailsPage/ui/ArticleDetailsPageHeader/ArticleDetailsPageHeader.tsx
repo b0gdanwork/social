@@ -7,12 +7,14 @@ import { PathsAppT } from 'shared/config/routes/routes'
 
 import s from './ArticleDetailsPageHeader.module.scss'
 import { useSelector } from 'react-redux'
-import { getCanEditArticle } from '../model/selectors/getCanEditArticle'
+import { useTranslation } from 'react-i18next'
+import { getCanEditArticle } from '../../model/selectors/getCanEditArticle'
 
 interface Props {}
 
 function ArticleDetailsPageHeader ({}: Props) {
 
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const canEdit = useSelector(getCanEditArticle)
 
@@ -27,11 +29,11 @@ function ArticleDetailsPageHeader ({}: Props) {
   return (
     <div className={s.wrapper}>
       <AppButton theme={AppButtonTheme.PRIMARY} onClick={onBackToList}>
-        К статьям
+        {t('К статьям')}
       </AppButton>
       {canEdit
         ? <AppButton theme={AppButtonTheme.PRIMARY} onClick={changeEdit}>
-          Редактировать
+          {t('Редактировать')}
         </AppButton>
         : null}
 

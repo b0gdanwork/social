@@ -9,23 +9,21 @@ import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
 import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 import { PageLayout } from 'pages/PageLayout'
-import { ArticleDetails, ArticleList, ArticleListViewT } from 'entitiess/Article'
+import { ArticleDetails } from 'entitiess/Article'
 import { featchCommentsByArrticleId } from '../model/services/featchCommentsByArrticleId'
 import { articleDetailsCommentsReducer, getArticleComments } from '../model/slices/articleDetailsComponentsSlice'
 import { getCommentsArticleIsLoading } from '../model/selectors/comments'
 import { CommentList } from 'entitiess/Comment'
 import { addCommentForArticle, AddCommentForm } from 'features/addCommentForm'
 
-import { articleDetailsRecommendationsReducer, getArticleRecomendations } from '../model/slices/articleDetailsRecommendationsSlice'
-import { getRecomendationsArticleDetailsIsLoading } from '../model/selectors/recommendations'
-import { featchRecomendationArticles } from '../model/services/featchRecomendationArticles'
-
 import s from './ArticleDetailsPage.module.scss'
-import ArticleDetailsPageHeader from './ArticleDetailsPageHeader'
+import ArticleDetailsPageHeader from './ArticleDetailsPageHeader/ArticleDetailsPageHeader'
+import { recomendationArticlesReducer } from 'features/recommendationsArticleList/model/slices/articleDetailsRecommendationsSlice'
+import { RecommendationArticlesList } from 'features/recommendationsArticleList'
 
 const reducer = combineReducers({
   comments: articleDetailsCommentsReducer,
-  recomendations: articleDetailsRecommendationsReducer
+  recomendations: recomendationArticlesReducer
 })
 
 export default function ArticleDetailsPage () {
@@ -36,17 +34,18 @@ export default function ArticleDetailsPage () {
   const dispatch = useAppDispath()
   const comments = useSelector(getArticleComments.selectAll)
   const isLoadingComments = useSelector(getCommentsArticleIsLoading)
-  const articlesRecomended = useSelector(getArticleRecomendations.selectAll)
-  const articlesRecomendedIsLoading = useSelector(getRecomendationsArticleDetailsIsLoading)
 
   useEffect(() => {
     dispatch(featchCommentsByArrticleId(id))
-    dispatch(featchRecomendationArticles({ limit: 4 }))
   }, [id])
 
   const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text))
   }, [])
+
+  if (!id) {
+    return <></>
+  }
   
   return (
     <DynamicModuleLoader reducer={reducer} reducerKey={'articleDetailsPage'} >
@@ -54,17 +53,9 @@ export default function ArticleDetailsPage () {
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id}/>
         <Divider mobileSize='m-30' desctopSize='d-30'/>
-        <h2>Рекомендованные статьи</h2>
-        <Divider mobileSize='m-10' desctopSize='d-10'/>
-        <ArticleList 
-          isLoading={articlesRecomendedIsLoading} 
-          articles={articlesRecomended} 
-          limit={4}
-          view={ArticleListViewT.grid}
-          target={'_blank'}
-        />
+        <RecommendationArticlesList id={id}/>
         <Divider mobileSize='m-30' desctopSize='d-30'/>
-        <h2>Комментарии</h2>
+        <h2>{t('Комментарии')}</h2>
         <div className={s.commentForm}>
           <AddCommentForm onSendComment={onSendComment}/>
         </div>

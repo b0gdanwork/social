@@ -12,6 +12,7 @@ import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
 import { type NavigateOptions, type To } from 'react-router'
 import { pageLayoutReducer } from 'pages/PageLayout/model/slice/pageLayoutSlice'
+import { rtkApi } from 'shared/api/rtkApi'
 
 interface Options { 
   navigate: (to: To, options?: NavigateOptions) => void;
@@ -22,7 +23,8 @@ export function createReduxStore (initialState?: StoreSchema, options?: Options)
   const rootResucer: ReducersMapObject<StoreSchema> = {
     user: userReducer,
     pageLayout: pageLayoutReducer,
-    counter: counterReducer
+    counter: counterReducer,
+    rtkApi: rtkApi.reducer
   }
 
   const reducerManager = createReducerManager(rootResucer)
@@ -39,7 +41,7 @@ export function createReduxStore (initialState?: StoreSchema, options?: Options)
             navigate: options?.navigate
           }
         }
-      })
+      }).concat(rtkApi.middleware)
   })
 
   // @ts-expect-error

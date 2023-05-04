@@ -2,7 +2,6 @@ import { type ArticleTextT } from 'entitiess/Article/model/types/articleSchema'
 import { memo } from 'react'
 
 import s from './ArticleTextBlockComponent.module.scss'
-import RichTextEditor from 'shared/ui/RichTextEditor/RichTextEditor'
 
 interface Props {
   data: ArticleTextT

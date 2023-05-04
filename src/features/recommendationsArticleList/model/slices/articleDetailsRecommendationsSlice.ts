@@ -4,10 +4,11 @@ import {
 } from '@reduxjs/toolkit'
 
 import { type StoreSchema } from 'app/providers/StoreProvider'
-import { type ArticleDetailsRecomendationsSchema } from '../types/ArticleDetailsRecomendationsSchema'
+
 import { type ArticleT } from 'entitiess/Article'
 
 import { featchRecomendationArticles } from '../services/featchRecomendationArticles'
+import { type RecomendationArticlesSchema } from '../types'
 
 const recomendationsAdapter = createEntityAdapter<ArticleT>({
   selectId: (article) => article.id
@@ -17,9 +18,9 @@ export const getArticleRecomendations = recomendationsAdapter.getSelectors<Store
   (state) => state.articleDetailsPage?.recomendations || recomendationsAdapter.getInitialState()
 )
 
-const articleDetailsRecommendationsSlice = createSlice({
-  name: 'articleDetailsRecommendations',
-  initialState: recomendationsAdapter.getInitialState<ArticleDetailsRecomendationsSchema>({
+const recomendationArticlesSlice = createSlice({
+  name: 'recomendationArticles',
+  initialState: recomendationsAdapter.getInitialState<RecomendationArticlesSchema>({
     error: undefined,
     isLoading: false,
     ids: [],
@@ -50,4 +51,4 @@ const articleDetailsRecommendationsSlice = createSlice({
   }
 })
 
-export const { reducer: articleDetailsRecommendationsReducer, actions: articleDetailsRecommendationsActions } = articleDetailsRecommendationsSlice
+export const { reducer: recomendationArticlesReducer, actions: recomendationArticlesActions } = recomendationArticlesSlice

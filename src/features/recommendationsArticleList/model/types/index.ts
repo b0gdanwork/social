@@ -3,7 +3,7 @@ import {
 } from '@reduxjs/toolkit'
 import { type ArticleT } from 'entitiess/Article'
 
-export interface ArticleDetailsRecomendationsSchema extends EntityState<ArticleT> {
+export interface RecomendationArticlesSchema extends EntityState<ArticleT> {
   isLoading?: boolean,
   error?: string,
   // ids: string[],
