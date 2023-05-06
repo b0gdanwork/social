@@ -7757,6 +7757,15 @@
     "inherits" "^2.0.1"
     "readable-stream" "^2.0.0"
 
+"fs-extra@^10.0.0":
+  "integrity" "sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ=="
+  "resolved" "https://registry.npmjs.org/fs-extra/-/fs-extra-10.1.0.tgz"
+  "version" "10.1.0"
+  dependencies:
+    "graceful-fs" "^4.2.0"
+    "jsonfile" "^6.0.1"
+    "universalify" "^2.0.0"
+
 "fs-extra@^10.1.0":
   "integrity" "sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ=="
   "resolved" "https://registry.npmjs.org/fs-extra/-/fs-extra-10.1.0.tgz"
@@ -9516,6 +9525,14 @@
   optionalDependencies:
     "fsevents" "^2.3.2"
 
+"jest-html-reporters@^3.1.4":
+  "integrity" "sha512-7lLrKDKDNBNDprd5lP241HRx2mRXb/XQOuYFxX/MxydgHtYRE/lEtK2+J5XLiNTs9JL/rUjWsWhIBOBs9j3wcg=="
+  "resolved" "https://registry.npmjs.org/jest-html-reporters/-/jest-html-reporters-3.1.4.tgz"
+  "version" "3.1.4"
+  dependencies:
+    "fs-extra" "^10.0.0"
+    "open" "^8.0.3"
+
 "jest-leak-detector@^29.4.3":
   "integrity" "sha512-9yw4VC1v2NspMMeV3daQ1yXPNxMgCzwq9BocCwYrRgXe4uaEJPAN0ZK37nFBhcy3cUwEVstFecFLaTHpF7NiGA=="
   "resolved" "https://registry.npmjs.org/jest-leak-detector/-/jest-leak-detector-29.4.3.tgz"
@@ -11147,7 +11164,7 @@
     "is-docker" "^2.0.0"
     "is-wsl" "^2.1.1"
 
-"open@^8.0.9", "open@^8.4.0":
+"open@^8.0.3", "open@^8.0.9", "open@^8.4.0":
   "integrity" "sha512-XgFPPM+B28FtCCgSb9I+s9szOC1vZRSwgWsRUA5ylIxRTgKozqjOCrVOqGsYABPYK5qnfqClxZTFBa8PKt2v6Q=="
   "resolved" "https://registry.npmjs.org/open/-/open-8.4.0.tgz"
   "version" "8.4.0"

@@ -24,7 +24,7 @@ export function createReduxStore (initialState?: StoreSchema, options?: Options)
     user: userReducer,
     pageLayout: pageLayoutReducer,
     counter: counterReducer,
-    rtkApi: rtkApi.reducer
+    [rtkApi.reducerPath]: rtkApi.reducer
   }
 
   const reducerManager = createReducerManager(rootResucer)
