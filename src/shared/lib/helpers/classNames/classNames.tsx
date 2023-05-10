@@ -1,6 +1,6 @@
 export function classNames (
   mainClass?: string,
-  mods?: Record<string, boolean | undefined>,
+  mods?: Record<string, boolean | undefined | string>,
   additional?: Array<string | undefined>
 ): string {
 
@@ -13,7 +13,7 @@ export function classNames (
     }
   }
 
-  additional?.forEach(item => { returnClass = returnClass + ' ' + item })
+  additional?.forEach(item => { if (item) { returnClass = `${returnClass} ${item}` } })
 
   return returnClass
 }

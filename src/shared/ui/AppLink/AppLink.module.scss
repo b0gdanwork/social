@@ -1,9 +1,15 @@
 .link {
   position: relative;
-  padding: 5px 10px;
+  display: flex;
+  padding: 5px 0;
+  align-items: center;
+  white-space: nowrap;
+  gap: 15px;
+  font-size: 0;
   color: var(--text-color);
   background-color: transparent;
-   
+  transition: .3s width, .3s min-width, .2s padding, .2s font-size, .2s padding;
+
   &::after {
     content: '';
     position: absolute;
@@ -22,6 +28,10 @@
     }
   }
 
+  svg {
+    min-width: 20px;
+  }
+
   :global {
     .primary {
       background-color: var(--primary-color);
@@ -30,5 +40,10 @@
     .secondary {
       background-color: var(--secondary-color);
     }
+  }
+
+  &.active {
+    font-size: initial;
+    padding: 5px 10px;
   }
 }

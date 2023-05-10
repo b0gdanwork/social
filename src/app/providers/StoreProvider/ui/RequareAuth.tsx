@@ -20,8 +20,6 @@ const RequareAuth = ({ children }: PropsT) => {
   const userInit = useSelector(getUserInit)
 
   if (!user && userInit) {
-    // eslint-disable-next-line no-debugger
-    debugger
     return <Navigate to={PathsAppT.MAIN}/>
   }
 

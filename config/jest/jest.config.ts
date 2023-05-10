@@ -12,6 +12,15 @@ export default async (): Promise<Config> => {
     // cacheDirectory: 'C:\\Users\\Bogdan\\AppData\\Local\\Temp\\jest',
   
     // Automatically clear mock calls, instances, contexts and results before every test
+    reporters: [
+      'default',
+      ['jest-html-reporters', {
+        publicPath: '<rootDir>/report/jest',
+        filename: 'report.html',
+        openReport: true,
+        inlineSource: true
+      }]
+    ],
     clearMocks: true,
   
     // Indicates whether the coverage information should be collected while executing the test

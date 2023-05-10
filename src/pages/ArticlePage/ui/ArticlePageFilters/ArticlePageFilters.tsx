@@ -4,12 +4,12 @@ import { memo, useCallback } from 'react'
 
 import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
 import { useSelector } from 'react-redux'
-import { getArticlePageSearch, getArticlePageType } from 'pages/ArticlePage/model/selectors/articlePageSelectors'
-import { articlesPageActions } from 'pages/ArticlePage/model/slices/ArticlesPageSlice'
+import { getArticlePageSearch, getArticlePageType } from '../../model/selectors/articlePageSelectors'
+import { articlesPageActions } from '../../model/slices/ArticlesPageSlice'
 import ArticlePageSort from '../ArticlePageSort/ArticlePageSort'
 
 import s from './ArticlePageFilters.module.scss'
-import { featchArticles } from 'pages/ArticlePage/model/services/featchArticles'
+import { featchArticles } from '../../model/services/featchArticles'
 import debounce from 'lodash/debounce'
 import { ArticleType } from 'entitiess/Article'
 import Tabs from 'shared/ui/Tabs/Tabs'
@@ -59,15 +59,15 @@ function ArticlePageFilters ({}: Props) {
   }, [dispath, valueType])
 
   return (
-    <>
-      <div className={s.wrapper}>
+    <div className={s.wrapper}>
+      <div className={s.wrapperTop}>
         <ArticlePageSort fetchData={fetchData}/>
         <AppInput value={searchValue} onChange={changeSearch} label={'Поиск'}/>
         <ArticlePageViewSelector />
       </div>
       <Divider desctopSize='d-15' mobileSize='m-15'/>
       <Tabs callback={changeTab} data={dataTabs} value={valueType}/>
-    </>
+    </div>
   )
 }
 

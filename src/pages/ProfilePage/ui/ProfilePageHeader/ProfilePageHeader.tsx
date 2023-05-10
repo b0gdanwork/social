@@ -1,10 +1,12 @@
 
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
 
-import s from './ProfilePageHeader.module.scss'
-import { useMemo } from 'react'
+import { useMemo, memo } from 'react'
 import { AppButton } from 'shared/ui'
 import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
+import { useTranslation } from 'react-i18next'
+
+import s from './ProfilePageHeader.module.scss'
 
 interface ProfilePageHeaderProps {
   isEditingBlock: boolean
@@ -14,7 +16,7 @@ interface ProfilePageHeaderProps {
   changeReset: () => void
 }
 
-export default function ProfilePageHeader (props: ProfilePageHeaderProps) {
+function ProfilePageHeader (props: ProfilePageHeaderProps) {
   
   const {
     readOnly,
@@ -24,6 +26,8 @@ export default function ProfilePageHeader (props: ProfilePageHeaderProps) {
     isEditingBlock
   } = props
 
+  const { t } = useTranslation()
+
   const renderButtons = useMemo(() => {
 
     if (isEditingBlock) {
@@ -31,20 +35,20 @@ export default function ProfilePageHeader (props: ProfilePageHeaderProps) {
     }
 
     if (readOnly) {
-      return <AppButton theme={AppButtonTheme.PRIMARY} onClick={offReadonly}>Редактировать</AppButton>
+      return <AppButton theme={AppButtonTheme.PRIMARY} onClick={offReadonly}>{t('Редактировать')}</AppButton>
     }
     return (
       <>
-        <AppButton theme={AppButtonTheme.PRIMARY} onClick={changeSave}>Сохранить</AppButton>
-        <AppButton theme={AppButtonTheme.SECONDARY} onClick={changeReset}>Отменить</AppButton>
+        <AppButton theme={AppButtonTheme.PRIMARY} onClick={changeSave}>{t('Сохранить')}</AppButton>
+        <AppButton theme={AppButtonTheme.SECONDARY} onClick={changeReset}>{t('Отменить')}</AppButton>
       </>
     )
-  }, [readOnly, changeReset, offReadonly, changeSave])
+  }, [isEditingBlock, readOnly, changeSave, t, changeReset, offReadonly])
 
   return (
     <div className={classNames(s.header)}>    
       <h2 className={classNames(s.title)} onClick={offReadonly}>
-        Профиль
+        {t('Профиль')}
       </h2>
       <div className={classNames(s.btns)}>
         {renderButtons}
@@ -52,3 +56,5 @@ export default function ProfilePageHeader (props: ProfilePageHeaderProps) {
     </div>    
   )
 }
+
+export default memo(ProfilePageHeader)

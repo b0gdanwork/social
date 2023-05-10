@@ -28,7 +28,7 @@ export interface ArticleTextT {
   id: number,
   type: ARTICLE_TYPES.TEXT,
   title: string,
-  paragraphs: string[]
+  value: string
 }
 
 export interface ArticleImageT {
@@ -49,6 +49,7 @@ export type ArticleBlocks = ArticleCodeT | ArticleImageT | ArticleTextT
 export interface ArticleT { 
   id: string,
   user: UserT,
+  userId: string,
   title: string,
   subtitle: string,
   img: string | undefined,

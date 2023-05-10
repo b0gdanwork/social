@@ -1,11 +1,21 @@
-.articleList {
+.list {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.articleGrid {
+.grid {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(355px, 1fr));
+}
+
+.trigger {
+  height: 5px;
+  width: 100%;
+}
+
+.articles { 
+  padding: 0 15px 15px;
+  margin-top: 10px
 }

@@ -1,15 +1,15 @@
 .sidebar {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   padding: 10px 15px;
   width: 55px;
-  min-width: 55px;
   height: calc(100vh - var(--navbar-height));
+  min-width: 55px;
   background: var(--sidebar-bg);
   color: var(--sidebar-color);
   transition: .3s width, .3s min-width;
-  overflow: hidden;
-
+  
   &.open {
     width: 300px;
     min-width: 300px;
@@ -18,6 +18,7 @@
 
 .sidebarTop {
   height: 100%;
+  padding-top: 40px;
 }
 
 .sidebarBottom {
@@ -44,6 +45,20 @@
 
   &.openIcon {
     transform: rotate(180deg);
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link {
+  color: var(--navbar-color);
+
+  &::after {
+    background-color: var(--navbar-color);
   }
 }
 

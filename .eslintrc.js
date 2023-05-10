@@ -11,7 +11,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', 'i18next', 'react-hooks'],
+  plugins: ['react', 'i18next', 'react-hooks', 'eslint-plugin-eslint-plagin-path-checker-fsd'],
   rules: {
     strictNullChecks: 0,
     'comma-dangle': [0, {
@@ -57,7 +57,8 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn', 
     'i18next/no-literal-string': 'warn',
     '@typescript-eslint/no-dynamic-delete': 'off',
-    '@typescript-eslint/no-floating-promises': 'off'
+    '@typescript-eslint/no-floating-promises': 'off',
+    'eslint-plagin-path-checker-fsd/eslint-plagin-path-checker-fsd': 'error'
   },
   settings: {
     react: {

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { type ArticleListViewT, type ArticleT } from 'entitiess/Article/model/types/articleSchema'
 
 import { AppButton, Avatar, Skeleton } from 'shared/ui'
@@ -8,7 +9,6 @@ import { FaRegEye } from 'react-icons/fa'
 import s from './ArticleListItem.module.scss'
 import { useHover } from 'shared/lib/hooks/useHover/useHover'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
-import { useNavigate } from 'react-router'
 import { PathsAppT } from 'shared/config/routes/routes'
 import { type HTMLAttributeAnchorTarget, memo } from 'react'
 import { Link } from 'react-router-dom'
@@ -23,7 +23,6 @@ interface ArticleListItemProps {
 function ArticleListItem ({ article, view, isLoading, target = '_parent' }: ArticleListItemProps) {
 
   const [isHover, bindHover] = useHover()
-  const navigate = useNavigate()
 
   const renderTags = () => {
     if (!article) return 
@@ -33,12 +32,6 @@ function ArticleListItem ({ article, view, isLoading, target = '_parent' }: Arti
       </div>)
     } else {
       return null
-    }
-  }
-
-  const onClickArticle = () => {
-    if (article) {
-      navigate(PathsAppT.ARTICLE_DETAILS + '/' + article?.id) 
     }
   }
 
@@ -92,7 +85,7 @@ function ArticleListItem ({ article, view, isLoading, target = '_parent' }: Arti
   }
 
   if (view === 'grid') {
-    return (<div className={classNames(s.article, { [s.articleHover]: isHover })} onClick={onClickArticle} {...bindHover}>
+    return (<div className={classNames(s.article, { [s.articleHover]: isHover })} {...bindHover}>
       <Link to={`${PathsAppT.ARTICLE_DETAILS}/${article?.id}`} className={s.link} target={target}></Link>
 
       <div className={s.articleGridImg}>
@@ -113,7 +106,7 @@ function ArticleListItem ({ article, view, isLoading, target = '_parent' }: Arti
   }
 
   return (
-    <div className={classNames(s.article, { [s.articleHover]: isHover })} {...bindHover} onClick={onClickArticle}>
+    <div className={classNames(s.article, { [s.articleHover]: isHover })} {...bindHover} >
       <Link to={`${PathsAppT.ARTICLE_DETAILS}/${article?.id}`} className={s.link} target={target}></Link>
       <div className={s.articleTitle}>
         <div className={s.articleTitleLeft}>

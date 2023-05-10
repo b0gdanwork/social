@@ -10,7 +10,6 @@ interface Props {
 }
 
 export default function CommentList ({ comments, isLoading }: Props) {
-  console.log('comments', comments)
 
   if (isLoading) {
     return (

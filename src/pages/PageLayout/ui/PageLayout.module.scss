@@ -1,7 +1,9 @@
 .layout {
+  position: relative;
   padding: 15px;
   max-height: calc(100vh - 60px);
   overflow: auto;
+  height: 100%;
 }
 
 .trigger {

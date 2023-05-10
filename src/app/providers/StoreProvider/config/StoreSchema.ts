@@ -12,11 +12,13 @@ import { type AddCommentFormSchema } from 'features/addCommentForm'
 import { type ArticlePageSchema } from 'pages/ArticlePage'
 import { type ArticleDetailsSchema } from 'entitiess/Article'
 import { type pageLayoutSchema } from 'pages/PageLayout'
+import { type rtkApi } from 'shared/api/rtkApi'
 
 export default interface StoreSchema {
   counter: CounterSchema,
   user: UserSchema,
   pageLayout: pageLayoutSchema,
+  rtkApi: ReturnType<typeof rtkApi.reducer>,
 
   articlesPage?: ArticlePageSchema,
   loginForm?: LoginSchema,

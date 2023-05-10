@@ -32,7 +32,7 @@ export const featchArticles = createAsyncThunk<ArticleT[], PropsFetch, ThunkConf
 
       const response = await extra.api.get<ArticleT[]>('/articles', {
         params: {
-          _expend: 'user',
+          _expand: 'user',
           _page: page,
           _limit: limit,
           _sort: sort,

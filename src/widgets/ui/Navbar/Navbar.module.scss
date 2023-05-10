@@ -14,10 +14,17 @@
   gap: 10px;
 }
 
-.link {
-  color: var(--navbar-color);
+.newArticle {
+  margin-right: 30px;
+  background: transparent;
+  cursor: pointer;
+}
 
-  &::after {
-    background-color: var(--navbar-color);
-  }
+.right {
+  display: flex;
+}
+
+.hoverLogout {
+  display: none;
+  background-color: var(--red);
 }

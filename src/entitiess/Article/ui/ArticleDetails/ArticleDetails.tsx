@@ -11,7 +11,7 @@ import { getArticleDetailError } from '../../model/selectors/getArticleDetailErr
 import { getArticleDetailIsLoading } from '../../model/selectors/getArticleDetailIsLoading/getArticleDetailIsLoading'
 import { getArticleDetailData } from '../../model/selectors/getArticleDetailData/getArticleDetailData'
 
-import ArticleTitle from '../ArticleTitle/ArticleTitle'
+import ArticleTitle from './ArticleTitle/ArticleTitle'
 import { ARTICLE_TYPES } from 'entitiess/Article/model/types/articleSchema'
 import ArticleCodeBlockComponent from '../blocks/ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import ArticleImageBlockComponent from '../blocks/ArticleImageBlockComponent/ArticleImageBlockComponent'
@@ -58,25 +58,15 @@ function ArticleDetails ({ id }: Props) {
 
     return <div className={s.blocks}>{blocks}</div>
   }, [data])
-  
-  let content
-
-  if (error) {
-    content = <div>error</div>
-  } else if (isLoading) {
-    content = (
-      <ArticleTitle article={data} isLoading={true}/>
-    )
-  } else if (data) {
-    content = <div>
-      <ArticleTitle article={data}/>
-      {renderBlocks}
-    </div>
-  }
 
   return (
     <DynamicModuleLoader reducerKey='articleDetails' reducer={articleDetailsReducer}>
-      {content}
+      {error
+        ? <div>Error</div>
+        : <div>
+          <ArticleTitle article={data} isLoading={isLoading}/>
+          {data ? renderBlocks : null}
+        </div>}
     </DynamicModuleLoader>
   )
 }

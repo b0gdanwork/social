@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 import { ArticleList, ArticleListViewT } from 'entitiess/Article'
-import { PageLayout } from 'pages/PageLayout'
 import { useCallback, useEffect } from 'react'
 import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
 import { featchArticles } from '../model/services/featchArticles'
@@ -39,21 +38,28 @@ export default function ArticlePage () {
   }, [dispath])
 
   return (
-    <DynamicModuleLoader reducerKey='articlesPage' reducer={articlesPageReducer}>
-      <PageLayout onScrollEnd={onScrollEnd}>
+    <DynamicModuleLoader reducerKey='articlesPage' reducer={articlesPageReducer} deliteAfterAnmount={false}>
+      {/* <PageLayout> */}
+      <div style={{ position: 'relative' }}>
         {!error 
           ? <>
             <ArticlePageFilters />
-            <ArticleList 
-              view={view || ArticleListViewT.grid}
-              isLoading={isLoading}
-              articles={articles}
-              limit={limit}
-              style={{ marginTop: 10 }}
-            />
+            <div style={{ marginTop: '117px' }}>
+              <ArticleList 
+                limit={limit}
+                target={'_blank'}
+                isVirtuoso={true}
+                articles={articles}
+                isLoading={isLoading}
+                onScrollEnd={onScrollEnd}
+                view={view || ArticleListViewT.grid}
+              />
+            </div>
           </>
           : error}
-      </PageLayout>
+      </div>
+
+      {/* </PageLayout> */}
     </DynamicModuleLoader>
   )
 }
