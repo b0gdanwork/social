@@ -1,6 +1,6 @@
 import { type CommentT } from 'entitiess/Comment/model/types'
 import { Link } from 'react-router-dom'
-import { PathsAppT } from 'shared/config/routes/routes'
+import { PathsAppT } from 'shared/config/routes/types'
 import { Avatar } from 'shared/ui'
 
 import s from './CommentItem.module.scss'

@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type ThunkConfig } from 'app/providers/StoreProvider'
 import { type ErrorsValidateProfile, type ProfileT } from '../../types/profileSchema'
-import { getProfileData } from 'entitiess/Profile'
+import { getProfileData } from './../../selectors/getProfileData/getProfileData'
 import validateProfileData from '../validateProfileData/validateProfileData'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
@@ -15,7 +15,6 @@ export const updateProfileData = createAsyncThunk<ProfileT, any, ThunkConfig< Er
       const state = getState()
       const formData = getProfileData(state)
       const errors = validateProfileData(formData)
-      console.log('formData' ,formData)
 
       if (errors.length) {
         return rejectWithValue(errors)

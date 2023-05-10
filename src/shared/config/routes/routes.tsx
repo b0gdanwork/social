@@ -1,7 +1,4 @@
-import { type ReactNode, type FC } from 'react'
-
 import { RequareAuth } from 'app/providers/StoreProvider'
-import { type RulesT } from 'entitiess/User'
 import { AboutPage } from 'pages/AboutPage'
 import { AdminPanelPage } from 'pages/AdminPanelPage'
 import { ArticleCreatePage } from 'pages/ArticleCreatePage'
@@ -11,33 +8,13 @@ import { ArticlePage } from 'pages/ArticlePage'
 import { MainPage } from 'pages/MainPage'
 import NotFoundPage from 'pages/NotFoundPage/ui/NotFoundPage'
 import { ProfilePage } from 'pages/ProfilePage'
-import { type RouteObject } from 'react-router'
 
 import { BiHomeAlt } from 'react-icons/bi'
 import { BiGame } from 'react-icons/bi'
 import { CgProfile } from 'react-icons/cg'
 import { RiArticleLine, RiAdminLine } from 'react-icons/ri'
 import { ForbiddenPage } from 'pages/ForbiddenPage'
-
-export enum PathsAppT {
-  MAIN = '/',
-  ABOUT = '/about',
-  PROFILE = '/profile',
-  ARTICLE = '/article',
-  ARTICLE_DETAILS = '/article',
-  ADMIN_PANEL = '/admin',
-  ARTICLE_CREATE = '/article/new',
-  ARTICLE_EDIT = '/article/:id/edit',
-  FORBIDDEN = '/forbidden'
-}
-
-export type CustomRouteObject = RouteObject & {
-  name?: string 
-  path?: string
-  authOnly?: boolean
-  rules?: RulesT[]
-  icon?: FC
-}
+import { CustomRouteObject, PathsAppT } from './types'
 
 const AppRoutesList: CustomRouteObject[] = [
   {

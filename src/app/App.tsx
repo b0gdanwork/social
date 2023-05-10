@@ -51,6 +51,7 @@ function App () {
       <Navbar/>
       <div className={'content-page'}>
         <SideBar/>
+        
         <div className={'contant-page__inner'}>
           <AppRoutes />
         </div>

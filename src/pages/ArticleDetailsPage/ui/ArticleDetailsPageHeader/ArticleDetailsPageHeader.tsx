@@ -3,7 +3,7 @@ import React, { memo } from 'react'
 import { AppButton } from 'shared/ui'
 import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
 import { useNavigate } from 'react-router'
-import { PathsAppT } from 'shared/config/routes/routes'
+import { PathsAppT } from 'shared/config/routes/types'
 
 import s from './ArticleDetailsPageHeader.module.scss'
 import { useSelector } from 'react-redux'

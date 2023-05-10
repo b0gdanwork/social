@@ -13,7 +13,7 @@ import AppRoutesList from 'shared/config/routes/routes'
 import { useSelector } from 'react-redux'
 import { getUser, isUserAdmin } from 'entitiess/User'
 import { useTranslation } from 'react-i18next'
-import { PathsAppT } from 'shared/config/routes/routes';
+import { PathsAppT } from 'shared/config/routes/types'
 
 interface Props {}
 
