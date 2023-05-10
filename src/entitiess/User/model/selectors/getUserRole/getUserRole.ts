@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit'
 import { type StoreSchema } from 'app/providers/StoreProvider'
 
-const getUserRole = (store: StoreSchema) => store.user.authData?.rueles
+export const getUserRoles = (store: StoreSchema) => store.user.authData?.roles
 
-export const isUserAdmin = createSelector(getUserRole, (state) => state?.includes('ADMIN')) 
-export const isUserManager = createSelector(getUserRole, (state) => state?.includes('MANAGER')) 
+export const isUserAdmin = createSelector(getUserRoles, (roles) => roles?.includes('ADMIN')) 
+export const isUserManager = createSelector(getUserRoles, (roles) => roles?.includes('MANAGER')) 

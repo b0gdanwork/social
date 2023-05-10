@@ -5,7 +5,7 @@ interface PropsLoader {}
 
 function Loader ({ }: PropsLoader) {
   return (
-    <div>
+    <div className={s.wrapper}>
       <div className={s.spiner}>
         <div className={s.spinnerInner}>
           <div>

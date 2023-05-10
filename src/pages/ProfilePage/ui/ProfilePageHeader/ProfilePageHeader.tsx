@@ -39,8 +39,10 @@ function ProfilePageHeader (props: ProfilePageHeaderProps) {
     }
     return (
       <>
+      <div className={s.btns}>
         <AppButton theme={AppButtonTheme.PRIMARY} onClick={changeSave}>{t('Сохранить')}</AppButton>
         <AppButton theme={AppButtonTheme.SECONDARY} onClick={changeReset}>{t('Отменить')}</AppButton>
+      </div>
       </>
     )
   }, [isEditingBlock, readOnly, changeSave, t, changeReset, offReadonly])

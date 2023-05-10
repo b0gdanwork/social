@@ -16,7 +16,8 @@ import { type RouteObject } from 'react-router'
 import { BiHomeAlt } from 'react-icons/bi'
 import { BiGame } from 'react-icons/bi'
 import { CgProfile } from 'react-icons/cg'
-import { RiArticleLine } from 'react-icons/ri'
+import { RiArticleLine, RiAdminLine } from 'react-icons/ri'
+import { ForbiddenPage } from 'pages/ForbiddenPage'
 
 export enum PathsAppT {
   MAIN = '/',
@@ -26,7 +27,8 @@ export enum PathsAppT {
   ARTICLE_DETAILS = '/article',
   ADMIN_PANEL = '/admin',
   ARTICLE_CREATE = '/article/new',
-  ARTICLE_EDIT = '/article/:id/edit'
+  ARTICLE_EDIT = '/article/:id/edit',
+  FORBIDDEN = '/forbidden'
 }
 
 export type CustomRouteObject = RouteObject & {
@@ -92,15 +94,20 @@ const AppRoutesList: CustomRouteObject[] = [
   },
   {
     name: 'Админка',
+    icon: RiAdminLine,
     authOnly: true,
     path: PathsAppT.ADMIN_PANEL,
     rules: ['ADMIN', 'MANAGER'],
     children: [
       {
         index: true,
-        element: <RequareAuth><AdminPanelPage /></RequareAuth>
+        element: <RequareAuth rules={['ADMIN', 'MANAGER']}><AdminPanelPage /></RequareAuth>
       }
     ]
+  },
+  {
+    path: PathsAppT.FORBIDDEN,
+    element: <ForbiddenPage />,
   },
   {
     path: '*',

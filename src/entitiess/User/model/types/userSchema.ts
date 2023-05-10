@@ -4,7 +4,7 @@ export interface UserT {
   id: string,
   avatar: string,
   username: string,
-  rueles: RulesT[]
+  roles: RulesT[]
 }
 
 export interface UserSchema { 

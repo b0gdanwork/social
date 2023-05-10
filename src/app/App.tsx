@@ -3,7 +3,7 @@ import './styles/index.scss'
 import 'rc-tooltip/assets/bootstrap.css'
 
 import { userActions } from 'entitiess/User'
-import { useEffect } from 'react'
+import { memo, useEffect } from 'react'
 import { useTheme } from 'shared/config/theme'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
 
@@ -31,7 +31,7 @@ function addFullHeightVars () {
   })
 } 
 
-export default function App () {
+function App () {
 
   const { theme } = useTheme()
   const dispath = useAppDispath()
@@ -58,3 +58,5 @@ export default function App () {
     </div>
   )
 }
+
+export default memo(App)

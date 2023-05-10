@@ -41,13 +41,15 @@ export const profileSlice = createSlice({
         state.data = { ...state.oldData }
       }
       state.oldData = null
+      state.errorsValidate = undefined
       state.readonly = true
     },
     offReadonly: (state) => {
       state.readonly = false
     },
     onReadonly: (state) => {
-      state.readonly = false
+      state.errorsValidate = undefined
+      state.readonly = true
     }
 
   },

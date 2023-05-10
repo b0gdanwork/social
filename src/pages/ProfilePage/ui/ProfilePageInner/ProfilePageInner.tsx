@@ -12,7 +12,7 @@ import { getUser } from 'entitiess/User/model/selectors/getUser/getUser'
 import ProfilePageHeader from '../ProfilePageHeader/ProfilePageHeader'
 import { getProfileValidateErrors } from 'entitiess/Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 
-import s from './ProfilePageInner.modele.scss'
+import s from './ProfilePageInner.module.scss'
 
 function ProfilePageInner () {
 
@@ -59,7 +59,7 @@ function ProfilePageInner () {
       <div className={s.card}>
         <Avatar src={data?.avatar} width={200} height={200}/>
         <ProfileCard data={data} error={error} isLoading={isLoading} validateErrors={validateErrors} createFunChange={createFunChange} readonly={!!readonly}/>
-      </div>
+      </div> 
     </>
   )
 }

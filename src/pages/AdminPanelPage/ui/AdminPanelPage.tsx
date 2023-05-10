@@ -1,6 +1,9 @@
+import { PageLayout } from "pages/PageLayout";
 
 export default function AdminPanelPage () {
   return (
-    <div>AdminPanelPage</div>
+    <PageLayout>
+      <div>AdminPanelPage</div>
+    </PageLayout>
   )
 }

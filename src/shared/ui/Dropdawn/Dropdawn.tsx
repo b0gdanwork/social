@@ -5,9 +5,10 @@ import s from './Dropdawn.module.scss'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
 
 export interface DropdawnItem {
-  children: ReactNode,
-  onClick?: () => void,
-  styleActive?: CSSProperties,
+  classNameListItem?: string
+  children: ReactNode
+  onClick?: () => void
+  styleActive?: CSSProperties
 }
 
 interface PropsDropdawn {
@@ -31,7 +32,7 @@ function Dropdawn (props: PropsDropdawn) {
           <div
             onClick={item.onClick}
             style={active ? item.styleActive : undefined}
-            className={classNames(s.item, { [s.active]: active, classNameItem })}
+            className={classNames(s.item, { [s.active]: active, classNameItem }, [item.classNameListItem])}
           >
             {item.children}
           </div>

@@ -1,5 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
-import { memo } from 'react'
+import React, { memo } from 'react'
 import { useCallback, useMemo, useState } from 'react'
 import { classNames } from 'shared/lib/helpers/classNames/classNames'
 import { AppButton, AppLink } from 'shared/ui'
@@ -11,8 +11,9 @@ import { TbArrowBarToRight } from 'react-icons/tb'
 import s from './SideBar.module.scss'
 import AppRoutesList from 'shared/config/routes/routes'
 import { useSelector } from 'react-redux'
-import { getUser } from 'entitiess/User'
+import { getUser, isUserAdmin } from 'entitiess/User'
 import { useTranslation } from 'react-i18next'
+import { PathsAppT } from 'shared/config/routes/routes';
 
 interface Props {}
 
@@ -22,16 +23,26 @@ function SideBar ({}: Props) {
 
   const { t } = useTranslation()
   const user = useSelector(getUser)
+  const isAdmin = useSelector(isUserAdmin)
 
   const onToggle = useCallback(() => {
     setIsOpen(prev => !prev)
   }, [])
 
   const renderLinks = useMemo(() => {
-    return AppRoutesList.map((key, ind) => {
-      if (!key.path || !key.name || (!user && key.authOnly)) return <></>
-      return <AppLink key={key.path + key.name} className={s.link} to={key.path} Icon={key.icon} isOpen={isOpen}>{t(key.name)}</AppLink>
+    const list =  AppRoutesList.map((route, ind) => {
+      if (!route.path || !route.name || (!user && route.authOnly) || route.rules) return <></>
+      
+      return <AppLink key={route.path + ind} className={s.link} to={route.path} Icon={route.icon} isOpen={isOpen}>{t(route.name)}</AppLink>
     })
+
+    if (isAdmin) {
+      const route = AppRoutesList.find(item => item.path === PathsAppT.ADMIN_PANEL)
+      if (!route || !route.path || !route.name || (!user && route.authOnly)) return 
+      list.push(<AppLink key={route.path} className={classNames(s.link, {}, [s.admin])} to={route.path} Icon={route.icon} isOpen={isOpen}>{t(route.name)}</AppLink>)
+    }
+
+    return list
   }, [isOpen, t, user])
 
   return (

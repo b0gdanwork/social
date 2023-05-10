@@ -2,6 +2,14 @@
   0% { transform: rotate(0) }
   100% { transform: rotate(360deg) }
 }
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 .spinnerInner div { box-sizing: border-box!important }
 
 .spinnerInner > div {

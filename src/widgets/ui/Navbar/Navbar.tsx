@@ -1,4 +1,4 @@
-import { userActions } from 'entitiess/User'
+import { isUserAdmin, userActions } from 'entitiess/User'
 import { getUser } from 'entitiess/User/model/selectors/getUser/getUser'
 import { LoginModal } from 'features/AuthByUsername'
 import { memo, useCallback, useEffect, useMemo, useState } from 'react'
@@ -29,6 +29,8 @@ const Navbar = (props: NavbarProps) => {
   const dispath = useAppDispath()
   const navigete = useNavigate()
   const user = useSelector(getUser)
+  const isAdmin = useSelector(isUserAdmin)
+  const isManager = useSelector(isUserAdmin)
   
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false)
 
@@ -60,29 +62,48 @@ const Navbar = (props: NavbarProps) => {
     if (!user) return
     navigete(`${PathsAppT.PROFILE}/${user.id}`)
   }, [navigete, user])
+  
+  const toAdmin = useCallback(() => {
+    if (!user) return
+    navigete(`${PathsAppT.ADMIN_PANEL}`)
+  }, [user, navigete])
 
-  const dropdawnnList = useMemo<DropdawnItem[]>(() => [
-    {
-      children: <div className={s.newArticle} key={1}>
-        {t('Профиль')}
-      </div>,
-      onClick: toProfile
-    },
-    {
-      children: <button className={s.newArticle} key={2}>
-        {t('Создать статью')}
-      </button>,
-      onClick: createNewArticle
-    },
-    {
-      children: <button className={s.newArticle} key={3}>
-        {t('Выйти')}
-      </button>,
-      onClick: logout, 
-      styleActive: { backgroundColor: 'var(--red)' }
+  const dropdawnnList = useMemo<DropdawnItem[]>(() => {
+    const list = [
+      {
+        children: <div className={s.newArticle} key={1}>
+          {t('Профиль')}
+        </div>,
+        onClick: toProfile
+      },
+      {
+        children: <button className={s.newArticle} key={2}>
+          {t('Создать статью')}
+        </button>,
+        onClick: createNewArticle
+      },
+      {
+        children: <button className={s.newArticle} key={3}>
+          {t('Выйти')}
+        </button>,
+        onClick: logout, 
+        styleActive: { backgroundColor: 'var(--red)' }
+      }
+    ]
+
+    if (isAdmin || isManager) {
+      const adminBtn = {
+        children: <button className={classNames(s.newArticle)} key={2}>
+          {t('Админка')}
+        </button>,
+        onClick: toAdmin,
+      }
+
+      list.unshift(adminBtn)
     }
-    
-  ], [createNewArticle, logout, t, toProfile])
+
+    return list
+  }, [createNewArticle, logout, t, toProfile, isAdmin, isManager])
   
   const renderLogin = () => {
     if (!user) return
