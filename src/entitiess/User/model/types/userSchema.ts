@@ -1,7 +1,10 @@
+export type RulesT = 'ADMIN' | 'USER' | 'MANAGER'
+
 export interface UserT { 
   id: string,
   avatar: string,
   username: string,
+  rueles: RulesT[]
 }
 
 export interface UserSchema { 

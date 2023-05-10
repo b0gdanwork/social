@@ -7,7 +7,7 @@ import { createReduxStore } from '../config/reduxConfig'
 import type StoreSchema from '../config/StoreSchema'
 import { getUser } from 'entitiess/User/model/selectors/getUser/getUser'
 import { PathsAppT } from 'shared/config/routes/routes'
-import { getUserInit } from 'entitiess/User/model/selectors/getUserInit/getUser'
+import { getUserInit } from 'entitiess/User/model/selectors/getUserInit/getUserInit'
 import { Loader } from 'shared/ui'
 
 interface PropsT {

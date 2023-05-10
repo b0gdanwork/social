@@ -1,5 +1,7 @@
 import { RequareAuth } from 'app/providers/StoreProvider'
+import { type RulesT } from 'entitiess/User'
 import { AboutPage } from 'pages/AboutPage'
+import { AdminPanelPage } from 'pages/AdminPanelPage'
 import { ArticleDetailsPage } from 'pages/ArticleDetailsPage'
 import { ArticlePage } from 'pages/ArticlePage'
 import { MainPage } from 'pages/MainPage'
@@ -12,13 +14,15 @@ export enum PathsAppT {
   ABOUT = '/about',
   PROFILE = '/profile',
   ARTICLE = '/article',
-  ARTICLE_DETAILS = '/article'
+  ARTICLE_DETAILS = '/article',
+  ADMIN_PANEL = '/admin'
 }
 
 export type CustomRouteObject = RouteObject & {
   name?: string 
   path?: string
-  authOnly?: boolean
+  authOnly?: boolean,
+  rules?: RulesT[]
 }
 
 const AppRoutesList: CustomRouteObject[] = [
@@ -59,6 +63,18 @@ const AppRoutesList: CustomRouteObject[] = [
       {
         path: '/article/:id', 
         element: <RequareAuth><ArticleDetailsPage /></RequareAuth>
+      }
+    ]
+  },
+  {
+    name: 'Админка',
+    authOnly: true,
+    path: PathsAppT.ADMIN_PANEL,
+    rules: ['ADMIN', 'MANAGER'],
+    children: [
+      {
+        index: true,
+        element: <RequareAuth><AdminPanelPage /></RequareAuth>
       }
     ]
   },

@@ -37,7 +37,6 @@ export default function ArticleDetailsPage () {
   const isLoadingComments = useSelector(getCommentsArticleIsLoading)
   const articlesRecomended = useSelector(getArticleRecomendations.selectAll)
   const articlesRecomendedIsLoading = useSelector(getRecomendationsArticleDetailsIsLoading)
-  console.log('articlesRecomended', articlesRecomended)
 
   useEffect(() => {
     dispatch(featchCommentsByArrticleId(id))
