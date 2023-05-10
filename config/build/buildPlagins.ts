@@ -8,6 +8,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import CircularDependencyPlugin from 'circular-dependency-plugin'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 
 function plaginsBuild ({ paths, isDev }: BuildOptionsT): webpack.WebpackPluginInstance[] {
 
@@ -23,7 +24,8 @@ function plaginsBuild ({ paths, isDev }: BuildOptionsT): webpack.WebpackPluginIn
       patterns: [
         { from: paths.publicFolder + '/locales', to: 'locales' }
       ]
-    })
+    }),
+    new ForkTsCheckerWebpackPlugin()
   ]
 
   if (isDev) {

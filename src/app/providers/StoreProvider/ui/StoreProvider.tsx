@@ -23,7 +23,7 @@ const StoreProvider = ({ children, initialState }: PropsT) => {
 
   return (
     <Provider store={store}>
-      {children}
+      {children} 
     </Provider>
   )
 }
