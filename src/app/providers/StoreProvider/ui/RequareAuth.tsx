@@ -4,7 +4,7 @@ import { Navigate } from 'react-router'
 
 import { getUser } from 'entitiess/User/model/selectors/getUser/getUser'
 import { getUserInit } from 'entitiess/User/model/selectors/getUserInit/getUserInit'
-import { RulesT, getUserRoles } from 'entitiess/User'
+import { type RulesT, getUserRoles } from 'entitiess/User'
 
 import { Loader } from 'shared/ui'
 import { PathsAppT } from 'shared/config/routes/types'

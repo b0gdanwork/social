@@ -32,3 +32,9 @@
   display: none;
   background-color: var(--red);
 }
+
+.loginRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

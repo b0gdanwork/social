@@ -1,0 +1,10 @@
+.popover {
+  position: relative;
+}
+
+.panel {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 5px);
+  right: 0;
+}

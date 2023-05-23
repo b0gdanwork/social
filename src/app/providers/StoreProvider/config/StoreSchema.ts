@@ -13,6 +13,7 @@ import { type ArticlePageSchema } from 'pages/ArticlePage'
 import { type ArticleDetailsSchema } from 'entitiess/Article'
 import { type pageLayoutSchema } from 'pages/PageLayout'
 import { type rtkApi } from 'shared/api/rtkApi'
+import { type NotificationFeatureSchema } from 'features/notificationFeature'
 
 export default interface StoreSchema {
   counter: CounterSchema,
@@ -26,6 +27,7 @@ export default interface StoreSchema {
   articleDetails?: ArticleDetailsSchema
   addCommentForm?: AddCommentFormSchema
   articleDetailsPage?: ArticleDetailsPageSchema
+  notificationFeature?: NotificationFeatureSchema
 }
 
 export type StoreSchemaKeys = keyof StoreSchema

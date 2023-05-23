@@ -14,6 +14,7 @@ import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
 import s from './Navbar.module.scss'
 import { useNavigate } from 'react-router'
 import { type DropdawnItem } from 'shared/ui/Dropdawn/Dropdawn'
+import { NotificationFeature } from 'features/notificationFeature'
 
 interface NavbarProps {
   className?: string
@@ -96,7 +97,7 @@ const Navbar = (props: NavbarProps) => {
         children: <button className={classNames(s.newArticle)} key={2}>
           {t('Админка')}
         </button>,
-        onClick: toAdmin,
+        onClick: toAdmin
       }
 
       list.unshift(adminBtn)
@@ -107,12 +108,13 @@ const Navbar = (props: NavbarProps) => {
   
   const renderLogin = () => {
     if (!user) return
-    return <>
+    return <div className={s.loginRight}>
+      <NotificationFeature />
       <Dropdawn 
         menuItems={dropdawnnList}
         innerButton={<Avatar src={user.avatar} width={30} height={30}/>}
       />
-    </>
+    </div>
   }
 
   return (

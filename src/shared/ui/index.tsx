@@ -9,6 +9,7 @@ import Dropdawn from './Dropdawn/Dropdawn'
 import Form from './Form/Form'
 import Loader from './Loader/Loader'
 import Modal from './Modal/Modal'
+import Popover from './Popover/Popover'
 import Skeleton from './Skeleton/Skeleton'
 
-export { AppLink, AppButton, Loader, AppInput, Form, Modal, Divider, Avatar, AppSelect, Skeleton, AppTextarea, Dropdawn }
+export { AppLink, AppButton, Loader, AppInput, Form, Modal, Divider, Avatar, AppSelect, Skeleton, AppTextarea, Dropdawn, Popover }

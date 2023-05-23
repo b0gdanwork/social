@@ -41,7 +41,7 @@ function plaginsBuild ({ paths, isDev }: BuildOptionsT): webpack.WebpackPluginIn
       // e.g. via import(/* webpackMode: "weak" */ './file.js')
       allowAsyncCycles: false,
       // set the current working directory for displaying module paths
-      cwd: process.cwd(),
+      cwd: process.cwd()
     }))
     // plagins.push(new BundleAnalyzerPlugin())
   }
