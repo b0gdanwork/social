@@ -1,4 +1,4 @@
-import { RulesT } from "entitiess/User"
+import { RulesT } from "@/entitiess/User"
 import { FC } from "react"
 import { RouteObject } from "react-router"
 

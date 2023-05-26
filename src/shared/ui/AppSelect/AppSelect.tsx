@@ -1,6 +1,6 @@
 import { type ReactNode, memo, useMemo } from 'react'
 import Select, { type SingleValue, type ActionMeta, type GroupBase, type OptionsOrGroups } from 'react-select'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
 
 import s from './AppSelect.module.scss'
 

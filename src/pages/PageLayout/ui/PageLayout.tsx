@@ -1,10 +1,10 @@
 import React, { useRef, type ReactNode, useEffect, useCallback } from 'react'
 import s from './PageLayout.module.scss'
-import useInfiniteScroll from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
+import useInfiniteScroll from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
 import { useLocation } from 'react-router'
 import { useSelector } from 'react-redux'
 import { getPageLayoutScroll } from '../model/selectors/PageLayoutSelectors'
-import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
+import { useAppDispath } from '@/shared/lib/hooks/useAppDispath/useAppDispath'
 import { pageLayoutActions } from '../model/slice/pageLayoutSlice'
 import throttle from 'lodash/throttle'
 

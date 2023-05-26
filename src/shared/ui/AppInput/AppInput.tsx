@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { type InputHTMLAttributes, useState } from 'react'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
 import s from './AppInput.module.scss'
 import { useEffect } from 'react'
 

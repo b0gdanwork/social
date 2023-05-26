@@ -1,7 +1,7 @@
 
 import { memo } from 'react'
 import s from './Skeleton.module.scss'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
 
 interface Props {
   width?: number | string,

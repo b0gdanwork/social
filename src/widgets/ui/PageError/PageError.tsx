@@ -1,6 +1,6 @@
 import s from './PageError.module.scss'
 
-import img404 from 'shared/assets/img/404.png'
+import img404 from '@/shared/assets/img/404.png'
 
 interface PropsPageError {}
 

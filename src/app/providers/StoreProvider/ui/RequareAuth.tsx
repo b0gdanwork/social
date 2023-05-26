@@ -2,12 +2,12 @@ import { useMemo, type ReactNode } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router'
 
-import { getUser } from 'entitiess/User/model/selectors/getUser/getUser'
-import { getUserInit } from 'entitiess/User/model/selectors/getUserInit/getUserInit'
-import { type RulesT, getUserRoles } from 'entitiess/User'
+import { getUser } from '@/entitiess/User/model/selectors/getUser/getUser'
+import { getUserInit } from '@/entitiess/User/model/selectors/getUserInit/getUserInit'
+import { type RulesT, getUserRoles } from '@/entitiess/User'
 
-import { Loader } from 'shared/ui'
-import { PathsAppT } from 'shared/config/routes/types'
+import { Loader } from '@/shared/ui'
+import { PathsAppT } from '@/shared/config/routes/types'
 
 interface PropsT {
   rules?: RulesT[]

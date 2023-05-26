@@ -1,8 +1,8 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Divider } from 'shared/ui'
-import { ArticleList, ArticleListViewT } from 'entitiess/Article'
+import { Divider } from '@/shared/ui'
+import { ArticleList, ArticleListViewT } from '@/entitiess/Article'
 import { useArticleRecomendList } from '../../model/api'
 
 interface Props {

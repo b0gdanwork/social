@@ -1,13 +1,13 @@
 import React, { memo, useCallback } from 'react'
 
 import s from './addCommentForm.module.scss'
-import { AppButton, AppTextarea } from 'shared/ui'
-import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { AppButton, AppTextarea } from '@/shared/ui'
+import DynamicModuleLoader from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { addCommentFormActions, addCommentFormReducer } from '../model/slices/addCommentFormSlice'
 import { useSelector } from 'react-redux'
 import { getAddCommentFormText } from '../model/selectors/addCommentFormSelectors'
-import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
-import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
+import { useAppDispath } from '@/shared/lib/hooks/useAppDispath/useAppDispath'
+import { AppButtonTheme } from '@/shared/ui/AppButton/AppButton'
 
 export interface AddCommentFormProps {
   onSendComment: (text: string) => void

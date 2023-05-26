@@ -1,12 +1,12 @@
 
 import { type ReactNode, memo, useCallback } from 'react'
 
-import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
+import { useAppDispath } from '@/shared/lib/hooks/useAppDispath/useAppDispath'
 import { useSelector } from 'react-redux'
 import { getArticlePageOrder, getArticlePageSort } from '../../model/selectors/articlePageSelectors'
 import { articlesPageActions } from '../../model/slices/ArticlesPageSlice'
-import { ArticleSortField, ArticleSortOrder } from 'entitiess/Article/model/types/articleSchema'
-import { AppSelect } from 'shared/ui'
+import { ArticleSortField, ArticleSortOrder } from '@/entitiess/Article/model/types/articleSchema'
+import { AppSelect } from '@/shared/ui'
 
 import s from './ArticlePageSort.module.scss'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'

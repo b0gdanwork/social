@@ -50,7 +50,7 @@ function buildRules (BuildOptions: BuildOptionsT): webpack.RuleSetRule[] {
     imgsRule,
     // svgRule,
     scssRuleBuild(BuildOptions),
-    babelRule,
+    babelRule
     // BuildOptions.isDev ? tsRule : null as any
   ]
 

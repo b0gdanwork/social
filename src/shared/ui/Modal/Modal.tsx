@@ -1,5 +1,5 @@
 import { useEffect, type ReactNode } from 'react'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
 import Portal from '../Portal/Portal'
 
 import s from './Modal.module.scss'

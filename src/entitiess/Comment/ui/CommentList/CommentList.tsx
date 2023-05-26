@@ -1,5 +1,5 @@
-import { type CommentT } from 'entitiess/Comment/model/types'
-import { Skeleton } from 'shared/ui'
+import { type CommentT } from '@/entitiess/Comment/model/types'
+import { Skeleton } from '@/shared/ui'
 import CommentItem from '../CommentItem/CommentItem'
 
 import s from './CommentList.module.scss'

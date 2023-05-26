@@ -1,4 +1,4 @@
-import { type NotificationT } from 'entitiess/Notification/types/Notification'
+import { type NotificationT } from '@/entitiess/Notification/types/Notification'
 import NotificationItem from '../NotificationItem/NotificationItem'
 
 import s from './NotificationList.module.scss'

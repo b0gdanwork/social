@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { useEffect, useState } from 'react'
-import { AppButton } from 'shared/ui'
-import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
+import { AppButton } from '@/shared/ui'
+import { AppButtonTheme } from '@/shared/ui/AppButton/AppButton'
 
 interface Props {}
 

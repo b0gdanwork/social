@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppButton } from 'shared/ui'
+import { AppButton } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
 
 import { MdLanguage } from 'react-icons/md'

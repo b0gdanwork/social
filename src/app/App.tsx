@@ -2,10 +2,10 @@
 import './styles/index.scss'
 import 'rc-tooltip/assets/bootstrap.css'
 
-import { userActions } from 'entitiess/User'
+import { userActions } from '@/entitiess/User'
 import { memo, useEffect } from 'react'
-import { useTheme } from 'shared/config/theme'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { useTheme } from '@/shared/config/theme'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
 
 import { useAppDispath } from '../shared/lib/hooks/useAppDispath/useAppDispath'
 import { Navbar, SideBar } from '../widgets/ui/index'

@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type ThunkConfig } from 'app/providers/StoreProvider'
+import { type ThunkConfig } from '@/app/providers/StoreProvider'
 import { type ArticleT } from '../../types/articleSchema'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type

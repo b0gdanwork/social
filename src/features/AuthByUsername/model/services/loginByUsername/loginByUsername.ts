@@ -1,8 +1,8 @@
-import { USER_LOVALSTORAGE_KEY } from 'shared/const/localstorage'
-import { type UserT } from 'entitiess/User/model/types/userSchema'
+import { USER_LOVALSTORAGE_KEY } from '@/shared/const/localstorage'
+import { type UserT } from '@/entitiess/User/model/types/userSchema'
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { userActions } from 'entitiess/User'
-import { type ThunkConfig } from 'app/providers/StoreProvider'
+import { userActions } from '@/entitiess/User'
+import { type ThunkConfig } from '@/app/providers/StoreProvider'
 
 export interface LoginByUsernameProps {
   username: string

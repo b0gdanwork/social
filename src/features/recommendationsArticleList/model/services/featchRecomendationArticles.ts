@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type ThunkConfig } from 'app/providers/StoreProvider'
-import { type ArticleT } from 'entitiess/Article'
+import { type ThunkConfig } from '@/app/providers/StoreProvider'
+import { type ArticleT } from '@/entitiess/Article'
 
 interface Props {
   limit?: number 

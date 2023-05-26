@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
-import { ArticleList, ArticleListViewT } from 'entitiess/Article'
+import { ArticleList, ArticleListViewT } from '@/entitiess/Article'
 import { useCallback, useEffect } from 'react'
-import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
+import { useAppDispath } from '@/shared/lib/hooks/useAppDispath/useAppDispath'
 import { featchArticles } from '../model/services/featchArticles'
 import { articlesPageActions, articlesPageReducer, getArticles } from '../model/slices/ArticlesPageSlice'
 import { useSelector } from 'react-redux'
 import { getArticlePageError, getArticlePageHasMore, getArticlePageInited, getArticlePageIsLoading, getArticlePageLimit, getArticlePagePageNum, getArticlePageView } from '../model/selectors/articlePageSelectors'
-import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import DynamicModuleLoader from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import ArticlePageFilters from './ArticlePageFilters/ArticlePageFilters'
 
 export default function ArticlePage () {

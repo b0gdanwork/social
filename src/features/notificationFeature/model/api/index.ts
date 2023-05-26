@@ -1,5 +1,5 @@
-import { type NotificationT } from 'entitiess/Notification'
-import { rtkApi } from 'shared/api/rtkApi'
+import { type NotificationT } from '@/entitiess/Notification'
+import { rtkApi } from '@/shared/api/rtkApi'
 
 const extendedApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({

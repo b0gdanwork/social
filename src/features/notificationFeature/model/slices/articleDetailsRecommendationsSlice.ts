@@ -4,8 +4,8 @@ import {
 } from '@reduxjs/toolkit'
 
 import { type NotificationFeatureSchema } from '../types'
-import { type StoreSchema } from 'app/providers/StoreProvider'
-import { type NotificationT } from 'entitiess/Notification/types/Notification'
+import { type StoreSchema } from '@/app/providers/StoreProvider'
+import { type NotificationT } from '@/entitiess/Notification/types/Notification'
 
 const recomendationsAdapter = createEntityAdapter<NotificationT>({
   selectId: (notif) => notif.id

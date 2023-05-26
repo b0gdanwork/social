@@ -11,7 +11,8 @@
     "allowSyntheticDefaultImports" : true,
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      // "*": ["./src/*"],
+      "@/*": ["./src/*"]
     },
     "strict": true,
     "isolatedModules": true
@@ -23,7 +24,6 @@
   // ],
   "ts-node": {
     "compilerOptions": {
-      "strictFunctionTypes": true,
       "module": "CommonJS",
     }
   }

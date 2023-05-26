@@ -1,15 +1,15 @@
 import React, { memo } from 'react'
-import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
+import { useAppDispath } from '@/shared/lib/hooks/useAppDispath/useAppDispath'
 
 import { articlesPageActions } from '../../model/slices/ArticlesPageSlice'
-import { ArticleListViewT } from 'entitiess/Article'
+import { ArticleListViewT } from '@/entitiess/Article'
 
 import { BsFillGridFill, BsList } from 'react-icons/bs'
 
 import s from './ArticlePageViewSelector.module.scss'
 import { useSelector } from 'react-redux'
 import { getArticlePageView } from '../../model/selectors/articlePageSelectors'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
 
 function ArticlePageViewSelector () {
 

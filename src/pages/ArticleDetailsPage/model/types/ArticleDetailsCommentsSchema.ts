@@ -1,4 +1,4 @@
-import { type CommentT } from 'entitiess/Comment/model/types'
+import { type CommentT } from '@/entitiess/Comment/model/types'
 import {
   type EntityState
 } from '@reduxjs/toolkit'

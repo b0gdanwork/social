@@ -1,9 +1,9 @@
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
 import { useCallback } from 'react'
 import { useSelector } from 'react-redux'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
-import { AppButton, AppInput, Form } from 'shared/ui'
-import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
+import { AppButton, AppInput, Form } from '@/shared/ui'
+import { AppButtonTheme } from '@/shared/ui/AppButton/AppButton'
 
 import s from './LoginForm.module.scss'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
@@ -11,8 +11,8 @@ import { getLoginPassword } from '../../model/selectors/getLoginState/getLoginPa
 import { getLoginUsername } from '../../model/selectors/getLoginState/getLoginUsername'
 import { getLoginIsLoading } from '../../model/selectors/getLoginState/getLoginIsLoading'
 import { getLoginError } from '../../model/selectors/getLoginState/getLoginError'
-import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
+import DynamicModuleLoader from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispath } from '@/shared/lib/hooks/useAppDispath/useAppDispath'
 
 export interface PropsLoginForm {
   className?: string

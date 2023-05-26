@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { USER_LOVALSTORAGE_KEY } from 'shared/const/localstorage'
+import { USER_LOVALSTORAGE_KEY } from '@/shared/const/localstorage'
 
 const baseURL = __IS_DEV__ ? 'http://localhost:8000' : 'http://localhost:8000'
 

@@ -1,6 +1,6 @@
 import { memo, useState } from 'react'
 
-import { type ArticleCodeT } from 'entitiess/Article/model/types/articleSchema'
+import { type ArticleCodeT } from '@/entitiess/Article/model/types/articleSchema'
 import { BiCopy } from 'react-icons/bi'
 
 import s from './ArticleCodeBlockComponent.module.scss'

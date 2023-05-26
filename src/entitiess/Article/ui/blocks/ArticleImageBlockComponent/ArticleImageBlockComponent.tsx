@@ -1,4 +1,4 @@
-import { type ArticleImageT } from 'entitiess/Article/model/types/articleSchema'
+import { type ArticleImageT } from '@/entitiess/Article/model/types/articleSchema'
 import { memo } from 'react'
 
 import s from './ArticleImageBlockComponent.module.scss'

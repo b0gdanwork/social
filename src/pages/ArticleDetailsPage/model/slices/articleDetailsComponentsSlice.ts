@@ -1,9 +1,9 @@
-import { type CommentT } from 'entitiess/Comment/model/types'
+import { type CommentT } from '@/entitiess/Comment/model/types'
 import {
   createEntityAdapter,
   createSlice
 } from '@reduxjs/toolkit'
-import { type StoreSchema } from 'app/providers/StoreProvider'
+import { type StoreSchema } from '@/app/providers/StoreProvider'
 import { featchCommentsByArrticleId } from '../services/featchCommentsByArrticleId'
 import { type ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema'
 

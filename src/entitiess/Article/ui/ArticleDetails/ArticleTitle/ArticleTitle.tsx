@@ -1,7 +1,7 @@
 import { memo } from 'react'
 
-import { Avatar, Divider, Skeleton } from 'shared/ui'
-import { type ArticleT } from 'entitiess/Article/model/types/articleSchema'
+import { Avatar, Divider, Skeleton } from '@/shared/ui'
+import { type ArticleT } from '@/entitiess/Article/model/types/articleSchema'
 
 import { FaRegEye } from 'react-icons/fa'
 import { AiTwotoneCalendar } from 'react-icons/ai'

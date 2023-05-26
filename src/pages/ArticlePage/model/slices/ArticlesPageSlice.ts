@@ -4,13 +4,13 @@ import {
   type PayloadAction
 } from '@reduxjs/toolkit'
 
-import { type StoreSchema } from 'app/providers/StoreProvider'
-import { ArticleListViewT, type ArticleT } from 'entitiess/Article'
+import { type StoreSchema } from '@/app/providers/StoreProvider'
+import { ArticleListViewT, type ArticleT } from '@/entitiess/Article'
 import { type ArticlePageSchema } from '../types/ArticlePageTypes'
 import { featchArticles } from '../services/featchArticles'
-import { ARTICLE_PAGE_VIEW } from 'shared/const/localstorage'
-import { ArticleSortField, ArticleSortOrder, ArticleType } from 'entitiess/Article'
-import { getSearchParams } from 'shared/lib/helpers/urlHelpers/urlHelpers'
+import { ARTICLE_PAGE_VIEW } from '@/shared/const/localstorage'
+import { ArticleSortField, ArticleSortOrder, ArticleType } from '@/entitiess/Article'
+import { getSearchParams } from '@/shared/lib/helpers/urlHelpers/urlHelpers'
 
 const articlesAdapter = createEntityAdapter<ArticleT>({
   selectId: (comment) => comment.id

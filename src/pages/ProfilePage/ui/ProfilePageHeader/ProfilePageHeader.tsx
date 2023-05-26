@@ -1,9 +1,9 @@
 
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
 
 import { useMemo, memo } from 'react'
-import { AppButton } from 'shared/ui'
-import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
+import { AppButton } from '@/shared/ui'
+import { AppButtonTheme } from '@/shared/ui/AppButton/AppButton'
 import { useTranslation } from 'react-i18next'
 
 import s from './ProfilePageHeader.module.scss'

@@ -1,15 +1,15 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { type ArticleListViewT, type ArticleT } from 'entitiess/Article/model/types/articleSchema'
+import { type ArticleListViewT, type ArticleT } from '@/entitiess/Article/model/types/articleSchema'
 
-import { AppButton, Avatar, Skeleton } from 'shared/ui'
-import { AppButtonTheme } from 'shared/ui/AppButton/AppButton'
+import { AppButton, Avatar, Skeleton } from '@/shared/ui'
+import { AppButtonTheme } from '@/shared/ui/AppButton/AppButton'
 
 import { FaRegEye } from 'react-icons/fa'
 
 import s from './ArticleListItem.module.scss'
-import { useHover } from 'shared/lib/hooks/useHover/useHover'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
-import { PathsAppT } from 'shared/config/routes/types'
+import { useHover } from '@/shared/lib/hooks/useHover/useHover'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
+import { PathsAppT } from '@/shared/config/routes/types'
 import { type HTMLAttributeAnchorTarget, memo } from 'react'
 import { Link } from 'react-router-dom'
 

@@ -1,19 +1,19 @@
 /* eslint-disable i18next/no-literal-string */
 import React, { memo } from 'react'
 import { useCallback, useMemo, useState } from 'react'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
-import { AppButton, AppLink } from 'shared/ui'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
+import { AppButton, AppLink } from '@/shared/ui'
 import ToggleLanguageBtn from '../ToggleLanguageBtn/ToggleLanguageBtn'
 import ToggleThemeBtn from '../ToggleThemeBtn/ToggleThemeBtn'
 
 import { TbArrowBarToRight } from 'react-icons/tb'
 
 import s from './SideBar.module.scss'
-import AppRoutesList from 'shared/config/routes/routes'
+import AppRoutesList from '@/shared/config/routes/routes'
 import { useSelector } from 'react-redux'
-import { getUser, isUserAdmin } from 'entitiess/User'
+import { getUser, isUserAdmin } from '@/entitiess/User'
 import { useTranslation } from 'react-i18next'
-import { PathsAppT } from 'shared/config/routes/types'
+import { PathsAppT } from '@/shared/config/routes/types'
 
 interface Props {}
 

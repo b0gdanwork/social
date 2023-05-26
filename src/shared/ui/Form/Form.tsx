@@ -1,5 +1,5 @@
 import { useMemo, type FormEvent, type FormHTMLAttributes, type ReactNode } from 'react'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
 import Loader from '../Loader/Loader'
 
 import s from './Form.module.scss'

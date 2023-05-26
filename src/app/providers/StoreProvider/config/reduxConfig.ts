@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import type StoreSchema from './StoreSchema'
-import { counterReducer } from 'entitiess/Counter'
-import { userReducer } from 'entitiess/User'
+import { counterReducer } from '@/entitiess/Counter'
+import { userReducer } from '@/entitiess/User'
 
 import {
   type CombinedState,
@@ -9,10 +9,10 @@ import {
 } from '@reduxjs/toolkit'
 
 import { createReducerManager } from './reducerManager'
-import { $api } from 'shared/api/api'
+import { $api } from '@/shared/api/api'
 import { type NavigateOptions, type To } from 'react-router'
-import { pageLayoutReducer } from 'pages/PageLayout/model/slice/pageLayoutSlice'
-import { rtkApi } from 'shared/api/rtkApi'
+import { pageLayoutReducer } from '@/pages/PageLayout/model/slice/pageLayoutSlice'
+import { rtkApi } from '@/shared/api/rtkApi'
 
 interface Options { 
   navigate: (to: To, options?: NavigateOptions) => void;

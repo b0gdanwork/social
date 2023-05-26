@@ -1,8 +1,8 @@
-import { AppInput, Divider } from 'shared/ui'
+import { AppInput, Divider } from '@/shared/ui'
 import ArticlePageViewSelector from '../ArticlePageViewSelector/ArticlePageViewSelector'
 import { memo, useCallback } from 'react'
 
-import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
+import { useAppDispath } from '@/shared/lib/hooks/useAppDispath/useAppDispath'
 import { useSelector } from 'react-redux'
 import { getArticlePageSearch, getArticlePageType } from '../../model/selectors/articlePageSelectors'
 import { articlesPageActions } from '../../model/slices/ArticlesPageSlice'
@@ -11,8 +11,8 @@ import ArticlePageSort from '../ArticlePageSort/ArticlePageSort'
 import s from './ArticlePageFilters.module.scss'
 import { featchArticles } from '../../model/services/featchArticles'
 import debounce from 'lodash/debounce'
-import { ArticleType } from 'entitiess/Article'
-import Tabs from 'shared/ui/Tabs/Tabs'
+import { ArticleType } from '@/entitiess/Article'
+import Tabs from '@/shared/ui/Tabs/Tabs'
 
 interface Props {}
 

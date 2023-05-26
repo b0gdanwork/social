@@ -1,20 +1,20 @@
-import { RequareAuth } from 'app/providers/StoreProvider'
-import { AboutPage } from 'pages/AboutPage'
-import { AdminPanelPage } from 'pages/AdminPanelPage'
-import { ArticleCreatePage } from 'pages/ArticleCreatePage'
-import { ArticleDetailsPage } from 'pages/ArticleDetailsPage'
-import { ArticleEditPage } from 'pages/ArticleEditPage'
-import { ArticlePage } from 'pages/ArticlePage'
-import { MainPage } from 'pages/MainPage'
-import NotFoundPage from 'pages/NotFoundPage/ui/NotFoundPage'
-import { ProfilePage } from 'pages/ProfilePage'
+import { RequareAuth } from '@/app/providers/StoreProvider'
+import { AboutPage } from '@/pages/AboutPage'
+import { AdminPanelPage } from '@/pages/AdminPanelPage'
+import { ArticleCreatePage } from '@/pages/ArticleCreatePage'
+import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage'
+import { ArticleEditPage } from '@/pages/ArticleEditPage'
+import { ArticlePage } from '@/pages/ArticlePage'
+import { MainPage } from '@/pages/MainPage'
+import NotFoundPage from '@/pages/NotFoundPage/ui/NotFoundPage'
+import { ProfilePage } from '@/pages/ProfilePage'
 
 import { BiHomeAlt } from 'react-icons/bi'
 import { BiGame } from 'react-icons/bi'
 import { CgProfile } from 'react-icons/cg'
 import { RiArticleLine, RiAdminLine } from 'react-icons/ri'
-import { ForbiddenPage } from 'pages/ForbiddenPage'
-import { CustomRouteObject, PathsAppT } from './types'
+import { ForbiddenPage } from '@/pages/ForbiddenPage'
+import { type CustomRouteObject, PathsAppT } from './types'
 
 const AppRoutesList: CustomRouteObject[] = [
   {
@@ -84,7 +84,7 @@ const AppRoutesList: CustomRouteObject[] = [
   },
   {
     path: PathsAppT.FORBIDDEN,
-    element: <ForbiddenPage />,
+    element: <ForbiddenPage />
   },
   {
     path: '*',

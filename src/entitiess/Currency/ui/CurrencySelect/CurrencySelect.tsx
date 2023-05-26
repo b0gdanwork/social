@@ -1,6 +1,6 @@
 import { Currency } from '../../types/currency'
-import { AppSelect } from 'shared/ui'
-import { type PropsAppSelect } from 'shared/ui/AppSelect/AppSelect'
+import { AppSelect } from '@/shared/ui'
+import { type PropsAppSelect } from '@/shared/ui/AppSelect/AppSelect'
 
 interface PropsCurrencySelect extends PropsAppSelect {
   className?: string,

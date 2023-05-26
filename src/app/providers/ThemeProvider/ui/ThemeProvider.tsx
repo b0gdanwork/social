@@ -1,5 +1,5 @@
 import { type ReactNode, useCallback, useMemo, useState } from 'react'
-import { ThemeContext, type ThemeContextT, ThemesT } from 'shared/config/theme/context/ThemeContext'
+import { ThemeContext, type ThemeContextT, ThemesT } from '@/shared/config/theme/context/ThemeContext'
 
 interface PropsT {
   children: ReactNode,

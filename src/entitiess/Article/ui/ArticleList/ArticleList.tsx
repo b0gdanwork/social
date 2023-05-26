@@ -1,10 +1,10 @@
 /* eslint-disable react/display-name */
 import React, { useState, type HTMLAttributeAnchorTarget, memo } from 'react'
 
-import { type ArticleListViewT, type ArticleT } from 'entitiess/Article/model/types/articleSchema'
+import { type ArticleListViewT, type ArticleT } from '@/entitiess/Article/model/types/articleSchema'
 import ArticleListItem from '../ArticleListItem/ArticleListItem'
 
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
 import { VirtuosoGrid, type GridScrollSeekPlaceholderProps } from 'react-virtuoso'
 
 import s from './ArticleList.module.scss'

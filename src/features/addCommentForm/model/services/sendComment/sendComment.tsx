@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type ThunkConfig } from 'app/providers/StoreProvider'
-import { type CommentT } from 'entitiess/Comment/model/types'
-import { getUser } from 'entitiess/User/model/selectors/getUser/getUser'
+import { type ThunkConfig } from '@/app/providers/StoreProvider'
+import { type CommentT } from '@/entitiess/Comment/model/types'
+import { getUser } from '@/entitiess/User/model/selectors/getUser/getUser'
 import { getAddCommentFormText } from '../../selectors/addCommentFormSelectors'
-import { getArticleDetailData } from 'entitiess/Article/model/selectors/getArticleDetailData/getArticleDetailData'
+import { getArticleDetailData } from '@/entitiess/Article/model/selectors/getArticleDetailData/getArticleDetailData'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export const sendComment = createAsyncThunk<CommentT, void, ThunkConfig<string>>(

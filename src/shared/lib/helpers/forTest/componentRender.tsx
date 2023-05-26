@@ -1,6 +1,6 @@
-import { StoreProvider, type StoreSchema } from 'app/providers/StoreProvider'
+import { StoreProvider, type StoreSchema } from '@/app/providers/StoreProvider'
 import { type ReactNode, type FC } from 'react'
-import 'shared/config/i18n/i18nForTest'
+import '@/shared/config/i18n/i18nForTest'
 import { type DeepPartial } from '@reduxjs/toolkit'
 
 interface Props {

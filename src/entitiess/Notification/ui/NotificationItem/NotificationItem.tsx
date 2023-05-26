@@ -1,4 +1,4 @@
-import { type NotificationT } from 'entitiess/Notification/types/Notification'
+import { type NotificationT } from '@/entitiess/Notification/types/Notification'
 
 import { Link } from 'react-router-dom'
 

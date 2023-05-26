@@ -1,8 +1,8 @@
 
 import { memo } from 'react'
 import s from './Tabs.module.scss'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
-import { type ArticleType } from 'entitiess/Article'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
+import { type ArticleType } from '@/entitiess/Article'
 
 interface Props {
   value: ArticleType,

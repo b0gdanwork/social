@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type ThunkConfig } from 'app/providers/StoreProvider'
-import { type CommentT } from 'entitiess/Comment/model/types'
-import { getUser } from 'entitiess/User'
-import { getArticleDetailData } from 'entitiess/Article/model/selectors/getArticleDetailData/getArticleDetailData'
+import { type ThunkConfig } from '@/app/providers/StoreProvider'
+import { type CommentT } from '@/entitiess/Comment/model/types'
+import { getUser } from '@/entitiess/User'
+import { getArticleDetailData } from '@/entitiess/Article/model/selectors/getArticleDetailData/getArticleDetailData'
 import { addCommentFormActions } from '../../slices/addCommentFormSlice'
 import { featchCommentsByArrticleId } from '../../../../../pages/ArticleDetailsPage/model/services/featchCommentsByArrticleId'
 

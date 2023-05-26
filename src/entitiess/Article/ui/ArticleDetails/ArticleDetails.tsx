@@ -1,18 +1,18 @@
 import { memo, useEffect, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 
-import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
-import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispath } from '@/shared/lib/hooks/useAppDispath/useAppDispath'
+import DynamicModuleLoader from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
-import { fetchArticleById } from 'entitiess/Article/model/services/fetchArticleById/fetchArticleById'
-import { articleDetailsReducer } from 'entitiess/Article/model/slice/articleDetailsSlice'
+import { fetchArticleById } from '@/entitiess/Article/model/services/fetchArticleById/fetchArticleById'
+import { articleDetailsReducer } from '@/entitiess/Article/model/slice/articleDetailsSlice'
 
 import { getArticleDetailError } from '../../model/selectors/getArticleDetailError/getArticleDetailError'
 import { getArticleDetailIsLoading } from '../../model/selectors/getArticleDetailIsLoading/getArticleDetailIsLoading'
 import { getArticleDetailData } from '../../model/selectors/getArticleDetailData/getArticleDetailData'
 
 import ArticleTitle from './ArticleTitle/ArticleTitle'
-import { ARTICLE_TYPES } from 'entitiess/Article/model/types/articleSchema'
+import { ARTICLE_TYPES } from '@/entitiess/Article/model/types/articleSchema'
 import ArticleCodeBlockComponent from '../blocks/ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import ArticleImageBlockComponent from '../blocks/ArticleImageBlockComponent/ArticleImageBlockComponent'
 import ArticleTextBlockComponent from '../blocks/ArticleTextBlockComponent/ArticleTextBlockComponent'

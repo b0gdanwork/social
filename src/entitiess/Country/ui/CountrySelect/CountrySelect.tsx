@@ -1,6 +1,6 @@
-import { AppSelect } from 'shared/ui'
+import { AppSelect } from '@/shared/ui'
 import { Country } from './../../types/country'
-import { type PropsAppSelect } from 'shared/ui/AppSelect/AppSelect'
+import { type PropsAppSelect } from '@/shared/ui/AppSelect/AppSelect'
 
 interface PropsCountrySelect extends PropsAppSelect {
   className?: string,

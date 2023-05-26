@@ -2,14 +2,14 @@ import { useEffect, useCallback, memo } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { CommentList } from 'entitiess/Comment'
-import AddCommentForm from 'features/addCommentForm/ui/addCommentForm'
-import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
+import { CommentList } from '@/entitiess/Comment'
+import AddCommentForm from '@/features/addCommentForm/ui/addCommentForm'
+import { useAppDispath } from '@/shared/lib/hooks/useAppDispath/useAppDispath'
 
 import { featchCommentsByArrticleId } from '../../model/services/featchCommentsByArrticleId'
 import { getArticleComments } from '../../model/slices/articleDetailsComponentsSlice'
 import { getCommentsArticleIsLoading } from '../../model/selectors/comments'
-import { addCommentForArticle } from 'features/addCommentForm'
+import { addCommentForArticle } from '@/features/addCommentForm'
 
 import s from './CommentsList.module.scss'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
 import s from './AppTextarea.module.scss'
 
 interface Props {

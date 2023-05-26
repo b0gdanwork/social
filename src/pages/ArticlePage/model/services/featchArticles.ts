@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type ThunkConfig } from 'app/providers/StoreProvider'
-import { ArticleType, type ArticleT } from 'entitiess/Article'
+import { type ThunkConfig } from '@/app/providers/StoreProvider'
+import { ArticleType, type ArticleT } from '@/entitiess/Article'
 import { getArticlePageLimit, getArticlePageOrder, getArticlePagePageNum, getArticlePageSearch, getArticlePageSort, getArticlePageType } from '../selectors/articlePageSelectors'
-import { setSearchParams } from 'shared/lib/helpers/urlHelpers/urlHelpers'
+import { setSearchParams } from '@/shared/lib/helpers/urlHelpers/urlHelpers'
 
 interface Props {
   replace?: boolean 

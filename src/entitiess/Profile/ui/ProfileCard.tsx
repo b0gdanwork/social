@@ -1,10 +1,10 @@
-import { AppInput, Form } from 'shared/ui'
-import { type ProfileT, type ProfileSchema } from 'entitiess/Profile'
+import { AppInput, Form } from '@/shared/ui'
+import { type ProfileT, type ProfileSchema } from '@/entitiess/Profile'
 import { useMemo } from 'react'
 
 import s from './ProfileCard.module.scss'
-import { CountrySelect } from 'entitiess/Country'
-import { CurrencySelect } from 'entitiess/Currency'
+import { CountrySelect } from '@/entitiess/Country'
+import { CurrencySelect } from '@/entitiess/Currency'
 import { type ErrorsValidateProfile } from '../model/types/profileSchema'
 
 type ProfileSchemaForProps = Partial<Omit<ProfileSchema, 'data'>>

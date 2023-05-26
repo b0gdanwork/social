@@ -1,4 +1,4 @@
-import { type ArticleTextT } from 'entitiess/Article/model/types/articleSchema'
+import { type ArticleTextT } from '@/entitiess/Article/model/types/articleSchema'
 import { memo } from 'react'
 
 import s from './ArticleTextBlockComponent.module.scss'

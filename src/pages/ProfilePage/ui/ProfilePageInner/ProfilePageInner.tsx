@@ -1,16 +1,16 @@
 /* eslint-disable eqeqeq */
 import { useCallback, useEffect, memo } from 'react'
 
-import { fetchProfileData, getProfileData, getProfileError, getProfileIsLoading, getProfileReadonly, profileActions, updateProfileData, type ProfileT } from 'entitiess/Profile'
-import { ProfileCard } from 'entitiess/Profile'
+import { fetchProfileData, getProfileData, getProfileError, getProfileIsLoading, getProfileReadonly, profileActions, updateProfileData, type ProfileT } from '@/entitiess/Profile'
+import { ProfileCard } from '@/entitiess/Profile'
 import { useSelector } from 'react-redux'
-import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath'
+import { useAppDispath } from '@/shared/lib/hooks/useAppDispath/useAppDispath'
 
-import { Avatar } from 'shared/ui'
+import { Avatar } from '@/shared/ui'
 import { useParams } from 'react-router'
-import { getUser } from 'entitiess/User/model/selectors/getUser/getUser'
+import { getUser } from '@/entitiess/User/model/selectors/getUser/getUser'
 import ProfilePageHeader from '../ProfilePageHeader/ProfilePageHeader'
-import { getProfileValidateErrors } from 'entitiess/Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors'
+import { getProfileValidateErrors } from '@/entitiess/Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 
 import s from './ProfilePageInner.module.scss'
 

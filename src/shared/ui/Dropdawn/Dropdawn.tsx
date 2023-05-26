@@ -2,7 +2,7 @@ import { type CSSProperties, memo, type ReactNode } from 'react'
 import { Menu } from '@headlessui/react'
 
 import s from './Dropdawn.module.scss'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { classNames } from '@/shared/lib/helpers/classNames/classNames'
 
 export interface DropdawnItem {
   classNameListItem?: string

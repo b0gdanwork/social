@@ -1,9 +1,9 @@
-import { NotificationList } from 'entitiess/Notification'
+import { NotificationList } from '@/entitiess/Notification'
 import { IoIosNotifications } from 'react-icons/io'
-import { Loader, Popover } from 'shared/ui'
+import { Loader, Popover } from '@/shared/ui'
 
 import { useNotifications } from '../../model/api'
-import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import DynamicModuleLoader from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { notificationFeatureReducer } from '../../model/slices/articleDetailsRecommendationsSlice'
 
 import s from './NotificationFeature.module.scss'

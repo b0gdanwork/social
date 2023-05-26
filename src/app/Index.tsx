@@ -1,10 +1,10 @@
 import './styles/index.scss'
-import 'shared/config/i18n/i18n'
+import '@/shared/config/i18n/i18n.ts'
 
 import { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-import { Loader } from 'shared/ui'
+import { Loader } from '@/shared/ui'
 
 import App from './App'
 import { ErrorBoundary } from './providers/ErrorBoundary'

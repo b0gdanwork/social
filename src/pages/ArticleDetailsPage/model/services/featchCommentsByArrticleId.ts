@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type ThunkConfig } from 'app/providers/StoreProvider'
-import { type CommentT } from 'entitiess/Comment/model/types'
+import { type ThunkConfig } from '@/app/providers/StoreProvider'
+import { type CommentT } from '@/entitiess/Comment/model/types'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export const featchCommentsByArrticleId = createAsyncThunk<CommentT[], string | undefined, ThunkConfig<string>>(
