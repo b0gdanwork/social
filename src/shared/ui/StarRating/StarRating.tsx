@@ -23,6 +23,7 @@ function StarRating ({ onSelect, selectedStars }: Props) {
   }, [selectedStars])
 
   const onClick = (value: StarT) => {
+    if (selectedStars) return
     setSelectedValue(value)
     if (onSelect) {
       onSelect(value)
@@ -35,6 +36,7 @@ function StarRating ({ onSelect, selectedStars }: Props) {
   }
 
   const onMouseLeave = () => {
+    if (selectedStars) return
     setHoverValue(null)
   }
 

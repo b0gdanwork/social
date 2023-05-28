@@ -46,11 +46,17 @@ function RatingCard ({ title, onChange, selectedStars }: Props) {
     setValueRating(null)
   }, [closeMoadal])
 
+  console.log('selectedStars CARD', selectedStars)
   return (
     <div className={s.wrapper}>
-      { title
+      { title && !selectedStars
         ? <h3 className={s.title}>
           {title}
+        </h3>
+        : null}
+      { title && selectedStars
+        ? <h3 className={s.title}>
+          Спасибо за отзыв!
         </h3>
         : null}
       <StarRating 
