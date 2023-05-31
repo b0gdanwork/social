@@ -189,7 +189,6 @@ const toggleBlock = (editor: BaseEditor, format: string) => {
       !TEXT_ALIGN_TYPES.includes(format),
     split: true
   })
-  let newProperties: Partial<SlateElement>
 
   if (!isActive && isList) {
     const block = { type: format, children: [] }

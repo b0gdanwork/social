@@ -104,7 +104,7 @@ const Navbar = (props: NavbarProps) => {
     }
 
     return list
-  }, [createNewArticle, logout, t, toProfile, isAdmin, isManager])
+  }, [t, toProfile, createNewArticle, logout, isAdmin, isManager, toAdmin])
   
   const renderLogin = () => {
     if (!user) return

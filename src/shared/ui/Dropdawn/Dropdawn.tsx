@@ -4,6 +4,9 @@ import { Menu } from '@headlessui/react'
 import s from './Dropdawn.module.scss'
 import { classNames } from '@/shared/lib/helpers/classNames/classNames'
 
+const Button = Menu.Button
+const Items = Menu.Items
+
 export interface DropdawnItem {
   classNameListItem?: string
   children: ReactNode
@@ -15,6 +18,7 @@ interface PropsDropdawn {
   menuItems: DropdawnItem[]
   innerButton: ReactNode
   classNameItem?: string
+  classNameWrapper?: string
 }
 
 function Dropdawn (props: PropsDropdawn) {
@@ -22,7 +26,8 @@ function Dropdawn (props: PropsDropdawn) {
   const {
     menuItems,
     innerButton,
-    classNameItem
+    classNameItem,
+    classNameWrapper
   } = props
 
   const renderItems = (item: DropdawnItem, ind: number) => {
@@ -48,18 +53,18 @@ function Dropdawn (props: PropsDropdawn) {
     }
     return menuItems.map((item, index) => renderItems(item, index))
   }
-
+  
   return (
-    <div className={s.wrapper}>
+    <div className={classNames(s.wrapper, {}, [classNameWrapper])}>
       <Menu>
-        <Menu.Button>
+        <Button>
           {innerButton}
-        </Menu.Button>
-        <Menu.Items 
+        </Button>
+        <Items 
           className={s.list}
         >
           {renderMenuItems()}
-        </Menu.Items>
+        </Items>
       </Menu>
     </div>
   )

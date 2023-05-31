@@ -30,20 +30,20 @@ function SideBar ({}: Props) {
   }, [])
 
   const renderLinks = useMemo(() => {
-    const list =  AppRoutesList.map((route, ind) => {
+    const list = AppRoutesList.map((route, ind) => {
       if (!route.path || !route.name || (!user && route.authOnly) || route.rules) return <></>
       
-      return <AppLink key={route.path + ind} className={s.link} to={route.path} Icon={route.icon} isOpen={isOpen}>{t(route.name)}</AppLink>
+      return <AppLink key={`${route.path}${ind}`} className={s.link} to={route.path} Icon={route.icon} isOpen={isOpen} colorIcon='var(--navbar-color)'>{t(route.name)}</AppLink>
     })
 
     if (isAdmin) {
       const route = AppRoutesList.find(item => item.path === PathsAppT.ADMIN_PANEL)
-      if (!route || !route.path || !route.name || (!user && route.authOnly)) return 
-      list.push(<AppLink key={route.path} className={classNames(s.link, {}, [s.admin])} to={route.path} Icon={route.icon} isOpen={isOpen}>{t(route.name)}</AppLink>)
+      if (!route?.path || !route.name || (!user && route.authOnly)) return 
+      list.push(<AppLink key={route.path} className={classNames(s.link, {}, [s.admin])} to={route.path} Icon={route.icon} isOpen={isOpen} colorIcon='var(--navbar-color)'>{t(route.name)}</AppLink>)
     }
 
     return list
-  }, [isOpen, t, user])
+  }, [isAdmin, isOpen, t, user])
 
   return (
     <div className={classNames(s.sidebar, { [s.open]: isOpen }, [])}>

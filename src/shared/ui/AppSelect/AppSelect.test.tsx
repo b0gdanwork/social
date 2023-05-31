@@ -6,7 +6,7 @@ import AppSelect from './AppSelect'
 describe('test AppSelect', () => {
 
   test('', async () => {
-    const { container } = render(<AppSelect />)
+    const { } = render(<AppSelect />)
 
     // expect(container.getElementsByTagName('img')[0]).toBeInTheDocument()
   })

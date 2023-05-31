@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/object-curly-spacing */
+
 module.exports = {
   env: {
     browser: true,
@@ -11,7 +13,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', 'i18next', 'react-hooks', 'eslint-plugin-eslint-plagin-path-checker-fsd'],
+  plugins: ['react', 'i18next', 'react-hooks', 'ulbi-tv-plugin'],
   rules: {
     strictNullChecks: 0,
     'comma-dangle': [0, {
@@ -32,7 +34,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'import/prefer-default-export': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-props-no-spreading': 'warn',
+    'react/jsx-props-no-spreading': 'off',
     // 'no-shadow': 'off',
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
@@ -58,7 +60,8 @@ module.exports = {
     'i18next/no-literal-string': 'warn',
     '@typescript-eslint/no-dynamic-delete': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
-    'eslint-plagin-path-checker-fsd/eslint-plagin-path-checker-fsd': 'error'
+    'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
+    'ulbi-tv-plugin/public-api-imports': ['error', { alias: '@' }],
   },
   settings: {
     react: {

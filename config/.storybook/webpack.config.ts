@@ -1,7 +1,6 @@
 import { BuildPathsT } from './../build/types';
 import webpack from "webpack";
 import path from 'path';
-import styleRuleBuild from '../build/rules/styleRule'
 
 export default ({ config }:{config: webpack.Configuration}) => {
 
@@ -11,6 +10,11 @@ export default ({ config }:{config: webpack.Configuration}) => {
     srcJs: '',
     html: '',
     publicFolder: ''
+  } 
+
+  config!.resolve!.alias = {
+    ...config.resolve?.alias,
+    '@': paths.src
   }
 
   config.resolve?.modules?.push(paths.src)

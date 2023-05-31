@@ -6,7 +6,6 @@ import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage'
 import { ArticleEditPage } from '@/pages/ArticleEditPage'
 import { ArticlePage } from '@/pages/ArticlePage'
 import { MainPage } from '@/pages/MainPage'
-import NotFoundPage from '@/pages/NotFoundPage/ui/NotFoundPage'
 import { ProfilePage } from '@/pages/ProfilePage'
 
 import { BiHomeAlt } from 'react-icons/bi'
@@ -15,6 +14,7 @@ import { CgProfile } from 'react-icons/cg'
 import { RiArticleLine, RiAdminLine } from 'react-icons/ri'
 import { ForbiddenPage } from '@/pages/ForbiddenPage'
 import { type CustomRouteObject, PathsAppT } from './types'
+import { NotFoundPage } from '@/pages/NotFoundPage'
 
 const AppRoutesList: CustomRouteObject[] = [
   {

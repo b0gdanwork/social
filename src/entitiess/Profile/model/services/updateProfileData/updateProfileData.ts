@@ -3,6 +3,7 @@ import { type ThunkConfig } from '@/app/providers/StoreProvider'
 import { type ErrorsValidateProfile, type ProfileT } from '../../types/profileSchema'
 import { getProfileData } from './../../selectors/getProfileData/getProfileData'
 import validateProfileData from '../validateProfileData/validateProfileData'
+import { PathsAppT } from '@/shared/config/routes/types'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export const updateProfileData = createAsyncThunk<ProfileT, any, ThunkConfig< ErrorsValidateProfile[]>>(
@@ -20,7 +21,11 @@ export const updateProfileData = createAsyncThunk<ProfileT, any, ThunkConfig< Er
         return rejectWithValue(errors)
       }
 
-      const response = await extra.api.put<ProfileT>('/profile/' + formData?.id, formData)
+      if (!formData) {
+        return rejectWithValue(['Profile save err'])
+      }
+
+      const response = await extra.api.put<ProfileT>(PathsAppT.PROFILE + formData.id, formData)
 
       return response.data
 

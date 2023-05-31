@@ -25,8 +25,7 @@ function AppSelect (props: PropsAppSelect) {
     options,
     readOnly,
     className,
-    onChange,
-    ...anyProps
+    onChange
   } = props
 
   const onChangeFunc = (newValue: SingleValue<Option>, actionMeta: ActionMeta<Option>) => {

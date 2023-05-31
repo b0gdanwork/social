@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
 import { CommentList } from '@/entitiess/Comment'
-import AddCommentForm from '@/features/addCommentForm/ui/addCommentForm'
+import { AddCommentForm } from '@/features/addCommentForm'
 import { useAppDispath } from '@/shared/lib/hooks/useAppDispath/useAppDispath'
 
 import { featchCommentsByArrticleId } from '../../model/services/featchCommentsByArrticleId'

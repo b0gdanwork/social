@@ -4,7 +4,7 @@ import { combineReducers } from '@reduxjs/toolkit'
 import DynamicModuleLoader from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 import { articleDetailsCommentsReducer } from '../model/slices/articleDetailsComponentsSlice'
-import { recomendationArticlesReducer } from '@/features/recommendationsArticleList/model/slices/articleDetailsRecommendationsSlice'
+import { recomendationArticlesReducer } from '@/features/recommendationsArticleList'
 
 import { Divider } from '@/shared/ui'
 import { PageLayout } from '@/pages/PageLayout'

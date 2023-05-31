@@ -2,6 +2,7 @@
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
 
 import Dropdawn from './Dropdawn'
+import s from './Dropdawn.module.scss'
 
 export default {
   title: 'shared/Dropdawn',
@@ -12,16 +13,16 @@ const Template: ComponentStory<typeof Dropdawn> = (args) => <Dropdawn {...args} 
 
 export const Primary = Template.bind({})
 Primary.args = {
-}
+  menuItems: [
+    {
+      children: 'Крутаааа'
 
-export const Error = Template.bind({})
-Error.args = {
-}
+    },
+    {
+      children: 'Привет всем'
 
-export const Error2 = Template.bind({})
-Error2.args = {
-}
-
-export const Loading = Template.bind({})
-Loading.args = {
+    }
+  ],
+  classNameWrapper: s.wrapperTest,
+  innerButton: 'btn'
 }

@@ -28,3 +28,13 @@
     color: var(--primary-color-text);
   }
 }
+
+.wrapperTest {
+  width: 100%;
+
+  .list {
+    left: 0;
+    right: auto
+    
+  }
+}

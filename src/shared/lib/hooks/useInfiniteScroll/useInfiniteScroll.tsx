@@ -35,6 +35,6 @@ export default function useInfiniteScroll ({ callback, refTrigger, refWrapper }:
         observer.unobserve(refTriggerLocal)
       }
     }
-  }, [callback])
+  }, [callback, refTrigger, refWrapper])
 
 }

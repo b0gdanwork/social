@@ -1,5 +1,5 @@
 import NotFoundPageAsyns from './ui/NotFoundPageAsyns'
 
 export {
-  NotFoundPageAsyns as AboutPage
+  NotFoundPageAsyns as NotFoundPage
 }

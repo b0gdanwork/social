@@ -56,7 +56,7 @@ function ArticlePageFilters ({}: Props) {
       dispath(articlesPageActions.setType(value))
     }
     fetchData()
-  }, [dispath, valueType])
+  }, [dispath, fetchData, valueType])
 
   return (
     <div className={s.wrapper}>

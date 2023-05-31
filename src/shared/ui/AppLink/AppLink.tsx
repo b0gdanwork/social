@@ -10,6 +10,7 @@ interface PropsAppLink extends LinkProps {
   children?: any
   className?: string
   isOpen?: boolean
+  colorIcon?: string
 }
 
 const AppLink: FC<PropsAppLink> = (props) => {
@@ -19,13 +20,14 @@ const AppLink: FC<PropsAppLink> = (props) => {
     isOpen,
     children,
     className,
+    colorIcon,
     ...anyProps
   } = props
 
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <Link {...anyProps} className={classNames(s.link, { [s.active]: isOpen }, [className])}>
-      {Icon ? <Icon size={20} color={'var(--navbar-color'}/> : null}
+      {Icon ? <Icon size={20} color={colorIcon}/> : null}
       {isOpen ? children : null}
     </Link>
   )

@@ -1,4 +1,4 @@
-import { PageLayout } from "@/pages/PageLayout";
+import { PageLayout } from '@/pages/PageLayout'
 
 import s from './ForbiddenPage.module.scss'
 

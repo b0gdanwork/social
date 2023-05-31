@@ -30,7 +30,7 @@ export default function PageLayout ({ children, saveScrollPosition = false, onSc
     } else {
       dispatch(pageLayoutActions.setPositionScroll({ scroll: 0, path: location.pathname }))
     }
-  }, [dispatch, location, scrollList, wrapperRef])
+  }, [dispatch, location, saveScrollPosition, scrollList, wrapperRef])
 
   const onScroll = useCallback(throttle((event: any) => {
     dispatch(pageLayoutActions.setPositionScroll({ scroll: event.target.scrollTop, path: location.pathname }))

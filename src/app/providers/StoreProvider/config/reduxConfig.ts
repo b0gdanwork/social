@@ -11,7 +11,7 @@ import {
 import { createReducerManager } from './reducerManager'
 import { $api } from '@/shared/api/api'
 import { type NavigateOptions, type To } from 'react-router'
-import { pageLayoutReducer } from '@/pages/PageLayout/model/slice/pageLayoutSlice'
+import { pageLayoutReducer } from '@/pages/PageLayout'
 import { rtkApi } from '@/shared/api/rtkApi'
 
 interface Options { 

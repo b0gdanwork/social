@@ -54,7 +54,7 @@ const DynamicModuleLoader: FC<Props> = (props) => {
       if (deliteAfterAnmount) {
         return () => {
           Object.entries(reducer).forEach((reduc) => {
-            const [name, value] = reduc
+            const [name] = reduc
             store.reducerManager?.remove(name as StoreSchemaKeys)
           })
         }
