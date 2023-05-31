@@ -54,10 +54,10 @@ function ArticleList (props: ArticleListProps) {
       return <ArticleListItem key={ind} view={view} isLoading={true}/>
     })
   }
-  console.log(view)
+  
   const renderArticles = () => {
 
-    if (!articles.length && !isLoading) {
+    if (!articles?.length && !isLoading) {
       return <h2>Список статей пуст</h2>
     }
 
@@ -95,16 +95,17 @@ function ArticleList (props: ArticleListProps) {
       return <div  
         className= {classNames(s.articles, {}, [s[view]])}
       >
-        {articles.map((article) => {
-          return <>
-            <ArticleListItem key={article.id} article={article} view={view} isLoading={false} target={target}/>
-            {/* {isLoading ? renderSkeletons() : null} */}
-          </>
-        })}
+        {!isLoading
+          ? articles.map((article) => {
+            return <>
+              <ArticleListItem key={article.id} article={article} view={view} isLoading={false} target={target}/>
+            </>
+          })
+          : renderSkeletons()}
       </div>
     }
   }
-
+  
   return (
     <div className={classNames(className)}>
       {renderArticles()}

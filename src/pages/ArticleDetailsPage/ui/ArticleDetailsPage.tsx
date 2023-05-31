@@ -12,6 +12,7 @@ import { ArticleDetails } from '@/entitiess/Article'
 import ArticleDetailsPageHeader from './ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import { RecommendationArticlesList } from '@/features/recommendationsArticleList'
 import CommentsList from './CommentsList/CommentsList'
+import { ArticleRating } from '@/features/articleRating'
 
 const reducer = combineReducers({
   comments: articleDetailsCommentsReducer,
@@ -34,6 +35,7 @@ export default function ArticleDetailsPage () {
         <ArticleDetails id={id}/>
         <Divider mobileSize='m-30' desctopSize='d-30'/>
         <RecommendationArticlesList id={id}/>
+        <ArticleRating articleId={id}/>
         <Divider mobileSize='m-30' desctopSize='d-30'/>
         <CommentsList id={id}/>
       </PageLayout>

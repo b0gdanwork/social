@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev": "concurrently -n front,back \"npm run start\" \"npm run start:dev:server\" --kill-others",
+    "dev": "concurrently -n front,back \"npm run start:vite\" \"npm run start:dev:server\" --kill-others",
     "start": "webpack serve --env port=3000 --env mode=development ",
     "start:vite": "vite",
     "start:dev:server": "node ./json-server/index.js",

@@ -11,5 +11,6 @@ import Loader from './Loader/Loader'
 import Modal from './Modal/Modal'
 import Popover from './Popover/Popover'
 import Skeleton from './Skeleton/Skeleton'
+import StarRating from './StarRating/StarRating'
 
-export { AppLink, AppButton, Loader, AppInput, Form, Modal, Divider, Avatar, AppSelect, Skeleton, AppTextarea, Dropdawn, Popover }
+export { AppLink, AppButton, Loader, AppInput, Form, Modal, Divider, Avatar, AppSelect, Skeleton, AppTextarea, Dropdawn, Popover, StarRating }
