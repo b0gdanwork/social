@@ -1,5 +1,4 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import path from 'path'
 import { type BuildOptionsT } from '../types'
 
 const styleRuleBuild = ({ isDev, paths }: BuildOptionsT) => ({

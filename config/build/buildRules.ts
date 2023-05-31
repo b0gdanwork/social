@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import type webpack from 'webpack'
 import scssRuleBuild from './rules/styleRule'
 import { type BuildOptionsT } from './types'

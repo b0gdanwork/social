@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import React, { useState, type HTMLAttributeAnchorTarget, memo } from 'react'
+import React, { type HTMLAttributeAnchorTarget, memo } from 'react'
 
 import { type ArticleListViewT, type ArticleT } from '@/entitiess/Article/model/types/articleSchema'
 import ArticleListItem from '../ArticleListItem/ArticleListItem'

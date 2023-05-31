@@ -13,7 +13,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', 'i18next', 'react-hooks', 'ulbi-tv-plugin'],
+  plugins: ['react', 'i18next', 'react-hooks', 'ulbi-tv-plugin', 'unused-imports'],
   rules: {
     strictNullChecks: 0,
     'comma-dangle': [0, {
@@ -58,6 +58,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error', 
     'react-hooks/exhaustive-deps': 'warn', 
     'i18next/no-literal-string': 'warn',
+    'unused-imports/no-unused-imports': 'error',
     '@typescript-eslint/no-dynamic-delete': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
