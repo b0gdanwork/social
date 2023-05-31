@@ -13,7 +13,7 @@ import { BiGame } from 'react-icons/bi'
 import { CgProfile } from 'react-icons/cg'
 import { RiArticleLine, RiAdminLine } from 'react-icons/ri'
 import { ForbiddenPage } from '@/pages/ForbiddenPage'
-import { type CustomRouteObject, PathsAppT } from './types'
+import { type CustomRouteObject, PathsAppT } from '@/shared/const/routingTypes'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 
 const AppRoutesList: CustomRouteObject[] = [

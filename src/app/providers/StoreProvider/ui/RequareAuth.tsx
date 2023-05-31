@@ -7,7 +7,7 @@ import { getUserInit } from '@/entitiess/User/model/selectors/getUserInit/getUse
 import { type RulesT, getUserRoles } from '@/entitiess/User'
 
 import { Loader } from '@/shared/ui'
-import { PathsAppT } from '@/shared/config/routes/types'
+import { PathsAppT } from '@/shared/const/routingTypes'
 
 interface PropsT {
   rules?: RulesT[]

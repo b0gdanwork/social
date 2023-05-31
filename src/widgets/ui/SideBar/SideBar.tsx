@@ -9,11 +9,11 @@ import ToggleThemeBtn from '../ToggleThemeBtn/ToggleThemeBtn'
 import { TbArrowBarToRight } from 'react-icons/tb'
 
 import s from './SideBar.module.scss'
-import AppRoutesList from '@/shared/config/routes/routes'
+import AppRoutesList from '@/app/providers/AppRoutes/config/routes'
 import { useSelector } from 'react-redux'
 import { getUser, isUserAdmin } from '@/entitiess/User'
 import { useTranslation } from 'react-i18next'
-import { PathsAppT } from '@/shared/config/routes/types'
+import { PathsAppT } from '@/shared/const/routingTypes'
 
 interface Props {}
 

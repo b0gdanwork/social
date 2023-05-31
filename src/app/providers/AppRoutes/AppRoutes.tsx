@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import { useRoutes } from 'react-router-dom'
-import AppRoutesList from '@/shared/config/routes/routes'
+import AppRoutesList from './config/routes'
 import Loader from '@/shared/ui/Loader/Loader'
 
 const AppRoutes = () => {
