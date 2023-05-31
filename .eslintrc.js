@@ -62,6 +62,13 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
     'ulbi-tv-plugin/public-api-imports': ['error', { alias: '@' }],
+    'ulbi-tv-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ]
   },
   settings: {
     react: {

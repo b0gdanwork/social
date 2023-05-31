@@ -9,7 +9,7 @@ import { FaRegEye } from 'react-icons/fa'
 import s from './ArticleListItem.module.scss'
 import { useHover } from '@/shared/lib/hooks/useHover/useHover'
 import { classNames } from '@/shared/lib/helpers/classNames/classNames'
-import { PathsAppT } from '@/shared/config/routes/types'
+import { PathsAppT } from '@/shared/const/routingTypes'
 import { type HTMLAttributeAnchorTarget, memo } from 'react'
 import { Link } from 'react-router-dom'
 
