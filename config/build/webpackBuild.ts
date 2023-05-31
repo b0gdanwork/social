@@ -23,7 +23,7 @@ export function WebpackBuild (options: BuildOptionsT) {
     },
     resolve: resolvesBuild(options),
     plugins: plaginsBuild(options),
-    devtool: isDev ? 'inline-source-map' : undefined,
+    devtool: isDev ? 'eval-cheap-module-source-map' : undefined,
     devServer: DevServerBuild(options)
   }
 }

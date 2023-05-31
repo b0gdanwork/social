@@ -2,27 +2,15 @@ import { Currency } from '../../types/currency'
 import { AppSelect } from '@/shared/ui'
 import { type PropsAppSelect } from '@/shared/ui/AppSelect/AppSelect'
 
-interface PropsCurrencySelect extends PropsAppSelect {
-  className?: string,
-  [x: string]: any
-}
-
-const options: any = Object.entries(Currency).map((key) => {
-  return { value: key[0], label: key[0] }
+const options = Object.entries(Currency).map((key) => {
+  return { value: key[0] as Currency, label: key[0] }
 })
 
-export default function CurrencySelect (props: PropsCurrencySelect) {
-
-  const {
-    value,
-    className,
-    ...anyProps
-  } = props
+export default function CurrencySelect (props: PropsAppSelect<Currency>) {
 
   return (
-    <AppSelect 
-      {...anyProps}  
-      value={value}
+    <AppSelect
+      {...props}
       options={options}
 
    />

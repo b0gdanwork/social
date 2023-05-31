@@ -15,7 +15,10 @@ function buildRules (BuildOptions: BuildOptionsT): webpack.RuleSetRule[] {
     test: /\.(js|jsx|tsx|ts)$/,
     exclude: /node_modules/,
     use: {
-      loader: 'babel-loader'
+      loader: 'babel-loader',
+      options: {
+        cacheDirectory: true
+      }
     }
   }
 

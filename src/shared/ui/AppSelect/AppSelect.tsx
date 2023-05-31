@@ -6,18 +6,18 @@ import s from './AppSelect.module.scss'
 
 interface Option {value: string, label: string}
 
-export interface PropsAppSelect {
+export interface PropsAppSelect<T> {
   [x: string]: any
   label?: string
   readOnly?: boolean
   className?: string
   value?: string | undefined | ReactNode
-  options?: OptionsOrGroups<string, GroupBase<string>> | any
-  onChange?: ((newValue: string | null) => void) | undefined
+  options?: OptionsOrGroups<T, GroupBase<T>> | any
+  onChange?: (newValue: T | null) => void
   
 }
 
-function AppSelect (props: PropsAppSelect) {
+function AppSelect <T extends string> (props: PropsAppSelect<T>) {
 
   const {
     label,
@@ -33,7 +33,7 @@ function AppSelect (props: PropsAppSelect) {
     if (!newValue) {
       onChange(null)
     } else {
-      onChange(newValue.value)
+      onChange(newValue.value as T)
     }
   }
 
@@ -75,4 +75,4 @@ function AppSelect (props: PropsAppSelect) {
   )
 }
 
-export default memo(AppSelect)
+export default memo(AppSelect) as typeof AppSelect
