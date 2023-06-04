@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { type ArticleListViewT, type ArticleT } from '@/entitiess/Article/model/types/articleSchema'
 
-import { AppButton, Avatar, Skeleton } from '@/shared/ui'
+import { AppButton, AppImage, Avatar, Skeleton } from '@/shared/ui'
 import { AppButtonTheme } from '@/shared/ui/AppButton/AppButton'
 
 import { FaRegEye } from 'react-icons/fa'
@@ -89,7 +89,7 @@ function ArticleListItem ({ article, view, isLoading, target = '_parent' }: Arti
       <Link to={`${PathsAppT.ARTICLE_DETAILS}/${article?.id}`} className={s.link} target={target}></Link>
 
       <div className={s.articleGridImg}>
-        <img src={article.img} alt="" />
+        <AppImage src={article.img} alt="" />
         <data>{article.createdAt}</data>
       </div>
       <div className={s.articleGridFooter}>
@@ -121,7 +121,7 @@ function ArticleListItem ({ article, view, isLoading, target = '_parent' }: Arti
           <data>{article.createdAt}</data>
         </div>
       </div>
-      {article.img ? <div className={s.articleImg}><img src={article.img}/></div> : null}
+      {article.img ? <div className={s.articleImg}><AppImage src={article.img}/></div> : null}
       <div className={s.text}>
         {article.subtitle}
       </div>

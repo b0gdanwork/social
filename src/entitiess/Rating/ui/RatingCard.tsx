@@ -46,7 +46,6 @@ function RatingCard ({ title, onChange, selectedStars }: Props) {
     setValueRating(null)
   }, [closeMoadal])
 
-  console.log('selectedStars CARD', selectedStars)
   return (
     <div className={s.wrapper}>
       { title && !selectedStars

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-import { Divider, Skeleton } from '@/shared/ui'
+import { AppImage, Divider, Skeleton } from '@/shared/ui'
 import { type ArticleT } from '@/entitiess/Article/model/types/articleSchema'
 
 import { FaRegEye } from 'react-icons/fa'
@@ -70,7 +70,7 @@ function ArticleTitle ({ article, isLoading }: Props) {
       </div>
       <div className={s.img}>
         <div className={s.bg} style={{ backgroundImage: `url(${article.img || ''})` }} />
-        <img src={ article.img } alt="" />
+        <AppImage src={ article.img } alt="" />
       </div>
     </div>
   )
