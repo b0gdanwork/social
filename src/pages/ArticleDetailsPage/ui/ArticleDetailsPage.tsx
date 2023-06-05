@@ -1,44 +1,43 @@
-import { useParams } from 'react-router'
-import { combineReducers } from '@reduxjs/toolkit'
+import { useParams } from "react-router"
+import { combineReducers } from "@reduxjs/toolkit"
 
-import DynamicModuleLoader from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import DynamicModuleLoader from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 
-import { articleDetailsCommentsReducer } from '../model/slices/articleDetailsComponentsSlice'
-import { recomendationArticlesReducer } from '@/features/recommendationsArticleList'
+import { articleDetailsCommentsReducer } from "../model/slices/articleDetailsComponentsSlice"
+import { recomendationArticlesReducer } from "@/features/recommendationsArticleList"
 
-import { Divider } from '@/shared/ui'
-import { PageLayout } from '@/pages/PageLayout'
-import { ArticleDetails } from '@/entitiess/Article'
-import ArticleDetailsPageHeader from './ArticleDetailsPageHeader/ArticleDetailsPageHeader'
-import { RecommendationArticlesList } from '@/features/recommendationsArticleList'
-import CommentsList from './CommentsList/CommentsList'
-import { ArticleRating } from '@/features/articleRating'
+import { Divider } from "@/shared/ui"
+import { PageLayout } from "@/pages/PageLayout"
+import { ArticleDetails } from "@/entitiess/Article"
+import ArticleDetailsPageHeader from "./ArticleDetailsPageHeader/ArticleDetailsPageHeader"
+import { RecommendationArticlesList } from "@/features/recommendationsArticleList"
+import CommentsList from "./CommentsList/CommentsList"
+import { ArticleRating } from "@/features/articleRating"
 
 const reducer = combineReducers({
-  comments: articleDetailsCommentsReducer,
-  recomendations: recomendationArticlesReducer
+	comments: articleDetailsCommentsReducer,
+	recomendations: recomendationArticlesReducer,
 })
 
-export default function ArticleDetailsPage () {
+export default function ArticleDetailsPage() {
+	const { id } = useParams()
 
-  const { id } = useParams()
+	if (!id) {
+		// eslint-disable-next-line i18next/no-literal-string
+		return <>!id</>
+	}
 
-  if (!id) {
-    // eslint-disable-next-line i18next/no-literal-string
-    return <>!id</>
-  }
-  
-  return (
-    <DynamicModuleLoader reducer={reducer} reducerKey={'articleDetailsPage'} >
-      <PageLayout saveScrollPosition={true}>
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id}/>
-        <Divider mobileSize='m-30' desctopSize='d-30'/>
-        <RecommendationArticlesList id={id}/>
-        <ArticleRating articleId={id}/>
-        <Divider mobileSize='m-30' desctopSize='d-30'/>
-        <CommentsList id={id}/>
-      </PageLayout>
-    </DynamicModuleLoader>
-  )
+	return (
+		<DynamicModuleLoader reducer={reducer} reducerKey={"articleDetailsPage"}>
+			<PageLayout saveScrollPosition={true}>
+				<ArticleDetailsPageHeader />
+				<ArticleDetails id={id} />
+				<Divider mobileSize="m-30" desctopSize="d-30" />
+				<RecommendationArticlesList id={id} />
+				<ArticleRating articleId={id} />
+				<Divider mobileSize="m-30" desctopSize="d-30" />
+				<CommentsList id={id} />
+			</PageLayout>
+		</DynamicModuleLoader>
+	)
 }

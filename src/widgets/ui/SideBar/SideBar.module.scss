@@ -1,69 +1,67 @@
 .sidebar {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding: 10px 15px;
-  width: 55px;
-  height: calc(100vh - var(--navbar-height));
-  min-width: 55px;
-  background: var(--sidebar-bg);
-  color: var(--sidebar-color);
-  transition: .3s width, .3s min-width;
-  
-  &.open {
-    width: 300px;
-    min-width: 300px;
-  }
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	padding: 10px 15px;
+	width: 55px;
+	height: calc(100vh - var(--navbar-height));
+	min-width: 55px;
+	background: var(--sidebar-bg);
+	color: var(--sidebar-color);
+	transition: 0.3s width, 0.3s min-width;
+
+	&.open {
+		width: 300px;
+		min-width: 300px;
+	}
 }
 
 .admin {
-  margin-top: 30px;
+	margin-top: 30px;
 }
 
-
 .sidebarTop {
-  height: 100%;
-  padding-top: 40px;
+	height: 100%;
+	padding-top: 40px;
 }
 
 .sidebarBottom {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .iconBtn {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: fit-content;
-  min-width: 0;
-  transition: transform .1s;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: fit-content;
+	min-width: 0;
+	transition: transform 0.1s;
 
-  &:hover {
-    transform: scale(1.05);
-  }
+	&:hover {
+		transform: scale(1.05);
+	}
 }
 
 .iconToggle {
-  transition: transform .3s;
+	transition: transform 0.3s;
 
-  &.openIcon {
-    transform: rotate(180deg);
-  }
+	&.openIcon {
+		transform: rotate(180deg);
+	}
 }
 
 .links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .link {
-  color: var(--navbar-color);
+	color: var(--navbar-color);
 
-  &::after {
-    background-color: var(--navbar-color);
-  }
+	&::after {
+		background-color: var(--navbar-color);
+	}
 }
-

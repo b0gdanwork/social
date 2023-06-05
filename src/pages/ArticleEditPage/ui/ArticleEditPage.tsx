@@ -1,8 +1,3 @@
-
-export default function ArticleEditPage () {
-
-  return (
-    <>ArticleEditPage</>
-  )
-
+export default function ArticleEditPage() {
+	return <>ArticleEditPage</>
 }

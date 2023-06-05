@@ -1,49 +1,49 @@
 .link {
-  position: relative;
-  display: flex;
-  padding: 5px 0;
-  align-items: center;
-  white-space: nowrap;
-  gap: 15px;
-  font-size: 0;
-  color: var(--text-color);
-  background-color: transparent;
-  transition: .3s width, .3s min-width, .2s padding, .2s font-size, .2s padding;
+	position: relative;
+	display: flex;
+	padding: 5px 0;
+	align-items: center;
+	white-space: nowrap;
+	gap: 15px;
+	font-size: 0;
+	color: var(--text-color);
+	background-color: transparent;
+	transition: 0.3s width, 0.3s min-width, 0.2s padding, 0.2s font-size, 0.2s padding;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 1px;
-    background-color: var(--text-color);;
-    transform: translate(-50%);
-    transition: width .2s;
-  }
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		width: 0;
+		height: 1px;
+		background-color: var(--text-color);
+		transform: translate(-50%);
+		transition: width 0.2s;
+	}
 
-  &:hover {
-    &::after {
-      width: 100%;
-    }
-  }
+	&:hover {
+		&::after {
+			width: 100%;
+		}
+	}
 
-  svg {
-    min-width: 20px;
-  }
+	svg {
+		min-width: 20px;
+	}
 
-  :global {
-    .primary {
-      background-color: var(--primary-color);
-    }
+	:global {
+		.primary {
+			background-color: var(--primary-color);
+		}
 
-    .secondary {
-      background-color: var(--secondary-color);
-    }
-  }
+		.secondary {
+			background-color: var(--secondary-color);
+		}
+	}
 
-  &.active {
-    font-size: initial;
-    padding: 5px 10px;
-  }
+	&.active {
+		font-size: initial;
+		padding: 5px 10px;
+	}
 }

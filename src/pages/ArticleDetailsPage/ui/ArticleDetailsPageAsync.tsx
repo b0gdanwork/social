@@ -1,5 +1,5 @@
-import { lazy } from 'react'
+import { lazy } from "react"
 
-const ArticleDetailsPageAsync = lazy(async () => await import('./ArticleDetailsPage'))
+const ArticleDetailsPageAsync = lazy(async () => await import("./ArticleDetailsPage"))
 
 export default ArticleDetailsPageAsync

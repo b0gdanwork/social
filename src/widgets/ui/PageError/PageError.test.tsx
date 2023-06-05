@@ -1,15 +1,17 @@
 /* eslint-disable i18next/no-literal-string */
-import '@testing-library/jest-dom/extend-expect'
-import { render } from '@testing-library/react'
-import ProviderTest from '@/shared/lib/helpers/forTest/componentRender'
-import PageError from './PageError'
+import "@testing-library/jest-dom/extend-expect"
+import { render } from "@testing-library/react"
+import ProviderTest from "@/shared/lib/helpers/forTest/componentRender"
+import PageError from "./PageError"
 
-describe('test AppButton', () => {
+describe("test AppButton", () => {
+	test("", async () => {
+		const { container } = render(
+			<ProviderTest>
+				<PageError />
+			</ProviderTest>
+		)
 
-  test('', async () => {
-    const { container } = render(<ProviderTest><PageError /></ProviderTest>)
-
-    expect(container.getElementsByTagName('div')[0]).toBeInTheDocument()
-  })
-  
+		expect(container.getElementsByTagName("div")[0]).toBeInTheDocument()
+	})
 })

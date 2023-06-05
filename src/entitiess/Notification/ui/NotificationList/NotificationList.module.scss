@@ -1,13 +1,12 @@
 .list {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
-  border: 1px solid var(--primary-color);
-  border-radius: 3px;
-  background: var(--body-bg);
-  max-height: 300px;
-  overflow-y: auto;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 10px;
+	border: 1px solid var(--primary-color);
+	border-radius: 3px;
+	background: var(--body-bg);
+	max-height: 300px;
+	overflow-y: auto;
 }
-

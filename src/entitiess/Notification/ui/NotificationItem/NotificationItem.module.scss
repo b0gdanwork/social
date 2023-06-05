@@ -1,30 +1,29 @@
 .item {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: max-content;
-  max-width: 300px;
-  padding: 10px;
-  border: 1px solid var(--primary-color);
-  border-radius: 3px;
-  background: var(--body-alt-bg);
-  color: var(--text-color);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: max-content;
+	max-width: 300px;
+	padding: 10px;
+	border: 1px solid var(--primary-color);
+	border-radius: 3px;
+	background: var(--body-alt-bg);
+	color: var(--text-color);
 
-  h3 {
-    margin: 0;
-    margin-bottom: 10px;
-  }
+	h3 {
+		margin: 0;
+		margin-bottom: 10px;
+	}
 }
 
 .link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .discr {
-  line-height: 1.2;
+	line-height: 1.2;
 }
-

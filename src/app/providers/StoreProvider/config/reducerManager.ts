@@ -1,60 +1,67 @@
-import type StoreSchema from './StoreSchema'
+import type StoreSchema from "./StoreSchema"
 import {
-  type AnyAction, type CombinedState, combineReducers, type Reducer, type ReducersMapObject
-} from '@reduxjs/toolkit'
+	type AnyAction,
+	type CombinedState,
+	combineReducers,
+	type Reducer,
+	type ReducersMapObject,
+} from "@reduxjs/toolkit"
 
-import { type StoreSchemaKeys } from './StoreSchema'
+import { type StoreSchemaKeys } from "./StoreSchema"
 
 export interface reducerManager {
-  reduce: (state: StoreSchema, action: AnyAction) => CombinedState<StoreSchema>
-  add: (key: StoreSchemaKeys, reducer: Reducer) => void
-  remove: (key: StoreSchemaKeys) => void
-  getReducerMap: () => ReducersMapObject<StoreSchema>,
-} 
+	reduce: (state: StoreSchema, action: AnyAction) => CombinedState<StoreSchema>
+	add: (key: StoreSchemaKeys, reducer: Reducer) => void
+	remove: (key: StoreSchemaKeys) => void
+	getReducerMap: () => ReducersMapObject<StoreSchema>
+}
 
-export function createReducerManager (initialReducers: ReducersMapObject<StoreSchema>): reducerManager {
+export function createReducerManager(initialReducers: ReducersMapObject<StoreSchema>): reducerManager {
+	const reducers = {
+		...initialReducers,
+	}
 
-  const reducers = { ...initialReducers }
+	let combinedReducer = combineReducers(reducers)
 
-  let combinedReducer = combineReducers(reducers)
+	let keysToRemove: StoreSchemaKeys[] = []
 
-  let keysToRemove: StoreSchemaKeys[] = []
+	return {
+		getReducerMap: () => reducers,
 
-  return {
-    getReducerMap: () => reducers,
+		reduce: (state: StoreSchema, action: AnyAction) => {
+			if (keysToRemove.length > 0) {
+				state = {
+					...state,
+				}
+				for (const key of keysToRemove) {
+					delete state[key]
+				}
+				keysToRemove = []
+			}
 
-    reduce: (state: StoreSchema, action: AnyAction) => {
-      if (keysToRemove.length > 0) {
-        state = { ...state }
-        for (const key of keysToRemove) {
-          delete state[key]
-        }
-        keysToRemove = []
-      }
+			return combinedReducer(state, action)
+		},
 
-      return combinedReducer(state, action)
-    },
+		add: (key: StoreSchemaKeys, reducer: Reducer) => {
+			if (!key || reducers[key]) {
+				return
+			}
 
-    add: (key: StoreSchemaKeys, reducer: Reducer) => {
-      if (!key || reducers[key]) {
-        return
-      }
+			reducers[key] = reducer
 
-      reducers[key] = reducer
+			combinedReducer = combineReducers(reducers)
+		},
 
-      combinedReducer = combineReducers(reducers)
-    },
+		remove: (key: StoreSchemaKeys) => {
+			if (!key || !reducers[key]) {
+				return
+			}
 
-    remove: (key: StoreSchemaKeys) => {
-      if (!key || !reducers[key]) {
-        return
-      }
+			delete reducers[key]
 
-      delete reducers[key]
+			keysToRemove.push(key)
 
-      keysToRemove.push(key)
-
-      combinedReducer = combineReducers(reducers)
-    }
-  }
+			combinedReducer = combineReducers(reducers)
+		},
+	}
 }

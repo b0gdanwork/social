@@ -1,5 +1,5 @@
-import { type StoreSchema } from '@/app/providers/StoreProvider'
+import { type StoreSchema } from "@/app/providers/StoreProvider"
 
 export const getProfileData = (state: StoreSchema) => {
-  return state.profile?.data
+	return state.profile?.data
 }

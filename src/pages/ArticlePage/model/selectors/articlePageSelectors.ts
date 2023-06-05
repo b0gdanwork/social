@@ -1,5 +1,5 @@
-import { type StoreSchema } from '@/app/providers/StoreProvider'
-import { ArticleType } from '@/entitiess/Article'
+import { type StoreSchema } from "@/app/providers/StoreProvider"
+import { ArticleType } from "@/entitiess/Article"
 
 export const getArticlePageError = (state: StoreSchema) => state.articlesPage?.error
 export const getArticlePageIsLoading = (state: StoreSchema) => state.articlesPage?.isLoading

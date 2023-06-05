@@ -1,21 +1,17 @@
-import { type ReactNode } from 'react'
-import ReactDOM from 'react-dom'
+import { type ReactNode } from "react"
+import ReactDOM from "react-dom"
 
 interface PoratalProps {
-  container?: Element | DocumentFragment,
-  children: ReactNode,
+	container?: Element | DocumentFragment
+	children: ReactNode
 }
 
-const body = document.querySelector('body')
+const body = document.querySelector("body")
 
 const Portal = (props: PoratalProps) => {
+	const { container = body, children } = props
 
-  const {
-    container = body,
-    children
-  } = props
-  
-  return ReactDOM.createPortal(children, container as DocumentFragment)
+	return ReactDOM.createPortal(children, container as DocumentFragment)
 }
 
 export default Portal

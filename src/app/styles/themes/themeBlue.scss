@@ -1,37 +1,33 @@
 .theme-blue {
-  --primary-color: #003;
-  --primary-color-text: #fff;
-  --primary-color-active: transparent;
-  --primary-color-text-active: #1A2C52;
+	--primary-color: #003;
+	--primary-color-text: #fff;
+	--primary-color-active: transparent;
+	--primary-color-text-active: #1a2c52;
 
-  --secondary-color: #BD977E;
-  --secondary-color-text: #fff;
-  --secondary-color-active: #233144;
-  --secondary-color-text-active: #fff;
+	--secondary-color: #bd977e;
+	--secondary-color-text: #fff;
+	--secondary-color-active: #233144;
+	--secondary-color-text-active: #fff;
 
-  --bg-color: #e5e5e5;
-  --bg-color-dark: #6b589e;
+	--bg-color: #e5e5e5;
+	--bg-color-dark: #6b589e;
 
-  --bg-color-navbar:  #616161;
-  
-  --text-color: #101010;
-  --text-color-dark-bg: #e5e5e5;
-  --subtext-color: #b5b5b5;
+	--bg-color-navbar: #616161;
 
+	--text-color: #101010;
+	--text-color-dark-bg: #e5e5e5;
+	--subtext-color: #b5b5b5;
 
+	--body-bg: #f8f8ff;
+	--body-alt-bg: #edf1fa;
 
+	--sidebar-bg: #6b589e;
+	--sidebar-color: #e5e5e5;
 
-  --body-bg: #f8f8ff;
-  --body-alt-bg: #edf1fa;
+	--navbar-bg: #6b589e;
+	--navbar-color: #e5e5e5;
 
-  --sidebar-bg: #6b589e;
-  --sidebar-color: #e5e5e5;
+	--overlay-color: rgb(16 16 16 / 47%);
 
-  --navbar-bg: #6b589e;
-  --navbar-color: #e5e5e5;
-
-  --overlay-color: rgb(16 16 16 / 47%);
-
-  --red: #F06;
-
+	--red: #f06;
 }

@@ -1,14 +1,14 @@
 .readonly {
-  position: relative;
-  height: 40px;
-  padding: 5px;
+	position: relative;
+	height: 40px;
+	padding: 5px;
 }
 
 .readonlyLabel {
-  position: absolute;
-  top: 0;
-  left: 5px;
-  color: var(--subtext-color);
-  font-size: 8px;
-  line-height: 1px;
+	position: absolute;
+	top: 0;
+	left: 5px;
+	color: var(--subtext-color);
+	font-size: 8px;
+	line-height: 1px;
 }

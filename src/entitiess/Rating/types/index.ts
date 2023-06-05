@@ -1,6 +1,6 @@
-import { type StarT } from '../model/types'
+import { type StarT } from "../model/types"
 
 export interface RatingT {
-  feedback?: string,
-  rate: StarT
+	feedback?: string
+	rate: StarT
 }

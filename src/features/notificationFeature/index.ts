@@ -1,5 +1,5 @@
-import NotificationFeature from './ui/NotificationFeature/NotificationFeature'
+import NotificationFeature from "./ui/NotificationFeature/NotificationFeature"
 
-export type { NotificationFeatureSchema } from './model/types/index'
+export type { NotificationFeatureSchema } from "./model/types/index"
 
 export { NotificationFeature }

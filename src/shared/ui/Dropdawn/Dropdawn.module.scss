@@ -1,40 +1,40 @@
 .wrapper {
-  position: relative;
+	position: relative;
 }
 
 .list {
-  z-index: 100;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: calc(100% + 10px);
-  right: 0;
-  background: var(--body-alt-bg);
-  border-radius: 5px;
-  color: var(--text-color);
-  box-shadow: 0 0 5px #0000003c;
-  outline: none;
+	z-index: 100;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	top: calc(100% + 10px);
+	right: 0;
+	background: var(--body-alt-bg);
+	border-radius: 5px;
+	color: var(--text-color);
+	box-shadow: 0 0 5px #0000003c;
+	outline: none;
 }
 
 .item {
-  padding: 5px;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: .2s background-color, .2s color;
-  border-radius: 5px;
+	padding: 5px;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: 0.2s background-color, 0.2s color;
+	border-radius: 5px;
 
-  &:hover, &.active {
-    background-color: var(--primary-color);
-    color: var(--primary-color-text);
-  }
+	&:hover,
+	&.active {
+		background-color: var(--primary-color);
+		color: var(--primary-color-text);
+	}
 }
 
 .wrapperTest {
-  width: 100%;
+	width: 100%;
 
-  .list {
-    left: 0;
-    right: auto
-    
-  }
+	.list {
+		left: 0;
+		right: auto;
+	}
 }

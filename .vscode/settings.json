@@ -1,17 +1,24 @@
 {
-  "i18n-ally.localesPaths": [
-    "src/app/public/locales",
-    "src/shared/config/i18n"
-  ],
-  "stylelint.enable": true,
-  "css.validate": true,
-  "scss.validate": true,
-  "stylelint.validate": [
-  "css",
-  "scss"
-  ],
-  "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": true,
-    "source.fixAll.eslint": true
-  }
+	"i18n-ally.localesPaths": ["src/app/public/locales", "src/shared/config/i18n"],
+	"stylelint.enable": true,
+	"css.validate": true,
+	"scss.validate": true,
+	"stylelint.validate": ["css", "scss"],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.stylelint": true,
+		"source.fixAll.eslint": true
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.tabSize": 2,
+	"files.autoSave": "afterDelay",
+	"prettier.printWidth": 120,
+	"prettier.tabWidth": 2,
+	"prettier.useTabs": false,
+	"prettier.semi": false,
+	"prettier.singleQuote": false,
+	"prettier.bracketSameLine": false,
+	"prettier.arrowParens": "always"
 }

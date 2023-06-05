@@ -1396,9 +1396,9 @@
   "resolved" "https://registry.npmjs.org/@emotion/weak-memoize/-/weak-memoize-0.3.0.tgz"
   "version" "0.3.0"
 
-"@esbuild/win32-x64@0.17.19":
-  "integrity" "sha512-lAhycmKnVOuRYNtRtatQR1LPQf2oYCkRGkSFnseDAKPl8lu5SOsK/e1sXe5a0Pc5kHIHe6P2I/ilntNv2xf3cA=="
-  "resolved" "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.17.19.tgz"
+"@esbuild/linux-x64@0.17.19":
+  "integrity" "sha512-68ngA9lg2H6zkZcyp22tsVt38mlhWde8l3eJLWkyLrp4HwMUr3c1s/M2t7+kHIhvMjglIBrFpncX1SzMckomGw=="
+  "resolved" "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.17.19.tgz"
   "version" "0.17.19"
 
 "@eslint/eslintrc@^1.4.1":
@@ -7110,6 +7110,11 @@
   optionalDependencies:
     "source-map" "~0.6.1"
 
+"eslint-config-prettier@^8.8.0":
+  "integrity" "sha512-wLbQiFre3tdGgpDv67NQKnJuTlcUVYHas3k+DZCc2U2BadthoEY4B7hLPvAxaqdyOGCzuLfii2fqGph10va7oA=="
+  "resolved" "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-8.8.0.tgz"
+  "version" "8.8.0"
+
 "eslint-config-standard-jsx@^11.0.0":
   "integrity" "sha512-+1EV/R0JxEK1L0NGolAr8Iktm3Rgotx3BKwgaX+eAuSX8D952LULKtjgZD3F+e6SvibONnhLwoTi9DPxN5LvvQ=="
   "resolved" "https://registry.npmjs.org/eslint-config-standard-jsx/-/eslint-config-standard-jsx-11.0.0.tgz"
@@ -7242,10 +7247,10 @@
     "requireindex" "^1.1.0"
     "ts-dedent" "^2.2.0"
 
-"eslint-plugin-ulbi-tv-plugin@^0.0.7":
-  "integrity" "sha512-uq6CzDsrW8CJ9OHv+p1m3kpkj19whdr/9jQAfxK+5v/Ni+h01OdpeS09uB/cn7gOaCYxsT6r7cEVkG3609n6/A=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-ulbi-tv-plugin/-/eslint-plugin-ulbi-tv-plugin-0.0.7.tgz"
-  "version" "0.0.7"
+"eslint-plugin-ulbi-tv-plugin@^0.0.9":
+  "integrity" "sha512-H/Md7BjH3hFVEmKZF+aGB2JHAEMOF4QH4m81/GxbiO3VB+cSpuQnhk2MwfVowFK26yLmKTiiwGnETMAUzpeb9w=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-ulbi-tv-plugin/-/eslint-plugin-ulbi-tv-plugin-0.0.9.tgz"
+  "version" "0.0.9"
   dependencies:
     "micromatch" "^4.0.5"
     "requireindex" "^1.2.0"
@@ -12092,6 +12097,11 @@
   "resolved" "https://registry.npmjs.org/prettier/-/prettier-2.3.0.tgz"
   "version" "2.3.0"
 
+"prettier@2.8.8":
+  "integrity" "sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q=="
+  "resolved" "https://registry.npmjs.org/prettier/-/prettier-2.8.8.tgz"
+  "version" "2.8.8"
+
 "pretty-error@^2.1.1":
   "integrity" "sha512-EY5oDzmsX5wvuynAByrmY0P0hcp+QpnAKbJng2A2MPjVKXCxrDSUkzghVJ4ZGPIv+JC4gX8fPUWscC0RtjsWGw=="
   "resolved" "https://registry.npmjs.org/pretty-error/-/pretty-error-2.1.2.tgz"
@@ -14212,6 +14222,11 @@
   "version" "0.3.0"
   dependencies:
     "inline-style-parser" "0.1.1"
+
+"stylelint-config-prettier@^9.0.5":
+  "integrity" "sha512-U44lELgLZhbAD/xy/vncZ2Pq8sh2TnpiPvo38Ifg9+zeioR+LAkHu0i6YORIOxFafZoVg0xqQwex6e6F25S5XA=="
+  "resolved" "https://registry.npmjs.org/stylelint-config-prettier/-/stylelint-config-prettier-9.0.5.tgz"
+  "version" "9.0.5"
 
 "stylelint-config-recommended-scss@^9.0.0":
   "integrity" "sha512-qAmz/TdrqslwiMTuLM3QXeISUkfEDUXGMfRBCHm/xrkCJNnQefv+mzG2mWTsWkqcVk8HAyUkug10dwAcYp2fCQ=="

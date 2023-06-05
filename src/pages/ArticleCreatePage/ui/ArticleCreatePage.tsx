@@ -1,8 +1,3 @@
-
-export default function ArticleCreatePage () {
-
-  return (
-    <>ArticleCreatePage</>
-  )
-
+export default function ArticleCreatePage() {
+	return <>ArticleCreatePage</>
 }

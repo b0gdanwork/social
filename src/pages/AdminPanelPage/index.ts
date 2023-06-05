@@ -1,5 +1,3 @@
-import AdminPanelPageAsync from './ui/AdminPanelPageAsync'
+import AdminPanelPageAsync from "./ui/AdminPanelPageAsync"
 
-export {
-  AdminPanelPageAsync as AdminPanelPage
-}
+export { AdminPanelPageAsync as AdminPanelPage }

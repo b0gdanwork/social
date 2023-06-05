@@ -1,5 +1,5 @@
-import { lazy } from 'react'
+import { lazy } from "react"
 
-const ArticleCreatePageAsync = lazy(async () => await import('./ArticleCreatePage'))
+const ArticleCreatePageAsync = lazy(async () => await import("./ArticleCreatePage"))
 
 export default ArticleCreatePageAsync

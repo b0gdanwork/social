@@ -1,3 +1,3 @@
 export interface pageLayoutSchema {
-  scrollList: Record<string, number>
+	scrollList: Record<string, number>
 }

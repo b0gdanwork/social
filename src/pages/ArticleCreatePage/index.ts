@@ -1,5 +1,3 @@
-import ArticleCreatePageAsync from './ui/ArticleCreatePageAsync'
+import ArticleCreatePageAsync from "./ui/ArticleCreatePageAsync"
 
-export {
-  ArticleCreatePageAsync as ArticleCreatePage
-} 
+export { ArticleCreatePageAsync as ArticleCreatePage }

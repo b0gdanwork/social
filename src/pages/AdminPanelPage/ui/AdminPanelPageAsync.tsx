@@ -1,5 +1,5 @@
-import { lazy } from 'react'
+import { lazy } from "react"
 
-const AdminPanelPageAsync = lazy(async () => await import('./AdminPanelPage'))
+const AdminPanelPageAsync = lazy(async () => await import("./AdminPanelPage"))
 
 export default AdminPanelPageAsync

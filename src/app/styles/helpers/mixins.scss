@@ -1,70 +1,65 @@
 @mixin max-h($height) {
-  $condition: 'screen and (max-height: #{$height}px)';
-  
-  @media ($condition) {
-    @content;
-  }
+	$condition: "screen and (max-height: #{$height}px)";
+
+	@media ($condition) {
+		@content;
+	}
 }
 
 @mixin max-w($width) {
-  $condition: 'screen and (max-height: #{$width}px)';
-  
-  @media ($condition) {
-    @content;
-  }
+	$condition: "screen and (max-height: #{$width}px)";
+
+	@media ($condition) {
+		@content;
+	}
 }
 
 @mixin min-h($height) {
-  $condition: 'screen and (max-height: #{$height}px)';
-  
-  @media ($condition) {
-    @content;
-  }
+	$condition: "screen and (max-height: #{$height}px)";
+
+	@media ($condition) {
+		@content;
+	}
 }
 
 @mixin min-w($width) {
-  $condition: 'screen and (max-height: #{$width}px)';
-  
-  @media ($condition) {
-    @content;
-  }
+	$condition: "screen and (max-height: #{$width}px)";
+
+	@media ($condition) {
+		@content;
+	}
 }
 
 @mixin min-max-w($minWidth, $maxWidth) {
-  $condition: '(min-width: #{$minWidth}) and (max-width:#{$maxWidth})';
-  
-  @media ($condition) {
-    @content;
-  }
+	$condition: "(min-width: #{$minWidth}) and (max-width:#{$maxWidth})";
+
+	@media ($condition) {
+		@content;
+	}
 }
 
 @mixin min-max-h($minHeight, $maxHeight) {
-  $condition: '(min-height: #{$minHeight}) and (max-height:#{$maxWidth})';
-  
-  @media ($condition) {
-    @content;
-  }
+	$condition: "(min-height: #{$minHeight}) and (max-height:#{$maxWidth})";
+
+	@media ($condition) {
+		@content;
+	}
 }
 
 @mixin adaptiv-font($pcSize, $mobSize) {
- 
- $addSize: $pcSize - $mobSize;
- $maxWidth: $maxWidth - 320;
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
 
- font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 
- @media (max-width: 1300px) {
-   @content
- };
+	@media (max-width: 1300px) {
+		@content;
+	}
 }
 
 @mixin adaptiv-img($pcSize, $mobSize) {
-  $addSize: $pcSize - $mobSize;
-  $maxWidth: $maxWidth - 320;
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
 
-  width: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+	width: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 }
-
-
-
-

@@ -11,90 +11,91 @@ $button-min-height-mob: 45px;
 $button-border-radius: 5px;
 
 @mixin btn {
-  display: inline-block;
-  min-width: $button-min-width;
-  padding: calc(($button-min-height - 3px - math.round($TextSize * 1.7)) / 2) 15px calc(($button-min-height - 1px - math.round($TextSize * 1.7)) / 2) 15px;
-  border-radius: $button-border-radius;
-  font-family: $TextFont;
-  font-size: $TextSize;
-  line-height: math.round($TextSize * 1.7);
-  font-weight: 500;
-  text-decoration: none;
-  text-align: center;
-  user-select: none;
-  cursor: pointer;
+	display: inline-block;
+	min-width: $button-min-width;
+	padding: calc(($button-min-height - 3px - math.round($TextSize * 1.7)) / 2) 15px
+		calc(($button-min-height - 1px - math.round($TextSize * 1.7)) / 2) 15px;
+	border-radius: $button-border-radius;
+	font-family: $TextFont;
+	font-size: $TextSize;
+	line-height: math.round($TextSize * 1.7);
+	font-weight: 500;
+	text-decoration: none;
+	text-align: center;
+	user-select: none;
+	cursor: pointer;
 
-  @include min-max-w($mob-l + 1, $lap-s) {
-    font-size: ($TextSize - 2px);
-    line-height: math.round(($TextSize - 2px) * 1.7);
-    padding-top: calc(($button-min-height - math.round(($TextSize - 1px) * 1.7)) / 2);
-    padding-bottom: calc(($button-min-height - math.round(($TextSize - 1px) * 1.7)) / 2);
-  }
+	@include min-max-w($mob-l + 1, $lap-s) {
+		font-size: ($TextSize - 2px);
+		line-height: math.round(($TextSize - 2px) * 1.7);
+		padding-top: calc(($button-min-height - math.round(($TextSize - 1px) * 1.7)) / 2);
+		padding-bottom: calc(($button-min-height - math.round(($TextSize - 1px) * 1.7)) / 2);
+	}
 
-  @include min-max-w(1px, $mob-l) {
-    font-size: ($TextSize - 2px);
-    line-height: math.round(($TextSize - 2px) * 1.7);
-    padding-top: calc(($button-min-height-mob - 4px - math.round(($TextSize) * 1.7)) / 2);
-    padding-bottom: calc(($button-min-height-mob - 0px - math.round(($TextSize) * 1.7)) / 2);
-  }
+	@include min-max-w(1px, $mob-l) {
+		font-size: ($TextSize - 2px);
+		line-height: math.round(($TextSize - 2px) * 1.7);
+		padding-top: calc(($button-min-height-mob - 4px - math.round(($TextSize) * 1.7)) / 2);
+		padding-bottom: calc(($button-min-height-mob - 0px - math.round(($TextSize) * 1.7)) / 2);
+	}
 
-  @include min-max-w(1px, $mob-m) {
-    min-width: 100%;
-  }
+	@include min-max-w(1px, $mob-m) {
+		min-width: 100%;
+	}
 
-  &[disabled],
-  &.disabled {
-    border-color: #dfdfdf;
-    background-color: #dfdfdf;
-    color: #a7a7a7;
-    pointer-events: none;
-  }
+	&[disabled],
+	&.disabled {
+		border-color: #dfdfdf;
+		background-color: #dfdfdf;
+		color: #a7a7a7;
+		pointer-events: none;
+	}
 }
 
 @mixin btn--primary {
-  border: 1px solid var(--primary-color);
-  background-color: var(--primary-color);
-  color: var(--primary-color-text);
-  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+	border: 1px solid var(--primary-color);
+	background-color: var(--primary-color);
+	color: var(--primary-color-text);
+	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 
-  &:hover {
-    @include min-w($tab) {
-      border: 1px solid var(--primary-color) ;
-      background-color: var(--primary-color-active);
-      color: var(--primary-text-active);
-    }
-  }
+	&:hover {
+		@include min-w($tab) {
+			border: 1px solid var(--primary-color);
+			background-color: var(--primary-color-active);
+			color: var(--primary-text-active);
+		}
+	}
 
-  &.active:not([disabled], .disabled),
-  &:active:not([disabled], .disabled),
-  &:focus:focus-visible:not([disabled], .disabled) {
-    border: 1px solid var(--primary-color);
-    background-color: var(--primary-color-active);
-    color: var(--primary-text-active);
-  }
+	&.active:not([disabled], .disabled),
+	&:active:not([disabled], .disabled),
+	&:focus:focus-visible:not([disabled], .disabled) {
+		border: 1px solid var(--primary-color);
+		background-color: var(--primary-color-active);
+		color: var(--primary-text-active);
+	}
 }
 
 @mixin btn--secondary {
-  border: 1px solid var(--secondary-color);
-  background-color: var(--secondary-color);
-  color: var(--secondary-color-text);
-  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+	border: 1px solid var(--secondary-color);
+	background-color: var(--secondary-color);
+	color: var(--secondary-color-text);
+	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 
-  &:hover {
-    @include min-w($tab) {
-      border: 1px solid var(--secondary-color-active);
-      background-color: var(--secondary-color-active);
-      color: var(--secondary-color-text-active);
-    }
-  }
+	&:hover {
+		@include min-w($tab) {
+			border: 1px solid var(--secondary-color-active);
+			background-color: var(--secondary-color-active);
+			color: var(--secondary-color-text-active);
+		}
+	}
 
-  &.active:not([disabled], .disabled),
-  &:active:not([disabled], .disabled),
-  &:focus:focus-visible:not([disabled], .disabled) {
-    border: 1px solid var(--secondary-color-active);
-    background-color: var(--secondary-color-active);
-    color: var(--secondary-color-text-active);
-  }
+	&.active:not([disabled], .disabled),
+	&:active:not([disabled], .disabled),
+	&:focus:focus-visible:not([disabled], .disabled) {
+		border: 1px solid var(--secondary-color-active);
+		background-color: var(--secondary-color-active);
+		color: var(--secondary-color-text-active);
+	}
 }
 
 $transparent-bg: transparent;
@@ -104,42 +105,41 @@ $transparent-border-active: #fff;
 $transparent-bg-active: #fff;
 $transparent-text-active: var(--primary-color);
 
-
 @mixin btn--transparent {
-  border: 1px solid $transparent-text;
-  background-color: $transparent-bg;
-  color: $transparent-text;
-  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+	border: 1px solid $transparent-text;
+	background-color: $transparent-bg;
+	color: $transparent-text;
+	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 
-  &:hover {
-    @include min-w($tab) {
-      border: 1px solid $transparent-bg-active;
-      background: $transparent-bg-active;
-      color: var(--primary-color);
-    }
-  }
+	&:hover {
+		@include min-w($tab) {
+			border: 1px solid $transparent-bg-active;
+			background: $transparent-bg-active;
+			color: var(--primary-color);
+		}
+	}
 
-  &.active:not([disabled], .disabled),
-  &:active:not([disabled], .disabled),
-  &:focus:focus-visible:not([disabled], .disabled) {
-    border: 1px solid $transparent-bg-active;
-    background-color: $transparent-bg-active;
-    color: var(--primary-color);
-  }
+	&.active:not([disabled], .disabled),
+	&:active:not([disabled], .disabled),
+	&:focus:focus-visible:not([disabled], .disabled) {
+		border: 1px solid $transparent-bg-active;
+		background-color: $transparent-bg-active;
+		color: var(--primary-color);
+	}
 }
 
 .btn {
-  @include btn;
+	@include btn;
 
-  &--primary {
-    @include btn--primary
-  }
+	&--primary {
+		@include btn--primary;
+	}
 
-  &--transparent {
-    @include btn--transparent
-  }
+	&--transparent {
+		@include btn--transparent;
+	}
 
-  &--secondary {
-    @include btn--secondary
-  }
+	&--secondary {
+		@include btn--secondary;
+	}
 }

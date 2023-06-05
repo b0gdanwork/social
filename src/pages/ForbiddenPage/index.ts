@@ -1,5 +1,3 @@
-import ForbiddenPageAsync from './ui/ForbiddenPageAsync'
+import ForbiddenPageAsync from "./ui/ForbiddenPageAsync"
 
-export {
-  ForbiddenPageAsync as ForbiddenPage
-}
+export { ForbiddenPageAsync as ForbiddenPage }

@@ -1,11 +1,9 @@
-import { type UserT } from '@/entitiess/User'
+import { type UserT } from "@/entitiess/User"
 
 export interface CommentT {
-  id: string,
-  text: string,
-  user: UserT,
+	id: string
+	text: string
+	user: UserT
 }
 
-export interface CommentList {
-
-}
+export interface CommentList {}

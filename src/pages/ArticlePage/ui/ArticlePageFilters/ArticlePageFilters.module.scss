@@ -1,25 +1,25 @@
 .wrapperTop {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    gap: 20px;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	gap: 20px;
 }
 
 .wrapper {
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--body-bg);
-    padding: 15px;
-    box-shadow: 0 0 4px #00000053;
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: var(--body-bg);
+	padding: 15px;
+	box-shadow: 0 0 4px #00000053;
 }
 
 .wrapperSearch {
-    width: 100%;
+	width: 100%;
 }
 
 .select {
-    width: 400px;
+	width: 400px;
 }

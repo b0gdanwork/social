@@ -1,20 +1,20 @@
 .tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
 }
 
 .tab {
-  padding: 6px 8px;
-  opacity: 0.7;
-  transition: opacity .2s;
-  border: 1px solid var(--primary-color);
-  border-radius: 2px;
-  cursor: pointer;
+	padding: 6px 8px;
+	opacity: 0.7;
+	transition: opacity 0.2s;
+	border: 1px solid var(--primary-color);
+	border-radius: 2px;
+	cursor: pointer;
 }
 
-
-.tab.active, .tab:hover {
-  opacity: 1;
-  background: var(--body-alt-bg);
+.tab.active,
+.tab:hover {
+	opacity: 1;
+	background: var(--body-alt-bg);
 }

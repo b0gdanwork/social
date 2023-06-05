@@ -1,5 +1,5 @@
-import { type StoreSchema } from '@/app/providers/StoreProvider'
+import { type StoreSchema } from "@/app/providers/StoreProvider"
 
 export const getProfileValidateErrors = (state: StoreSchema) => {
-  return state.profile?.errorsValidate
+	return state.profile?.errorsValidate
 }
